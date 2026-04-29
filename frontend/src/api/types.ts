@@ -11,6 +11,8 @@ export interface Movie {
   description: string | null;
   category: string | null;
   poster_path: string | null;
+  release_year: number | null;
+  duration_minutes: number | null;
   publication_status: 'DRAFT' | 'PUBLISHED' | 'UNPUBLISHED' | 'DISABLED';
   created_at: string;
   updated_at: string;
@@ -34,12 +36,18 @@ export interface LoginResponse {
 export interface CreateMovieRequest {
   title: string;
   description?: string;
+  category?: string;
+  release_year?: number;
+  duration_minutes?: number;
   publication_status?: 'DRAFT' | 'PUBLISHED' | 'UNPUBLISHED' | 'DISABLED';
 }
 
 export interface UpdateMovieRequest {
   title?: string;
   description?: string;
+  category?: string;
+  release_year?: number;
+  duration_minutes?: number;
   publication_status?: 'DRAFT' | 'PUBLISHED' | 'UNPUBLISHED' | 'DISABLED';
 }
 

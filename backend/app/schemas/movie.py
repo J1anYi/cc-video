@@ -11,6 +11,8 @@ class MovieBase(BaseModel):
     title: str
     description: Optional[str] = None
     category: Optional[str] = None
+    release_year: Optional[int] = None
+    duration_minutes: Optional[int] = None
 
 
 class MovieCreate(MovieBase):
@@ -22,6 +24,8 @@ class MovieUpdate(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
     category: Optional[str] = None
+    release_year: Optional[int] = None
+    duration_minutes: Optional[int] = None
     publication_status: Optional[PublicationStatus] = None
 
 
@@ -31,6 +35,8 @@ class MovieResponse(BaseModel):
     description: Optional[str] = None
     category: Optional[str] = None
     poster_path: Optional[str] = None
+    release_year: Optional[int] = None
+    duration_minutes: Optional[int] = None
     publication_status: PublicationStatus
     created_at: datetime
     updated_at: datetime

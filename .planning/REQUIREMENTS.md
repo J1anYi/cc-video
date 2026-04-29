@@ -17,20 +17,20 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 
 ### Content Moderation
 
-- [ ] **MOD-01**: User can report reviews for inappropriate content
-- [ ] **MOD-02**: User can report comments for inappropriate content
-- [ ] **MOD-03**: Admin can view reported content queue
-- [ ] **MOD-04**: Admin can dismiss reports (content is acceptable)
-- [ ] **MOD-05**: Admin can remove reported content
-- [ ] **MOD-06**: Admin can issue warnings to users
+- [x] **MOD-01**: User can report reviews for inappropriate content
+- [x] **MOD-02**: User can report comments for inappropriate content
+- [x] **MOD-03**: Admin can view reported content queue
+- [x] **MOD-04**: Admin can dismiss reports (content is acceptable)
+- [x] **MOD-05**: Admin can remove reported content
+- [x] **MOD-06**: Admin can issue warnings to users
 
 ### Advanced Search
 
-- [ ] **SEARCH-01**: User can filter movies by minimum rating
-- [ ] **SEARCH-02**: User can filter movies by release year range
-- [ ] **SEARCH-03**: User can filter movies by duration range
-- [ ] **SEARCH-04**: User can combine multiple filters
-- [ ] **SEARCH-05**: User can sort search results (rating, year, title)
+- [x] **SEARCH-01**: User can filter movies by minimum rating
+- [x] **SEARCH-02**: User can filter movies by release year range
+- [x] **SEARCH-03**: User can filter movies by duration range
+- [x] **SEARCH-04**: User can combine multiple filters
+- [x] **SEARCH-05**: User can sort search results (rating, year, title)
 
 ### User Blocking
 
@@ -67,17 +67,17 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 | ADMIN-USER-03 | Phase 21 | Complete |
 | ADMIN-USER-04 | Phase 21 | Complete |
 | ADMIN-USER-05 | Phase 21 | Complete |
-| MOD-01 | Phase 22 | Pending |
-| MOD-02 | Phase 22 | Pending |
-| MOD-03 | Phase 22 | Pending |
-| MOD-04 | Phase 22 | Pending |
-| MOD-05 | Phase 22 | Pending |
-| MOD-06 | Phase 22 | Pending |
-| SEARCH-01 | Phase 23 | Pending |
-| SEARCH-02 | Phase 23 | Pending |
-| SEARCH-03 | Phase 23 | Pending |
-| SEARCH-04 | Phase 23 | Pending |
-| SEARCH-05 | Phase 23 | Pending |
+| MOD-01 | Phase 22 | Complete |
+| MOD-02 | Phase 22 | Complete |
+| MOD-03 | Phase 22 | Complete |
+| MOD-04 | Phase 22 | Complete |
+| MOD-05 | Phase 22 | Complete |
+| MOD-06 | Phase 22 | Complete |
+| SEARCH-01 | Phase 23 | Complete |
+| SEARCH-02 | Phase 23 | Complete |
+| SEARCH-03 | Phase 23 | Complete |
+| SEARCH-04 | Phase 23 | Complete |
+| SEARCH-05 | Phase 23 | Complete |
 | BLOCK-01 | Phase 24 | Pending |
 | BLOCK-02 | Phase 24 | Pending |
 | BLOCK-03 | Phase 24 | Pending |

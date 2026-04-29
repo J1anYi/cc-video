@@ -10,6 +10,9 @@ export default function EditMovie() {
   const [movie, setMovie] = useState<Movie | null>(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+  const [releaseYear, setReleaseYear] = useState('');
+  const [durationMinutes, setDurationMinutes] = useState('');
   const [status, setStatus] = useState<string>('DRAFT');
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
@@ -27,6 +30,9 @@ export default function EditMovie() {
       setMovie(data);
       setTitle(data.title);
       setDescription(data.description || '');
+      setCategory(data.category || '');
+      setReleaseYear(data.release_year?.toString() || '');
+      setDurationMinutes(data.duration_minutes?.toString() || '');
       setStatus(data.publication_status);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load movie');
@@ -36,7 +42,14 @@ export default function EditMovie() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      await updateMovie(parseInt(id!), { title, description, publication_status: status as any });
+      await updateMovie(parseInt(id!), {
+        title,
+        description,
+        category: category || undefined,
+        release_year: releaseYear ? parseInt(releaseYear) : undefined,
+        duration_minutes: durationMinutes ? parseInt(durationMinutes) : undefined,
+        publication_status: status as any
+      });
       navigate('/admin/movies');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save');
@@ -81,6 +94,20 @@ export default function EditMovie() {
           <label style={styles.label}>Description</label>
           <textarea value={description} onChange={(e) => setDescription(e.target.value)} style={styles.textarea} />
         </div>
+        <div style={styles.row}>
+          <div style={styles.field}>
+            <label style={styles.label}>Category</label>
+            <input value={category} onChange={(e) => setCategory(e.target.value)} style={styles.input} placeholder="e.g., Action, Comedy" />
+          </div>
+          <div style={styles.field}>
+            <label style={styles.label}>Release Year</label>
+            <input type="number" value={releaseYear} onChange={(e) => setReleaseYear(e.target.value)} style={styles.input} placeholder="e.g., 2024" min="1900" max="2030" />
+          </div>
+          <div style={styles.field}>
+            <label style={styles.label}>Duration (min)</label>
+            <input type="number" value={durationMinutes} onChange={(e) => setDurationMinutes(e.target.value)} style={styles.input} placeholder="e.g., 120" min="1" />
+          </div>
+        </div>
         <div style={styles.field}>
           <label style={styles.label}>Status</label>
           <select value={status} onChange={(e) => setStatus(e.target.value)} style={styles.select}>
@@ -91,7 +118,6 @@ export default function EditMovie() {
           </select>
         </div>
         <button onClick={handleSave} disabled={saving} style={styles.saveButton}>{saving ? 'Saving...' : 'Save'}</button>
-
         <h2 style={styles.subtitle}>Upload Video</h2>
         <input type="file" accept="video/*" onChange={(e) => setFile(e.target.files?.[0] || null)} style={styles.fileInput} />
         <button onClick={handleUpload} disabled={!file || uploading} style={styles.uploadButton}>{uploading ? 'Uploading...' : 'Upload Video'}</button>
@@ -110,7 +136,8 @@ const styles: Record<string, React.CSSProperties> = {
   subtitle: { margin: '2rem 0 1rem', fontSize: '1.25rem' },
   error: { padding: '1rem', background: '#fee', color: '#c00', borderRadius: '4px', marginBottom: '1rem' },
   form: { display: 'flex', flexDirection: 'column', gap: '1rem' },
-  field: { display: 'flex', flexDirection: 'column', gap: '0.5rem' },
+  row: { display: 'flex', gap: '1rem' },
+  field: { display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 },
   label: { fontWeight: '500' },
   input: { padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px' },
   textarea: { padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px', minHeight: '100px' },

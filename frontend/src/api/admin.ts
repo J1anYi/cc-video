@@ -19,7 +19,7 @@ export async function createMovie(data: CreateMovieRequest): Promise<Movie> {
 
 export async function updateMovie(id: number, data: UpdateMovieRequest): Promise<Movie> {
   return fetchApi<Movie>(`/admin/movies/${id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     body: JSON.stringify(data),
   });
 }

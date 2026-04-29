@@ -62,13 +62,29 @@ async def list_movies(
     current_user=Depends(get_current_user),
     q: Optional[str] = None,
     category: Optional[str] = None,
+    min_rating: Optional[float] = None,
+    year_from: Optional[int] = None,
+    year_to: Optional[int] = None,
+    duration_from: Optional[int] = None,
+    duration_to: Optional[int] = None,
+    sort_by: Optional[str] = None,
+    sort_order: Optional[str] = None,
     skip: int = 0,
     limit: int = 100
 ):
     movies = await movie_service.get_published_filtered(
-        db, search=q, category=category, skip=skip, limit=limit
+        db, search=q, category=category,
+        min_rating=min_rating, year_from=year_from, year_to=year_to,
+        duration_from=duration_from, duration_to=duration_to,
+        sort_by=sort_by, sort_order=sort_order,
+        skip=skip, limit=limit
     )
-    return MovieListResponse(movies=movies, total=len(movies))
+    total = await movie_service.count_published_filtered(
+        db, search=q, category=category,
+        min_rating=min_rating, year_from=year_from, year_to=year_to,
+        duration_from=duration_from, duration_to=duration_to
+    )
+    return MovieListResponse(movies=movies, total=total)
 
 
 @router.get("/categories", response_model=List[str])

@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, TYPE_CHECKING
-from sqlalchemy import String, Text, DateTime, Enum as SQLEnum
+from sqlalchemy import String, Text, DateTime, Enum as SQLEnum, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 import enum
 
@@ -25,6 +25,8 @@ class Movie(Base):
     description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     category: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
     poster_path: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
+    release_year: Mapped[Optional[int]] = mapped_column(Integer, nullable=True, index=True)
+    duration_minutes: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     publication_status: Mapped[PublicationStatus] = mapped_column(
         SQLEnum(PublicationStatus), default=PublicationStatus.DRAFT, nullable=False
     )
