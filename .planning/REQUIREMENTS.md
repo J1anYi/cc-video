@@ -34,11 +34,11 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 
 ### User Blocking
 
-- [ ] **BLOCK-01**: User can block another user
-- [ ] **BLOCK-02**: User can unblock a blocked user
-- [ ] **BLOCK-03**: Blocked user's content is hidden from blocker
-- [ ] **BLOCK-04**: Blocked user cannot comment on blocker's reviews
-- [ ] **BLOCK-05**: User can view their blocked users list
+- [x] **BLOCK-01**: User can block another user
+- [x] **BLOCK-02**: User can unblock a blocked user
+- [x] **BLOCK-03**: Blocked user's content is hidden from blocker
+- [x] **BLOCK-04**: Blocked user cannot comment on blocker's reviews
+- [x] **BLOCK-05**: User can view their blocked users list
 
 ### @Mentions
 
@@ -78,11 +78,11 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 | SEARCH-03 | Phase 23 | Complete |
 | SEARCH-04 | Phase 23 | Complete |
 | SEARCH-05 | Phase 23 | Complete |
-| BLOCK-01 | Phase 24 | Pending |
-| BLOCK-02 | Phase 24 | Pending |
-| BLOCK-03 | Phase 24 | Pending |
-| BLOCK-04 | Phase 24 | Pending |
-| BLOCK-05 | Phase 24 | Pending |
+| BLOCK-01 | Phase 24 | Complete |
+| BLOCK-02 | Phase 24 | Complete |
+| BLOCK-03 | Phase 24 | Complete |
+| BLOCK-04 | Phase 24 | Complete |
+| BLOCK-05 | Phase 24 | Complete |
 | MENTION-01 | Phase 25 | Pending |
 | MENTION-02 | Phase 25 | Pending |
 | MENTION-03 | Phase 25 | Pending |

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getPublicProfile } from '../api/profile';
 import type { PublicProfileResponse } from '../api/profile';
 import { getFollowStatus, followUser, unfollowUser } from '../api/follow';
+import { getBlockStatus, blockUser, unblockUser } from '../api/blocks';
 import { useAuth } from '../auth/AuthContext';
 
 export default function UserProfile() {
@@ -11,6 +12,7 @@ export default function UserProfile() {
   const { user } = useAuth();
   const [profile, setProfile] = useState<PublicProfileResponse | null>(null);
   const [isFollowing, setIsFollowing] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -24,16 +26,34 @@ export default function UserProfile() {
     if (!userId) return;
     setIsLoading(true);
     try {
-      const [profileData, followStatus] = await Promise.all([
+      const [profileData, followStatus, blockStatus] = await Promise.all([
         getPublicProfile(parseInt(userId)),
         getFollowStatus(parseInt(userId)),
+        getBlockStatus(parseInt(userId)),
       ]);
       setProfile(profileData);
       setIsFollowing(followStatus.is_following);
+      setIsBlocked(blockStatus.is_blocked);
     } catch (err) {
       setError('Failed to load profile');
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleBlockToggle = async () => {
+    if (!userId) return;
+    try {
+      if (isBlocked) {
+        await unblockUser(parseInt(userId));
+        setIsBlocked(false);
+      } else {
+        await blockUser(parseInt(userId));
+        setIsBlocked(true);
+        setIsFollowing(false);
+      }
+    } catch (err) {
+      setError('Failed to update block status');
     }
   };
 
@@ -90,6 +110,15 @@ export default function UserProfile() {
               }}
             >
               {isFollowing ? 'Unfollow' : 'Follow'}
+            </button>
+            <button
+              onClick={handleBlockToggle}
+              style={{
+                ...styles.followButton,
+                background: isBlocked ? '#28a745' : '#dc3545',
+              }}
+            >
+              {isBlocked ? 'Unblock' : 'Block'}
             </button>
           )}
         </div>

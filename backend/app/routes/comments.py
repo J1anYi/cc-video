@@ -3,7 +3,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.dependencies import get_db, get_current_user
 from app.models.user import User
 from app.schemas.comment import CommentCreate, CommentResponse, CommentListResponse
-from app.services.comment import comment_service
+from app.services.comment import comment_service, BlockedException
+from app.services.user_block import user_block_service
 
 router = APIRouter(prefix="/api", tags=["comments"])
 
@@ -14,7 +15,10 @@ async def create_comment(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    comment = await comment_service.create_comment(db, current_user.id, review_id, comment_data)
+    try:
+        comment = await comment_service.create_comment(db, current_user.id, review_id, comment_data)
+    except BlockedException as e:
+        raise HTTPException(status_code=403, detail=str(e))
     return CommentResponse(
         id=comment.id,
         user_id=comment.user_id,
@@ -29,9 +33,11 @@ async def get_comments(
     review_id: int,
     skip: int = Query(0, ge=0),
     limit: int = Query(20, ge=1, le=100),
-    db: AsyncSession = Depends(get_db)
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
-    comments, total = await comment_service.get_review_comments(db, review_id, skip, limit)
+    blocked_ids = await user_block_service.get_blocked_user_ids(db, current_user.id)
+    comments, total = await comment_service.get_review_comments(db, review_id, skip, limit, blocked_ids)
     return CommentListResponse(comments=comments, total=total)
 
 @router.delete("/comments/{comment_id}")
