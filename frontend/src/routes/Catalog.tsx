@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import { getMovies, getCategories } from '../api/movies';
 import { getFavoriteStatus, addFavorite, removeFavorite } from '../api/favorites';
+import { getRecommendations } from '../api/recommendations';
 import type { Movie } from '../api/types';
+import type { RecommendationsResponse } from '../api/recommendations';
+import ContinueWatching from '../components/ContinueWatching';
+import Recommendations from '../components/Recommendations';
 
 export default function Catalog() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
+  const [recommendations, setRecommendations] = useState<RecommendationsResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const { user, logout } = useAuth();
@@ -22,11 +27,20 @@ export default function Catalog() {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  useEffect(() => { loadCategories(); }, []);
+  useEffect(() => { loadCategories(); loadRecommendations(); }, []);
   useEffect(() => { loadMovies(); }, [debouncedSearch, selectedCategory]);
 
   const loadCategories = async () => {
     try { setCategories(await getCategories()); } catch (err) { console.error(err); }
+  };
+
+  const loadRecommendations = async () => {
+    try {
+      const recs = await getRecommendations();
+      setRecommendations(recs);
+    } catch (err) {
+      console.error('Failed to load recommendations:', err);
+    }
   };
 
   const loadMovies = async () => {
@@ -86,6 +100,13 @@ export default function Catalog() {
           <button onClick={logout} style={styles.logoutButton}>Logout</button>
         </div>
       </header>
+
+      {!hasActiveFilters && recommendations && (
+        <>
+          <ContinueWatching items={recommendations.continue_watching} />
+          <Recommendations items={recommendations.recommendations} />
+        </>
+      )}
 
       <div style={styles.filterSection}>
         <input type="text" placeholder="Search movies..." value={searchTerm}

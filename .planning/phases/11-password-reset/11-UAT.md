@@ -2,24 +2,14 @@
 
 **Date:** 2026-04-29
 **Tester:** AI Agent
-**Status:** ❌ BLOCKED
+**Status:** ⚠️ IN PROGRESS
 
-## Critical Blocker
+## Previous Blocker - RESOLVED
 
-### API Proxy Configuration Missing
-The vite.config.ts is missing the required path rewrite for the API proxy. This causes all API calls to fail with 404.
+### API Proxy Configuration - FIXED
+The vite.config.ts now has the correct path rewrite for the API proxy.
 
-**Current (broken) configuration:**
-```typescript
-proxy: {
-  '/api': {
-    target: 'http://localhost:8000',
-    changeOrigin: true,
-  }
-}
-```
-
-**Required fix:**
+**Fixed configuration:**
 ```typescript
 proxy: {
   '/api/v1': {
@@ -30,60 +20,54 @@ proxy: {
 }
 ```
 
-## Browser Test Results
+✅ Verified: API calls now reach backend (returns 401 Unauthorized instead of 404)
 
-### TC-01: Navigate to Forgot Password
-- [x] Navigate to http://127.0.0.1:5181/login
-- [x] Click "Forgot password?" link
-- [x] Page navigates to /forgot-password ✅
+## Current Issue
 
-### TC-02: Request Password Reset
-- [x] Fill email: test@example.com
-- [x] Click "Send Reset Link"
-- [ ] ❌ API call fails: `404 (Not Found) @ http://127.0.0.1:5181/api/v1/auth/password-reset`
+### Database Schema Mismatch
+The User model has `display_name` field but the database table lacks this column.
 
-## Root Cause
-Frontend requests `/api/v1/auth/password-reset` → vite proxy forwards to `http://localhost:8000/api/v1/auth/password-reset` → 404 (backend route is `/auth/password-reset`)
+**Error:** `sqlite3.OperationalError: no such column: users.display_name`
 
-## Required Action
-Fix `frontend/vite.config.ts` to add path rewrite that strips `/api/v1` prefix before forwarding to backend.
-
-## Test Cases (Pending Fix)
-
-### TC-01: Request Password Reset (Existing Email)
-- [ ] Enter existing email (BLOCKED - API 404)
-- [ ] Verify success message
-- [ ] Verify reset token created
-
-### TC-02: Request Password Reset (Non-existing Email)
-- [ ] Enter non-existing email (BLOCKED - API 404)
-- [ ] Verify success message (no enumeration)
-
-### TC-03: Reset Password with Valid Token
-- [ ] Navigate to /reset-password?token=VALID_TOKEN (BLOCKED)
-- [ ] Enter new password
-- [ ] Verify password updated
-
-### TC-04: Reset Password with Expired Token
-- [ ] Test with expired token (BLOCKED)
-
-### TC-05: Reset Password with Used Token
-- [ ] Test with used token (BLOCKED)
-
-### TC-06: Password Validation
-- [ ] Test short password (BLOCKED)
-
-### TC-07: Password Mismatch
-- [ ] Test mismatched passwords (BLOCKED)
-
-### TC-08: Login After Password Reset
-- [ ] Login with new password (BLOCKED)
-
-### TC-09: Missing Token in URL
-- [ ] Navigate to /reset-password without token (BLOCKED)
+**Impact:** Cannot create test users for login testing.
 
 ## Build Verification
 - [x] TypeScript compilation passed
 - [x] Vite build succeeded
+- [x] API proxy configuration fixed
 
-## Result: ❌ BLOCKED - API proxy misconfiguration
+## Test Cases (Pending Database Fix)
+
+### TC-01: Request Password Reset (Existing Email)
+- [ ] Enter existing email
+- [ ] Verify success message
+- [ ] Verify reset token created
+
+### TC-02: Request Password Reset (Non-existing Email)
+- [ ] Enter non-existing email
+- [ ] Verify success message (no enumeration)
+
+### TC-03: Reset Password with Valid Token
+- [ ] Navigate to /reset-password?token=VALID_TOKEN
+- [ ] Enter new password
+- [ ] Verify password updated
+
+### TC-04: Reset Password with Expired Token
+- [ ] Test with expired token
+
+### TC-05: Reset Password with Used Token
+- [ ] Test with used token
+
+### TC-06: Password Validation
+- [ ] Test short password
+
+### TC-07: Password Mismatch
+- [ ] Test mismatched passwords
+
+### TC-08: Login After Password Reset
+- [ ] Login with new password
+
+### TC-09: Missing Token in URL
+- [ ] Navigate to /reset-password without token
+
+## Result: ⚠️ IN PROGRESS - Database schema needs migration

@@ -2,24 +2,14 @@
 
 **Date:** 2026-04-29
 **Tester:** AI Agent
-**Status:** ❌ BLOCKED
+**Status:** ⚠️ IN PROGRESS
 
-## Critical Blocker
+## Previous Blocker - RESOLVED
 
-### API Proxy Configuration Missing
-The vite.config.ts is missing the required path rewrite for the API proxy. This causes all API calls to fail with 404.
+### API Proxy Configuration - FIXED
+The vite.config.ts now has the correct path rewrite for the API proxy.
 
-**Current (broken) configuration:**
-```typescript
-proxy: {
-  '/api': {
-    target: 'http://localhost:8000',
-    changeOrigin: true,
-  }
-}
-```
-
-**Required fix:**
+**Fixed configuration:**
 ```typescript
 proxy: {
   '/api/v1': {
@@ -30,36 +20,32 @@ proxy: {
 }
 ```
 
-## Browser Test Results
+✅ Verified: API calls now reach backend (returns 401 Unauthorized instead of 404)
 
-### Login Test
-- [x] Navigate to http://127.0.0.1:5181
-- [x] Page loads correctly (redirects to /login)
-- [x] Fill email: test@example.com
-- [x] Fill password: testpassword123
-- [x] Click Login button
-- [ ] ❌ API call fails: `404 (Not Found) @ http://127.0.0.1:5181/api/v1/auth/login`
+## Current Issue
 
-## Root Cause
-Frontend requests `/api/v1/auth/login` → vite proxy forwards to `http://localhost:8000/api/v1/auth/login` → 404 (backend route is `/auth/login`)
+### Database Schema Mismatch
+The User model has `display_name` field but the database table lacks this column.
 
-## Required Action
-Fix `frontend/vite.config.ts` to add path rewrite that strips `/api/v1` prefix before forwarding to backend.
+**Error:** `sqlite3.OperationalError: no such column: users.display_name`
 
-## Test Cases (Pending Fix)
-
-### MED-01: Upload Poster
-- [ ] Admin can upload image file (BLOCKED - cannot login)
-- [ ] Supported formats: JPEG, PNG, WebP, GIF
-- [ ] Invalid formats rejected
-
-### MED-02: Display Poster
-- [ ] Poster shown in catalog cards (BLOCKED - cannot access catalog)
-- [ ] Placeholder shown when no poster
-- [ ] Image properly sized
+**Impact:** Cannot create test users for login testing.
 
 ## Build Verification
 - [x] TypeScript compilation passed
 - [x] Vite build succeeded
+- [x] API proxy configuration fixed
 
-## Result: ❌ BLOCKED - API proxy misconfiguration
+## Test Cases (Pending Database Fix)
+
+### MED-01: Upload Poster
+- [ ] Admin can upload image file
+- [ ] Supported formats: JPEG, PNG, WebP, GIF
+- [ ] Invalid formats rejected
+
+### MED-02: Display Poster
+- [ ] Poster shown in catalog cards
+- [ ] Placeholder shown when no poster
+- [ ] Image properly sized
+
+## Result: ⚠️ IN PROGRESS - Database schema needs migration
