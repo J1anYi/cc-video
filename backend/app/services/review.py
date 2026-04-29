@@ -2,7 +2,9 @@ from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.review import Review
 from app.models.user import User
+from app.models.activity import ActivityType
 from app.schemas.review import ReviewCreate, ReviewUpdate, ReviewResponse
+from app.services.activity import activity_service
 
 class ReviewService:
     @staticmethod
@@ -11,6 +13,10 @@ class ReviewService:
         db.add(review)
         await db.commit()
         await db.refresh(review)
+        # Create activity for new review
+        await activity_service.create_activity(
+            db, user_id, ActivityType.REVIEW_POSTED.value, movie_id=movie_id, reference_id=review.id
+        )
         return review
 
     @staticmethod

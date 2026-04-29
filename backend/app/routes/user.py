@@ -1,15 +1,18 @@
 from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select, func
 from pydantic import BaseModel
 from datetime import datetime
 
 from app.dependencies import get_current_user, get_db
 from app.models.movie import PublicationStatus
 from app.models.user import User
+from app.models.review import Review
+from app.models.rating import Rating
 from app.schemas.movie import MovieResponse, MovieListResponse
 from app.schemas.subtitle import SubtitleResponse, SubtitleListResponse
-from app.schemas.user import UserResponse, ProfileUpdate, PasswordChange
+from app.schemas.user import UserResponse, ProfileUpdate, PasswordChange, PublicProfileResponse
 from app.services.movie import movie_service
 from app.services.video_file import video_file_service
 from app.services.video_streaming import video_streaming_service
@@ -17,6 +20,7 @@ from app.services.history import history_service
 from app.services.favorite import favorite_service
 from app.services.subtitle import subtitle_service
 from app.services.auth import auth_service
+from app.services.follow import follow_service
 
 
 class WatchHistoryUpdate(BaseModel):
@@ -275,3 +279,43 @@ async def change_password(
     await db.commit()
 
     return {"message": "Password changed successfully"}
+
+
+# Public profile endpoints
+@router.get("/users/{user_id}/profile", response_model=PublicProfileResponse)
+async def get_public_profile(
+    user_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Get a user's public profile."""
+    # Get user
+    result = await db.execute(select(User).where(User.id == user_id))
+    user = result.scalar_one_or_none()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    # Get follower/following counts
+    followers_count = await follow_service.get_followers_count(db, user_id)
+    following_count = await follow_service.get_following_count(db, user_id)
+
+    # Get review count
+    review_result = await db.execute(
+        select(func.count(Review.id)).where(Review.user_id == user_id)
+    )
+    review_count = review_result.scalar() or 0
+
+    # Get rating count
+    rating_result = await db.execute(
+        select(func.count(Rating.id)).where(Rating.user_id == user_id)
+    )
+    rating_count = rating_result.scalar() or 0
+
+    return PublicProfileResponse(
+        id=user.id,
+        display_name=user.display_name,
+        followers_count=followers_count,
+        following_count=following_count,
+        review_count=review_count,
+        rating_count=rating_count,
+    )

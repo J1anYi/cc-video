@@ -44,3 +44,15 @@ class PasswordChange(BaseModel):
         if len(v) < 6:
             raise ValueError('Password must be at least 6 characters long')
         return v
+
+
+class PublicProfileResponse(BaseModel):
+    id: int
+    display_name: str | None
+    followers_count: int
+    following_count: int
+    review_count: int
+    rating_count: int
+
+    class Config:
+        from_attributes = True

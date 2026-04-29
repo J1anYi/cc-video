@@ -1,7 +1,9 @@
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.rating import Rating
+from app.models.activity import ActivityType
 from app.schemas.rating import RatingCreate, RatingUpdate, MovieRatingStats
+from app.services.activity import activity_service
 
 class RatingService:
     @staticmethod
@@ -19,6 +21,10 @@ class RatingService:
         db.add(rating)
         await db.commit()
         await db.refresh(rating)
+        # Create activity for new rating
+        await activity_service.create_activity(
+            db, user_id, ActivityType.RATING_ADDED.value, movie_id=movie_id, reference_id=rating.id
+        )
         return rating
 
     @staticmethod

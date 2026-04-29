@@ -5,5 +5,15 @@ from app.models.password_reset import PasswordReset
 from app.models.favorite import Favorite
 from app.models.subtitle import Subtitle
 from app.models.watch_history import WatchHistory
+from app.models.user_follow import UserFollow
+from app.models.activity import Activity, ActivityType
+from app.models.rating import Rating
+from app.models.review import Review
+from app.models.comment import Comment
+from app.models.helpful_vote import HelpfulVote
 
-__all__ = ["User", "UserRole", "Movie", "PublicationStatus", "VideoFile", "PasswordReset", "Favorite", "Subtitle", "WatchHistory"]
+__all__ = [
+    "User", "UserRole", "Movie", "PublicationStatus", "VideoFile", "PasswordReset",
+    "Favorite", "Subtitle", "WatchHistory", "UserFollow", "Activity", "ActivityType",
+    "Rating", "Review", "Comment", "HelpfulVote"
+]

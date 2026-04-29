@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.database import get_db
-from app.dependencies import get_current_user, get_current_user_optional, get_current_user_optional
+from app.dependencies import get_db, get_current_user, get_current_user_optional
 from app.models.user import User
 from app.schemas.helpful_vote import HelpfulVoteResponse, HelpfulVoteToggleResponse
 from app.services.helpful_vote import helpful_vote_service
