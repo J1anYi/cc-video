@@ -41,3 +41,16 @@ export interface UpdateMovieRequest {
   description?: string;
   publication_status?: 'DRAFT' | 'PUBLISHED' | 'UNPUBLISHED' | 'DISABLED';
 }
+
+export interface WatchHistory {
+  id: number;
+  movie_id: number;
+  progress: number;
+  last_watched_at: string;
+  movie: Movie | null;
+}
+
+export interface WatchHistoryUpdate {
+  movie_id: number;
+  progress: number;
+}

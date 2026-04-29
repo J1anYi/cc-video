@@ -1,0 +1,108 @@
+- generic [ref=e2]:
+  - region "Notifications alt+T"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Sonic Curator" [level=1] [ref=e10]
+        - button "? Shortcuts" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: "?"
+          - generic [ref=e14]: Shortcuts
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Home" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e21]
+              - generic [ref=e24]: Home
+            - link "Library" [ref=e26] [cursor=pointer]:
+              - /url: /library
+              - img [ref=e27]
+              - generic [ref=e31]: Library
+            - link "Maintenance" [ref=e32] [cursor=pointer]:
+              - /url: /maintenance
+              - img [ref=e33]
+              - generic [ref=e35]: Maintenance
+            - link "Albums" [ref=e36] [cursor=pointer]:
+              - /url: /albums
+              - img [ref=e37]
+              - generic [ref=e40]: Albums
+            - link "Artists" [ref=e41] [cursor=pointer]:
+              - /url: /artists
+              - img [ref=e42]
+              - generic [ref=e47]: Artists
+            - link "Search" [ref=e48] [cursor=pointer]:
+              - /url: /search
+              - img [ref=e49]
+              - generic [ref=e52]: Search
+            - link "Health" [ref=e53] [cursor=pointer]:
+              - /url: /health
+              - img [ref=e54]
+              - generic [ref=e56]: Health
+            - link "Duplicates" [ref=e57] [cursor=pointer]:
+              - /url: /duplicates
+              - img [ref=e58]
+              - generic [ref=e61]: Duplicates
+            - link "Profile" [ref=e62] [cursor=pointer]:
+              - /url: /profile
+              - img [ref=e63]
+              - generic [ref=e66]: Profile
+            - link "Now Playing" [ref=e67] [cursor=pointer]:
+              - /url: /player
+              - img [ref=e68]
+              - generic [ref=e73]: Now Playing
+          - generic [ref=e75]:
+            - heading "Quick Access" [level=3] [ref=e76]
+            - navigation [ref=e77]:
+              - link "Favorites" [ref=e78] [cursor=pointer]:
+                - /url: /?filter=favorites
+                - img [ref=e80]
+                - generic [ref=e82]: Favorites
+              - link "Recently Added" [ref=e83] [cursor=pointer]:
+                - /url: /?filter=all
+                - img [ref=e85]
+                - generic [ref=e88]: Recently Added
+      - main [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e95]:
+            - heading "Welcome to Sonic Curator" [level=1] [ref=e96]
+            - paragraph [ref=e97]: Your personal music library, beautifully organized.
+          - generic [ref=e99]:
+            - button "Upload Add new music" [ref=e100] [cursor=pointer]:
+              - img [ref=e102]
+              - generic [ref=e105]:
+                - text: Upload
+                - paragraph [ref=e106]: Add new music
+            - button "Library Browse tracks" [ref=e107] [cursor=pointer]:
+              - img [ref=e109]
+              - generic [ref=e113]:
+                - text: Library
+                - paragraph [ref=e114]: Browse tracks
+            - button "Search Find music" [ref=e115] [cursor=pointer]:
+              - img [ref=e117]
+              - generic [ref=e120]:
+                - text: Search
+                - paragraph [ref=e121]: Find music
+            - button "Playlist Create new" [ref=e122] [cursor=pointer]:
+              - img [ref=e124]
+              - generic [ref=e125]:
+                - text: Playlist
+                - paragraph [ref=e126]: Create new
+          - generic [ref=e127]:
+            - heading "Recently Added" [level=2] [ref=e129]:
+              - img [ref=e130]
+              - text: Recently Added
+            - paragraph [ref=e133]: Loading...
+          - generic [ref=e134]:
+            - heading "Recent Plays" [level=2] [ref=e136]:
+              - img [ref=e137]
+              - text: Recent Plays
+            - paragraph [ref=e141]: Loading...
+          - generic [ref=e142]:
+            - heading "Your Playlists" [level=2] [ref=e144]
+            - paragraph [ref=e146]: Loading...
+    - generic [ref=e148]:
+      - img [ref=e150]
+      - generic [ref=e154]:
+        - heading "No track playing" [level=3] [ref=e155]
+        - paragraph [ref=e156]: Select a track to start
