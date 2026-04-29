@@ -1,13 +1,10 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Optional, List, TYPE_CHECKING
+from typing import Optional, List
 from pydantic import BaseModel
 
 from app.models.movie import PublicationStatus
-
-if TYPE_CHECKING:
-    from app.schemas.video_file import VideoFileResponse
 
 
 class MovieBase(BaseModel):
@@ -26,8 +23,10 @@ class MovieUpdate(BaseModel):
     publication_status: Optional[PublicationStatus] = None
 
 
-class MovieResponse(MovieBase):
+class MovieResponse(BaseModel):
     id: int
+    title: str
+    description: Optional[str] = None
     publication_status: PublicationStatus
     created_at: datetime
     updated_at: datetime
@@ -40,7 +39,3 @@ class MovieListResponse(BaseModel):
     """Schema for paginated movie list responses."""
     movies: List[MovieResponse]
     total: int
-
-
-# Resolve forward references after all schemas are defined
-MovieResponse.model_rebuild()
