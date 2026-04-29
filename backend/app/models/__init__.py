@@ -11,9 +11,10 @@ from app.models.rating import Rating
 from app.models.review import Review
 from app.models.comment import Comment
 from app.models.helpful_vote import HelpfulVote
+from app.models.notification import Notification, NotificationType
 
 __all__ = [
     "User", "UserRole", "Movie", "PublicationStatus", "VideoFile", "PasswordReset",
     "Favorite", "Subtitle", "WatchHistory", "UserFollow", "Activity", "ActivityType",
-    "Rating", "Review", "Comment", "HelpfulVote"
+    "Rating", "Review", "Comment", "HelpfulVote", "Notification", "NotificationType"
 ]

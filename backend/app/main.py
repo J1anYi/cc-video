@@ -17,6 +17,7 @@ from app.routes.comments import router as comments_router
 from app.routes.helpful_votes import router as helpful_votes_router
 from app.routes.follows import router as follows_router
 from app.routes.feed import router as feed_router
+from app.routes.notifications import router as notifications_router
 
 
 @asynccontextmanager
@@ -55,6 +56,7 @@ app.include_router(comments_router)
 app.include_router(helpful_votes_router)
 app.include_router(follows_router)
 app.include_router(feed_router)
+app.include_router(notifications_router)
 
 # Mount static files for posters and subtitles
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
