@@ -3,95 +3,95 @@
 **Defined:** 2026-04-30
 **Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## v2.1 Requirements
+## v2.2 Requirements
 
-Requirements for v2.1 Enhanced User Experience milestone. Focuses on accessibility, advanced personalization, and premium user features.
+Requirements for v2.2 Monetization & Business milestone. Focuses on payment integration, subscription management, and business features.
 
-### Accessibility Enhancement
+### Subscription System
 
-- [x] **ACCESS-01**: WCAG 2.1 AA compliance for all pages
-- [x] **ACCESS-02**: Screen reader support for video player
-- [x] **ACCESS-03**: Keyboard navigation for all interactions
-- [x] **ACCESS-04**: High contrast mode and color blind support
-- [x] **ACCESS-05**: Audio descriptions for movies
+- [ ] **SUB-01**: Multiple subscription tiers (Free, Basic, Premium)
+- [ ] **SUB-02**: Subscription signup and upgrade flow
+- [ ] **SUB-03**: Monthly and annual billing options
+- [ ] **SUB-04**: Subscription status display in UI
+- [ ] **SUB-05**: Grace period and dunning management
 
-### Advanced Personalization
+### Payment Integration
 
-- [x] **PERS-01**: Customizable homepage layout
-- [x] **PERS-02**: User-defined genre preferences weighting
-- [x] **PERS-03**: Personalized email digest notifications
-- [x] **PERS-04**: Learning-based recommendation refinement
-- [x] **PERS-05**: Mood-based movie suggestions
+- [ ] **PAY-01**: Stripe payment gateway integration
+- [ ] **PAY-02**: Secure payment form handling
+- [ ] **PAY-03**: Payment method management
+- [ ] **PAY-04**: Invoice generation and history
+- [ ] **PAY-05**: Refund processing workflow
 
-### Offline & Mobile Experience
+### Access Control
 
-- [x] **MOBILE-01**: Progressive Web App (PWA) support
-- [x] **MOBILE-02**: Offline movie metadata caching
-- [x] **MOBILE-03**: Download movies for offline viewing
-- [x] **MOBILE-04**: Mobile-optimized video player controls
-- [x] **MOBILE-05**: Push notifications for mobile
+- [ ] **ACCESS-01**: Premium content restrictions
+- [ ] **ACCESS-02**: Feature gating by tier
+- [ ] **ACCESS-03**: Download limits by tier
+- [ ] **ACCESS-04**: Quality restrictions by tier
+- [ ] **ACCESS-05**: Trial period implementation
 
-### Advanced Media Features
+### Admin Business Tools
 
-- [ ] **MEDIA-01**: Multiple video quality options (360p-4K)
-- [ ] **MEDIA-02**: Picture-in-picture mode
-- [ ] **MEDIA-03**: Playback speed control
-- [ ] **MEDIA-04**: Audio track selection (multiple languages)
-- [ ] **MEDIA-05**: Video chapter markers
+- [ ] **ADMIN-01**: Revenue dashboard
+- [ ] **ADMIN-02**: Subscription analytics
+- [ ] **ADMIN-03**: Churn tracking and reporting
+- [ ] **ADMIN-04**: Promotional code management
+- [ ] **ADMIN-05**: Customer support tools
 
-### Premium User Features
+### Business Intelligence
 
-- [ ] **PREM-01**: Watch party (synchronized viewing)
-- [ ] **PREM-02**: User avatars and profile customization
-- [ ] **PREM-03**: Badge and achievement system
-- [ ] **PREM-04**: Early access to new features
-- [ ] **PREM-05**: Ad-free viewing experience
+- [ ] **BI-01**: Customer lifetime value calculation
+- [ ] **BI-02**: Revenue forecasting
+- [ ] **BI-03**: Cohort analysis
+- [ ] **BI-04**: Conversion funnel tracking
+- [ ] **BI-05**: A/B testing framework
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| VR/AR viewing | Experimental technology |
-| AI-generated content | Ethical and legal concerns |
-| Live streaming | Different architecture needed |
-| Payment integration | Deferred to monetization phase |
-| Native mobile apps | PWA approach prioritized |
+| Cryptocurrency payments | Regulatory complexity |
+| In-app purchases (mobile) | PWA approach |
+| Enterprise contracts | Focus on individual users first |
+| Affiliate program | Later phase consideration |
+| White-label solution | Architectural complexity |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ACCESS-01 | Phase 36 | Complete |
-| ACCESS-02 | Phase 36 | Complete |
-| ACCESS-03 | Phase 36 | Complete |
-| ACCESS-04 | Phase 36 | Complete |
-| ACCESS-05 | Phase 36 | Complete |
-| PERS-01 | Phase 37 | Complete |
-| PERS-02 | Phase 37 | Complete |
-| PERS-03 | Phase 37 | Complete |
-| PERS-04 | Phase 37 | Complete |
-| PERS-05 | Phase 37 | Complete |
-| MOBILE-01 | Phase 38 | Complete |
-| MOBILE-02 | Phase 38 | Complete |
-| MOBILE-03 | Phase 38 | Complete |
-| MOBILE-04 | Phase 38 | Complete |
-| MOBILE-05 | Phase 38 | Complete |
-| MEDIA-01 | Phase 39 | Pending |
-| MEDIA-02 | Phase 39 | Pending |
-| MEDIA-03 | Phase 39 | Pending |
-| MEDIA-04 | Phase 39 | Pending |
-| MEDIA-05 | Phase 39 | Pending |
-| PREM-01 | Phase 40 | Pending |
-| PREM-02 | Phase 40 | Pending |
-| PREM-03 | Phase 40 | Pending |
-| PREM-04 | Phase 40 | Pending |
-| PREM-05 | Phase 40 | Pending |
+| SUB-01 | Phase 41 | Pending |
+| SUB-02 | Phase 41 | Pending |
+| SUB-03 | Phase 41 | Pending |
+| SUB-04 | Phase 41 | Pending |
+| SUB-05 | Phase 41 | Pending |
+| PAY-01 | Phase 42 | Pending |
+| PAY-02 | Phase 42 | Pending |
+| PAY-03 | Phase 42 | Pending |
+| PAY-04 | Phase 42 | Pending |
+| PAY-05 | Phase 42 | Pending |
+| ACCESS-01 | Phase 43 | Pending |
+| ACCESS-02 | Phase 43 | Pending |
+| ACCESS-03 | Phase 43 | Pending |
+| ACCESS-04 | Phase 43 | Pending |
+| ACCESS-05 | Phase 43 | Pending |
+| ADMIN-01 | Phase 44 | Pending |
+| ADMIN-02 | Phase 44 | Pending |
+| ADMIN-03 | Phase 44 | Pending |
+| ADMIN-04 | Phase 44 | Pending |
+| ADMIN-05 | Phase 44 | Pending |
+| BI-01 | Phase 45 | Pending |
+| BI-02 | Phase 45 | Pending |
+| BI-03 | Phase 45 | Pending |
+| BI-04 | Phase 45 | Pending |
+| BI-05 | Phase 45 | Pending |
 
 **Coverage:**
-- v2.1 requirements: 25 total
+- v2.2 requirements: 25 total
 - Mapped to phases: 25
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-30*
-*Last updated: 2026-04-30 - v2.1 milestone created*
+*Last updated: 2026-04-30 - v2.2 milestone created*
