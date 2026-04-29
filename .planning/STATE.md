@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Watch History & Favorites
-status: planning
-last_updated: "2026-04-29T18:00:00.000Z"
-last_activity: 2026-04-29 — v1.1 complete, v1.2 started
+status: executing
+last_updated: "2026-04-29T19:00:00.000Z"
+last_activity: 2026-04-29 — Phase 7 complete, starting Phase 8
 progress:
   total_phases: 2
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 1
+  completed_plans: 1
+  percent: 50
 ---
 
 # State: CC Video
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-04-29)
 
 ## Current Position
 
-Phase: Not started
+Phase: 8 (Favorites/Watchlist)
 Plan: Not started
-Status: Ready for milestone planning
-Last activity: 2026-04-29 — v1.1 shipped, v1.2 started
+Status: Ready for Phase 8 planning
+Last activity: 2026-04-29 — Phase 7 Watch History complete
 
 ## Accumulated Context
 
@@ -49,6 +49,16 @@ Last activity: 2026-04-29 — v1.1 shipped, v1.2 started
 - Password validation
 - Auto-login after registration
 
+### v1.2 Completed Features (In Progress)
+
+#### Phase 7: Watch History ✅
+
+- Watch history tracking per user
+- Progress percentage saved per movie
+- Resume playback from last position
+- History page with reverse chronological order
+- Automatic progress updates during playback
+
 ### Technical Stack
 
 - **Backend**: FastAPI + SQLAlchemy + SQLite
@@ -58,9 +68,10 @@ Last activity: 2026-04-29 — v1.1 shipped, v1.2 started
 
 ## Next Steps
 
-1. Run `/gsd-new-milestone` to define v1.2 requirements
-2. Create roadmap phases
-3. Begin Phase 7 implementation
+1. Plan Phase 8: Favorites/Watchlist
+2. Implement Phase 8
+3. Run `/gsd-audit-milestone` for v1.2
+4. Complete v1.2 milestone
 
 ---
-*Last updated: 2026-04-29 after v1.1 milestone completion*
+*Last updated: 2026-04-29 after Phase 7 completion*

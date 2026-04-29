@@ -28,7 +28,7 @@
 
 ### 🚧 v1.2 Watch History & Favorites (In Progress)
 
-- [ ] **Phase 7: Watch History** — Track user viewing history with progress
+- [x] **Phase 7: Watch History** — Track user viewing history with progress ✅ 2026-04-29
 - [ ] **Phase 8: Favorites/Watchlist** — Allow users to save movies for later
 
 ## Phase Details
@@ -85,17 +85,17 @@
 | 4. Frontend Integration | v1.0 | 1/1 | Complete | 2026-04-29 |
 | 5. Movie Search & Filtering | v1.1 | 3/3 | Complete | 2026-04-29 |
 | 6. User Registration | v1.1 | 1/1 | Complete | 2026-04-29 |
-| 7. Watch History | v1.2 | 0/? | Not started | - |
+| 7. Watch History | v1.2 | 1/1 | Complete | 2026-04-29 |
 | 8. Favorites/Watchlist | v1.2 | 0/? | Not started | - |
 
 ## Coverage Validation
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HIST-01 | Phase 7 | Pending |
-| HIST-02 | Phase 7 | Pending |
-| HIST-03 | Phase 7 | Pending |
-| HIST-04 | Phase 7 | Pending |
+| HIST-01 | Phase 7 | Complete |
+| HIST-02 | Phase 7 | Complete |
+| HIST-03 | Phase 7 | Complete |
+| HIST-04 | Phase 7 | Complete |
 | FAV-01 | Phase 8 | Pending |
 | FAV-02 | Phase 8 | Pending |
 | FAV-03 | Phase 8 | Pending |
@@ -105,8 +105,8 @@
 - v1.2 requirements: 8 total
 - Mapped to phases: 8
 - Unmapped: 0
-- Completed: 0
-- Remaining: 8
+- Completed: 4
+- Remaining: 4
 
 ---
 *Last updated: 2026-04-29 for v1.2 milestone*
