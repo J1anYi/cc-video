@@ -6,9 +6,9 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v1.7 Planning (2026-04-30)
+## Current State: v1.8 Planning (2026-04-30)
 
-**v1.6 Social Features shipped.** Planning v1.7 Social Extensions.
+**v1.7 Social Extensions shipped.** Planning v1.8 Content Organization.
 
 The system now supports:
 - User authentication with password reset
@@ -23,6 +23,10 @@ The system now supports:
 - Movie ratings and reviews
 - Comments on reviews
 - Helpful votes on reviews
+- User following system
+- Activity feed
+- Notifications
+- Social profiles
 
 ## Core Value
 
@@ -57,15 +61,15 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 
 (None - all planned requirements satisfied)
 
-## Current Milestone: v1.7 Social Extensions
+## Current Milestone: v1.8 Content Organization
 
-**Goal:** Extend social features with user following, activity feed, and notifications
+**Goal:** Add user watchlists and complete notification integration
 
 **Target features:**
-- User following system (follow/unfollow users)
-- Activity feed (see reviews/ratings from followed users)
-- Notifications (new reviews, comment replies)
-- Social profile page (show user's activity)
+- User watchlists (create, manage, share themed movie lists)
+- Auto-notification generation (follower events, comment replies)
+- Activity enhancements (favorites, new follower activities)
+- Watchlist discovery (browse public lists)
 
 ### Out of Scope
 
@@ -90,6 +94,8 @@ v1.4 added password reset and profile management - improving account security an
 v1.5 added personalized recommendations, continue watching, trending movies, and related movies - enhancing content discovery.
 
 v1.6 added ratings, reviews, comments, and helpful votes - enabling user engagement and social interaction.
+
+v1.7 added user following, activity feed, notifications, and social profiles - completing the social foundation.
 
 ## Constraints
 
@@ -123,4 +129,4 @@ v1.6 added ratings, reviews, comments, and helpful votes - enabling user engagem
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - v1.7 planning started*
+*Last updated: 2026-04-30 - v1.8 planning started*
