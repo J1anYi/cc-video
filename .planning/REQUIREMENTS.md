@@ -9,17 +9,17 @@ Requirements for Watch History & Favorites milestone. Each maps to roadmap phase
 
 ### History
 
-- [ ] **HIST-01**: User can view a list of previously watched movies
-- [ ] **HIST-02**: Watch history shows playback progress for each movie
-- [ ] **HIST-03**: User can resume playback from where they left off
-- [ ] **HIST-04**: Watch history is sorted by most recently watched
+- [x] **HIST-01**: User can view a list of previously watched movies
+- [x] **HIST-02**: Watch history shows playback progress for each movie
+- [x] **HIST-03**: User can resume playback from where they left off
+- [x] **HIST-04**: Watch history is sorted by most recently watched
 
 ### Favorites
 
-- [ ] **FAV-01**: User can add a movie to their favorites/watchlist
-- [ ] **FAV-02**: User can remove a movie from their favorites/watchlist
-- [ ] **FAV-03**: User can view their favorites/watchlist in a dedicated page
-- [ ] **FAV-04**: User can start playback directly from favorites/watchlist
+- [x] **FAV-01**: User can add a movie to their favorites/watchlist
+- [x] **FAV-02**: User can remove a movie from their favorites/watchlist
+- [x] **FAV-03**: User can view their favorites/watchlist in a dedicated page
+- [x] **FAV-04**: User can start playback directly from favorites/watchlist
 
 ## v1.1 Requirements (Completed)
 
@@ -64,21 +64,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HIST-01 | Phase 7 | Pending |
-| HIST-02 | Phase 7 | Pending |
-| HIST-03 | Phase 7 | Pending |
-| HIST-04 | Phase 7 | Pending |
-| FAV-01 | Phase 8 | Pending |
-| FAV-02 | Phase 8 | Pending |
-| FAV-03 | Phase 8 | Pending |
-| FAV-04 | Phase 8 | Pending |
+| HIST-01 | Phase 7 | Complete |
+| HIST-02 | Phase 7 | Complete |
+| HIST-03 | Phase 7 | Complete |
+| HIST-04 | Phase 7 | Complete |
+| FAV-01 | Phase 8 | Complete |
+| FAV-02 | Phase 8 | Complete |
+| FAV-03 | Phase 8 | Complete |
+| FAV-04 | Phase 8 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 8 total
 - Mapped to phases: 8
 - Unmapped: 0
-- Completed: 0
-- Remaining: 8
+- Completed: 8
+- Remaining: 0
 
 ---
 *Requirements defined: 2026-04-29 for v1.2 milestone*

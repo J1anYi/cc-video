@@ -12,6 +12,7 @@ from app.services.movie import movie_service
 from app.services.video_file import video_file_service
 from app.services.video_streaming import video_streaming_service
 from app.services.history import history_service
+from app.services.favorite import favorite_service
 
 
 class WatchHistoryUpdate(BaseModel):
@@ -28,6 +29,20 @@ class WatchHistoryResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class FavoriteResponse(BaseModel):
+    id: int
+    movie_id: int
+    created_at: datetime
+    movie: Optional[MovieResponse] = None
+
+    class Config:
+        from_attributes = True
+
+
+class FavoriteStatusResponse(BaseModel):
+    is_favorite: bool
 
 
 router = APIRouter(tags=["movies"])
@@ -151,3 +166,68 @@ async def get_history_entry(
         last_watched_at=entry.last_watched_at,
         movie=MovieResponse.model_validate(entry.movie) if entry.movie else None
     )
+
+
+# Favorites endpoints
+
+@router.get("/favorites", response_model=List[FavoriteResponse])
+async def get_favorites(
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Get user's favorites sorted by most recent first."""
+    favorites = await favorite_service.get_user_favorites(db, current_user.id)
+    return [
+        FavoriteResponse(
+            id=f.id,
+            movie_id=f.movie_id,
+            created_at=f.created_at,
+            movie=MovieResponse.model_validate(f.movie) if f.movie else None
+        )
+        for f in favorites
+    ]
+
+
+@router.post("/favorites", response_model=FavoriteResponse)
+async def add_favorite(
+    movie_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Add a movie to favorites."""
+    # Verify movie exists and is published
+    movie = await movie_service.get_by_id(db, movie_id)
+    if not movie or movie.publication_status != PublicationStatus.PUBLISHED:
+        raise HTTPException(status_code=404, detail="Movie not found")
+
+    favorite = await favorite_service.add_favorite(db, current_user.id, movie_id)
+    return FavoriteResponse(
+        id=favorite.id,
+        movie_id=favorite.movie_id,
+        created_at=favorite.created_at,
+        movie=MovieResponse.model_validate(movie)
+    )
+
+
+@router.delete("/favorites/{movie_id}")
+async def remove_favorite(
+    movie_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Remove a movie from favorites."""
+    removed = await favorite_service.remove_favorite(db, current_user.id, movie_id)
+    if not removed:
+        raise HTTPException(status_code=404, detail="Favorite not found")
+    return {"message": "Removed from favorites"}
+
+
+@router.get("/favorites/{movie_id}/status", response_model=FavoriteStatusResponse)
+async def get_favorite_status(
+    movie_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Check if a movie is in user's favorites."""
+    is_fav = await favorite_service.is_favorite(db, current_user.id, movie_id)
+    return FavoriteStatusResponse(is_favorite=is_fav)

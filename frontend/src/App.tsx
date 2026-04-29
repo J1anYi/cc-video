@@ -6,6 +6,7 @@ import Register from './routes/Register';
 import Catalog from './routes/Catalog';
 import Playback from './routes/Playback';
 import History from './routes/History';
+import Favorites from './routes/Favorites';
 import AdminMovies from './routes/admin/Movies';
 import EditMovie from './routes/admin/EditMovie';
 import CreateMovie from './routes/admin/CreateMovie';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+          <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route path="/movies" element={<ProtectedRoute><Catalog /></ProtectedRoute>} />
           <Route path="/movies/:id" element={<ProtectedRoute><Playback /></ProtectedRoute>} />
           <Route path="/admin/movies" element={<ProtectedRoute requireAdmin><AdminMovies /></ProtectedRoute>} />

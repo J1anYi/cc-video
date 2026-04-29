@@ -54,3 +54,14 @@ export interface WatchHistoryUpdate {
   movie_id: number;
   progress: number;
 }
+
+export interface Favorite {
+  id: number;
+  movie_id: number;
+  created_at: string;
+  movie: Movie | null;
+}
+
+export interface FavoriteStatus {
+  is_favorite: boolean;
+}
