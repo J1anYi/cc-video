@@ -28,8 +28,52 @@
 
 ### 🚧 v1.2 Watch History & Favorites (In Progress)
 
-- [ ] Phase 7: Watch History
-- [ ] Phase 8: Favorites/Watchlist
+- [ ] **Phase 7: Watch History** — Track user viewing history with progress
+- [ ] **Phase 8: Favorites/Watchlist** — Allow users to save movies for later
+
+## Phase Details
+
+### Phase 7: Watch History
+
+**Goal:** Enable users to track and resume their viewing history.
+
+**Requirements:** HIST-01, HIST-02, HIST-03, HIST-04
+
+**Success Criteria:**
+
+1. User can view a list of previously watched movies in reverse chronological order
+2. Each history entry shows the movie title, thumbnail, and progress percentage
+3. User can click a history entry to resume playback from where they left off
+4. History is automatically updated when user watches a movie
+
+**Notes:**
+
+- Need new `WatchHistory` model to store user-movie-view relationships
+- Track playback position for resume functionality
+- Consider privacy: history is user-specific, never shared
+
+---
+
+### Phase 8: Favorites/Watchlist
+
+**Goal:** Allow users to save movies to a personal watchlist.
+
+**Requirements:** FAV-01, FAV-02, FAV-03, FAV-04
+
+**Success Criteria:**
+
+1. User can add a movie to favorites from the catalog or playback page
+2. User can remove a movie from favorites
+3. User can view their favorites list in a dedicated page
+4. User can start playback directly from the favorites page
+
+**Notes:**
+
+- Need new `Favorite` model for user-movie relationships
+- Toggle button should be easily accessible
+- Favorites should be sorted by date added (most recent first)
+
+---
 
 ## Progress
 
@@ -44,5 +88,25 @@
 | 7. Watch History | v1.2 | 0/? | Not started | - |
 | 8. Favorites/Watchlist | v1.2 | 0/? | Not started | - |
 
+## Coverage Validation
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| HIST-01 | Phase 7 | Pending |
+| HIST-02 | Phase 7 | Pending |
+| HIST-03 | Phase 7 | Pending |
+| HIST-04 | Phase 7 | Pending |
+| FAV-01 | Phase 8 | Pending |
+| FAV-02 | Phase 8 | Pending |
+| FAV-03 | Phase 8 | Pending |
+| FAV-04 | Phase 8 | Pending |
+
+**Coverage:**
+- v1.2 requirements: 8 total
+- Mapped to phases: 8
+- Unmapped: 0
+- Completed: 0
+- Remaining: 8
+
 ---
-*Last updated: 2026-04-29*
+*Last updated: 2026-04-29 for v1.2 milestone*

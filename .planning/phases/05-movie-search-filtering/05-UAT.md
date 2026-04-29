@@ -1,168 +1,112 @@
-# Phase 5 UAT: Movie Search & Filtering
-
-## User Acceptance Test Plan
-
-**Phase:** 05 - Movie Search & Filtering
-**Date:** 2026-04-29
-**Tester:** Automated Verification
-
-## Prerequisites
-
-1. Backend server running on `http://localhost:8000`
-2. Frontend server running on `http://localhost:5173`
-3. Test user account exists
-4. Test movies with various categories exist
-
-## Test Cases
-
-### TC-01: Search Movies by Title
-
-**Objective:** Verify users can search movies by title
-
-**Steps:**
-1. Login as user
-2. Navigate to Catalog page
-3. Type search term in search input
-4. Wait 300ms for debounce
-5. Verify results update
-
-**Expected Results:**
-- Search input accepts text
-- Results filter after 300ms debounce
-- Matching movies displayed (case-insensitive)
-- Non-matching movies hidden
-- Results count updates
-
-**Status:** ✅ PASS (Code Review)
-
+---
+status: testing
+phase: 05-movie-search-filtering
+source:
+  - 05-01-SUMMARY.md
+  - 05-02-SUMMARY.md
+  - 05-03-SUMMARY.md
+started: 2026-04-29T10:05:00Z
+updated: 2026-04-29T10:10:00Z
 ---
 
-### TC-02: Filter by Category
+## Current Test
 
-**Objective:** Verify users can filter movies by category
+number: 1
+name: API Path Configuration
+expected: Frontend API requests should correctly proxy to backend endpoints
+awaiting: fix required
 
-**Steps:**
-1. Login as user
-2. Navigate to Catalog page
-3. Select a category from dropdown
-4. Verify results filter
+## Tests
 
-**Expected Results:**
-- Category dropdown populated with available categories
-- Selecting category filters results
-- Only movies in selected category shown
-- Results count updates
+### 1. API Path Configuration
+expected: Frontend API_BASE (/api/v1) should correctly proxy to backend endpoints via vite proxy
+result: issue
+reported: "Frontend requests /api/v1/auth/login but vite proxy forwards to http://localhost:8000/api/v1/auth/login which returns 404. Backend actual path is /auth/login. The vite proxy needs path rewrite: rewrite: (path) => path.replace(/^\/api\/v1/, '')"
+severity: blocker
+diagnosis: |
+  - Frontend API_BASE = '/api/v1' in frontend/src/api/auth.ts
+  - Vite proxy: '/api' -> 'http://localhost:8000' (no path rewrite)
+  - Backend routes: /auth/login, /movies, /categories, etc.
+  - Result: /api/v1/auth/login proxied to http://localhost:8000/api/v1/auth/login (404)
+  - Expected: Should reach http://localhost:8000/auth/login
 
-**Status:** ✅ PASS (Code Review)
+### 2. Search Movies by Title
+expected: User can type in search box to filter movies by title (case-insensitive, partial match)
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
----
+### 3. Filter by Category
+expected: User can select a category from dropdown to filter movies
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
-### TC-03: Combined Search and Category Filter
+### 4. Combined Search and Category Filter
+expected: Search and category filters work together
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
-**Objective:** Verify search and category filters work together
+### 5. Clear Filters Button
+expected: Clear Filters button appears when filters active and resets both filters
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
-**Steps:**
-1. Login as user
-2. Navigate to Catalog page
-3. Enter search term
-4. Select category
-5. Verify both filters applied
+### 6. Empty Results State
+expected: "No movies found" message displays when no results match
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
-**Expected Results:**
-- Results match both search term AND selected category
-- Results count reflects combined filtering
-- Both filters active simultaneously
+### 7. Category Badge Display
+expected: Category badge visible on each movie card
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
-**Status:** ✅ PASS (Code Review)
+### 8. Backend API Endpoints
+expected: |
+  - GET /movies - returns all published movies
+  - GET /movies?q={term} - returns filtered movies
+  - GET /movies?category={cat} - returns filtered movies
+  - GET /categories - returns category list
+result: pending
+blocked_by: api-configuration
+reason: Cannot test until API proxy is fixed
 
----
+## Summary
 
-### TC-04: Clear Filters
+total: 8
+passed: 0
+issues: 1
+pending: 7
+skipped: 0
+blocked: 7
 
-**Objective:** Verify users can clear active filters
+## Gaps
 
-**Steps:**
-1. Apply search filter
-2. Apply category filter
-3. Click "Clear Filters" button
-4. Verify filters reset
-
-**Expected Results:**
-- Clear Filters button appears when filters active
-- Clicking clears search input
-- Clicking resets category to "All Categories"
-- All movies displayed again
-
-**Status:** ✅ PASS (Code Review)
-
----
-
-### TC-05: Empty Results State
-
-**Objective:** Verify empty state displays correctly
-
-**Steps:**
-1. Enter search term that matches no movies
-2. Verify empty state displays
-
-**Expected Results:**
-- "No movies found" message displayed
-- Clear Filters button shown
-- Empty state is user-friendly
-
-**Status:** ✅ PASS (Code Review)
-
----
-
-### TC-06: Category Badge Display
-
-**Objective:** Verify category badges on movie cards
-
-**Steps:**
-1. View movie cards on Catalog page
-2. Verify category badge displayed
-
-**Expected Results:**
-- Category badge visible on each movie card
-- Badge shows movie's category
-- Badge styled appropriately
-
-**Status:** ✅ PASS (Code Review)
-
----
-
-### TC-07: API Endpoints
-
-**Objective:** Verify backend API endpoints work correctly
-
-**Steps:**
-1. GET /movies - returns all published movies
-2. GET /movies?q={term} - returns filtered movies
-3. GET /movies?category={cat} - returns filtered movies
-4. GET /categories - returns category list
-
-**Expected Results:**
-- All endpoints return 200 OK
-- Search uses case-insensitive matching
-- Category uses exact match
-- Categories endpoint returns distinct categories
-
-**Status:** ✅ PASS (Code Review)
-
----
-
-## Test Summary
-
-| Test Case | Description | Status |
-|-----------|-------------|--------|
-| TC-01 | Search by Title | ✅ PASS |
-| TC-02 | Filter by Category | ✅ PASS |
-| TC-03 | Combined Filters | ✅ PASS |
-| TC-04 | Clear Filters | ✅ PASS |
-| TC-05 | Empty State | ✅ PASS |
-| TC-06 | Category Badge | ✅ PASS |
-| TC-07 | API Endpoints | ✅ PASS |
-
-**Overall UAT Status:** ✅ PASS
-
-All test cases verified through code review. Implementation matches requirements and acceptance criteria.
+- truth: "Frontend API requests should successfully reach backend endpoints"
+  status: failed
+  reason: "API path mismatch: frontend uses /api/v1 prefix but vite proxy does not rewrite paths. Backend expects /auth/login, /movies, etc. without /api/v1 prefix."
+  severity: blocker
+  test: 1
+  artifacts:
+    - frontend/src/api/auth.ts (API_BASE = '/api/v1')
+    - frontend/vite.config.ts (proxy without rewrite)
+  missing:
+    - Path rewrite configuration in vite proxy
+  fix: |
+    Update vite.config.ts to add path rewrite:
+    ```typescript
+    server: {
+      proxy: {
+        '/api/v1': {
+          target: 'http://localhost:8000',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/v1/, ''),
+        }
+      }
+    }
+    ```
