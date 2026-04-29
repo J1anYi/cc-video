@@ -6,6 +6,15 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
+## Current Milestone: v1.1 Discovery & Registration
+
+**Goal:** Enhance user experience with movie search and self-registration capabilities
+
+**Target features:**
+- Movie search by title
+- User self-registration
+- Category/genre filtering (if time permits)
+
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
@@ -14,17 +23,19 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 
 ### Validated
 
-(None yet - ship to validate)
+- [x] Regular users can log in before accessing the movie viewing experience
+- [x] Users can browse a movie list in the web frontend
+- [x] Users can play uploaded movie videos in the browser
+- [x] Administrators can log in to a management area
+- [x] Administrators can upload local video files
+- [x] Administrators can create, edit, and manage movie records shown to users
+- [x] The frontend and backend are separated with a clear API boundary
 
 ### Active
 
-- [ ] Regular users can log in before accessing the movie viewing experience
-- [ ] Users can browse a movie list in the web frontend
-- [ ] Users can play uploaded movie videos in the browser
-- [ ] Administrators can log in to a management area
-- [ ] Administrators can upload local video files
-- [ ] Administrators can create, edit, and manage movie records shown to users
-- [ ] The frontend and backend are separated with a clear API boundary
+- [ ] User can search movies by title
+- [ ] User can register a new account from the public web UI
+- [ ] User can filter movies by category or genre
 
 ### Out of Scope
 
@@ -33,17 +44,17 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - Native mobile apps - v1 is web-first
 - Advanced recommendation algorithms - browsing and playback matter first
 - Live streaming - v1 handles uploaded movie files, not live broadcasts
+- Password reset by email - deferred to v1.2
+- Watch history - deferred to v1.2
+- Subtitles and multiple audio tracks - deferred to v1.2+
 
 ## Context
 
-The project starts from an almost empty repository. The user described the goal as a video/movie web app where films can be watched from the web, with separated frontend and backend. Both ordinary viewers and administrators are in scope.
+v1.0 MVP completed successfully with all 18 requirements satisfied. The core viewing loop (admin upload → user catalog → user playback) works end-to-end.
 
-The confirmed v1 direction:
-
-- Ordinary users need accounts and must log in.
-- Administrators upload local video files.
-- The main user experience is browsing the movie list and playing movies.
-- Admin movie management is part of the initial product, not a later add-on.
+v1.1 focuses on two key improvements:
+1. **Discoverability** - As the movie catalog grows, users need search to find content efficiently
+2. **User acquisition** - Self-registration removes friction for new users joining the platform
 
 ## Constraints
 
@@ -56,27 +67,29 @@ The confirmed v1 direction:
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Build as separated frontend and backend | Explicit user requirement and a clean fit for web video catalog/API boundaries | Pending |
-| Require ordinary user login for viewing | User confirmed login is required | Pending |
-| Support administrator-uploaded local videos in v1 | User confirmed uploaded local video files are the source of movie content | Pending |
-| Include admin movie management in v1 | User confirmed backend movie management is part of the core scope | Pending |
+| Build as separated frontend and backend | Explicit user requirement and a clean fit for web video catalog/API boundaries | Validated |
+| Require ordinary user login for viewing | User confirmed login is required | Validated |
+| Support administrator-uploaded local videos in v1 | User confirmed uploaded local video files are the source of movie content | Validated |
+| Include admin movie management in v1 | User confirmed backend movie management is part of the core scope | Validated |
+| Add search before advanced discovery features | Search is table stakes for any catalog; filtering can follow | Pending |
+| Add self-registration before password reset | Registration enables organic growth; password reset is support for existing users | Pending |
 
 ## Evolution
 
 This document evolves at phase transitions and milestone boundaries.
 
-**After each phase transition** (via `$gsd-transition`):
+**After each phase transition** (via `/gsd-transition`):
 1. Requirements invalidated? Move to Out of Scope with reason
 2. Requirements validated? Move to Validated with phase reference
 3. New requirements emerged? Add to Active
 4. Decisions to log? Add to Key Decisions
 5. "What This Is" still accurate? Update if drifted
 
-**After each milestone** (via `$gsd-complete-milestone`):
+**After each milestone** (via `/gsd-complete-milestone`):
 1. Full review of all sections
 2. Core Value check - still the right priority?
 3. Audit Out of Scope - reasons still valid?
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-29 after initialization*
+*Last updated: 2026-04-29 starting v1.1 milestone*
