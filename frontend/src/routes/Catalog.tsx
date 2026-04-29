@@ -4,15 +4,19 @@ import { useAuth } from '../auth/AuthContext';
 import { getMovies, getCategories } from '../api/movies';
 import { getFavoriteStatus, addFavorite, removeFavorite } from '../api/favorites';
 import { getRecommendations } from '../api/recommendations';
+import { getTrending } from '../api/trending';
 import type { Movie } from '../api/types';
 import type { RecommendationsResponse } from '../api/recommendations';
+import type { TrendingResponse } from '../api/trending';
 import ContinueWatching from '../components/ContinueWatching';
 import Recommendations from '../components/Recommendations';
+import Trending from '../components/Trending';
 
 export default function Catalog() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [recommendations, setRecommendations] = useState<RecommendationsResponse | null>(null);
+  const [trending, setTrending] = useState<TrendingResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const { user, logout } = useAuth();
@@ -27,7 +31,7 @@ export default function Catalog() {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  useEffect(() => { loadCategories(); loadRecommendations(); }, []);
+  useEffect(() => { loadCategories(); loadRecommendations(); loadTrending(); }, []);
   useEffect(() => { loadMovies(); }, [debouncedSearch, selectedCategory]);
 
   const loadCategories = async () => {
@@ -40,6 +44,15 @@ export default function Catalog() {
       setRecommendations(recs);
     } catch (err) {
       console.error('Failed to load recommendations:', err);
+    }
+  };
+
+  const loadTrending = async () => {
+    try {
+      const t = await getTrending();
+      setTrending(t);
+    } catch (err) {
+      console.error('Failed to load trending:', err);
     }
   };
 
@@ -100,6 +113,10 @@ export default function Catalog() {
           <button onClick={logout} style={styles.logoutButton}>Logout</button>
         </div>
       </header>
+
+      {!hasActiveFilters && trending && (
+        <Trending items={trending.movies} />
+      )}
 
       {!hasActiveFilters && recommendations && (
         <>

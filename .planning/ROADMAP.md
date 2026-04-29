@@ -26,7 +26,7 @@
 | 11. Password Reset | v1.4 | 2/2 | Complete | 2026-04-29 |
 | 12. Profile Management | v1.4 | 1/1 | Complete | 2026-04-29 |
 | 13. Personalized Recommendations | v1.5 | 2/2 | Complete | 2026-04-29 |
-| 14. Trending & Discovery | v1.5 | 0/2 | Planned | - |
+| 14. Trending & Discovery | v1.5 | 2/2 | Complete | 2026-04-29 |
 
 ---
-*Last updated: 2026-04-29 - Phase 13 complete*
+*Last updated: 2026-04-29 - Phase 14 complete*

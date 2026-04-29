@@ -17,10 +17,10 @@
 Users receive personalized movie recommendations based on their watch history and favorites.
 
 **Acceptance Criteria:**
-- [ ] System analyzes user's watched movies to find similar content
-- [ ] Recommendations appear on home page for logged-in users
-- [ ] At least 5 recommendations shown per user
-- [ ] Recommendations update when watch history changes
+- [x] System analyzes user's watched movies to find similar content
+- [x] Recommendations appear on home page for logged-in users
+- [x] At least 5 recommendations shown per user
+- [x] Recommendations update when watch history changes
 
 ---
 
@@ -31,10 +31,10 @@ Users receive personalized movie recommendations based on their watch history an
 Users can resume playback from where they left off.
 
 **Acceptance Criteria:**
-- [ ] Playback position saved periodically during viewing
-- [ ] "Continue Watching" section shows incomplete movies
-- [ ] Clicking a continue-watching item resumes from saved position
-- [ ] Position persists across sessions
+- [x] Playback position saved periodically during viewing
+- [x] "Continue Watching" section shows incomplete movies
+- [x] Clicking a continue-watching item resumes from saved position
+- [x] Position persists across sessions
 
 ---
 
@@ -45,10 +45,10 @@ Users can resume playback from where they left off.
 Users can discover popular movies based on community activity.
 
 **Acceptance Criteria:**
-- [ ] "Trending" section shows most-watched movies in last 7 days
-- [ ] Trending visible to all users (logged in or not)
-- [ ] Trending updates daily
-- [ ] View count tracked per movie
+- [x] "Trending" section shows most-watched movies in last 7 days
+- [x] Trending visible to all users (logged in or not)
+- [x] Trending updates daily
+- [x] View count tracked per movie
 
 ---
 
@@ -59,10 +59,10 @@ Users can discover popular movies based on community activity.
 Users see related movies while viewing movie details.
 
 **Acceptance Criteria:**
-- [ ] Related movies shown on movie detail page
-- [ ] Related by same category/genre
-- [ ] At least 4 related movies shown when available
-- [ ] Related section excludes current movie
+- [x] Related movies shown on movie detail page
+- [x] Related by same category/genre
+- [x] At least 4 related movies shown when available
+- [x] Related section excludes current movie
 
 ---
 
@@ -70,10 +70,10 @@ Users see related movies while viewing movie details.
 
 | ID | Requirement | Phase | Status |
 |----|-------------|-------|--------|
-| REC-01 | Personalized Recommendations | 13 | Planned |
-| REC-02 | Continue Watching | 13 | Planned |
-| REC-03 | Trending/Popular Movies | 14 | Planned |
-| REC-04 | Related Movies | 14 | Planned |
+| REC-01 | Personalized Recommendations | 13 | Complete |
+| REC-02 | Continue Watching | 13 | Complete |
+| REC-03 | Trending/Popular Movies | 14 | Complete |
+| REC-04 | Related Movies | 14 | Complete |
 
 ---
 
