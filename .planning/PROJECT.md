@@ -6,14 +6,14 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current Milestone: v1.4 Account Enhancement
+## Current State: v1.4 Shipped (2026-04-29)
 
-**Goal:** Improve account management with password reset and profile features
-
-**Target features:**
-- Password reset via email
+**All planned milestones complete.** The system now supports:
+- User authentication with password reset
+- Movie browsing, search, and filtering
+- Video playback with subtitles and poster images
+- Watch history and favorites
 - User profile management
-- Enhanced account security
 
 ## Core Value
 
@@ -37,11 +37,12 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] User can save favorites/watchlist (v1.2)
 - [x] Administrator can upload poster images (v1.3)
 - [x] Administrator can manage subtitles (v1.3)
+- [x] User can reset password by email (v1.4)
+- [x] User can update profile information (v1.4)
 
 ### Active
 
-- [ ] User can reset password by email
-- [ ] User can update profile information
+(None - all planned requirements satisfied)
 
 ### Out of Scope
 
@@ -50,8 +51,6 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - Native mobile apps - v1 is web-first
 - Advanced recommendation algorithms - browsing and playback matter first
 - Live streaming - v1 handles uploaded movie files, not live broadcasts
-- Password reset by email - deferred to v1.4
-- Subtitles and multiple audio tracks - deferred to v1.4+
 
 ## Context
 
@@ -63,9 +62,7 @@ v1.2 added watch history and favorites - increasing user engagement and retentio
 
 v1.3 added poster images and subtitles - enhancing visual presentation and accessibility.
 
-v1.4 focuses on account management:
-1. **Password Reset** - Users can recover access via email
-2. **Profile Management** - Users can update their information
+v1.4 added password reset and profile management - improving account security and user control.
 
 ## Constraints
 
@@ -86,7 +83,10 @@ v1.4 focuses on account management:
 | Add self-registration before password reset | Registration enables organic growth; password reset is support for existing users | Validated |
 | Add watch history before recommendations | History is personal data; recommendations require more signals | Validated |
 | Add favorites before watch history | Favorites are explicit user intent; history is passive | Validated |
-| Add poster images before subtitles | Visual catalog first; accessibility enhancement follows | Pending |
+| Add poster images before subtitles | Visual catalog first; accessibility enhancement follows | Validated |
+| Use SHA-256 hash for reset tokens | Secure, no plaintext tokens stored | Validated |
+| 1-hour token expiration | Balance security and usability | Validated |
+| No email enumeration | Prevent account discovery attacks | Validated |
 
 ## Evolution
 
@@ -106,4 +106,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-29 starting v1.3 milestone*
+*Last updated: 2026-04-29 - v1.4 complete*
