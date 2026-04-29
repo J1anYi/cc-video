@@ -31,6 +31,17 @@ class Settings(BaseSettings):
     # CORS
     CORS_ORIGINS: List[str] = ["http://localhost:5173"]
 
+    # Video Upload Configuration
+    MAX_VIDEO_SIZE: int = 500 * 1024 * 1024  # 500MB default
+    UPLOAD_DIR: str = "uploads/videos"
+    ALLOWED_VIDEO_TYPES: List[str] = [
+        "video/mp4",
+        "video/webm",
+        "video/ogg",
+        "video/quicktime",
+        "video/x-msvideo",
+    ]
+
     model_config = SettingsConfigDict(
         env_file=str(get_env_file_path()),
         env_file_encoding="utf-8",
