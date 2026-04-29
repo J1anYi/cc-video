@@ -47,10 +47,10 @@ Users can write and read text reviews for movies.
 Users can comment on reviews to enable discussion.
 
 **Acceptance Criteria:**
-- [ ] Users can add comments to reviews
-- [ ] Comments thread shown below review
-- [ ] Comments show username and timestamp
-- [ ] Users can delete their own comments
+- [x] Users can add comments to reviews
+- [x] Comments thread shown below review
+- [x] Comments show username and timestamp
+- [x] Users can delete their own comments
 
 ---
 
@@ -61,10 +61,10 @@ Users can comment on reviews to enable discussion.
 Users can mark reviews as helpful to surface quality content.
 
 **Acceptance Criteria:**
-- [ ] "Helpful" button on each review
-- [ ] Helpful count displayed on review
-- [ ] One vote per user per review
-- [ ] Reviews sortable by helpfulness
+- [x] "Helpful" button on each review
+- [x] Helpful count displayed on review
+- [x] One vote per user per review
+- [x] Reviews sortable by helpfulness
 
 ---
 
@@ -74,8 +74,8 @@ Users can mark reviews as helpful to surface quality content.
 |----|-------------|-------|--------|
 | SOC-01 | Movie Ratings | 15 | Complete |
 | SOC-02 | Movie Reviews | 15 | Complete |
-| SOC-03 | Comments on Reviews | 16 | Planned |
-| SOC-04 | Helpful Votes | 16 | Planned |
+| SOC-03 | Comments on Reviews | 16 | Complete |
+| SOC-04 | Helpful Votes | 16 | Complete |
 
 ---
 

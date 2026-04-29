@@ -29,7 +29,7 @@
 | 13. Personalized Recommendations | v1.5 | 2/2 | Complete | 2026-04-29 |
 | 14. Trending & Discovery | v1.5 | 1/1 | Complete | 2026-04-29 |
 | 15. Ratings & Reviews | v1.6 | 2/2 | Complete | 2026-04-30 |
-| 16. Comments & Engagement | v1.6 | 0/2 | Planned | - |
+| 16. Comments & Engagement | v1.6 | 2/2 | Complete | 2026-04-30 |
 
 ---
-*Last updated: 2026-04-30 - Phase 15 complete*
+*Last updated: 2026-04-30 - Phase 16 complete*

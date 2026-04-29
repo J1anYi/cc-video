@@ -49,3 +49,19 @@ async def get_current_user(
         )
 
     return user
+
+
+async def get_current_user_optional(
+    credentials: HTTPAuthorizationCredentials | None = Depends(HTTPBearer(auto_error=False)),
+    db: AsyncSession = Depends(get_db),
+) -> User | None:
+    if credentials is None:
+        return None
+    token = credentials.credentials
+    payload = auth_service.decode_token(token)
+    if payload is None or payload.type != "access":
+        return None
+    user = await user_service.get_by_id(db, int(payload.sub))
+    if user is None or not user.is_active:
+        return None
+    return user

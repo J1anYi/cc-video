@@ -13,6 +13,8 @@ from app.routes.recommendations import router as recommendations_router
 from app.routes.trending import router as trending_router
 from app.routes.ratings import router as ratings_router
 from app.routes.reviews import router as reviews_router
+from app.routes.comments import router as comments_router
+from app.routes.helpful_votes import router as helpful_votes_router
 
 
 @asynccontextmanager
@@ -47,6 +49,8 @@ app.include_router(recommendations_router)
 app.include_router(trending_router)
 app.include_router(ratings_router)
 app.include_router(reviews_router)
+app.include_router(comments_router)
+app.include_router(helpful_votes_router)
 
 # Mount static files for posters and subtitles
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
