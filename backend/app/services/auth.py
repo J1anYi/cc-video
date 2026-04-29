@@ -1,13 +1,10 @@
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 from jose import jwt, JWTError
-from passlib.context import CryptContext
+import bcrypt
 
 from app.config import settings
 from app.schemas.token import TokenPayload
-
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 class AuthService:
@@ -18,10 +15,10 @@ class AuthService:
         self.refresh_token_expire_days = settings.REFRESH_TOKEN_EXPIRE_DAYS
 
     def verify_password(self, plain_password: str, hashed_password: str) -> bool:
-        return pwd_context.verify(plain_password, hashed_password)
+        return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
 
     def get_password_hash(self, password: str) -> str:
-        return pwd_context.hash(password)
+        return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
     def create_access_token(self, subject: str, role: str) -> str:
         expire = datetime.now(timezone.utc) + timedelta(minutes=self.access_token_expire_minutes)
