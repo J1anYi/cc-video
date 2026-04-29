@@ -25,11 +25,11 @@ Requirements for v2.0 Platform Maturity milestone. Focuses on performance, scala
 
 ### Internationalization
 
-- [ ] **I18N-01**: Multi-language support in UI
-- [ ] **I18N-02**: Content language detection and filtering
-- [ ] **I18N-03**: Timezone-aware date/time display
-- [ ] **I18N-04**: Currency and number formatting localization
-- [ ] **I18N-05**: RTL (right-to-left) layout support
+- [x] **I18N-01**: Multi-language support in UI
+- [x] **I18N-02**: Content language detection and filtering
+- [x] **I18N-03**: Timezone-aware date/time display
+- [x] **I18N-04**: Currency and number formatting localization
+- [x] **I18N-05**: RTL (right-to-left) layout support
 
 ### Security Hardening
 

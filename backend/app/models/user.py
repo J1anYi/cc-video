@@ -30,5 +30,9 @@ class User(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
+    # i18n preferences
+    language: Mapped[str] = mapped_column(String(10), default="en", nullable=False)
+    timezone: Mapped[str] = mapped_column(String(50), default="UTC", nullable=False)
+
     # Relationships
     password_resets: Mapped[list["PasswordReset"]] = relationship("PasswordReset", back_populates="user")

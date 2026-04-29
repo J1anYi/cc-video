@@ -23,6 +23,7 @@ class Movie(Base):
         Index('ix_movies_category', 'category'),
         Index('ix_movies_created_at', 'created_at'),
         Index('ix_movies_publication_status', 'publication_status'),
+        Index('ix_movies_language', 'language'),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
@@ -32,6 +33,8 @@ class Movie(Base):
     poster_path: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
     release_year: Mapped[Optional[int]] = mapped_column(Integer, nullable=True, index=True)
     duration_minutes: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    language: Mapped[str] = mapped_column(String(10), default="en", nullable=False)  # ISO 639-1 code
+    original_language: Mapped[Optional[str]] = mapped_column(String(10), nullable=True)  # Original language if dubbed
     publication_status: Mapped[PublicationStatus] = mapped_column(
         SQLEnum(PublicationStatus), default=PublicationStatus.DRAFT, nullable=False
     )

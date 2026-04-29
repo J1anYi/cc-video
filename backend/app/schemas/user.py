@@ -24,6 +24,8 @@ class UserResponse(UserBase):
     display_name: str | None = None
     role: UserRole
     is_active: bool
+    language: str = "en"
+    timezone: str = "UTC"
     created_at: datetime
 
     class Config:
@@ -32,6 +34,8 @@ class UserResponse(UserBase):
 
 class ProfileUpdate(BaseModel):
     display_name: str | None = None
+    language: str | None = None
+    timezone: str | None = None
 
 
 class PasswordChange(BaseModel):
