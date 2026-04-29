@@ -6,9 +6,9 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v1.8 Planning (2026-04-30)
+## Current State: v1.8 Content Organization Shipped (2026-04-30)
 
-**v1.7 Social Extensions shipped.** Planning v1.8 Content Organization.
+**v1.8 Content Organization shipped.** User watchlists and notification automation complete.
 
 The system now supports:
 - User authentication with password reset
@@ -27,6 +27,9 @@ The system now supports:
 - Activity feed
 - Notifications
 - Social profiles
+- User watchlists (public/private)
+- Public watchlist discovery
+- Auto-notifications for social events
 
 ## Core Value
 
@@ -57,19 +60,27 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] User can discover trending movies (v1.5)
 - [x] User can view related movies (v1.5)
 
+### Validated (v1.6-v1.8)
+
+- [x] User can rate and review movies — v1.6
+- [x] User can comment on reviews — v1.6
+- [x] User can mark reviews as helpful — v1.6
+- [x] User can follow other users — v1.7
+- [x] User can view activity feed — v1.7
+- [x] User receives notifications — v1.7
+- [x] User can create themed watchlists — v1.8
+- [x] User can add/remove movies from watchlists — v1.8
+- [x] User can set watchlist privacy — v1.8
+- [x] User can browse public watchlists — v1.8
+- [x] Auto-notifications for social events — v1.8
+
 ### Active
 
 (None - all planned requirements satisfied)
 
-## Current Milestone: v1.8 Content Organization
+## Next Milestone Goals
 
-**Goal:** Add user watchlists and complete notification integration
-
-**Target features:**
-- User watchlists (create, manage, share themed movie lists)
-- Auto-notification generation (follower events, comment replies)
-- Activity enhancements (favorites, new follower activities)
-- Watchlist discovery (browse public lists)
+Awaiting next milestone planning.
 
 ### Out of Scope
 
@@ -96,6 +107,8 @@ v1.5 added personalized recommendations, continue watching, trending movies, and
 v1.6 added ratings, reviews, comments, and helpful votes - enabling user engagement and social interaction.
 
 v1.7 added user following, activity feed, notifications, and social profiles - completing the social foundation.
+
+v1.8 added user watchlists, public watchlist discovery, and notification automation - completing content organization.
 
 ## Constraints
 
@@ -129,4 +142,4 @@ v1.7 added user following, activity feed, notifications, and social profiles - c
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - v1.8 planning started*
+*Last updated: 2026-04-30 - v1.8 shipped*

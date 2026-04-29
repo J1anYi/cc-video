@@ -10,7 +10,7 @@
 - v1.5 Discovery Enhancement - Phases 13-14 (shipped 2026-04-29)
 - v1.6 Social Features - Phases 15-16 (shipped 2026-04-30)
 - v1.7 Social Extensions - Phases 17-18 (shipped 2026-04-30)
-- v1.8 Content Organization - Phases 19-20 (planning)
+- v1.8 Content Organization - Phases 19-20 (shipped 2026-04-30)
 
 ## Progress
 
@@ -34,8 +34,8 @@
 | 16. Comments & Engagement | v1.6 | 2/2 | Complete | 2026-04-30 |
 | 17. User Following & Activity | v1.7 | 2/2 | Complete | 2026-04-30 |
 | 18. Notifications & Profiles | v1.7 | 2/2 | Complete | 2026-04-30 |
-| 19. User Watchlists | v1.8 | 0/2 | Planning | - |
-| 20. Notification Integration | v1.8 | 0/2 | Planning | - |
+| 19. User Watchlists | v1.8 | 1/1 | Complete | 2026-04-30 |
+| 20. Notification Integration | v1.8 | 1/1 | Complete | 2026-04-30 |
 
 ---
-*Last updated: 2026-04-30 - v1.8 planning started*
+*Last updated: 2026-04-30 - v1.8 shipped*
