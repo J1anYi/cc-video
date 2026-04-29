@@ -9,15 +9,15 @@ Requirements for Discovery & Registration milestone. Each maps to roadmap phases
 
 ### Discovery
 
-- [ ] **DISC-01**: User can search movies by title with real-time or submit-based filtering
-- [ ] **DISC-02**: User can filter movies by category or genre tag
-- [ ] **DISC-03**: Search and filter results update the catalog view dynamically
+- [x] **DISC-01**: User can search movies by title with real-time or submit-based filtering
+- [x] **DISC-02**: User can filter movies by category or genre tag
+- [x] **DISC-03**: Search and filter results update the catalog view dynamically
 
 ### Account
 
-- [ ] **ACC-01**: User can register a new account from the public web UI
-- [ ] **ACC-02**: Registration form validates username uniqueness and password strength
-- [ ] **ACC-03**: Newly registered users can immediately log in with their credentials
+- [x] **ACC-01**: User can register a new account from the public web UI
+- [x] **ACC-02**: Registration form validates username uniqueness and password strength
+- [x] **ACC-03**: Newly registered users can immediately log in with their credentials
 
 ## v1 Requirements (Completed)
 
@@ -62,19 +62,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DISC-01 | Phase 5 | ⏳ Pending |
-| DISC-02 | Phase 5 | ⏳ Pending |
-| DISC-03 | Phase 5 | ⏳ Pending |
-| ACC-01 | Phase 6 | ⏳ Pending |
-| ACC-02 | Phase 6 | ⏳ Pending |
-| ACC-03 | Phase 6 | ⏳ Pending |
+| DISC-01 | Phase 5 | ✅ Complete |
+| DISC-02 | Phase 5 | ✅ Complete |
+| DISC-03 | Phase 5 | ✅ Complete |
+| ACC-01 | Phase 6 | ✅ Complete |
+| ACC-02 | Phase 6 | ✅ Complete |
+| ACC-03 | Phase 6 | ✅ Complete |
 
 **Coverage:**
 - v1.1 requirements: 6 total
 - Mapped to phases: 6
 - Unmapped: 0
-- Completed: 0
-- Remaining: 6
+- Completed: 6
+- Remaining: 0
 
 ---
 *Requirements defined: 2026-04-29 for v1.1 milestone*
+*All requirements complete: 2026-04-29*

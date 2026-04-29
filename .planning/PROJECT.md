@@ -6,14 +6,14 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current Milestone: v1.1 Discovery & Registration
+## Current Milestone: v1.2 Watch History & Favorites
 
-**Goal:** Enhance user experience with movie search and self-registration capabilities
+**Goal:** Increase user engagement with watch history tracking and personal watchlist
 
 **Target features:**
-- Movie search by title
-- User self-registration
-- Category/genre filtering (if time permits)
+- Watch history tracking
+- Favorites/watchlist management
+- Quick access to previously watched content
 
 ## Core Value
 
@@ -30,12 +30,14 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Administrators can upload local video files
 - [x] Administrators can create, edit, and manage movie records shown to users
 - [x] The frontend and backend are separated with a clear API boundary
+- [x] User can search movies by title (v1.1)
+- [x] User can register a new account from the public web UI (v1.1)
+- [x] User can filter movies by category or genre (v1.1)
 
 ### Active
 
-- [ ] User can search movies by title
-- [ ] User can register a new account from the public web UI
-- [ ] User can filter movies by category or genre
+- [ ] User can view watch history
+- [ ] User can save favorites/watchlist
 
 ### Out of Scope
 
@@ -52,9 +54,11 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 
 v1.0 MVP completed successfully with all 18 requirements satisfied. The core viewing loop (admin upload → user catalog → user playback) works end-to-end.
 
-v1.1 focuses on two key improvements:
-1. **Discoverability** - As the movie catalog grows, users need search to find content efficiently
-2. **User acquisition** - Self-registration removes friction for new users joining the platform
+v1.1 added search, filtering, and user self-registration - enabling discoverability and organic user growth.
+
+v1.2 focuses on user engagement:
+1. **Watch History** - Users can see what they've watched, resume viewing
+2. **Favorites/Watchlist** - Users can save movies to watch later
 
 ## Constraints
 
@@ -71,8 +75,10 @@ v1.1 focuses on two key improvements:
 | Require ordinary user login for viewing | User confirmed login is required | Validated |
 | Support administrator-uploaded local videos in v1 | User confirmed uploaded local video files are the source of movie content | Validated |
 | Include admin movie management in v1 | User confirmed backend movie management is part of the core scope | Validated |
-| Add search before advanced discovery features | Search is table stakes for any catalog; filtering can follow | Pending |
-| Add self-registration before password reset | Registration enables organic growth; password reset is support for existing users | Pending |
+| Add search before advanced discovery features | Search is table stakes for any catalog; filtering can follow | Validated |
+| Add self-registration before password reset | Registration enables organic growth; password reset is support for existing users | Validated |
+| Add watch history before recommendations | History is personal data; recommendations require more signals | Pending |
+| Add favorites before watch history | Favorites are explicit user intent; history is passive | Pending |
 
 ## Evolution
 
@@ -92,4 +98,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-29 starting v1.1 milestone*
+*Last updated: 2026-04-29 starting v1.2 milestone*

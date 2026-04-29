@@ -1,4 +1,4 @@
-# Roadmap: CC Video v1.1
+# Roadmap: CC Video v1.2
 
 **Created:** 2026-04-29
 **Granularity:** Coarse
@@ -8,71 +8,71 @@
 
 | Phase | Name | Goal | Requirements | UI hint |
 |-------|------|------|--------------|---------|
-| 5 | Movie Search & Filtering | Add search and category filtering to the movie catalog | DISC-01, DISC-02, DISC-03 | yes |
-| 6 | User Registration | Enable self-registration for new users | ACC-01, ACC-02, ACC-03 | yes |
+| 7 | Watch History | Track and display user viewing history | HIST-01, HIST-02, HIST-03 | yes |
+| 8 | Favorites/Watchlist | Allow users to save and manage favorite movies | FAV-01, FAV-02, FAV-03, FAV-04 | yes |
 
 ## Phase Details
 
-### Phase 5: Movie Search & Filtering
+### Phase 7: Watch History
 
-**Goal:** Enable users to find movies quickly through title search and category/genre filtering.
+**Goal:** Enable users to track their viewing history and quickly resume previously watched movies.
 
-**Requirements:** DISC-01, DISC-02, DISC-03
-
-**Success Criteria:**
-
-1. User can type in a search box to filter movies by title (case-insensitive, partial match)
-2. User can select a category/genre to filter the catalog
-3. Search and filter can be combined for refined results
-4. Empty search state shows helpful message when no results match
-5. Catalog updates dynamically as user types or selects filters
-
-**Notes:**
-
-- Backend needs to support query parameters for search (q) and category filter
-- Movie model may need a category/genre field added (check existing schema)
-- Frontend needs search input and filter UI in catalog header
-- Consider debouncing search input for performance
-
-### Phase 6: User Registration
-
-**Goal:** Allow new users to create accounts without admin intervention.
-
-**Requirements:** ACC-01, ACC-02, ACC-03
+**Requirements:** HIST-01, HIST-02, HIST-03
 
 **Success Criteria:**
 
-1. Public registration page is accessible without login
-2. Registration form collects username and password with validation
-3. Username uniqueness is validated before account creation
-4. Password meets minimum strength requirements
-5. Successful registration redirects to login or auto-logs in
-6. New users have the default "user" role (not admin)
+1. User can view a list of movies they have watched
+2. Each history entry shows the movie title and last watched timestamp
+3. User can click a history item to navigate to the movie player
+4. History is automatically updated when user watches a movie
+5. History is private to each user (not visible to others)
 
 **Notes:**
 
-- Backend needs a public registration endpoint
-- Consider rate limiting to prevent abuse
-- Login page should link to registration
-- Registration page should link back to login
+- Backend needs a WatchHistory model (user_id, movie_id, last_watched_at)
+- Track progress: record when user starts/continues watching
+- Frontend needs a History page/route
+- Consider pagination for users with extensive history
+
+### Phase 8: Favorites/Watchlist
+
+**Goal:** Allow users to bookmark movies for later viewing.
+
+**Requirements:** FAV-01, FAV-02, FAV-03, FAV-04
+
+**Success Criteria:**
+
+1. User can add a movie to favorites from catalog or movie detail
+2. User can remove a movie from favorites
+3. User can view their favorites list on a dedicated page
+4. Favorite movies show a visual indicator (heart/star) in catalog
+5. Favorites persist across sessions
+
+**Notes:**
+
+- Backend needs a Favorite model (user_id, movie_id, created_at)
+- Many-to-many relationship between users and movies
+- Frontend needs favorites toggle on movie cards
+- Frontend needs a Favorites page/route
 
 ## Coverage Validation
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DISC-01 | Phase 5 | ⏳ Pending |
-| DISC-02 | Phase 5 | ⏳ Pending |
-| DISC-03 | Phase 5 | ⏳ Pending |
-| ACC-01 | Phase 6 | ⏳ Pending |
-| ACC-02 | Phase 6 | ⏳ Pending |
-| ACC-03 | Phase 6 | ⏳ Pending |
+| HIST-01 | Phase 7 | ⏳ Pending |
+| HIST-02 | Phase 7 | ⏳ Pending |
+| HIST-03 | Phase 7 | ⏳ Pending |
+| FAV-01 | Phase 8 | ⏳ Pending |
+| FAV-02 | Phase 8 | ⏳ Pending |
+| FAV-03 | Phase 8 | ⏳ Pending |
+| FAV-04 | Phase 8 | ⏳ Pending |
 
 **Coverage:**
-- v1.1 requirements: 6 total
-- Mapped to phases: 6
+- v1.2 requirements: 7 total
+- Mapped to phases: 7
 - Unmapped: 0
 - Completed: 0
-- Remaining: 6
+- Remaining: 7
 
 ---
-*Roadmap created: 2026-04-29 for v1.1 milestone*
+*Roadmap created: 2026-04-29 for v1.2 milestone*
