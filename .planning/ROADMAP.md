@@ -41,7 +41,7 @@
 | 22. Content Moderation | v1.9 | 1/1 | Complete | 2026-04-30 |
 | 23. Advanced Search | v1.9 | 1/1 | Complete | 2026-04-30 |
 | 24. User Blocking | v1.9 | 1/1 | Complete | 2026-04-30 |
-| 25. @Mentions | v1.9 | 0/1 | Not started | - |
+| 25. @Mentions | v1.9 | 1/1 | Complete | 2026-04-30 |
 
 ---
-*Last updated: 2026-04-30 - Phase 24 complete*
+*Last updated: 2026-04-30 - v1.9 Complete*

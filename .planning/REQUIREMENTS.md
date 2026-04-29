@@ -42,11 +42,11 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 
 ### @Mentions
 
-- [ ] **MENTION-01**: User can @mention other users in comments
-- [ ] **MENTION-02**: User can @mention other users in reviews
-- [ ] **MENTION-03**: Mentioned user receives notification
-- [ ] **MENTION-04**: @mention links to mentioned user's profile
-- [ ] **MENTION-05**: @mention autocomplete suggests followed users
+- [x] **MENTION-01**: User can @mention other users in comments
+- [x] **MENTION-02**: User can @mention other users in reviews
+- [x] **MENTION-03**: Mentioned user receives notification
+- [x] **MENTION-04**: @mention links to mentioned user's profile
+- [x] **MENTION-05**: @mention autocomplete suggests followed users
 
 ## Out of Scope
 
@@ -83,11 +83,11 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 | BLOCK-03 | Phase 24 | Complete |
 | BLOCK-04 | Phase 24 | Complete |
 | BLOCK-05 | Phase 24 | Complete |
-| MENTION-01 | Phase 25 | Pending |
-| MENTION-02 | Phase 25 | Pending |
-| MENTION-03 | Phase 25 | Pending |
-| MENTION-04 | Phase 25 | Pending |
-| MENTION-05 | Phase 25 | Pending |
+| MENTION-01 | Phase 25 | Complete |
+| MENTION-02 | Phase 25 | Complete |
+| MENTION-03 | Phase 25 | Complete |
+| MENTION-04 | Phase 25 | Complete |
+| MENTION-05 | Phase 25 | Complete |
 
 **Coverage:**
 - v1.9 requirements: 26 total

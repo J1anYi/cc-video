@@ -10,6 +10,7 @@ class NotificationType(str, enum.Enum):
     NEW_FOLLOWER = "new_follower"
     NEW_REVIEW = "new_review"
     COMMENT_REPLY = "comment_reply"
+    MENTION = "mention"
 
 
 class Notification(Base):

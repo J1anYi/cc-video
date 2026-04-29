@@ -7,6 +7,7 @@ from app.models.notification import NotificationType
 from app.schemas.comment import CommentCreate, CommentResponse
 from app.services.notification import notification_service
 from app.services.user_block import user_block_service
+from app.services.mentions import extract_mentions, resolve_mentions
 
 
 class BlockedException(Exception):
@@ -47,6 +48,23 @@ class CommentService:
                 target_type="comment",
                 target_id=comment.id,
             )
+
+        # Send mention notifications
+        mentioned_usernames = extract_mentions(comment_data.content)
+        if mentioned_usernames:
+            mentioned_users = await resolve_mentions(db, mentioned_usernames)
+            for mentioned_user in mentioned_users:
+                if mentioned_user.id != user_id:
+                    await notification_service.create_notification(
+                        db,
+                        user_id=mentioned_user.id,
+                        notification_type=NotificationType.MENTION.value,
+                        title=f"{commenter_name} mentioned you in a comment",
+                        content=comment_data.content[:100],
+                        actor_id=user_id,
+                        target_type="comment",
+                        target_id=comment.id,
+                    )
 
         return comment
 
