@@ -30,7 +30,6 @@ class MovieResponse(BaseModel):
     publication_status: PublicationStatus
     created_at: datetime
     updated_at: datetime
-    video_files: List["VideoFileResponse"] = []
 
     model_config = {"from_attributes": True}
 
