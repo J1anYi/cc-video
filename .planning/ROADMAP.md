@@ -9,7 +9,7 @@
 - v1.4 Account Enhancement - Phases 11-12 (shipped 2026-04-29)
 - v1.5 Discovery Enhancement - Phases 13-14 (shipped 2026-04-29)
 - v1.6 Social Features - Phases 15-16 (shipped 2026-04-30)
-- v1.6 Social Features - Phases 15-16 (planning)
+- v1.7 Social Extensions - Phases 17-18 (planning)
 
 ## Progress
 
@@ -31,6 +31,8 @@
 | 14. Trending & Discovery | v1.5 | 1/1 | Complete | 2026-04-29 |
 | 15. Ratings & Reviews | v1.6 | 2/2 | Complete | 2026-04-30 |
 | 16. Comments & Engagement | v1.6 | 2/2 | Complete | 2026-04-30 |
+| 17. User Following & Activity | v1.7 | 0/2 | Planning | - |
+| 18. Notifications & Profiles | v1.7 | 0/2 | Planning | - |
 
 ---
-*Last updated: 2026-04-30 - Phase 16 complete*
+*Last updated: 2026-04-30 - v1.7 planning started*

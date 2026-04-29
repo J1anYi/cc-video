@@ -2,72 +2,69 @@
 
 **Date:** 2026-04-29
 **Tester:** AI Agent
-**Status:** ⚠️ IN PROGRESS
+**Status:** ⏳ PENDING BACKEND RESTART
 
-## Previous Blocker - RESOLVED
+## Resolved Issues
 
-### API Proxy Configuration - FIXED
+### ✅ API Proxy Configuration - FIXED
 The vite.config.ts now has the correct path rewrite for the API proxy.
 
-**Fixed configuration:**
-```typescript
-proxy: {
-  '/api/v1': {
-    target: 'http://localhost:8000',
-    changeOrigin: true,
-    rewrite: (path) => path.replace(/^\/api\/v1/, ''),
-  }
-}
-```
+### ✅ Database Schema - FIXED
+Added `display_name` column to users table.
 
-✅ Verified: API calls now reach backend (returns 401 Unauthorized instead of 404)
+### ✅ Test Users - CREATED
+Created test users with correct passwords:
+- test@example.com / testpassword123
+- admin@example.com / adminpassword123
 
-## Current Issue
+## Current Status
 
-### Database Schema Mismatch
-The User model has `display_name` field but the database table lacks this column.
+### Backend Restart Required
+Phase 13 has completed but the running backend hasn't loaded the new routes. The password reset route exists in the code but is not available in the running backend.
 
-**Error:** `sqlite3.OperationalError: no such column: users.display_name`
+**Route Location:**
+- `backend/app/routes/auth.py:141` - `@router.post("/password-reset")`
+- `backend/app/services/password_reset.py` - Service exists
+- `backend/app/schemas/password_reset.py` - Schemas exist
 
-**Impact:** Cannot create test users for login testing.
+**Action Required:** Restart the backend server to load the password reset routes.
+
+## Test Results (Pending Backend Restart)
+
+### TC-01: Navigate to Forgot Password
+- [x] Navigate to /login
+- [x] Click "Forgot password?" link
+- [x] Page navigates to /forgot-password ✅
+
+### TC-02: Request Password Reset (Existing Email)
+- [ ] Pending backend restart
+
+### TC-03: Reset Password with Valid Token
+- [ ] Pending backend restart
+
+### TC-04: Reset Password with Expired Token
+- [ ] Pending backend restart
+
+### TC-05: Reset Password with Used Token
+- [ ] Pending backend restart
+
+### TC-06: Password Validation
+- [ ] Pending backend restart
+
+### TC-07: Password Mismatch
+- [ ] Pending backend restart
+
+### TC-08: Login After Password Reset
+- [ ] Pending backend restart
+
+### TC-09: Missing Token in URL
+- [ ] Pending backend restart
 
 ## Build Verification
 - [x] TypeScript compilation passed
 - [x] Vite build succeeded
 - [x] API proxy configuration fixed
+- [x] Database schema fixed
+- [x] Forgot password page renders correctly
 
-## Test Cases (Pending Database Fix)
-
-### TC-01: Request Password Reset (Existing Email)
-- [ ] Enter existing email
-- [ ] Verify success message
-- [ ] Verify reset token created
-
-### TC-02: Request Password Reset (Non-existing Email)
-- [ ] Enter non-existing email
-- [ ] Verify success message (no enumeration)
-
-### TC-03: Reset Password with Valid Token
-- [ ] Navigate to /reset-password?token=VALID_TOKEN
-- [ ] Enter new password
-- [ ] Verify password updated
-
-### TC-04: Reset Password with Expired Token
-- [ ] Test with expired token
-
-### TC-05: Reset Password with Used Token
-- [ ] Test with used token
-
-### TC-06: Password Validation
-- [ ] Test short password
-
-### TC-07: Password Mismatch
-- [ ] Test mismatched passwords
-
-### TC-08: Login After Password Reset
-- [ ] Login with new password
-
-### TC-09: Missing Token in URL
-- [ ] Navigate to /reset-password without token
-
-## Result: ⚠️ IN PROGRESS - Database schema needs migration
+## Result: ⏳ PENDING - Backend restart required to load new routes

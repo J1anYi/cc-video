@@ -1,23 +1,23 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.6
-milestone_name: Social Features
-status: complete
-last_updated: "2026-04-30T01:00:00.000Z"
-last_activity: 2026-04-30 - v1.6 milestone complete
+milestone: v1.7
+milestone_name: Social Extensions
+status: planning
+last_updated: "2026-04-30T02:00:00.000Z"
+last_activity: 2026-04-30 - v1.7 milestone planning started
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 # State: CC Video
 ## Current Position
-Phase: None
+Phase: Not started (defining requirements)
 Plan: None
-Status: Milestone complete - awaiting next milestone
-Last activity: 2026-04-30 - v1.6 milestone complete
+Status: Defining requirements
+Last activity: 2026-04-30 - v1.7 milestone planning started
 
 ## Completed Milestones
 - v1.0 MVP - Phases 1-4
@@ -29,4 +29,4 @@ Last activity: 2026-04-30 - v1.6 milestone complete
 - v1.6 Social Features - Phases 15-16
 
 ## Next Steps
-Run /gsd-new-milestone to start planning next milestone
+Define requirements for v1.7 Social Extensions

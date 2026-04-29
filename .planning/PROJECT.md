@@ -6,9 +6,11 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v1.5 Shipped (2026-04-29)
+## Current State: v1.7 Planning (2026-04-30)
 
-**All planned milestones complete.** The system now supports:
+**v1.6 Social Features shipped.** Planning v1.7 Social Extensions.
+
+The system now supports:
 - User authentication with password reset
 - Movie browsing, search, and filtering
 - Video playback with subtitles and poster images
@@ -18,6 +20,9 @@ The v1 product focuses on making the basic viewing loop work end to end: a user 
 - Continue watching
 - Trending movies
 - Related movies
+- Movie ratings and reviews
+- Comments on reviews
+- Helpful votes on reviews
 
 ## Core Value
 
@@ -52,6 +57,16 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 
 (None - all planned requirements satisfied)
 
+## Current Milestone: v1.7 Social Extensions
+
+**Goal:** Extend social features with user following, activity feed, and notifications
+
+**Target features:**
+- User following system (follow/unfollow users)
+- Activity feed (see reviews/ratings from followed users)
+- Notifications (new reviews, comment replies)
+- Social profile page (show user's activity)
+
 ### Out of Scope
 
 - External video providers - v1 uses administrator-uploaded local video files
@@ -73,6 +88,8 @@ v1.3 added poster images and subtitles - enhancing visual presentation and acces
 v1.4 added password reset and profile management - improving account security and user control.
 
 v1.5 added personalized recommendations, continue watching, trending movies, and related movies - enhancing content discovery.
+
+v1.6 added ratings, reviews, comments, and helpful votes - enabling user engagement and social interaction.
 
 ## Constraints
 
@@ -106,4 +123,4 @@ v1.5 added personalized recommendations, continue watching, trending movies, and
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-29 - v1.5 complete*
+*Last updated: 2026-04-30 - v1.7 planning started*
