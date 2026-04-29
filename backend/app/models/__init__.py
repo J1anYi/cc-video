@@ -15,10 +15,14 @@ from app.models.notification import Notification, NotificationType
 from app.models.watchlist import Watchlist, WatchlistItem
 from app.models.report import Report, ContentType, ReportStatus
 from app.models.user_block import UserBlock
+from app.models.viewing_session import ViewingSession
+from app.models.user_analytics import UserAnalytics
+from app.models.content_metrics import ContentMetrics, PlatformMetrics
 
 __all__ = [
     "User", "UserRole", "Movie", "PublicationStatus", "VideoFile", "PasswordReset",
     "Favorite", "Subtitle", "WatchHistory", "UserFollow", "Activity", "ActivityType",
     "Rating", "Review", "Comment", "HelpfulVote", "Notification", "NotificationType",
-    "Watchlist", "WatchlistItem", "Report", "ContentType", "ReportStatus", "UserBlock"
+    "Watchlist", "WatchlistItem", "Report", "ContentType", "ReportStatus", "UserBlock",
+    "ViewingSession", "UserAnalytics", "ContentMetrics", "PlatformMetrics"
 ]

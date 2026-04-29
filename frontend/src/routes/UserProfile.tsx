@@ -102,24 +102,26 @@ export default function UserProfile() {
         <div style={styles.header}>
           <h1 style={styles.title}>{profile.display_name || 'Anonymous User'}</h1>
           {!isOwnProfile && (
-            <button
-              onClick={handleFollowToggle}
-              style={{
-                ...styles.followButton,
-                background: isFollowing ? '#6c757d' : '#007bff',
-              }}
-            >
-              {isFollowing ? 'Unfollow' : 'Follow'}
-            </button>
-            <button
-              onClick={handleBlockToggle}
-              style={{
-                ...styles.followButton,
-                background: isBlocked ? '#28a745' : '#dc3545',
-              }}
-            >
-              {isBlocked ? 'Unblock' : 'Block'}
-            </button>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <button
+                onClick={handleFollowToggle}
+                style={{
+                  ...styles.followButton,
+                  background: isFollowing ? '#6c757d' : '#007bff',
+                }}
+              >
+                {isFollowing ? 'Unfollow' : 'Follow'}
+              </button>
+              <button
+                onClick={handleBlockToggle}
+                style={{
+                  ...styles.followButton,
+                  background: isBlocked ? '#28a745' : '#dc3545',
+                }}
+              >
+                {isBlocked ? 'Unblock' : 'Block'}
+              </button>
+            </div>
           )}
         </div>
 

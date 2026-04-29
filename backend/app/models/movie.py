@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, TYPE_CHECKING
-from sqlalchemy import String, Text, DateTime, Enum as SQLEnum, Integer
+from sqlalchemy import String, Text, DateTime, Enum as SQLEnum, Integer, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 import enum
 
@@ -19,6 +19,11 @@ class PublicationStatus(str, enum.Enum):
 
 class Movie(Base):
     __tablename__ = "movies"
+    __table_args__ = (
+        Index('ix_movies_category', 'category'),
+        Index('ix_movies_created_at', 'created_at'),
+        Index('ix_movies_publication_status', 'publication_status'),
+    )
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     title: Mapped[str] = mapped_column(String(255), nullable=False)

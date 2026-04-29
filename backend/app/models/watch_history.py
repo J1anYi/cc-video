@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import String, Integer, DateTime, ForeignKey, UniqueConstraint
+from sqlalchemy import String, Integer, DateTime, ForeignKey, UniqueConstraint, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import TYPE_CHECKING
 
@@ -14,6 +14,7 @@ class WatchHistory(Base):
     __tablename__ = "watch_history"
     __table_args__ = (
         UniqueConstraint('user_id', 'movie_id', name='uq_user_movie'),
+        Index('ix_watch_history_user_watched', 'user_id', 'last_watched_at'),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)

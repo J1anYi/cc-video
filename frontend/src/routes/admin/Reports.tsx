@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { reportsApi, Report, ReportStats } from '../../api/reports';
+import { getPendingReports, getReportStats, dismissReport, actionReport } from '../../api/reports';
+import type { Report, ReportStats } from '../../api/reports';
 
 export default function AdminReports() {
   const [reports, setReports] = useState<Report[]>([]);
@@ -12,8 +13,8 @@ export default function AdminReports() {
     try {
       setLoading(true);
       const [reportsRes, statsRes] = await Promise.all([
-        reportsApi.getPendingReports(page, 20),
-        reportsApi.getReportStats(),
+        getPendingReports(page, 20),
+        getReportStats(),
       ]);
       setReports(reportsRes.reports);
       setTotalPages(Math.ceil(reportsRes.total / 20));
@@ -29,14 +30,14 @@ export default function AdminReports() {
 
   const handleDismiss = async (reportId: number) => {
     if (!confirm('Dismiss this report?')) return;
-    await reportsApi.dismissReport(reportId);
+    await dismissReport(reportId);
     fetchData();
   };
 
   const handleAction = async (reportId: number) => {
     const warnUser = confirm('Issue warning to content author?');
     if (!confirm('Remove reported content?')) return;
-    await reportsApi.actionReport(reportId, true, warnUser);
+    await actionReport(reportId, true, warnUser);
     fetchData();
   };
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { adminUsersApi, UserAdminView, UserListResponse } from '../api/adminUsers';
+import { getUsers, suspendUser, deleteUser } from '../../api/adminUsers';
+import type { UserAdminView } from '../../api/adminUsers';
 
 export default function AdminUsers() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function AdminUsers() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await adminUsersApi.getUsers(page, 20, search || undefined);
+      const response = await getUsers(page, 20, search || undefined);
       setUsers(response.users);
       setTotalPages(response.total_pages);
     } catch (err: any) {
@@ -43,7 +44,7 @@ export default function AdminUsers() {
     }
     try {
       setActionLoading(true);
-      await adminUsersApi.suspendUser(user.id, !user.is_suspended);
+      await suspendUser(user.id, !user.is_suspended);
       fetchUsers();
       setSelectedUser(null);
     } catch (err: any) {
@@ -59,7 +60,7 @@ export default function AdminUsers() {
     }
     try {
       setActionLoading(true);
-      await adminUsersApi.deleteUser(user.id);
+      await deleteUser(user.id);
       fetchUsers();
       setSelectedUser(null);
     } catch (err: any) {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { analyticsApi, AnalyticsData } from '../api/analytics';
+import { getAnalytics, exportData } from '../api/analytics';
+import type { AnalyticsData } from '../api/analytics';
 
 export default function Analytics() {
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -13,7 +14,7 @@ export default function Analytics() {
   const loadAnalytics = async (refresh = false) => {
     setLoading(true);
     try {
-      const data = await analyticsApi.getAnalytics(refresh);
+      const data = await getAnalytics(refresh);
       setAnalytics(data);
     } catch (error) {
       console.error('Failed to load analytics:', error);
@@ -25,7 +26,7 @@ export default function Analytics() {
   const handleExport = async (format: 'json' | 'csv') => {
     setExporting(true);
     try {
-      const blob = await analyticsApi.exportData(format);
+      const blob = await exportData(format);
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -110,7 +111,7 @@ export default function Analytics() {
           <h2 className="text-xl font-semibold mb-4 text-gray-300">Genre Preferences</h2>
           {genreLabels.length > 0 ? (
             <div className="space-y-2">
-              {genreLabels.slice(0, 5).map((genre, i) => (
+              {genreLabels.slice(0, 5).map((genre) => (
                 <div key={genre}>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-300">{genre}</span>

@@ -1,8 +1,11 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.base import BaseHTTPMiddleware
 import os
+import time
+import logging
 
 from app.config import settings
 from app.database import engine, Base
@@ -21,6 +24,31 @@ from app.routes.notifications import router as notifications_router
 from app.routes.watchlist import router as watchlist_router
 from app.routes.reports import router as reports_router
 from app.routes.blocks import router as blocks_router
+from app.routes.analytics import router as analytics_router
+from app.routes.admin_metrics import router as admin_metrics_router
+from app.routes.admin_dashboard import router as admin_dashboard_router
+from app.routes.social_analytics import router as social_analytics_router
+from app.routes.rec_insights import router as rec_insights_router
+
+logger = logging.getLogger(__name__)
+
+
+class TimingMiddleware(BaseHTTPMiddleware):
+    """Middleware to add response time header and log slow requests."""
+
+    async def dispatch(self, request: Request, call_next):
+        start_time = time.time()
+        response = await call_next(request)
+        process_time = time.time() - start_time
+        response.headers["X-Process-Time"] = f"{process_time:.3f}"
+
+        # Log slow requests (>200ms)
+        if process_time > 0.2:
+            logger.warning(
+                f"Slow request: {request.method} {request.url.path} took {process_time:.3f}s"
+            )
+
+        return response
 
 
 @asynccontextmanager
@@ -37,6 +65,9 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+
+# Add timing middleware
+app.add_middleware(TimingMiddleware)
 
 # CORS configuration for frontend development
 app.add_middleware(
@@ -63,6 +94,11 @@ app.include_router(notifications_router)
 app.include_router(watchlist_router)
 app.include_router(reports_router)
 app.include_router(blocks_router)
+app.include_router(analytics_router)
+app.include_router(admin_metrics_router)
+app.include_router(admin_dashboard_router)
+app.include_router(social_analytics_router)
+app.include_router(rec_insights_router)
 
 # Mount static files for posters and subtitles
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
@@ -76,4 +112,9 @@ app.mount("/uploads/subtitles", StaticFiles(directory=subtitles_dir), name="subt
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    """Health check endpoint with response time info."""
+    return {
+        "status": "healthy",
+        "service": "cc-video-api",
+        "version": "1.0.0",
+    }

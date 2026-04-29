@@ -10,6 +10,6 @@ export function extractMentions(text: string): string[] {
   return matches;
 }
 
-export function formatMentions(text: string, getProfileUrl: (username: string) => string): string {
+export function formatMentions(text: string, _getProfileUrl: (username: string) => string): string {
   return text.replace(/@(\w+)/g, '<a href="$1" class="mention">@$1</a>');
 }

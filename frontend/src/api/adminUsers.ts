@@ -1,4 +1,4 @@
-import api from './client';
+import { fetchApi } from './auth';
 
 export interface UserAdminView {
   id: number;
@@ -20,30 +20,30 @@ export interface UserListResponse {
   total_pages: number;
 }
 
-export const adminUsersApi = {
-  getUsers: async (page: number = 1, limit: number = 20, search?: string): Promise<UserListResponse> => {
-    const params = new URLSearchParams({
-      page: page.toString(),
-      limit: limit.toString(),
-    });
-    if (search) {
-      params.append('search', search);
-    }
-    const response = await api.get(`/admin/users?${params.toString()}`);
-    return response.data;
-  },
+export async function getUsers(page: number = 1, limit: number = 20, search?: string): Promise<UserListResponse> {
+  const params = new URLSearchParams({
+    page: page.toString(),
+    limit: limit.toString(),
+  });
+  if (search) {
+    params.append('search', search);
+  }
+  return fetchApi<UserListResponse>(`/admin/users?${params.toString()}`);
+}
 
-  getUserDetails: async (userId: number): Promise<UserAdminView> => {
-    const response = await api.get(`/admin/users/${userId}`);
-    return response.data;
-  },
+export async function getUserDetails(userId: number): Promise<UserAdminView> {
+  return fetchApi<UserAdminView>(`/admin/users/${userId}`);
+}
 
-  suspendUser: async (userId: number, suspend: boolean): Promise<UserAdminView> => {
-    const response = await api.patch(`/admin/users/${userId}/suspend`, { suspend });
-    return response.data;
-  },
+export async function suspendUser(userId: number, suspend: boolean): Promise<UserAdminView> {
+  return fetchApi<UserAdminView>(`/admin/users/${userId}/suspend`, {
+    method: 'PATCH',
+    body: JSON.stringify({ suspend }),
+  });
+}
 
-  deleteUser: async (userId: number): Promise<void> => {
-    await api.delete(`/admin/users/${userId}`);
-  },
-};
+export async function deleteUser(userId: number): Promise<void> {
+  return fetchApi<void>(`/admin/users/${userId}`, {
+    method: 'DELETE',
+  });
+}

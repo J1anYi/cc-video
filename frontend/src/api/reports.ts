@@ -1,4 +1,4 @@
-import api from './client';
+import { fetchApi } from './auth';
 
 export type ContentType = 'review' | 'comment';
 export type ReportStatus = 'pending' | 'dismissed' | 'actioned';
@@ -28,36 +28,37 @@ export interface ReportStats {
   total: number;
 }
 
-export const reportsApi = {
-  createReport: async (contentType: ContentType, contentId: number, reason: string): Promise<Report> => {
-    const response = await api.post('/reports', {
+export async function createReport(contentType: ContentType, contentId: number, reason: string): Promise<Report> {
+  return fetchApi<Report>('/reports', {
+    method: 'POST',
+    body: JSON.stringify({
       content_type: contentType,
       content_id: contentId,
       reason,
-    });
-    return response.data;
-  },
+    }),
+  });
+}
 
-  getPendingReports: async (page: number = 1, limit: number = 20): Promise<ReportListResponse> => {
-    const response = await api.get(`/reports/admin?page=${page}&limit=${limit}`);
-    return response.data;
-  },
+export async function getPendingReports(page: number = 1, limit: number = 20): Promise<ReportListResponse> {
+  return fetchApi<ReportListResponse>(`/reports/admin?page=${page}&limit=${limit}`);
+}
 
-  getReportStats: async (): Promise<ReportStats> => {
-    const response = await api.get('/reports/admin/stats');
-    return response.data;
-  },
+export async function getReportStats(): Promise<ReportStats> {
+  return fetchApi<ReportStats>('/reports/admin/stats');
+}
 
-  dismissReport: async (reportId: number): Promise<Report> => {
-    const response = await api.patch(`/reports/admin/${reportId}/dismiss`);
-    return response.data;
-  },
+export async function dismissReport(reportId: number): Promise<Report> {
+  return fetchApi<Report>(`/reports/admin/${reportId}/dismiss`, {
+    method: 'PATCH',
+  });
+}
 
-  actionReport: async (reportId: number, removeContent: boolean, warnUser: boolean): Promise<Report> => {
-    const response = await api.patch(`/reports/admin/${reportId}/action`, {
+export async function actionReport(reportId: number, removeContent: boolean, warnUser: boolean): Promise<Report> {
+  return fetchApi<Report>(`/reports/admin/${reportId}/action`, {
+    method: 'PATCH',
+    body: JSON.stringify({
       remove_content: removeContent,
       warn_user: warnUser,
-    });
-    return response.data;
-  },
-};
+    }),
+  });
+}

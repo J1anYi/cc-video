@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.movie import Movie, PublicationStatus
 from app.schemas.movie import MovieCreate, MovieUpdate
+from app.services.cache import get_cached, set_cached, invalidate_movie_cache
 
 
 class MovieService:
@@ -24,14 +25,24 @@ class MovieService:
         db.add(movie)
         await db.commit()
         await db.refresh(movie)
+        # Invalidate movie list cache
+        invalidate_movie_cache()
         return movie
 
     async def get_by_id(
         self, db: AsyncSession, movie_id: int
     ) -> Optional[Movie]:
-        """Get a movie by ID."""
+        """Get a movie by ID with caching."""
+        cache_key = f"movies:detail:{movie_id}"
+        cached = get_cached(cache_key)
+        if cached:
+            return cached
+
         result = await db.execute(select(Movie).where(Movie.id == movie_id))
-        return result.scalar_one_or_none()
+        movie = result.scalar_one_or_none()
+        if movie:
+            set_cached(cache_key, movie, ttl_seconds=600)  # 10 minutes
+        return movie
 
     async def get_all(
         self, db: AsyncSession, skip: int = 0, limit: int = 100
@@ -43,14 +54,21 @@ class MovieService:
     async def get_published(
         self, db: AsyncSession, skip: int = 0, limit: int = 100
     ) -> TypingList[Movie]:
-        """Get only published movies (for user view)."""
+        """Get only published movies with caching."""
+        cache_key = f"movies:list:{skip}:{limit}"
+        cached = get_cached(cache_key)
+        if cached:
+            return cached
+
         result = await db.execute(
             select(Movie)
             .where(Movie.publication_status == PublicationStatus.PUBLISHED)
             .offset(skip)
             .limit(limit)
         )
-        return list(result.scalars().all())
+        movies = list(result.scalars().all())
+        set_cached(cache_key, movies, ttl_seconds=300)  # 5 minutes
+        return movies
 
     async def get_published_filtered(
         self,
@@ -67,7 +85,12 @@ class MovieService:
         skip: int = 0,
         limit: int = 100
     ) -> TypingList[Movie]:
-        """Get published movies with advanced filtering."""
+        """Get published movies with advanced filtering and caching."""
+        cache_key = f"movies:list:{search}:{category}:{skip}:{limit}:{sort_by}:{sort_order}"
+        cached = get_cached(cache_key)
+        if cached:
+            return cached
+
         query = select(Movie).where(
             Movie.publication_status == PublicationStatus.PUBLISHED
         )
@@ -108,7 +131,9 @@ class MovieService:
 
         query = query.offset(skip).limit(limit)
         result = await db.execute(query)
-        return list(result.scalars().all())
+        movies = list(result.scalars().all())
+        set_cached(cache_key, movies, ttl_seconds=300)  # 5 minutes
+        return movies
 
     async def count_published_filtered(
         self,
@@ -148,7 +173,12 @@ class MovieService:
         return result.scalar() or 0
 
     async def get_categories(self, db: AsyncSession) -> TypingList[str]:
-        """Get list of distinct categories from published movies."""
+        """Get list of distinct categories from published movies with caching."""
+        cache_key = "movies:categories"
+        cached = get_cached(cache_key)
+        if cached:
+            return cached
+
         query = (
             select(Movie.category)
             .where(
@@ -159,7 +189,9 @@ class MovieService:
         )
 
         result = await db.execute(query)
-        return [cat for cat in result.scalars().all() if cat]
+        categories = [cat for cat in result.scalars().all() if cat]
+        set_cached(cache_key, categories, ttl_seconds=600)  # 10 minutes
+        return categories
 
     async def update(
         self, db: AsyncSession, movie_id: int, movie_data: MovieUpdate
@@ -175,6 +207,8 @@ class MovieService:
 
         await db.commit()
         await db.refresh(movie)
+        # Invalidate cache for this movie and all lists
+        invalidate_movie_cache(movie_id)
         return movie
 
     async def delete(self, db: AsyncSession, movie_id: int) -> bool:
@@ -185,6 +219,8 @@ class MovieService:
 
         await db.delete(movie)
         await db.commit()
+        # Invalidate cache
+        invalidate_movie_cache(movie_id)
         return True
 
 
