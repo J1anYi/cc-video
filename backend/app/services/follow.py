@@ -6,6 +6,8 @@ from sqlalchemy.orm import selectinload
 
 from app.models.user_follow import UserFollow
 from app.models.user import User
+from app.models.notification import NotificationType
+from app.services.notification import notification_service
 
 
 class FollowService:
@@ -28,6 +30,23 @@ class FollowService:
         db.add(follow)
         await db.commit()
         await db.refresh(follow)
+
+        # Notify the followed user
+        follower_result = await db.execute(select(User).where(User.id == follower_id))
+        follower = follower_result.scalar_one_or_none()
+        follower_name = follower.display_name or follower.email if follower else "Someone"
+
+        await notification_service.create_notification(
+            db,
+            user_id=following_id,
+            notification_type=NotificationType.NEW_FOLLOWER.value,
+            title=f"{follower_name} started following you",
+            content=None,
+            actor_id=follower_id,
+            target_type="user",
+            target_id=follower_id,
+        )
+
         return follow
 
     async def unfollow_user(self, db: AsyncSession, follower_id: int, following_id: int) -> bool:
@@ -108,6 +127,13 @@ class FollowService:
             select(func.count(UserFollow.id)).where(UserFollow.follower_id == user_id)
         )
         return result.scalar() or 0
+
+    async def get_follower_ids(self, db: AsyncSession, user_id: int) -> List[int]:
+        """Get list of follower IDs for a user."""
+        result = await db.execute(
+            select(UserFollow.follower_id).where(UserFollow.following_id == user_id)
+        )
+        return [row[0] for row in result.all()]
 
 
 follow_service = FollowService()

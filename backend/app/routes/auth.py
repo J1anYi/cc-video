@@ -35,6 +35,18 @@ async def login(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
+    if user.deleted_at:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="User account has been deleted",
+        )
+
+    if user.is_suspended:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="User account has been suspended",
+        )
+
     if not user.is_active:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

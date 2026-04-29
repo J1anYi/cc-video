@@ -9,11 +9,11 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 
 ### Admin User Management
 
-- [ ] **ADMIN-USER-01**: Admin can list all users with pagination
-- [ ] **ADMIN-USER-02**: Admin can search users by email or username
-- [ ] **ADMIN-USER-03**: Admin can view user details (profile, activity, stats)
-- [ ] **ADMIN-USER-04**: Admin can suspend/unsuspend user accounts
-- [ ] **ADMIN-USER-05**: Admin can delete user accounts (soft delete)
+- [x] **ADMIN-USER-01**: Admin can list all users with pagination
+- [x] **ADMIN-USER-02**: Admin can search users by email or username
+- [x] **ADMIN-USER-03**: Admin can view user details (profile, activity, stats)
+- [x] **ADMIN-USER-04**: Admin can suspend/unsuspend user accounts
+- [x] **ADMIN-USER-05**: Admin can delete user accounts (soft delete)
 
 ### Content Moderation
 
@@ -62,11 +62,11 @@ Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, con
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ADMIN-USER-01 | Phase 21 | Pending |
-| ADMIN-USER-02 | Phase 21 | Pending |
-| ADMIN-USER-03 | Phase 21 | Pending |
-| ADMIN-USER-04 | Phase 21 | Pending |
-| ADMIN-USER-05 | Phase 21 | Pending |
+| ADMIN-USER-01 | Phase 21 | Complete |
+| ADMIN-USER-02 | Phase 21 | Complete |
+| ADMIN-USER-03 | Phase 21 | Complete |
+| ADMIN-USER-04 | Phase 21 | Complete |
+| ADMIN-USER-05 | Phase 21 | Complete |
 | MOD-01 | Phase 22 | Pending |
 | MOD-02 | Phase 22 | Pending |
 | MOD-03 | Phase 22 | Pending |

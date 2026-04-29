@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status, Form
+from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status, Form, Query
 from sqlalchemy.ext.asyncio import AsyncSession
+import math
 
 from app.dependencies import get_current_user, get_db
 from app.middleware.rbac import require_roles
@@ -7,10 +8,12 @@ from app.models.user import User
 from app.schemas.movie import MovieCreate, MovieUpdate, MovieResponse, MovieListResponse
 from app.schemas.video_file import VideoFileResponse
 from app.schemas.subtitle import SubtitleResponse, SubtitleListResponse
+from app.schemas.user import UserAdminView, UserListResponse, UserSuspensionRequest
 from app.services.movie import movie_service
 from app.services.video_file import video_file_service
 from app.services.poster import poster_service
 from app.services.subtitle import subtitle_service
+from app.services.admin_user import admin_user_service
 
 
 router = APIRouter(prefix="/admin", tags=["admin"])
@@ -20,10 +23,54 @@ router = APIRouter(prefix="/admin", tags=["admin"])
 admin_required = Depends(require_roles(["admin"]))
 
 
-@router.get("/users", dependencies=[admin_required])
-async def list_users():
-    """List all users. Admin only. Placeholder for future implementation."""
-    return {"message": "User listing - Phase 2", "users": []}
+@router.get("/users", response_model=UserListResponse, dependencies=[admin_required])
+async def list_users(
+    db: AsyncSession = Depends(get_db),
+    page: int = Query(1, ge=1),
+    limit: int = Query(20, ge=1, le=100),
+    search: str | None = Query(None),
+):
+    """List all users with pagination. Admin only."""
+    users, total = await admin_user_service.list_users(db, page, limit, search)
+    total_pages = math.ceil(total / limit) if limit > 0 else 0
+    return UserListResponse(
+        users=[UserAdminView.model_validate(u) for u in users],
+        total=total,
+        page=page,
+        limit=limit,
+        total_pages=total_pages,
+    )
+
+
+@router.get("/users/{user_id}", response_model=UserAdminView, dependencies=[admin_required])
+async def get_user(user_id: int, db: AsyncSession = Depends(get_db)):
+    """Get user details. Admin only."""
+    user = await admin_user_service.get_user_details(db, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return UserAdminView.model_validate(user)
+
+
+@router.patch("/users/{user_id}/suspend", response_model=UserAdminView, dependencies=[admin_required])
+async def toggle_user_suspension(
+    user_id: int,
+    request: UserSuspensionRequest,
+    db: AsyncSession = Depends(get_db),
+):
+    """Suspend or unsuspend a user. Admin only."""
+    user = await admin_user_service.suspend_user(db, user_id, request.suspend)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return UserAdminView.model_validate(user)
+
+
+@router.delete("/users/{user_id}", status_code=204, dependencies=[admin_required])
+async def delete_user(user_id: int, db: AsyncSession = Depends(get_db)):
+    """Soft delete a user. Admin only."""
+    user = await admin_user_service.delete_user(db, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return None
 
 
 @router.post("/movies", response_model=MovieResponse, dependencies=[admin_required])

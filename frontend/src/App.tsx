@@ -13,9 +13,13 @@ import Favorites from './routes/Favorites';
 import Feed from './routes/Feed';
 import UserProfile from './routes/UserProfile';
 import Notifications from './routes/Notifications';
+import Watchlists from './routes/Watchlists';
+import WatchlistDetail from './routes/WatchlistDetail';
+import PublicWatchlists from './routes/PublicWatchlists';
 import AdminMovies from './routes/admin/Movies';
 import EditMovie from './routes/admin/EditMovie';
 import CreateMovie from './routes/admin/CreateMovie';
+import AdminUsers from './routes/admin/Users';
 import './App.css';
 
 function App() {
@@ -32,12 +36,16 @@ function App() {
           <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route path="/feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
           <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
+          <Route path="/watchlists" element={<ProtectedRoute><Watchlists /></ProtectedRoute>} />
+          <Route path="/watchlists/:id" element={<ProtectedRoute><WatchlistDetail /></ProtectedRoute>} />
+          <Route path="/discover/watchlists" element={<ProtectedRoute><PublicWatchlists /></ProtectedRoute>} />
           <Route path="/users/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
           <Route path="/movies" element={<ProtectedRoute><Catalog /></ProtectedRoute>} />
           <Route path="/movies/:id" element={<ProtectedRoute><Playback /></ProtectedRoute>} />
           <Route path="/admin/movies" element={<ProtectedRoute requireAdmin><AdminMovies /></ProtectedRoute>} />
           <Route path="/admin/movies/new" element={<ProtectedRoute requireAdmin><CreateMovie /></ProtectedRoute>} />
           <Route path="/admin/movies/:id" element={<ProtectedRoute requireAdmin><EditMovie /></ProtectedRoute>} />
+          <Route path="/admin/users" element={<ProtectedRoute requireAdmin><AdminUsers /></ProtectedRoute>} />
           <Route path="/" element={<Navigate to="/movies" replace />} />
           <Route path="*" element={<Navigate to="/movies" replace />} />
         </Routes>

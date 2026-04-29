@@ -9,6 +9,8 @@ from app.database import Base
 class ActivityType(str, enum.Enum):
     REVIEW_POSTED = "review_posted"
     RATING_ADDED = "rating_added"
+    FAVORITE_ADDED = "favorite_added"
+    WATCHLIST_CREATED = "watchlist_created"
 
 
 class Activity(Base):

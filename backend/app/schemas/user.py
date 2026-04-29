@@ -56,3 +56,33 @@ class PublicProfileResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class UserAdminView(BaseModel):
+    """Full user details for admin view."""
+    id: int
+    email: str
+    display_name: str | None = None
+    role: UserRole
+    is_active: bool
+    is_suspended: bool
+    deleted_at: datetime | None = None
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class UserListResponse(BaseModel):
+    """Paginated user list response."""
+    users: list[UserAdminView]
+    total: int
+    page: int
+    limit: int
+    total_pages: int
+
+
+class UserSuspensionRequest(BaseModel):
+    """Request to suspend or unsuspend a user."""
+    suspend: bool

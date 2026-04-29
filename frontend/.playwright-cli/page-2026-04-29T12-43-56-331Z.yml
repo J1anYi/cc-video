@@ -1,0 +1,39 @@
+- generic [ref=e68]:
+  - banner [ref=e69]:
+    - heading "CC Video" [level=1] [ref=e70]
+    - generic [ref=e71]:
+      - link "Favorites" [ref=e72] [cursor=pointer]:
+        - /url: /favorites
+      - link "History" [ref=e73] [cursor=pointer]:
+        - /url: /history
+      - generic [ref=e74]: Welcome,
+      - button "Logout" [ref=e75] [cursor=pointer]
+  - generic [ref=e76]:
+    - textbox "Search movies..." [ref=e77]
+    - combobox [ref=e78]:
+      - option "All Categories" [selected]
+  - generic [ref=e79]:
+    - link "🎬 Updated Test Movie 🤍 A test movie for UAT" [ref=e80] [cursor=pointer]:
+      - /url: /movies/1
+      - generic [ref=e81]: 🎬
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - heading "Updated Test Movie" [level=2] [ref=e84]
+          - button "🤍" [ref=e85]
+        - paragraph [ref=e86]: A test movie for UAT
+    - link "🎬 Test Movie 2 🤍 Another test" [ref=e87] [cursor=pointer]:
+      - /url: /movies/2
+      - generic [ref=e88]: 🎬
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - heading "Test Movie 2" [level=2] [ref=e91]
+          - button "🤍" [ref=e92]
+        - paragraph [ref=e93]: Another test
+    - link "🎬 UAT Test Movie 🤍 For Phase 3 testing" [ref=e94] [cursor=pointer]:
+      - /url: /movies/3
+      - generic [ref=e95]: 🎬
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "UAT Test Movie" [level=2] [ref=e98]
+          - button "🤍" [ref=e99]
+        - paragraph [ref=e100]: For Phase 3 testing

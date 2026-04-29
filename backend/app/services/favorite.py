@@ -6,6 +6,8 @@ from sqlalchemy.orm import selectinload
 
 from app.models.favorite import Favorite
 from app.models.movie import Movie
+from app.models.activity import ActivityType
+from app.services.activity import activity_service
 
 
 class FavoriteService:
@@ -34,6 +36,12 @@ class FavoriteService:
         db.add(favorite)
         await db.commit()
         await db.refresh(favorite)
+
+        # Create activity for favorite
+        await activity_service.create_activity(
+            db, user_id, ActivityType.FAVORITE_ADDED.value, movie_id=movie_id
+        )
+
         return favorite
 
     async def remove_favorite(self, db: AsyncSession, user_id: int, movie_id: int) -> bool:

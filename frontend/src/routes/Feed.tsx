@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getActivityFeed, ActivityResponse, ActivityListResponse } from '../api/activity';
+import { getActivityFeed } from '../api/activity';
+import type { ActivityResponse } from '../api/activity';
 
 export default function Feed() {
   const navigate = useNavigate();
   const [activities, setActivities] = useState<ActivityResponse[]>([]);
-  const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -18,7 +18,6 @@ export default function Feed() {
     try {
       const data = await getActivityFeed();
       setActivities(data.activities);
-      setTotal(data.total);
     } catch (err) {
       setError('Failed to load activity feed');
     } finally {

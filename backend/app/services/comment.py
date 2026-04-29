@@ -2,7 +2,10 @@ from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.comment import Comment
 from app.models.user import User
+from app.models.review import Review
+from app.models.notification import NotificationType
 from app.schemas.comment import CommentCreate, CommentResponse
+from app.services.notification import notification_service
 
 class CommentService:
     @staticmethod
@@ -11,6 +14,25 @@ class CommentService:
         db.add(comment)
         await db.commit()
         await db.refresh(comment)
+
+        # Notify review author about the comment
+        review_result = await db.execute(select(Review).where(Review.id == review_id))
+        review = review_result.scalar_one_or_none()
+        if review and review.user_id != user_id:
+            user_result = await db.execute(select(User).where(User.id == user_id))
+            user = user_result.scalar_one_or_none()
+            commenter_name = user.display_name or user.email if user else "Someone"
+            await notification_service.create_notification(
+                db,
+                user_id=review.user_id,
+                notification_type=NotificationType.COMMENT_REPLY.value,
+                title=f"{commenter_name} replied to your review",
+                content=comment_data.content[:100] if len(comment_data.content) > 100 else comment_data.content,
+                actor_id=user_id,
+                target_type="comment",
+                target_id=comment.id,
+            )
+
         return comment
 
     @staticmethod

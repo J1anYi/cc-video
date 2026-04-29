@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getPublicProfile, PublicProfileResponse } from '../api/profile';
-import { getFollowStatus, followUser, unfollowUser, getFollowCounts } from '../api/follow';
+import { getPublicProfile } from '../api/profile';
+import type { PublicProfileResponse } from '../api/profile';
+import { getFollowStatus, followUser, unfollowUser } from '../api/follow';
 import { useAuth } from '../auth/AuthContext';
 
 export default function UserProfile() {
