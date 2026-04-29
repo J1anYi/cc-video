@@ -8,6 +8,7 @@
 - v1.3 Media Enhancement - Phases 9-10 (shipped 2026-04-29)
 - v1.4 Account Enhancement - Phases 11-12 (shipped 2026-04-29)
 - v1.5 Discovery Enhancement - Phases 13-14 (shipped 2026-04-29)
+- v1.6 Social Features - Phases 15-16 (shipped 2026-04-30)
 - v1.6 Social Features - Phases 15-16 (planning)
 
 ## Progress
