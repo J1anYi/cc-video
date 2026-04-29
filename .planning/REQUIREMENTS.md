@@ -3,95 +3,95 @@
 **Defined:** 2026-04-30
 **Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## v2.0 Requirements
+## v2.1 Requirements
 
-Requirements for v2.0 Platform Maturity milestone. Focuses on performance, scalability, internationalization, and production readiness.
+Requirements for v2.1 Enhanced User Experience milestone. Focuses on accessibility, advanced personalization, and premium user features.
 
-### Performance Optimization
+### Accessibility Enhancement
 
-- [x] **PERF-01**: API response time under 200ms for 95th percentile
-- [x] **PERF-02**: Frontend initial load under 3 seconds
-- [x] **PERF-03**: Video streaming starts within 2 seconds
-- [x] **PERF-04**: Database queries optimized with indexes
-- [x] **PERF-05**: Caching layer for frequently accessed data
+- [ ] **ACCESS-01**: WCAG 2.1 AA compliance for all pages
+- [ ] **ACCESS-02**: Screen reader support for video player
+- [ ] **ACCESS-03**: Keyboard navigation for all interactions
+- [ ] **ACCESS-04**: High contrast mode and color blind support
+- [ ] **ACCESS-05**: Audio descriptions for movies
 
-### Scalability
+### Advanced Personalization
 
-- [x] **SCALE-01**: Horizontal scaling support for backend
-- [x] **SCALE-02**: Database connection pooling configured
-- [x] **SCALE-03**: Static asset CDN integration
-- [x] **SCALE-04**: Rate limiting on all public endpoints
-- [x] **SCALE-05**: Graceful degradation under load
+- [ ] **PERS-01**: Customizable homepage layout
+- [ ] **PERS-02**: User-defined genre preferences weighting
+- [ ] **PERS-03**: Personalized email digest notifications
+- [ ] **PERS-04**: Learning-based recommendation refinement
+- [ ] **PERS-05**: Mood-based movie suggestions
 
-### Internationalization
+### Offline & Mobile Experience
 
-- [x] **I18N-01**: Multi-language support in UI
-- [x] **I18N-02**: Content language detection and filtering
-- [x] **I18N-03**: Timezone-aware date/time display
-- [x] **I18N-04**: Currency and number formatting localization
-- [x] **I18N-05**: RTL (right-to-left) layout support
+- [ ] **MOBILE-01**: Progressive Web App (PWA) support
+- [ ] **MOBILE-02**: Offline movie metadata caching
+- [ ] **MOBILE-03**: Download movies for offline viewing
+- [ ] **MOBILE-04**: Mobile-optimized video player controls
+- [ ] **MOBILE-05**: Push notifications for mobile
 
-### Security Hardening
+### Advanced Media Features
 
-- [x] **SEC-01**: HTTPS enforcement for all connections
-- [x] **SEC-02**: Content Security Policy (CSP) headers
-- [x] **SEC-03**: SQL injection prevention audit
-- [x] **SEC-04**: XSS prevention audit
-- [x] **SEC-05**: CSRF token implementation
+- [ ] **MEDIA-01**: Multiple video quality options (360p-4K)
+- [ ] **MEDIA-02**: Picture-in-picture mode
+- [ ] **MEDIA-03**: Playback speed control
+- [ ] **MEDIA-04**: Audio track selection (multiple languages)
+- [ ] **MEDIA-05**: Video chapter markers
 
-### Production Readiness
+### Premium User Features
 
-- [x] **PROD-01**: Health check endpoints
-- [x] **PROD-02**: Structured logging with log levels
-- [x] **PROD-03**: Error tracking and monitoring integration
-- [x] **PROD-04**: Backup and recovery procedures
-- [x] **PROD-05**: Deployment automation scripts
+- [ ] **PREM-01**: Watch party (synchronized viewing)
+- [ ] **PREM-02**: User avatars and profile customization
+- [ ] **PREM-03**: Badge and achievement system
+- [ ] **PREM-04**: Early access to new features
+- [ ] **PREM-05**: Ad-free viewing experience
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Microservices architecture | Monolith is sufficient for current scale |
-| Kubernetes deployment | Simple deployment first |
-| Multi-region deployment | Single region sufficient |
-| Payment integration | No monetization yet |
-| Mobile native apps | Web-first strategy continues |
+| VR/AR viewing | Experimental technology |
+| AI-generated content | Ethical and legal concerns |
+| Live streaming | Different architecture needed |
+| Payment integration | Deferred to monetization phase |
+| Native mobile apps | PWA approach prioritized |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PERF-01 | Phase 31 | Pending |
-| PERF-02 | Phase 31 | Pending |
-| PERF-03 | Phase 31 | Pending |
-| PERF-04 | Phase 31 | Pending |
-| PERF-05 | Phase 31 | Pending |
-| SCALE-01 | Phase 32 | Pending |
-| SCALE-02 | Phase 32 | Pending |
-| SCALE-03 | Phase 32 | Pending |
-| SCALE-04 | Phase 32 | Pending |
-| SCALE-05 | Phase 32 | Pending |
-| I18N-01 | Phase 33 | Pending |
-| I18N-02 | Phase 33 | Pending |
-| I18N-03 | Phase 33 | Pending |
-| I18N-04 | Phase 33 | Pending |
-| I18N-05 | Phase 33 | Pending |
-| SEC-01 | Phase 34 | Pending |
-| SEC-02 | Phase 34 | Pending |
-| SEC-03 | Phase 34 | Pending |
-| SEC-04 | Phase 34 | Pending |
-| SEC-05 | Phase 34 | Pending |
-| PROD-01 | Phase 35 | Pending |
-| PROD-02 | Phase 35 | Pending |
-| PROD-03 | Phase 35 | Pending |
-| PROD-04 | Phase 35 | Pending |
-| PROD-05 | Phase 35 | Pending |
+| ACCESS-01 | Phase 36 | Pending |
+| ACCESS-02 | Phase 36 | Pending |
+| ACCESS-03 | Phase 36 | Pending |
+| ACCESS-04 | Phase 36 | Pending |
+| ACCESS-05 | Phase 36 | Pending |
+| PERS-01 | Phase 37 | Pending |
+| PERS-02 | Phase 37 | Pending |
+| PERS-03 | Phase 37 | Pending |
+| PERS-04 | Phase 37 | Pending |
+| PERS-05 | Phase 37 | Pending |
+| MOBILE-01 | Phase 38 | Pending |
+| MOBILE-02 | Phase 38 | Pending |
+| MOBILE-03 | Phase 38 | Pending |
+| MOBILE-04 | Phase 38 | Pending |
+| MOBILE-05 | Phase 38 | Pending |
+| MEDIA-01 | Phase 39 | Pending |
+| MEDIA-02 | Phase 39 | Pending |
+| MEDIA-03 | Phase 39 | Pending |
+| MEDIA-04 | Phase 39 | Pending |
+| MEDIA-05 | Phase 39 | Pending |
+| PREM-01 | Phase 40 | Pending |
+| PREM-02 | Phase 40 | Pending |
+| PREM-03 | Phase 40 | Pending |
+| PREM-04 | Phase 40 | Pending |
+| PREM-05 | Phase 40 | Pending |
 
 **Coverage:**
-- v2.0 requirements: 25 total
+- v2.1 requirements: 25 total
 - Mapped to phases: 25
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-30*
-*Last updated: 2026-04-30 - v2.0 milestone created*
+*Last updated: 2026-04-30 - v2.1 milestone created*
