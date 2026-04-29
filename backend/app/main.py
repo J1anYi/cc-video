@@ -10,6 +10,10 @@ import logging
 from app.config import settings
 from app.database import engine, Base
 from app.middleware.rate_limit import RateLimitMiddleware
+from app.middleware.security import (
+    SecurityHeadersMiddleware,
+    HTTPSRedirectMiddleware,
+)
 from app.routes.auth import router as auth_router
 from app.routes.admin import router as admin_router
 from app.routes.user import router as user_router
@@ -66,6 +70,12 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+
+# Add security headers middleware
+app.add_middleware(SecurityHeadersMiddleware)
+
+# Add HTTPS redirect middleware (production only)
+app.add_middleware(HTTPSRedirectMiddleware)
 
 # Add rate limiting middleware
 app.add_middleware(RateLimitMiddleware)
