@@ -12,6 +12,7 @@
 - v1.7 Social Extensions - Phases 17-18 (shipped 2026-04-30)
 - v1.8 Content Organization - Phases 19-20 (shipped 2026-04-30)
 - v1.9 Admin & Safety - Phases 21-25 (shipped 2026-04-30) — [Archive](milestones/v1.9-ROADMAP.md)
+- v1.10 Analytics & Insights - Phases 26-30 (shipped 2026-04-30) — [Archive](milestones/v1.10-ROADMAP.md)
 
 ## Progress
 
@@ -42,6 +43,11 @@
 | 23. Advanced Search | v1.9 | 1/1 | Complete | 2026-04-30 |
 | 24. User Blocking | v1.9 | 1/1 | Complete | 2026-04-30 |
 | 25. @Mentions | v1.9 | 1/1 | Complete | 2026-04-30 |
+| 26. User Analytics Dashboard | v1.10 | 1/1 | Complete | 2026-04-30 |
+| 27. Content Performance Metrics | v1.10 | 1/1 | Complete | 2026-04-30 |
+| 28. Admin Dashboard Enhancement | v1.10 | 1/1 | Complete | 2026-04-30 |
+| 29. Social Analytics | v1.10 | 1/1 | Complete | 2026-04-30 |
+| 30. Recommendation Insights | v1.10 | 1/1 | Complete | 2026-04-30 |
 
 ---
-*Last updated: 2026-04-30 - v1.9 shipped*
+*Last updated: 2026-04-30 - v1.10 shipped*
