@@ -6,9 +6,9 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: Project Complete (2026-04-30)
+## Current State: v2.5 Planning (2026-04-30)
 
-**v2.4 AI & Machine Learning shipped.** All 16 milestones complete.
+**v2.4 AI & Machine Learning shipped.** Starting v2.5 Advanced Content Management & Live Streaming.
 
 The system now supports:
 - User authentication with password reset
@@ -70,9 +70,16 @@ The system now supports:
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: None
+## Current Milestone: v2.5 Advanced Content Management & Live Streaming
 
-**Status:** Project complete. All 55 phases across 16 milestones delivered.
+**Goal:** Enable live streaming capabilities and advanced content management features for events and premium content delivery.
+
+**Target features:**
+- Live streaming for events, premieres, and live Q&As
+- Content scheduling and availability windows
+- Advanced video management (bulk upload, transcoding)
+- Content versioning (director's cut, theatrical, etc.)
+- Real-time viewer analytics during live streams
 
 ## Requirements
 
@@ -98,9 +105,12 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Enterprise - API platform, integrations, developer tools (v2.3)
 - [x] AI/ML - recommendations, NLP, predictive analytics (v2.4)
 
-### Active
+### Active (v2.5)
 
-(None - all planned requirements satisfied)
+- [ ] Live streaming infrastructure
+- [ ] Content scheduling system
+- [ ] Advanced video management tools
+- [ ] Content versioning support
 
 ## Context
 
@@ -115,6 +125,8 @@ v2.2 added monetization with subscription tiers, Stripe payment integration, acc
 v2.3 enabled enterprise features with public API platform, third-party integrations, developer tools, and platform extensibility.
 
 v2.4 brought AI/ML capabilities with recommendation engines, content analysis, NLP, predictive analytics, and automated workflows.
+
+v2.5 introduces live streaming and advanced content management, enabling real-time viewer engagement and sophisticated content operations.
 
 ## Constraints
 
@@ -152,4 +164,4 @@ v2.4 brought AI/ML capabilities with recommendation engines, content analysis, N
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - Project complete*
+*Last updated: 2026-04-30 - Starting v2.5*

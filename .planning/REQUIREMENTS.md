@@ -1,97 +1,93 @@
-# Requirements: CC Video
+# Requirements: CC Video - v2.5 Advanced Content Management & Live Streaming
 
-**Defined:** 2026-04-30
-**Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
+## Active Requirements
 
-## v2.4 Requirements
+### Live Streaming (LIVE)
 
-Requirements for v2.4 AI & Machine Learning milestone. Focuses on intelligent features, ML-powered recommendations, and automated content analysis.
+- [ ] **LIVE-01**: Admin can schedule live streaming events with title, description, and start time
+- [ ] **LIVE-02**: User can view upcoming and ongoing live events in a dedicated section
+- [ ] **LIVE-03**: User can watch live streams with real-time video playback
+- [ ] **LIVE-04**: User can see live viewer count during streaming
+- [ ] **LIVE-05**: Admin can start and end live streams
+- [ ] **LIVE-06**: Live streams are automatically recorded and saved as VOD content
+- [ ] **LIVE-07**: User can receive notifications for upcoming live events they follow
 
-### ML Recommendation Engine
+### Content Scheduling (SCHED)
 
-- [ ] **ML-01**: Collaborative filtering recommendation model
-- [ ] **ML-02**: Content-based recommendation system
-- [ ] **ML-03**: Hybrid recommendation combining multiple signals
-- [ ] **ML-04**: Real-time recommendation updates
-- [ ] **ML-05**: A/B testing for recommendation algorithms
+- [ ] **SCHED-01**: Admin can schedule content availability windows (start/end dates)
+- [ ] **SCHED-02**: Content is automatically published/unpublished based on schedule
+- [ ] **SCHED-03**: Admin can set expiration dates for time-limited content
+- [ ] **SCHED-04**: User sees scheduled content countdown before release
+- [ ] **SCHED-05**: Admin can manage content release calendar
 
-### Content Analysis
+### Advanced Video Management (VIDM)
 
-- [ ] **CONTENT-01**: Automatic video quality assessment
-- [ ] **CONTENT-02**: Scene detection and thumbnail generation
-- [ ] **CONTENT-03**: Automatic content tagging
-- [ ] **CONTENT-04**: Sentiment analysis for reviews
-- [ ] **CONTENT-05**: Duplicate content detection
+- [ ] **VIDM-01**: Admin can upload multiple videos in bulk
+- [ ] **VIDM-02**: System transcodes videos to multiple quality variants (1080p, 720p, 480p)
+- [ ] **VIDM-03**: User can manually select video quality during playback
+- [ ] **VIDM-04**: Admin can view transcoding status and progress
+- [ ] **VIDM-05**: System stores multiple quality variants for adaptive streaming
+- [ ] **VIDM-06**: Admin can replace video file without losing metadata
 
-### Natural Language Processing
+### Content Versioning (VER)
 
-- [ ] **NLP-01**: Smart search with intent recognition
-- [ ] **NLP-02**: Query auto-completion and suggestions
-- [ ] **NLP-03**: Multi-language content understanding
-- [ ] **NLP-04**: Entity extraction from movie descriptions
-- [ ] **NLP-05**: Chatbot for user support
+- [ ] **VER-01**: Admin can create multiple versions of a movie (theatrical, director's cut, extended)
+- [ ] **VER-02**: User can select which version to watch from movie detail page
+- [ ] **VER-03**: Each version maintains separate watch history
+- [ ] **VER-04**: Admin can set default version for new viewers
+- [ ] **VER-05**: Version metadata includes runtime differences and content warnings
 
-### Predictive Analytics
+## Future Requirements
 
-- [ ] **PRED-01**: Churn prediction model
-- [ ] **PRED-02**: Content popularity forecasting
-- [ ] **PRED-03**: User engagement prediction
-- [ ] **PRED-04**: Revenue forecasting model
-- [ ] **PRED-05**: Optimal release time prediction
+### Live Streaming Enhancements (Future)
+- Live chat during streams
+- Real-time Q&A functionality
+- Multi-camera angle support
+- DVR-like rewind during live
 
-### Automated Workflows
+### Advanced Scheduling (Future)
+- Recurring content schedules
+- Timezone-aware releases
+- Geographic availability restrictions
 
-- [ ] **AUTO-01**: Automated content moderation
-- [ ] **AUTO-02**: Smart notification timing
-- [ ] **AUTO-03**: Automated video transcoding optimization
-- [ ] **AUTO-04**: Dynamic pricing recommendations
-- [ ] **AUTO-05**: Automated A/B test management
+### Content Management Enhancements (Future)
+- AI-powered video tagging
+- Automated thumbnail generation
+- Content recommendation for playlists
 
 ## Out of Scope
 
-| Feature | Reason |
-|---------|--------|
-| AI-generated video content | Ethical and legal concerns |
-| Facial recognition | Privacy concerns |
-| Deepfake detection | Specialized domain |
-| Real-time video analysis | Infrastructure requirements |
-| Autonomous decision making | Human oversight required |
+- **External streaming platforms**: Live streaming is through the platform only, no Twitch/YouTube integration
+- **User-generated content**: Only admins can create live streams and upload content
+- **Real-time analytics dashboard**: Live viewer count only, detailed analytics remain post-stream
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ML-01 | Phase 51 | Pending |
-| ML-02 | Phase 51 | Pending |
-| ML-03 | Phase 51 | Pending |
-| ML-04 | Phase 51 | Pending |
-| ML-05 | Phase 51 | Pending |
-| CONTENT-01 | Phase 52 | Pending |
-| CONTENT-02 | Phase 52 | Pending |
-| CONTENT-03 | Phase 52 | Pending |
-| CONTENT-04 | Phase 52 | Pending |
-| CONTENT-05 | Phase 52 | Pending |
-| NLP-01 | Phase 53 | Pending |
-| NLP-02 | Phase 53 | Pending |
-| NLP-03 | Phase 53 | Pending |
-| NLP-04 | Phase 53 | Pending |
-| NLP-05 | Phase 53 | Pending |
-| PRED-01 | Phase 54 | Pending |
-| PRED-02 | Phase 54 | Pending |
-| PRED-03 | Phase 54 | Pending |
-| PRED-04 | Phase 54 | Pending |
-| PRED-05 | Phase 54 | Pending |
-| AUTO-01 | Phase 55 | Pending |
-| AUTO-02 | Phase 55 | Pending |
-| AUTO-03 | Phase 55 | Pending |
-| AUTO-04 | Phase 55 | Pending |
-| AUTO-05 | Phase 55 | Pending |
-
-**Coverage:**
-- v2.4 requirements: 25 total
-- Mapped to phases: 25
-- Unmapped: 0 ✓
+| LIVE-01 | TBD | - |
+| LIVE-02 | TBD | - |
+| LIVE-03 | TBD | - |
+| LIVE-04 | TBD | - |
+| LIVE-05 | TBD | - |
+| LIVE-06 | TBD | - |
+| LIVE-07 | TBD | - |
+| SCHED-01 | TBD | - |
+| SCHED-02 | TBD | - |
+| SCHED-03 | TBD | - |
+| SCHED-04 | TBD | - |
+| SCHED-05 | TBD | - |
+| VIDM-01 | TBD | - |
+| VIDM-02 | TBD | - |
+| VIDM-03 | TBD | - |
+| VIDM-04 | TBD | - |
+| VIDM-05 | TBD | - |
+| VIDM-06 | TBD | - |
+| VER-01 | TBD | - |
+| VER-02 | TBD | - |
+| VER-03 | TBD | - |
+| VER-04 | TBD | - |
+| VER-05 | TBD | - |
 
 ---
-*Requirements defined: 2026-04-30*
-*Last updated: 2026-04-30 - v2.4 milestone created*
+*Created: 2026-04-30 - v2.5 Requirements*
