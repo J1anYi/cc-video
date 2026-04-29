@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate, Suspense, lazy } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import ProtectedRoute from './routes/ProtectedRoute';
+import { AccessibilityProvider, SkipLinks } from './components/accessibility';
 import './App.css';
 
 // Lazy load all route components for better initial load time
@@ -33,49 +34,55 @@ const RecSettings = lazy(() => import('./routes/RecSettings'));
 // Loading component for Suspense fallback
 function LoadingSpinner() {
   return (
-    <div className="loading-container">
-      <div className="loading-spinner"></div>
+    <div className="loading-container" role="status" aria-label="Loading">
+      <div className="loading-spinner" aria-hidden="true"></div>
+      <span className="sr-only">Loading...</span>
     </div>
   );
 }
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-            <Route path="/analytics" element={<ProtectedRoute><Analytics /></ProtectedRoute>} />
-            <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
-            <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
-            <Route path="/feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
-            <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
-            <Route path="/watchlists" element={<ProtectedRoute><Watchlists /></ProtectedRoute>} />
-            <Route path="/watchlists/:id" element={<ProtectedRoute><WatchlistDetail /></ProtectedRoute>} />
-            <Route path="/discover/watchlists" element={<ProtectedRoute><PublicWatchlists /></ProtectedRoute>} />
-            <Route path="/users/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
-            <Route path="/movies" element={<ProtectedRoute><Catalog /></ProtectedRoute>} />
-            <Route path="/movies/:id" element={<ProtectedRoute><Playback /></ProtectedRoute>} />
-            <Route path="/admin/movies" element={<ProtectedRoute requireAdmin><AdminMovies /></ProtectedRoute>} />
-            <Route path="/admin/movies/new" element={<ProtectedRoute requireAdmin><CreateMovie /></ProtectedRoute>} />
-            <Route path="/admin/movies/:id" element={<ProtectedRoute requireAdmin><EditMovie /></ProtectedRoute>} />
-            <Route path="/admin/users" element={<ProtectedRoute requireAdmin><AdminUsers /></ProtectedRoute>} />
-            <Route path="/admin/reports" element={<ProtectedRoute requireAdmin><AdminReports /></ProtectedRoute>} />
-            <Route path="/admin/metrics" element={<ProtectedRoute requireAdmin><AdminMetrics /></ProtectedRoute>} />
-            <Route path="/admin/dashboard" element={<ProtectedRoute requireAdmin><AdminDashboard /></ProtectedRoute>} />
-            <Route path="/social" element={<ProtectedRoute><SocialAnalyticsPage /></ProtectedRoute>} />
-            <Route path="/settings/recommendations" element={<ProtectedRoute><RecSettings /></ProtectedRoute>} />
-            <Route path="/" element={<Navigate to="/movies" replace />} />
-            <Route path="*" element={<Navigate to="/movies" replace />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </AuthProvider>
+    <AccessibilityProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <SkipLinks />
+          <main id="main-content">
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+                <Route path="/analytics" element={<ProtectedRoute><Analytics /></ProtectedRoute>} />
+                <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+                <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
+                <Route path="/feed" element={<ProtectedRoute><Feed /></ProtectedRoute>} />
+                <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
+                <Route path="/watchlists" element={<ProtectedRoute><Watchlists /></ProtectedRoute>} />
+                <Route path="/watchlists/:id" element={<ProtectedRoute><WatchlistDetail /></ProtectedRoute>} />
+                <Route path="/discover/watchlists" element={<ProtectedRoute><PublicWatchlists /></ProtectedRoute>} />
+                <Route path="/users/:userId" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+                <Route path="/movies" element={<ProtectedRoute><Catalog /></ProtectedRoute>} />
+                <Route path="/movies/:id" element={<ProtectedRoute><Playback /></ProtectedRoute>} />
+                <Route path="/admin/movies" element={<ProtectedRoute requireAdmin><AdminMovies /></ProtectedRoute>} />
+                <Route path="/admin/movies/new" element={<ProtectedRoute requireAdmin><CreateMovie /></ProtectedRoute>} />
+                <Route path="/admin/movies/:id" element={<ProtectedRoute requireAdmin><EditMovie /></ProtectedRoute>} />
+                <Route path="/admin/users" element={<ProtectedRoute requireAdmin><AdminUsers /></ProtectedRoute>} />
+                <Route path="/admin/reports" element={<ProtectedRoute requireAdmin><AdminReports /></ProtectedRoute>} />
+                <Route path="/admin/metrics" element={<ProtectedRoute requireAdmin><AdminMetrics /></ProtectedRoute>} />
+                <Route path="/admin/dashboard" element={<ProtectedRoute requireAdmin><AdminDashboard /></ProtectedRoute>} />
+                <Route path="/social" element={<ProtectedRoute><SocialAnalyticsPage /></ProtectedRoute>} />
+                <Route path="/settings/recommendations" element={<ProtectedRoute><RecSettings /></ProtectedRoute>} />
+                <Route path="/" element={<Navigate to="/movies" replace />} />
+                <Route path="*" element={<Navigate to="/movies" replace />} />
+              </Routes>
+            </Suspense>
+          </main>
+        </BrowserRouter>
+      </AuthProvider>
+    </AccessibilityProvider>
   );
 }
 

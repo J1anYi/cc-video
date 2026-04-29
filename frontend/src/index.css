@@ -142,3 +142,128 @@ code {
 .language-switcher:hover {
   border-color: var(--accent);
 }
+
+/* ===== Accessibility Styles ===== */
+
+/* Focus Indicators - WCAG 2.1 AA compliant */
+*:focus {
+  outline: 2px solid var(--accent, #aa3bff);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--accent, #aa3bff);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --text: #000;
+  --text-h: #000;
+  --bg: #fff;
+  --border: #000;
+  --accent: #0000ff;
+  --code-bg: #fff;
+}
+
+.high-contrast * {
+  border-color: #000 !important;
+}
+
+.high-contrast button,
+.high-contrast a,
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea {
+  border-width: 2px !important;
+  font-weight: 600 !important;
+}
+
+.high-contrast a {
+  text-decoration: underline !important;
+}
+
+/* Reduced Motion */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Font Size Adjustments */
+.font-large {
+  font-size: 20px;
+}
+
+.font-xlarge {
+  font-size: 24px;
+}
+
+/* Color Blind Modes */
+.colorblind-protanopia {
+  --accent: #0077bb;
+  --accent-bg: rgba(0, 119, 187, 0.1);
+}
+
+.colorblind-deuteranopia {
+  --accent: #009988;
+  --accent-bg: rgba(0, 153, 136, 0.1);
+}
+
+.colorblind-tritanopia {
+  --accent: #cc6677;
+  --accent-bg: rgba(204, 102, 119, 0.1);
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus skip links for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 12px 24px;
+  background: var(--accent, #aa3bff);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s ease;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+/* Visually Hidden but Focusable */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
