@@ -30,6 +30,7 @@ class MovieResponse(BaseModel):
     title: str
     description: Optional[str] = None
     category: Optional[str] = None
+    poster_path: Optional[str] = None
     publication_status: PublicationStatus
     created_at: datetime
     updated_at: datetime

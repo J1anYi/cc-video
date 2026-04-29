@@ -10,6 +10,7 @@ export interface Movie {
   title: string;
   description: string | null;
   category: string | null;
+  poster_path: string | null;
   publication_status: 'DRAFT' | 'PUBLISHED' | 'UNPUBLISHED' | 'DISABLED';
   created_at: string;
   updated_at: string;

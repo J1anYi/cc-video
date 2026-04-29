@@ -8,6 +8,7 @@ from app.schemas.movie import MovieCreate, MovieUpdate, MovieResponse, MovieList
 from app.schemas.video_file import VideoFileResponse
 from app.services.movie import movie_service
 from app.services.video_file import video_file_service
+from app.services.poster import poster_service
 
 
 router = APIRouter(prefix="/admin", tags=["admin"])
@@ -83,6 +84,36 @@ async def delete_video(movie_id: int, db: AsyncSession = Depends(get_db)):
     if not video_files:
         raise HTTPException(status_code=404, detail="No video file found")
     await video_file_service.delete(db, video_files[0].id)
+    return None
+
+
+@router.post("/movies/{movie_id}/poster", response_model=MovieResponse, dependencies=[admin_required])
+async def upload_poster(movie_id: int, file: UploadFile = File(...), db: AsyncSession = Depends(get_db)):
+    """Upload a poster image for a movie. Admin only."""
+    movie = await movie_service.get_by_id(db, movie_id)
+    if not movie:
+        raise HTTPException(status_code=404, detail="Movie not found")
+    try:
+        poster_path = await poster_service.upload(db, movie_id, file)
+        movie = await movie_service.update(db, movie_id, MovieUpdate())
+        # Directly update poster_path
+        movie.poster_path = poster_path
+        await db.commit()
+        await db.refresh(movie)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    return movie
+
+
+@router.delete("/movies/{movie_id}/poster", status_code=204, dependencies=[admin_required])
+async def delete_poster(movie_id: int, db: AsyncSession = Depends(get_db)):
+    """Delete poster image from a movie. Admin only."""
+    movie = await movie_service.get_by_id(db, movie_id)
+    if not movie:
+        raise HTTPException(status_code=404, detail="Movie not found")
+    poster_service.delete(movie.poster_path)
+    movie.poster_path = None
+    await db.commit()
     return None
 
 

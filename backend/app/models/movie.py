@@ -23,6 +23,7 @@ class Movie(Base):
     title: Mapped[str] = mapped_column(String(255), nullable=False)
     description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     category: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    poster_path: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
     publication_status: Mapped[PublicationStatus] = mapped_column(
         SQLEnum(PublicationStatus), default=PublicationStatus.DRAFT, nullable=False
     )

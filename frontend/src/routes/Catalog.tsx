@@ -109,18 +109,29 @@ export default function Catalog() {
         <div style={styles.grid}>
           {movies.map((movie) => (
             <Link key={movie.id} to={`/movies/${movie.id}`} style={styles.card}>
-              <div style={styles.cardHeader}>
-                <h2 style={styles.cardTitle}>{movie.title}</h2>
-                <button
-                  onClick={(e) => toggleFavorite(movie.id, e)}
-                  style={styles.favoriteButton}
-                  title={favoriteStatus[movie.id] ? 'Remove from favorites' : 'Add to favorites'}
-                >
-                  {favoriteStatus[movie.id] ? '❤️' : '🤍'}
-                </button>
+              {movie.poster_path ? (
+                <img
+                  src={`http://localhost:8000${movie.poster_path}`}
+                  alt={movie.title}
+                  style={styles.posterImage}
+                />
+              ) : (
+                <div style={styles.posterPlaceholder}>🎬</div>
+              )}
+              <div style={styles.cardContent}>
+                <div style={styles.cardHeader}>
+                  <h2 style={styles.cardTitle}>{movie.title}</h2>
+                  <button
+                    onClick={(e) => toggleFavorite(movie.id, e)}
+                    style={styles.favoriteButton}
+                    title={favoriteStatus[movie.id] ? 'Remove from favorites' : 'Add to favorites'}
+                  >
+                    {favoriteStatus[movie.id] ? '❤️' : '🤍'}
+                  </button>
+                </div>
+                {movie.category && <span style={styles.cardCategory}>{movie.category}</span>}
+                <p style={styles.cardDescription}>{movie.description || 'No description'}</p>
               </div>
-              {movie.category && <span style={styles.cardCategory}>{movie.category}</span>}
-              <p style={styles.cardDescription}>{movie.description || 'No description'}</p>
             </Link>
           ))}
         </div>
@@ -145,7 +156,10 @@ const styles: Record<string, React.CSSProperties> = {
   loading: { textAlign: 'center', padding: '2rem', color: '#666' },
   empty: { textAlign: 'center', color: '#666', padding: '2rem' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' },
-  card: { background: 'white', borderRadius: '8px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', textDecoration: 'none', color: 'inherit' },
+  card: { background: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', textDecoration: 'none', color: 'inherit' },
+  posterImage: { width: '100%', height: '180px', objectFit: 'cover' },
+  posterPlaceholder: { width: '100%', height: '180px', background: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' },
+  cardContent: { padding: '1rem' },
   cardHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' },
   cardTitle: { margin: 0, fontSize: '1.25rem', flex: 1 },
   favoriteButton: { background: 'none', border: 'none', fontSize: '1.25rem', cursor: 'pointer', padding: '0.25rem' },
