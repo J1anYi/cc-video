@@ -9,12 +9,14 @@ from app.models.movie import PublicationStatus
 from app.models.user import User
 from app.schemas.movie import MovieResponse, MovieListResponse
 from app.schemas.subtitle import SubtitleResponse, SubtitleListResponse
+from app.schemas.user import UserResponse, ProfileUpdate, PasswordChange
 from app.services.movie import movie_service
 from app.services.video_file import video_file_service
 from app.services.video_streaming import video_streaming_service
 from app.services.history import history_service
 from app.services.favorite import favorite_service
 from app.services.subtitle import subtitle_service
+from app.services.auth import auth_service
 
 
 class WatchHistoryUpdate(BaseModel):
@@ -230,3 +232,46 @@ async def get_favorite_status(
 ):
     is_fav = await favorite_service.is_favorite(db, current_user.id, movie_id)
     return FavoriteStatusResponse(is_favorite=is_fav)
+
+
+# Profile endpoints
+@router.get("/users/me", response_model=UserResponse)
+async def get_profile(
+    current_user: User = Depends(get_current_user)
+) -> UserResponse:
+    """Get current user's profile."""
+    return UserResponse.model_validate(current_user)
+
+
+@router.put("/users/me", response_model=UserResponse)
+async def update_profile(
+    data: ProfileUpdate,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+) -> UserResponse:
+    """Update current user's profile."""
+    if data.display_name is not None:
+        current_user.display_name = data.display_name
+        current_user.updated_at = datetime.utcnow()
+        await db.commit()
+        await db.refresh(current_user)
+    return UserResponse.model_validate(current_user)
+
+
+@router.post("/users/me/password")
+async def change_password(
+    data: PasswordChange,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Change current user's password."""
+    # Verify current password
+    if not auth_service.verify_password(data.current_password, current_user.hashed_password):
+        raise HTTPException(status_code=400, detail="Current password is incorrect")
+
+    # Update password
+    current_user.hashed_password = auth_service.get_password_hash(data.new_password)
+    current_user.updated_at = datetime.utcnow()
+    await db.commit()
+
+    return {"message": "Password changed successfully"}

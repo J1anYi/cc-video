@@ -21,9 +21,26 @@ class UserCreate(UserBase):
 
 class UserResponse(UserBase):
     id: int
+    display_name: str | None = None
     role: UserRole
     is_active: bool
     created_at: datetime
 
     class Config:
         from_attributes = True
+
+
+class ProfileUpdate(BaseModel):
+    display_name: str | None = None
+
+
+class PasswordChange(BaseModel):
+    current_password: str
+    new_password: str
+
+    @field_validator('new_password')
+    @classmethod
+    def validate_new_password(cls, v: str) -> str:
+        if len(v) < 6:
+            raise ValueError('Password must be at least 6 characters long')
+        return v

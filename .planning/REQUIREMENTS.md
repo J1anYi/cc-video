@@ -1,32 +1,32 @@
-# Requirements: CC Video v1.3
+# Requirements: CC Video v1.4
 
 **Defined:** 2026-04-29
 **Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## v1.3 Requirements
+## v1.4 Requirements
 
-Requirements for Media Enhancement milestone. Each maps to roadmap phases.
+Requirements for Account Enhancement milestone. Each maps to roadmap phases.
 
-### Media
+### Password Reset
 
-- [x] **MED-01**: Administrator can upload poster images for movies
-- [x] **MED-02**: Poster images display in movie catalog cards
-- [x] **MED-03**: Administrator can upload subtitle files (SRT/VTT format)
-- [x] **MED-04**: Users can enable/disable subtitles during playback
-- [x] **MED-05**: Multiple subtitle tracks supported per movie
+- [ ] **PWD-01**: User can request password reset via email
+- [ ] **PWD-02**: System sends password reset link with expiration
+- [ ] **PWD-03**: User can set new password via reset link
+- [ ] **PWD-04**: Reset link invalidates after use or expiration
 
-## v1.2 Requirements (Completed)
+### Profile
 
-All v1.2 requirements satisfied. See `.planning/milestones/v1.2-REQUIREMENTS.md` for archive.
+- [ ] **PROF-01**: User can view their profile information
+- [ ] **PROF-02**: User can update their display name
+- [ ] **PROF-03**: User can change their password when logged in
+
+## v1.3 Requirements (Completed)
+
+All v1.3 requirements satisfied. See `.planning/milestones/v1.3-REQUIREMENTS.md` for archive.
 
 ## Future Requirements
 
 Deferred to future releases. Tracked but not in current roadmap.
-
-### Account (Future)
-
-- **ACC-04**: User can reset password by email
-- **ACC-05**: User can update profile information
 
 ### Discovery (Future)
 
@@ -48,7 +48,6 @@ Explicitly excluded. Documented to prevent scope creep.
 | Native mobile apps | v1 is web-first |
 | Recommendations | Requires more user behavior signals first |
 | Live streaming | v1 handles uploaded movie files |
-| Password reset by email | Deferred to v1.4 - requires email infrastructure |
 | Social features (sharing, comments) | Not part of current user journey |
 
 ## Traceability
@@ -57,18 +56,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MED-01 | Phase 9 | Complete |
-| MED-02 | Phase 9 | Complete |
-| MED-03 | Phase 10 | Complete |
-| MED-04 | Phase 10 | Complete |
-| MED-05 | Phase 10 | Complete |
+| PWD-01 | Phase 11 | ⏳ Pending |
+| PWD-02 | Phase 11 | ⏳ Pending |
+| PWD-03 | Phase 11 | ⏳ Pending |
+| PWD-04 | Phase 11 | ⏳ Pending |
+| PROF-01 | Phase 12 | ⏳ Pending |
+| PROF-02 | Phase 12 | ⏳ Pending |
+| PROF-03 | Phase 12 | ⏳ Pending |
 
 **Coverage:**
-- v1.3 requirements: 5 total
-- Mapped to phases: 5
+- v1.4 requirements: 7 total
+- Mapped to phases: 7
 - Unmapped: 0
-- Completed: 5
-- Remaining: 0
+- Completed: 0
+- Remaining: 7
 
 ---
-*Requirements defined: 2026-04-29 for v1.3 milestone*
+*Requirements defined: 2026-04-29 for v1.4 milestone*

@@ -4,43 +4,45 @@
 
 - v1.0 MVP - Phases 1-4 (shipped 2026-04-29)
 - v1.1 Discovery & Registration - Phases 5-6 (shipped 2026-04-29)
-- v1.2 Watch History & Favorites - Phases 7-8 (shipped 2026-04-29) - [Details](milestones/v1.2-ROADMAP.md)
-- v1.3 Media Enhancement - Phases 9-10 (complete, pending audit)
+- v1.2 Watch History & Favorites - Phases 7-8 (shipped 2026-04-29)
+- v1.3 Media Enhancement - Phases 9-10 (shipped 2026-04-29)
+- v1.4 Account Enhancement - Phases 11-12 (planning)
 
 ## Phases
 
-### v1.3 Media Enhancement (Complete)
+### v1.4 Account Enhancement (Planning)
 
-- [x] Phase 9: Poster Images - Upload and display movie posters
-- [x] Phase 10: Subtitles - Upload and display subtitle tracks
+- [ ] **Phase 11: Password Reset** — Enable password recovery via email
+- [ ] **Phase 12: Profile Management** — Allow users to manage their account
 
 ## Phase Details
 
-### Phase 9: Poster Images
+### Phase 11: Password Reset
 
-**Goal:** Enable administrators to upload poster images for movies.
+**Goal:** Enable users to recover access to their accounts via email-based password reset.
 
-**Requirements:** MED-01, MED-02
+**Requirements:** PWD-01, PWD-02, PWD-03, PWD-04
 
 **Success Criteria:**
 
-1. Admin can upload a poster image for each movie
-2. Poster images display in catalog cards
-3. Poster images display on playback page
+1. User can request password reset from login page
+2. System sends email with secure reset link
+3. Reset link expires after 1 hour
+4. User can set new password via reset link
 
 ---
 
-### Phase 10: Subtitles
+### Phase 12: Profile Management
 
-**Goal:** Enable subtitle support for movies.
+**Goal:** Allow users to view and update their account information.
 
-**Requirements:** MED-03, MED-04, MED-05
+**Requirements:** PROF-01, PROF-02, PROF-03
 
 **Success Criteria:**
 
-1. Admin can upload subtitle files (SRT/VTT)
-2. Users can enable/disable subtitles during playback
-3. Multiple subtitle tracks supported per movie
+1. User can view their profile page
+2. User can update their display name
+3. User can change password when logged in
 
 ---
 
@@ -58,6 +60,8 @@
 | 8. Favorites/Watchlist | v1.2 | 1/1 | Complete | 2026-04-29 |
 | 9. Poster Images | v1.3 | 1/1 | Complete | 2026-04-29 |
 | 10. Subtitles | v1.3 | 1/1 | Complete | 2026-04-29 |
+| 11. Password Reset | v1.4 | 0/? | Not started | - |
+| 12. Profile Management | v1.4 | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-04-29 after Phase 10 completion*
+*Last updated: 2026-04-29 for v1.4 milestone*

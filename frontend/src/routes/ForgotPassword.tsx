@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../auth/AuthContext';
+import { Link } from 'react-router-dom';
+import { requestPasswordReset } from '../api/passwordReset';
 
-export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export default function ForgotPassword() {
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,20 +14,36 @@ export default function Login() {
     setIsLoading(true);
 
     try {
-      await login(username, password);
-      navigate('/movies');
+      await requestPasswordReset(email);
+      setSuccess(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed');
+      setError(err instanceof Error ? err.message : 'Failed to request password reset');
     } finally {
       setIsLoading(false);
     }
   };
 
+  if (success) {
+    return (
+      <div style={styles.container}>
+        <div style={styles.card}>
+          <h1 style={styles.title}>CC Video</h1>
+          <h2 style={styles.subtitle}>Check Your Email</h2>
+          <p style={styles.successText}>
+            If the email exists in our system, a password reset link has been sent.
+            Please check your inbox and follow the instructions.
+          </p>
+          <Link to="/login" style={styles.link}>Back to Login</Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={styles.container}>
       <div style={styles.card}>
         <h1 style={styles.title}>CC Video</h1>
-        <h2 style={styles.subtitle}>Login</h2>
+        <h2 style={styles.subtitle}>Forgot Password</h2>
 
         {error && <div style={styles.error}>{error}</div>}
 
@@ -37,36 +51,22 @@ export default function Login() {
           <div style={styles.field}>
             <label style={styles.label}>Email</label>
             <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               style={styles.input}
               required
-            />
-          </div>
-
-          <div style={styles.field}>
-            <label style={styles.label}>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={styles.input}
-              required
+              placeholder="Enter your email address"
             />
           </div>
 
           <button type="submit" style={styles.button} disabled={isLoading}>
-            {isLoading ? 'Logging in...' : 'Login'}
+            {isLoading ? 'Sending...' : 'Send Reset Link'}
           </button>
-
-          <p style={styles.forgotPassword}>
-            <Link to="/forgot-password" style={styles.link}>Forgot password?</Link>
-          </p>
         </form>
 
         <p style={styles.footer}>
-          Don't have an account? <Link to="/register" style={styles.link}>Register</Link>
+          Remember your password? <Link to="/login" style={styles.link}>Login</Link>
         </p>
       </div>
     </div>
@@ -139,15 +139,17 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: '4px',
     marginBottom: '1rem',
   },
+  successText: {
+    textAlign: 'center',
+    color: '#666',
+    marginBottom: '1rem',
+    lineHeight: '1.5',
+  },
   footer: {
     marginTop: '1rem',
     textAlign: 'center',
     color: '#666',
     fontSize: '0.875rem',
-  },
-  forgotPassword: {
-    marginTop: '0.5rem',
-    textAlign: 'center',
   },
   link: {
     color: '#007bff',

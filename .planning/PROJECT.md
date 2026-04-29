@@ -6,14 +6,14 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current Milestone: v1.3 Media Enhancement
+## Current Milestone: v1.4 Account Enhancement
 
-**Goal:** Enhance viewing experience with poster images and subtitle support
+**Goal:** Improve account management with password reset and profile features
 
 **Target features:**
-- Poster image upload for movies
-- Subtitle management and display
-- Improved visual catalog presentation
+- Password reset via email
+- User profile management
+- Enhanced account security
 
 ## Core Value
 
@@ -35,11 +35,13 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] User can filter movies by category or genre (v1.1)
 - [x] User can view watch history (v1.2)
 - [x] User can save favorites/watchlist (v1.2)
+- [x] Administrator can upload poster images (v1.3)
+- [x] Administrator can manage subtitles (v1.3)
 
 ### Active
 
-- [ ] Administrator can upload poster images
-- [ ] Administrator can manage subtitles
+- [ ] User can reset password by email
+- [ ] User can update profile information
 
 ### Out of Scope
 
@@ -59,9 +61,11 @@ v1.1 added search, filtering, and user self-registration - enabling discoverabil
 
 v1.2 added watch history and favorites - increasing user engagement and retention.
 
-v1.3 focuses on media enhancement:
-1. **Poster Images** - Visual movie cards with cover art
-2. **Subtitles** - Accessibility and multi-language support
+v1.3 added poster images and subtitles - enhancing visual presentation and accessibility.
+
+v1.4 focuses on account management:
+1. **Password Reset** - Users can recover access via email
+2. **Profile Management** - Users can update their information
 
 ## Constraints
 

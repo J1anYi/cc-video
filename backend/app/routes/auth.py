@@ -1,15 +1,19 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Response, Cookie
+from fastapi import APIRouter, Depends, HTTPException, status, Response, Cookie, BackgroundTasks
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 from typing import Optional
+import os
 
 from app.dependencies import get_db, get_current_user
 from app.models.user import User
 from app.schemas.user import UserResponse, UserCreate
 from app.schemas.token import Token
+from app.schemas.password_reset import PasswordResetRequest, PasswordResetConfirm, PasswordResetResponse
 from app.services.auth import auth_service
 from app.services.user import user_service
+from app.services.password_reset import password_reset_service
+from app.services.email import email_service
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -132,3 +136,57 @@ async def get_current_user_profile(
 ) -> UserResponse:
     """Get the currently authenticated user's profile."""
     return UserResponse.model_validate(current_user)
+
+
+@router.post("/password-reset", response_model=PasswordResetResponse)
+async def request_password_reset(
+    request: PasswordResetRequest,
+    background_tasks: BackgroundTasks,
+    db: AsyncSession = Depends(get_db),
+) -> PasswordResetResponse:
+    """
+    Request a password reset.
+    Always returns success to prevent email enumeration.
+    """
+    # Check if user exists
+    user = await user_service.get_by_email(db, request.email)
+
+    if user:
+        # Generate reset token
+        token = await password_reset_service.create_reset_token(db, user.id)
+
+        # Get reset URL from environment or use default
+        frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+        reset_url = f"{frontend_url}/reset-password"
+
+        # Send email in background
+        background_tasks.add_task(
+            email_service.send_password_reset_email,
+            user.email,
+            token,
+            reset_url
+        )
+
+    # Always return success to prevent email enumeration
+    return PasswordResetResponse(
+        message="If the email exists in our system, a password reset link has been sent."
+    )
+
+
+@router.post("/password-reset/confirm", response_model=PasswordResetResponse)
+async def confirm_password_reset(
+    request: PasswordResetConfirm,
+    db: AsyncSession = Depends(get_db),
+) -> PasswordResetResponse:
+    """
+    Confirm password reset with token and new password.
+    """
+    success = await password_reset_service.reset_password(db, request.token, request.new_password)
+
+    if not success:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid or expired reset token"
+        )
+
+    return PasswordResetResponse(message="Password has been reset successfully")

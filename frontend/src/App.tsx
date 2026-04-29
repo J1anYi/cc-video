@@ -3,6 +3,9 @@ import { AuthProvider } from './auth/AuthContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 import Login from './routes/Login';
 import Register from './routes/Register';
+import ForgotPassword from './routes/ForgotPassword';
+import ResetPassword from './routes/ResetPassword';
+import Profile from './routes/Profile';
 import Catalog from './routes/Catalog';
 import Playback from './routes/Playback';
 import History from './routes/History';
@@ -19,6 +22,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
           <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route path="/movies" element={<ProtectedRoute><Catalog /></ProtectedRoute>} />
