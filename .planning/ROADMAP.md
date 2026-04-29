@@ -13,7 +13,7 @@
 - v1.8 Content Organization - Phases 19-20 (shipped 2026-04-30)
 - v1.9 Admin & Safety - Phases 21-25 (shipped 2026-04-30)
 - v1.10 Analytics & Insights - Phases 26-30 (shipped 2026-04-30)
-- v2.0 Platform Maturity - Phases 31-35 (planning)
+- v2.0 Platform Maturity - Phases 31-35 (shipped 2026-04-30) - [Archive](milestones/v2.0-ROADMAP.md)
 
 ## Progress
 
