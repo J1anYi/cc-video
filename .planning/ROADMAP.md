@@ -11,7 +11,7 @@
 - v1.6 Social Features - Phases 15-16 (shipped 2026-04-30)
 - v1.7 Social Extensions - Phases 17-18 (shipped 2026-04-30)
 - v1.8 Content Organization - Phases 19-20 (shipped 2026-04-30)
-- v1.9 Admin & Safety - Phases 21-25 (planning)
+- v1.9 Admin & Safety - Phases 21-25 (shipped 2026-04-30) — [Archive](milestones/v1.9-ROADMAP.md)
 
 ## Progress
 
@@ -44,4 +44,4 @@
 | 25. @Mentions | v1.9 | 1/1 | Complete | 2026-04-30 |
 
 ---
-*Last updated: 2026-04-30 - v1.9 Complete*
+*Last updated: 2026-04-30 - v1.9 shipped*

@@ -1,55 +1,86 @@
 # Milestones: CC Video
 
----
+## v1.9 Admin and Safety (2026-04-30)
+**Phases:** 21-25
+**Requirements:** 26
 
-## v1.1 Discovery & Registration
-**Shipped:** 2026-04-29
-**Phases:** 2 | **Plans:** 4
+Key features:
+- Admin user management (suspend, delete, search)
+- Content moderation (reports, warnings)
+- Advanced search filters (rating, year, duration)
+- User blocking with content filtering
+- @mentions with notifications
 
-### What Was Built
-- Movie search with real-time filtering (300ms debounce)
-- Category/genre filtering with dropdown
-- Combined search and filter functionality
-- User self-registration with validation
-- Auto-login after registration
-- Navigation between login and register pages
+## v1.8 Content Organization (2026-04-30)
+**Phases:** 19-20
+**Requirements:** 2
 
-### Key Accomplishments
-1. Added movie search with real-time filtering
-2. Added category/genre filtering
-3. Combined search and filter work together
-4. User self-registration with validation
-5. Auto-login after registration
-6. Navigation between login and register pages
+Key features:
+- Custom watchlists
+- Notification integration
 
-### Requirements
-- DISC-01, DISC-02, DISC-03 (Discovery)
-- ACC-01, ACC-02, ACC-03 (Account)
+## v1.7 Social Extensions (2026-04-30)
+**Phases:** 17-18
+**Requirements:** 10
 
-### Tech Debt
-- Rate limiting for registration deferred
+Key features:
+- User following and activity feed
+- User profiles and notifications
 
----
+## v1.6 Social Features (2026-04-30)
+**Phases:** 15-16
+**Requirements:** 8
 
-## v1.0 MVP
-**Shipped:** 2026-04-29
-**Phases:** 4 | **Plans:** 11
+Key features:
+- Ratings and reviews
+- Comments and helpful votes
 
-### What Was Built
-- User authentication (login, logout, session persistence)
-- Admin role-based access control
-- Movie catalog browsing for logged-in users
-- Video upload and management by administrators
-- Browser-based video playback with seeking support
-- Separated frontend/backend architecture
+## v1.5 Discovery Enhancement (2026-04-29)
+**Phases:** 13-14
+**Requirements:** 7
 
-### Key Accomplishments
-1. JWT-based authentication system
-2. Admin dashboard for movie management
-3. Video upload and streaming
-4. React frontend with protected routes
-5. FastAPI backend with SQLAlchemy
+Key features:
+- Personalized recommendations
+- Trending and discovery
 
----
+## v1.4 Account Enhancement (2026-04-29)
+**Phases:** 11-12
+**Requirements:** 5
 
-*Last updated: 2026-04-29*
+Key features:
+- Password reset
+- Profile management
+
+## v1.3 Media Enhancement (2026-04-29)
+**Phases:** 9-10
+**Requirements:** 6
+
+Key features:
+- Poster images
+- Subtitles support
+
+## v1.2 Watch History and Favorites (2026-04-29)
+**Phases:** 7-8
+**Requirements:** 6
+
+Key features:
+- Watch history tracking
+- Favorites and watchlist
+
+## v1.1 Discovery and Registration (2026-04-29)
+**Phases:** 5-6
+**Requirements:** 4
+
+Key features:
+- Movie search and filtering
+- User registration
+
+## v1.0 MVP (2026-04-29)
+**Phases:** 1-4
+**Requirements:** 12
+
+Core features:
+- Backend foundation (auth, movies, videos)
+- Admin movie management
+- User catalog and playback
+- Frontend integration

@@ -6,9 +6,9 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v1.9 Planning (2026-04-30)
+## Current State: v1.10 Planning (2026-04-30)
 
-**v1.8 Content Organization shipped.** Planning v1.9 Admin & Safety.
+**v1.9 Admin & Safety shipped.** Planning v1.10 Analytics & Insights.
 
 The system now supports:
 - User authentication with password reset
@@ -30,10 +30,26 @@ The system now supports:
 - User watchlists (public/private)
 - Public watchlist discovery
 - Auto-notifications for social events
+- Admin user management
+- Content moderation
+- Advanced search filters
+- User blocking
+- @mentions
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
+
+## Current Milestone: v1.10 Analytics & Insights
+
+**Goal:** Implement analytics dashboards, content metrics, and recommendation insights
+
+**Target features:**
+- User analytics dashboard (watch stats, genre preferences, patterns)
+- Content performance metrics (engagement, retention, rankings)
+- Admin dashboard enhancement (platform metrics, activity summary)
+- Social analytics (influence score, review impact, follower growth)
+- Recommendation insights (transparency, preferences, feedback)
 
 ## Requirements
 
@@ -60,7 +76,7 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] User can discover trending movies (v1.5)
 - [x] User can view related movies (v1.5)
 
-### Validated (v1.6-v1.8)
+### Validated (v1.6-v1.9)
 
 - [x] User can rate and review movies — v1.6
 - [x] User can comment on reviews — v1.6
@@ -73,29 +89,16 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] User can set watchlist privacy — v1.8
 - [x] User can browse public watchlists — v1.8
 - [x] Auto-notifications for social events — v1.8
+- [x] Admin can manage users — v1.9
+- [x] User can report content — v1.9
+- [x] Admin can moderate content — v1.9
+- [x] User can filter by advanced criteria — v1.9
+- [x] User can block other users — v1.9
+- [x] User can @mention others — v1.9
 
 ### Active
 
 (None - all planned requirements satisfied)
-
-## Current Milestone: v1.9 Admin & Safety
-
-**Goal:** Implement admin user management, content moderation, and advanced search
-
-**Target features:**
-- Admin user management dashboard (list, search, suspend users)
-- Content moderation tools (reported content queue)
-- Advanced search filters (rating, year, duration)
-- User blocking system
-- @mentions in comments and reviews
-
-### Out of Scope
-
-- External video providers - v1 uses administrator-uploaded local video files
-- Payment, subscription, and membership tiers - not part of the initial viewing loop
-- Native mobile apps - v1 is web-first
-- Advanced recommendation algorithms - browsing and playback matter first
-- Live streaming - v1 handles uploaded movie files, not live broadcasts
 
 ## Context
 
@@ -116,6 +119,8 @@ v1.6 added ratings, reviews, comments, and helpful votes - enabling user engagem
 v1.7 added user following, activity feed, notifications, and social profiles - completing the social foundation.
 
 v1.8 added user watchlists, public watchlist discovery, and notification automation - completing content organization.
+
+v1.9 added admin user management, content moderation, advanced search, user blocking, and @mentions - completing admin & safety features.
 
 ## Constraints
 
@@ -143,10 +148,11 @@ v1.8 added user watchlists, public watchlist discovery, and notification automat
 | Content-based filtering by category | Simple, effective, no ML needed | Validated |
 | 7-day window for trending | Balance freshness with data volume | Validated |
 | Hide recommendations when filters active | User intent is search, not discovery | Validated |
+| Single admin role for v1.9 | Simpler implementation, defer RBAC | Validated |
 
 ## Evolution
 
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - v1.9 planning started*
+*Last updated: 2026-04-30 - v1.10 planning started*
