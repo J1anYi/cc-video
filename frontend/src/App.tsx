@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 import Login from './routes/Login';
+import Register from './routes/Register';
 import Catalog from './routes/Catalog';
 import Playback from './routes/Playback';
 import AdminMovies from './routes/admin/Movies';
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/movies"
             element={

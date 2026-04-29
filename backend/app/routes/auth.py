@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Cookie
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.exc import IntegrityError
 from typing import Optional
 
 from app.dependencies import get_db, get_current_user
 from app.models.user import User
-from app.schemas.user import UserResponse
+from app.schemas.user import UserResponse, UserCreate
 from app.schemas.token import Token
 from app.services.auth import auth_service
 from app.services.user import user_service
@@ -34,6 +35,36 @@ async def login(
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="User account is disabled",
+        )
+
+    access_token = auth_service.create_access_token(str(user.id), user.role.value)
+    refresh_token = auth_service.create_refresh_token(str(user.id))
+
+    response.set_cookie(
+        key="refresh_token",
+        value=refresh_token,
+        httponly=True,
+        secure=True,
+        samesite="lax",
+        max_age=7 * 24 * 60 * 60,  # 7 days in seconds
+    )
+
+    return Token(access_token=access_token, token_type="bearer")
+
+
+@router.post("/register", response_model=Token)
+async def register(
+    response: Response,
+    user_data: UserCreate,
+    db: AsyncSession = Depends(get_db),
+) -> Token:
+    """Register a new user. Returns access token and sets refresh token cookie."""
+    try:
+        user = await user_service.create(db, user_data.email, user_data.password)
+    except IntegrityError:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email already registered",
         )
 
     access_token = auth_service.create_access_token(str(user.id), user.role.value)

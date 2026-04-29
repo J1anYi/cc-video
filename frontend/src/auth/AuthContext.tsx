@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type { User } from '../api/types';
-import { login as apiLogin, logout as apiLogout, getCurrentUser, getToken } from '../api/auth';
+import { login as apiLogin, register as apiRegister, logout as apiLogout, getCurrentUser, getToken } from '../api/auth';
 
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   login: (username: string, password: string) => Promise<void>;
+  register: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   isAdmin: boolean;
 }
@@ -38,6 +39,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(user);
   };
 
+  const register = async (email: string, password: string) => {
+    await apiRegister(email, password);
+    const user = await getCurrentUser();
+    setUser(user);
+  };
+
   const logout = async () => {
     await apiLogout();
     setUser(null);
@@ -49,6 +56,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         user,
         isLoading,
         login,
+        register,
         logout,
         isAdmin: user?.role === 'admin',
       }}

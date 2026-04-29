@@ -10,6 +10,7 @@ from app.models.movie import PublicationStatus
 class MovieBase(BaseModel):
     title: str
     description: Optional[str] = None
+    category: Optional[str] = None
 
 
 class MovieCreate(MovieBase):
@@ -20,6 +21,7 @@ class MovieUpdate(BaseModel):
     """Schema for partial movie updates. All fields optional."""
     title: Optional[str] = None
     description: Optional[str] = None
+    category: Optional[str] = None
     publication_status: Optional[PublicationStatus] = None
 
 
@@ -27,6 +29,7 @@ class MovieResponse(BaseModel):
     id: int
     title: str
     description: Optional[str] = None
+    category: Optional[str] = None
     publication_status: PublicationStatus
     created_at: datetime
     updated_at: datetime

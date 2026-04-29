@@ -4,7 +4,7 @@ milestone: v1.2
 milestone_name: Watch History & Favorites
 status: planning
 last_updated: "2026-04-29T18:00:00.000Z"
-last_activity: 2026-04-29 — v1.2 milestone initialized
+last_activity: 2026-04-29 — v1.1 complete, v1.2 started
 progress:
   total_phases: 2
   completed_phases: 0
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-29)
 
 **Core value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
-**Status:** v1.2 milestone initialized, ready for Phase 7
+**Current focus:** Planning v1.2 Watch History & Favorites
 
 ## Current Position
 
-Phase: 07 - Watch History
+Phase: Not started
 Plan: Not started
-Status: Ready to discuss
-Last activity: 2026-04-29 — v1.2 milestone created
+Status: Ready for milestone planning
+Last activity: 2026-04-29 — v1.1 shipped, v1.2 started
 
 ## Accumulated Context
 
@@ -42,9 +42,9 @@ Last activity: 2026-04-29 — v1.2 milestone created
 
 ### v1.1 Completed Features
 
-- Movie search and filtering by title
+- Movie search with real-time filtering
 - Category/genre filtering
-- Dynamic catalog updates
+- Combined search and filter
 - User self-registration
 - Password validation
 - Auto-login after registration
@@ -58,9 +58,9 @@ Last activity: 2026-04-29 — v1.2 milestone created
 
 ## Next Steps
 
-1. Run `/gsd-discuss-phase 7` to gather context for Watch History
-2. Run `/gsd-plan-phase 7` to create implementation plans
-3. Execute Phase 7
+1. Run `/gsd-new-milestone` to define v1.2 requirements
+2. Create roadmap phases
+3. Begin Phase 7 implementation
 
 ---
-*Last updated: 2026-04-29 after v1.2 milestone initialization*
+*Last updated: 2026-04-29 after v1.1 milestone completion*

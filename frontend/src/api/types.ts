@@ -9,6 +9,7 @@ export interface Movie {
   id: number;
   title: string;
   description: string | null;
+  category: string | null;
   publication_status: 'DRAFT' | 'PUBLISHED' | 'UNPUBLISHED' | 'DISABLED';
   created_at: string;
   updated_at: string;

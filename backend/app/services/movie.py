@@ -1,5 +1,5 @@
 from typing import Optional, List as TypingList
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.movie import Movie, PublicationStatus
@@ -24,6 +24,7 @@ class MovieService:
         movie = Movie(
             title=movie_data.title,
             description=movie_data.description,
+            category=movie_data.category,
             publication_status=movie_data.publication_status,
         )
         db.add(movie)
@@ -82,6 +83,61 @@ class MovieService:
             .limit(limit)
         )
         return list(result.scalars().all())
+
+    async def get_published_filtered(
+        self,
+        db: AsyncSession,
+        search: Optional[str] = None,
+        category: Optional[str] = None,
+        skip: int = 0,
+        limit: int = 100
+    ) -> TypingList[Movie]:
+        """Get published movies with optional search and category filter.
+
+        Args:
+            db: Database session
+            search: Optional search term for title (case-insensitive, partial match)
+            category: Optional category filter (exact match)
+            skip: Number of records to skip
+            limit: Maximum records to return
+
+        Returns:
+            List of filtered published movies
+        """
+        query = select(Movie).where(
+            Movie.publication_status == PublicationStatus.PUBLISHED
+        )
+
+        if search:
+            query = query.where(Movie.title.ilike(f"%{search}%"))
+
+        if category:
+            query = query.where(Movie.category == category)
+
+        query = query.offset(skip).limit(limit)
+        result = await db.execute(query)
+        return list(result.scalars().all())
+
+    async def get_categories(self, db: AsyncSession) -> TypingList[str]:
+        """Get list of distinct categories from published movies.
+
+        Args:
+            db: Database session
+
+        Returns:
+            List of unique category strings
+        """
+        query = (
+            select(Movie.category)
+            .where(
+                Movie.publication_status == PublicationStatus.PUBLISHED,
+                Movie.category.isnot(None)
+            )
+            .distinct()
+        )
+
+        result = await db.execute(query)
+        return [cat for cat in result.scalars().all() if cat]
 
     async def update(
         self, db: AsyncSession, movie_id: int, movie_data: MovieUpdate

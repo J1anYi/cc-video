@@ -1,0 +1,309 @@
+- generic [ref=e2]:
+  - region "Notifications alt+T"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Sonic Curator" [level=1] [ref=e10]
+        - button "? Shortcuts" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: "?"
+          - generic [ref=e14]: Shortcuts
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Home" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e21]
+              - generic [ref=e24]: Home
+            - link "Library" [ref=e26] [cursor=pointer]:
+              - /url: /library
+              - img [ref=e27]
+              - generic [ref=e31]: Library
+            - link "Maintenance" [ref=e32] [cursor=pointer]:
+              - /url: /maintenance
+              - img [ref=e33]
+              - generic [ref=e35]: Maintenance
+            - link "Albums" [ref=e36] [cursor=pointer]:
+              - /url: /albums
+              - img [ref=e37]
+              - generic [ref=e40]: Albums
+            - link "Artists" [ref=e41] [cursor=pointer]:
+              - /url: /artists
+              - img [ref=e42]
+              - generic [ref=e47]: Artists
+            - link "Search" [ref=e48] [cursor=pointer]:
+              - /url: /search
+              - img [ref=e49]
+              - generic [ref=e52]: Search
+            - link "Health" [ref=e53] [cursor=pointer]:
+              - /url: /health
+              - img [ref=e54]
+              - generic [ref=e56]: Health
+            - link "Duplicates" [ref=e57] [cursor=pointer]:
+              - /url: /duplicates
+              - img [ref=e58]
+              - generic [ref=e61]: Duplicates
+            - link "Profile" [active] [ref=e62] [cursor=pointer]:
+              - /url: /profile
+              - img [ref=e63]
+              - generic [ref=e66]: Profile
+            - link "Now Playing" [ref=e67] [cursor=pointer]:
+              - /url: /player
+              - img [ref=e68]
+              - generic [ref=e73]: Now Playing
+          - generic [ref=e75]:
+            - heading "Quick Access" [level=3] [ref=e76]
+            - navigation [ref=e77]:
+              - link "Favorites" [ref=e78] [cursor=pointer]:
+                - /url: /?filter=favorites
+                - img [ref=e80]
+                - generic [ref=e82]: Favorites
+              - link "Recently Added" [ref=e83] [cursor=pointer]:
+                - /url: /?filter=all
+                - img [ref=e85]
+                - generic [ref=e88]: Recently Added
+      - main [ref=e89]:
+        - generic [ref=e357]:
+          - generic [ref=e360]:
+            - img [ref=e362]
+            - generic [ref=e365]:
+              - heading "Music Lover" [level=1] [ref=e366]
+              - paragraph [ref=e367]: Personal collection
+          - generic [ref=e368]:
+            - heading "Statistics" [level=2] [ref=e369]
+            - generic "Profile statistics" [ref=e370]:
+              - generic "42 tracks" [ref=e371]:
+                - img [ref=e372]
+                - paragraph [ref=e376]: "42"
+                - paragraph [ref=e377]: Tracks
+              - generic "9 artists" [ref=e378]:
+                - img [ref=e379]
+                - paragraph [ref=e382]: "9"
+                - paragraph [ref=e383]: Artists
+              - generic "1 playlists" [ref=e384]:
+                - img [ref=e385]
+                - paragraph [ref=e387]: "1"
+                - paragraph [ref=e388]: Playlists
+              - generic "2.6 hours listened" [ref=e389]:
+                - img [ref=e390]
+                - paragraph [ref=e393]: 2.6h
+                - paragraph [ref=e394]: Listened
+              - generic "37 plays" [ref=e395]:
+                - img [ref=e396]
+                - paragraph [ref=e399]: "37"
+                - paragraph [ref=e400]: Plays
+          - generic [ref=e401]:
+            - generic [ref=e402]:
+              - heading "Top Tracks" [level=2] [ref=e403]
+              - button "Play All" [ref=e404] [cursor=pointer]:
+                - img [ref=e405]
+                - text: Play All
+            - generic [ref=e407]:
+              - button "Play 青花瓷 by 周杰伦" [ref=e409] [cursor=pointer]:
+                - img "青花瓷" [ref=e411]
+                - generic [ref=e412]:
+                  - heading "青花瓷" [level=3] [ref=e413]
+                  - paragraph [ref=e414]: 周杰伦
+                - generic [ref=e415]: 8 plays
+                - button "Play 青花瓷" [ref=e416]:
+                  - img [ref=e417]
+                - button "More options" [ref=e421]:
+                  - img [ref=e422]
+              - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP by 永雏塔菲" [ref=e427] [cursor=pointer]:
+                - img [ref=e430]
+                - generic [ref=e434]:
+                  - heading "【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e435]
+                  - paragraph [ref=e436]: 永雏塔菲
+                - generic [ref=e437]: 8 plays
+                - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e438]:
+                  - img [ref=e439]
+                - button "More options" [ref=e443]:
+                  - img [ref=e444]
+              - button "Play 多远都要在一起-邓紫棋-黑人福音版 by Unknown Artist" [ref=e449] [cursor=pointer]:
+                - img [ref=e452]
+                - generic [ref=e456]:
+                  - heading "多远都要在一起-邓紫棋-黑人福音版" [level=3] [ref=e457]
+                  - paragraph [ref=e458]: Unknown Artist
+                - generic [ref=e459]: 6 plays
+                - button "Play 多远都要在一起-邓紫棋-黑人福音版" [ref=e460]:
+                  - img [ref=e461]
+                - button "More options" [ref=e465]:
+                  - img [ref=e466]
+              - button "Play 11-【SUNO V5】郭顶-凄美地-黑人福音版 by Unknown Artist" [ref=e471] [cursor=pointer]:
+                - img [ref=e474]
+                - generic [ref=e478]:
+                  - heading "11-【SUNO V5】郭顶-凄美地-黑人福音版" [level=3] [ref=e479]
+                  - paragraph [ref=e480]: Unknown Artist
+                - generic [ref=e481]: 5 plays
+                - button "Play 11-【SUNO V5】郭顶-凄美地-黑人福音版" [ref=e482]:
+                  - img [ref=e483]
+                - button "More options" [ref=e487]:
+                  - img [ref=e488]
+              - button "Play 02-《独家记忆》R&B by Unknown Artist" [ref=e493] [cursor=pointer]:
+                - img [ref=e496]
+                - generic [ref=e500]:
+                  - heading "02-《独家记忆》R&B" [level=3] [ref=e501]
+                  - paragraph [ref=e502]: Unknown Artist
+                - generic [ref=e503]: 5 plays
+                - button "Play 02-《独家记忆》R&B" [ref=e504]:
+                  - img [ref=e505]
+                - button "More options" [ref=e509]:
+                  - img [ref=e510]
+              - button "Play 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》 by Unknown Artist" [ref=e515] [cursor=pointer]:
+                - img [ref=e518]
+                - generic [ref=e522]:
+                  - heading "36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [level=3] [ref=e523]
+                  - paragraph [ref=e524]: Unknown Artist
+                - generic [ref=e525]: 3 plays
+                - button "Play 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [ref=e526]:
+                  - img [ref=e527]
+                - button "More options" [ref=e531]:
+                  - img [ref=e532]
+              - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP by Unknown Artist" [ref=e537] [cursor=pointer]:
+                - img [ref=e540]
+                - generic [ref=e544]:
+                  - heading "【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e545]
+                  - paragraph [ref=e546]: Unknown Artist
+                - generic [ref=e547]: 2 plays
+                - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e548]:
+                  - img [ref=e549]
+                - button "More options" [ref=e553]:
+                  - img [ref=e554]
+          - generic [ref=e558]:
+            - generic [ref=e559]:
+              - heading "Recent Activity" [level=2] [ref=e560]
+              - button "View all" [ref=e561] [cursor=pointer]
+            - generic [ref=e562]:
+              - button "Play 11-【SUNO V5】郭顶-凄美地-黑人福音版 by Unknown Artist" [ref=e564] [cursor=pointer]:
+                - img [ref=e567]
+                - generic [ref=e571]:
+                  - heading "11-【SUNO V5】郭顶-凄美地-黑人福音版" [level=3] [ref=e572]
+                  - paragraph [ref=e573]: Unknown Artist
+                - generic [ref=e574]: 15h ago
+                - button "Play 11-【SUNO V5】郭顶-凄美地-黑人福音版" [ref=e575]:
+                  - img [ref=e576]
+                - button "More options" [ref=e580]:
+                  - img [ref=e581]
+              - button "Play 02-《独家记忆》R&B by Unknown Artist" [ref=e586] [cursor=pointer]:
+                - img [ref=e589]
+                - generic [ref=e593]:
+                  - heading "02-《独家记忆》R&B" [level=3] [ref=e594]
+                  - paragraph [ref=e595]: Unknown Artist
+                - generic [ref=e596]: 2 days ago
+                - button "Play 02-《独家记忆》R&B" [ref=e597]:
+                  - img [ref=e598]
+                - button "More options" [ref=e602]:
+                  - img [ref=e603]
+              - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP by 永雏塔菲" [ref=e608] [cursor=pointer]:
+                - img [ref=e611]
+                - generic [ref=e615]:
+                  - heading "【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e616]
+                  - paragraph [ref=e617]: 永雏塔菲
+                - generic [ref=e618]: 2 days ago
+                - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e619]:
+                  - img [ref=e620]
+                - button "More options" [ref=e624]:
+                  - img [ref=e625]
+              - button "Play 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》 by Unknown Artist" [ref=e630] [cursor=pointer]:
+                - img [ref=e633]
+                - generic [ref=e637]:
+                  - heading "36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [level=3] [ref=e638]
+                  - paragraph [ref=e639]: Unknown Artist
+                - generic [ref=e640]: 5 days ago
+                - button "Play 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [ref=e641]:
+                  - img [ref=e642]
+                - button "More options" [ref=e646]:
+                  - img [ref=e647]
+              - button "Play 青花瓷 by 周杰伦" [ref=e652] [cursor=pointer]:
+                - img "青花瓷" [ref=e654]
+                - generic [ref=e655]:
+                  - heading "青花瓷" [level=3] [ref=e656]
+                  - paragraph [ref=e657]: 周杰伦
+                - generic [ref=e658]: 6 days ago
+                - button "Play 青花瓷" [ref=e659]:
+                  - img [ref=e660]
+                - button "More options" [ref=e664]:
+                  - img [ref=e665]
+              - button "Play 多远都要在一起-邓紫棋-黑人福音版 by Unknown Artist" [ref=e670] [cursor=pointer]:
+                - img [ref=e673]
+                - generic [ref=e677]:
+                  - heading "多远都要在一起-邓紫棋-黑人福音版" [level=3] [ref=e678]
+                  - paragraph [ref=e679]: Unknown Artist
+                - generic [ref=e680]: 1w ago
+                - button "Play 多远都要在一起-邓紫棋-黑人福音版" [ref=e681]:
+                  - img [ref=e682]
+                - button "More options" [ref=e686]:
+                  - img [ref=e687]
+              - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP by Unknown Artist" [ref=e692] [cursor=pointer]:
+                - img [ref=e695]
+                - generic [ref=e699]:
+                  - heading "【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e700]
+                  - paragraph [ref=e701]: Unknown Artist
+                - generic [ref=e702]: 1w ago
+                - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e703]:
+                  - img [ref=e704]
+                - button "More options" [ref=e708]:
+                  - img [ref=e709]
+          - generic [ref=e713]:
+            - heading "My Playlists" [level=2] [ref=e714]
+            - button "test 1 tracks" [ref=e716] [cursor=pointer]:
+              - img [ref=e718]
+              - generic [ref=e720]:
+                - heading "test" [level=3] [ref=e721]
+                - paragraph [ref=e722]: 1 tracks
+              - img [ref=e723]
+          - generic [ref=e725]:
+            - heading "Transcription History" [level=2] [ref=e726]
+            - generic [ref=e728]:
+              - group "Filter by status" [ref=e729]:
+                - button "All" [pressed] [ref=e730] [cursor=pointer]
+                - button "pending" [ref=e731] [cursor=pointer]
+                - button "processing" [ref=e732] [cursor=pointer]
+                - button "completed" [ref=e733] [cursor=pointer]
+                - button "failed" [ref=e734] [cursor=pointer]
+              - generic [ref=e735]:
+                - generic [ref=e737]:
+                  - generic [ref=e738]:
+                    - generic [ref=e739]: "Track: 07a98780..."
+                    - generic [ref=e740]: completed
+                  - generic [ref=e741]:
+                    - generic [ref=e742]: "Created: 2026/4/28 10:51:48"
+                    - generic [ref=e743]: "Completed: 2026/4/28 11:07:49"
+                - generic [ref=e745]:
+                  - generic [ref=e746]:
+                    - generic [ref=e747]: "Track: 4f64ee86..."
+                    - generic [ref=e748]: pending
+                  - generic [ref=e750]: "Created: 2026/4/27 15:47:05"
+                - generic [ref=e752]:
+                  - generic [ref=e753]:
+                    - generic [ref=e754]: "Track: 07a98780..."
+                    - generic [ref=e755]: completed
+                  - generic [ref=e756]:
+                    - generic [ref=e757]: "Created: 2026/4/24 17:07:36"
+                    - generic [ref=e758]: "Completed: 2026/4/24 17:08:31"
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - generic [ref=e762]: "Track: 86522c27..."
+                    - generic [ref=e763]: completed
+                  - generic [ref=e764]:
+                    - generic [ref=e765]: "Created: 2026/4/24 16:58:11"
+                    - generic [ref=e766]: "Completed: 2026/4/24 17:00:15"
+                - generic [ref=e768]:
+                  - generic [ref=e769]:
+                    - generic [ref=e770]: "Track: 54240c0f..."
+                    - generic [ref=e771]: completed
+                  - generic [ref=e772]:
+                    - generic [ref=e773]: "Created: 2026/4/24 16:57:09"
+                    - generic [ref=e774]: "Completed: 2026/4/24 16:59:59"
+                - generic [ref=e776]:
+                  - generic [ref=e777]:
+                    - generic [ref=e778]: "Track: aeb9475c..."
+                    - generic [ref=e779]: completed
+                  - generic [ref=e780]:
+                    - generic [ref=e781]: "Created: 2026/4/24 16:18:29"
+                    - generic [ref=e782]: "Completed: 2026/4/24 16:20:28"
+    - generic [ref=e346]:
+      - img [ref=e348]
+      - generic [ref=e352]:
+        - heading "No track playing" [level=3] [ref=e353]
+        - paragraph [ref=e354]: Select a track to start

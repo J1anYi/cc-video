@@ -71,6 +71,25 @@ export async function login(data: LoginRequest): Promise<LoginResponse> {
   return result;
 }
 
+export async function register(email: string, password: string): Promise<LoginResponse> {
+  const response = await fetch(`${API_BASE}/auth/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({ detail: 'Registration failed' }));
+    throw new Error(error.detail || 'Registration failed');
+  }
+
+  const result: LoginResponse = await response.json();
+  setToken(result.access_token);
+  return result;
+}
+
 export async function logout(): Promise<void> {
   try {
     await fetchApi('/auth/logout', { method: 'POST' });

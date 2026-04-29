@@ -2,24 +2,36 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 
-export default function Login() {
-  const [username, setUsername] = useState('');
+export default function Register() {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  const { register } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters long');
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      await login(username, password);
+      await register(email, password);
       navigate('/movies');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed');
+      setError(err instanceof Error ? err.message : 'Registration failed');
     } finally {
       setIsLoading(false);
     }
@@ -29,7 +41,7 @@ export default function Login() {
     <div style={styles.container}>
       <div style={styles.card}>
         <h1 style={styles.title}>CC Video</h1>
-        <h2 style={styles.subtitle}>Login</h2>
+        <h2 style={styles.subtitle}>Create Account</h2>
 
         {error && <div style={styles.error}>{error}</div>}
 
@@ -37,9 +49,9 @@ export default function Login() {
           <div style={styles.field}>
             <label style={styles.label}>Email</label>
             <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               style={styles.input}
               required
             />
@@ -52,17 +64,31 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={styles.input}
+              minLength={8}
+              required
+            />
+            <small style={styles.hint}>Minimum 8 characters</small>
+          </div>
+
+          <div style={styles.field}>
+            <label style={styles.label}>Confirm Password</label>
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              style={styles.input}
+              minLength={8}
               required
             />
           </div>
 
           <button type="submit" style={styles.button} disabled={isLoading}>
-            {isLoading ? 'Logging in...' : 'Login'}
+            {isLoading ? 'Creating Account...' : 'Register'}
           </button>
         </form>
 
         <p style={styles.footer}>
-          Don't have an account? <Link to="/register" style={styles.link}>Register</Link>
+          Already have an account? <Link to="/login" style={styles.link}>Login</Link>
         </p>
       </div>
     </div>
@@ -117,6 +143,10 @@ const styles: Record<string, React.CSSProperties> = {
     border: '1px solid #ddd',
     borderRadius: '4px',
     fontSize: '1rem',
+  },
+  hint: {
+    fontSize: '0.75rem',
+    color: '#666',
   },
   button: {
     padding: '0.75rem',

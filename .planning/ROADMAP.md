@@ -1,78 +1,48 @@
-# Roadmap: CC Video v1.2
+# Roadmap: CC Video
 
-**Created:** 2026-04-29
-**Granularity:** Coarse
-**Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
+## Milestones
 
-## Overview
+- ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-04-29)
+- ✅ **v1.1 Discovery & Registration** — Phases 5-6 (shipped 2026-04-29)
+- 🚧 **v1.2 Watch History & Favorites** — Phases 7-8 (in progress)
 
-| Phase | Name | Goal | Requirements | UI hint |
-|-------|------|------|--------------|---------|
-| 7 | Watch History | Track and display user viewing history | HIST-01, HIST-02, HIST-03 | yes |
-| 8 | Favorites/Watchlist | Allow users to save and manage favorite movies | FAV-01, FAV-02, FAV-03, FAV-04 | yes |
+## Phases
 
-## Phase Details
+<details>
+<summary>✅ v1.0 MVP (Phases 1-4) — SHIPPED 2026-04-29</summary>
 
-### Phase 7: Watch History
+- [x] Phase 1: Backend Foundation (5/5 plans)
+- [x] Phase 2: Admin Movie Management (2/2 plans)
+- [x] Phase 3: User Catalog & Playback (1/1 plan)
+- [x] Phase 4: Frontend Integration (1/1 plan)
 
-**Goal:** Enable users to track their viewing history and quickly resume previously watched movies.
+</details>
 
-**Requirements:** HIST-01, HIST-02, HIST-03
+<details>
+<summary>✅ v1.1 Discovery & Registration (Phases 5-6) — SHIPPED 2026-04-29</summary>
 
-**Success Criteria:**
+- [x] Phase 5: Movie Search & Filtering (3/3 plans)
+- [x] Phase 6: User Registration (1/1 plan)
 
-1. User can view a list of movies they have watched
-2. Each history entry shows the movie title and last watched timestamp
-3. User can click a history item to navigate to the movie player
-4. History is automatically updated when user watches a movie
-5. History is private to each user (not visible to others)
+</details>
 
-**Notes:**
+### 🚧 v1.2 Watch History & Favorites (In Progress)
 
-- Backend needs a WatchHistory model (user_id, movie_id, last_watched_at)
-- Track progress: record when user starts/continues watching
-- Frontend needs a History page/route
-- Consider pagination for users with extensive history
+- [ ] Phase 7: Watch History
+- [ ] Phase 8: Favorites/Watchlist
 
-### Phase 8: Favorites/Watchlist
+## Progress
 
-**Goal:** Allow users to bookmark movies for later viewing.
-
-**Requirements:** FAV-01, FAV-02, FAV-03, FAV-04
-
-**Success Criteria:**
-
-1. User can add a movie to favorites from catalog or movie detail
-2. User can remove a movie from favorites
-3. User can view their favorites list on a dedicated page
-4. Favorite movies show a visual indicator (heart/star) in catalog
-5. Favorites persist across sessions
-
-**Notes:**
-
-- Backend needs a Favorite model (user_id, movie_id, created_at)
-- Many-to-many relationship between users and movies
-- Frontend needs favorites toggle on movie cards
-- Frontend needs a Favorites page/route
-
-## Coverage Validation
-
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| HIST-01 | Phase 7 | ⏳ Pending |
-| HIST-02 | Phase 7 | ⏳ Pending |
-| HIST-03 | Phase 7 | ⏳ Pending |
-| FAV-01 | Phase 8 | ⏳ Pending |
-| FAV-02 | Phase 8 | ⏳ Pending |
-| FAV-03 | Phase 8 | ⏳ Pending |
-| FAV-04 | Phase 8 | ⏳ Pending |
-
-**Coverage:**
-- v1.2 requirements: 7 total
-- Mapped to phases: 7
-- Unmapped: 0
-- Completed: 0
-- Remaining: 7
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Backend Foundation | v1.0 | 5/5 | Complete | 2026-04-29 |
+| 2. Admin Movie Management | v1.0 | 2/2 | Complete | 2026-04-29 |
+| 3. User Catalog & Playback | v1.0 | 1/1 | Complete | 2026-04-29 |
+| 4. Frontend Integration | v1.0 | 1/1 | Complete | 2026-04-29 |
+| 5. Movie Search & Filtering | v1.1 | 3/3 | Complete | 2026-04-29 |
+| 6. User Registration | v1.1 | 1/1 | Complete | 2026-04-29 |
+| 7. Watch History | v1.2 | 0/? | Not started | - |
+| 8. Favorites/Watchlist | v1.2 | 0/? | Not started | - |
 
 ---
-*Roadmap created: 2026-04-29 for v1.2 milestone*
+*Last updated: 2026-04-29*
