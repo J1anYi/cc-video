@@ -20,6 +20,7 @@ import AdminMovies from './routes/admin/Movies';
 import EditMovie from './routes/admin/EditMovie';
 import CreateMovie from './routes/admin/CreateMovie';
 import AdminUsers from './routes/admin/Users';
+import AdminReports from './routes/admin/Reports';
 import './App.css';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="/admin/movies/new" element={<ProtectedRoute requireAdmin><CreateMovie /></ProtectedRoute>} />
           <Route path="/admin/movies/:id" element={<ProtectedRoute requireAdmin><EditMovie /></ProtectedRoute>} />
           <Route path="/admin/users" element={<ProtectedRoute requireAdmin><AdminUsers /></ProtectedRoute>} />
+          <Route path="/admin/reports" element={<ProtectedRoute requireAdmin><AdminReports /></ProtectedRoute>} />
           <Route path="/" element={<Navigate to="/movies" replace />} />
           <Route path="*" element={<Navigate to="/movies" replace />} />
         </Routes>

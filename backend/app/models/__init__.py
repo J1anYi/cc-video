@@ -13,10 +13,11 @@ from app.models.comment import Comment
 from app.models.helpful_vote import HelpfulVote
 from app.models.notification import Notification, NotificationType
 from app.models.watchlist import Watchlist, WatchlistItem
+from app.models.report import Report, ContentType, ReportStatus
 
 __all__ = [
     "User", "UserRole", "Movie", "PublicationStatus", "VideoFile", "PasswordReset",
     "Favorite", "Subtitle", "WatchHistory", "UserFollow", "Activity", "ActivityType",
     "Rating", "Review", "Comment", "HelpfulVote", "Notification", "NotificationType",
-    "Watchlist", "WatchlistItem"
+    "Watchlist", "WatchlistItem", "Report", "ContentType", "ReportStatus"
 ]

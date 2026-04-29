@@ -19,6 +19,7 @@ from app.routes.follows import router as follows_router
 from app.routes.feed import router as feed_router
 from app.routes.notifications import router as notifications_router
 from app.routes.watchlist import router as watchlist_router
+from app.routes.reports import router as reports_router
 
 
 @asynccontextmanager
@@ -59,6 +60,7 @@ app.include_router(follows_router)
 app.include_router(feed_router)
 app.include_router(notifications_router)
 app.include_router(watchlist_router)
+app.include_router(reports_router)
 
 # Mount static files for posters and subtitles
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
