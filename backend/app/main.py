@@ -9,6 +9,7 @@ import logging
 
 from app.config import settings
 from app.database import engine, Base
+from app.middleware.rate_limit import RateLimitMiddleware
 from app.routes.auth import router as auth_router
 from app.routes.admin import router as admin_router
 from app.routes.user import router as user_router
@@ -66,6 +67,9 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# Add rate limiting middleware
+app.add_middleware(RateLimitMiddleware)
+
 # Add timing middleware
 app.add_middleware(TimingMiddleware)
 
@@ -112,9 +116,28 @@ app.mount("/uploads/subtitles", StaticFiles(directory=subtitles_dir), name="subt
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint with response time info."""
+    """Health check endpoint for load balancers."""
     return {
         "status": "healthy",
         "service": "cc-video-api",
         "version": "1.0.0",
     }
+
+
+@app.get("/healthz")
+async def liveness():
+    """Liveness probe - is the service running?"""
+    return {"status": "alive"}
+
+
+@app.get("/readyz")
+async def readiness():
+    """Readiness probe - is the service ready to accept traffic?"""
+    try:
+        # Test database connectivity
+        async with engine.connect() as conn:
+            await conn.execute("SELECT 1")
+        return {"status": "ready"}
+    except Exception as e:
+        logger.error(f"Readiness check failed: {e}")
+        return {"status": "not ready", "error": str(e)}, 503

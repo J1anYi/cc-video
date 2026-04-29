@@ -21,6 +21,10 @@ class Settings(BaseSettings):
 
     # Database
     DATABASE_URL: str = "sqlite+aiosqlite:///./data/cc_video.db"
+    DATABASE_POOL_SIZE: int = 10  # Number of connections to keep in pool
+    DATABASE_MAX_OVERFLOW: int = 20  # Max connections beyond pool_size
+    DATABASE_POOL_TIMEOUT: int = 30  # Seconds to wait for connection
+    DATABASE_POOL_RECYCLE: int = 3600  # Recycle connections after 1 hour
 
     # Authentication
     SECRET_KEY: str = "development-secret-key-change-in-production-32ch"  # Default for development
