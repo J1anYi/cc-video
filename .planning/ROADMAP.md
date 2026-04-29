@@ -11,6 +11,7 @@
 - v1.6 Social Features - Phases 15-16 (shipped 2026-04-30)
 - v1.7 Social Extensions - Phases 17-18 (shipped 2026-04-30)
 - v1.8 Content Organization - Phases 19-20 (shipped 2026-04-30)
+- v1.9 Admin & Safety - Phases 21-25 (planning)
 
 ## Progress
 
@@ -36,6 +37,11 @@
 | 18. Notifications & Profiles | v1.7 | 2/2 | Complete | 2026-04-30 |
 | 19. User Watchlists | v1.8 | 1/1 | Complete | 2026-04-30 |
 | 20. Notification Integration | v1.8 | 1/1 | Complete | 2026-04-30 |
+| 21. Admin User Management | v1.9 | 0/1 | Not started | - |
+| 22. Content Moderation | v1.9 | 0/1 | Not started | - |
+| 23. Advanced Search | v1.9 | 0/1 | Not started | - |
+| 24. User Blocking | v1.9 | 0/1 | Not started | - |
+| 25. @Mentions | v1.9 | 0/1 | Not started | - |
 
 ---
-*Last updated: 2026-04-30 - v1.8 shipped*
+*Last updated: 2026-04-30 - v1.9 planning started*

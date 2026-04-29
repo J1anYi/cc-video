@@ -6,9 +6,9 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v1.8 Content Organization Shipped (2026-04-30)
+## Current State: v1.9 Planning (2026-04-30)
 
-**v1.8 Content Organization shipped.** User watchlists and notification automation complete.
+**v1.8 Content Organization shipped.** Planning v1.9 Admin & Safety.
 
 The system now supports:
 - User authentication with password reset
@@ -78,9 +78,16 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 
 (None - all planned requirements satisfied)
 
-## Next Milestone Goals
+## Current Milestone: v1.9 Admin & Safety
 
-Awaiting next milestone planning.
+**Goal:** Implement admin user management, content moderation, and advanced search
+
+**Target features:**
+- Admin user management dashboard (list, search, suspend users)
+- Content moderation tools (reported content queue)
+- Advanced search filters (rating, year, duration)
+- User blocking system
+- @mentions in comments and reviews
 
 ### Out of Scope
 
@@ -142,4 +149,4 @@ v1.8 added user watchlists, public watchlist discovery, and notification automat
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - v1.8 shipped*
+*Last updated: 2026-04-30 - v1.9 planning started*
