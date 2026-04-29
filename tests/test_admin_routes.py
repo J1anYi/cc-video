@@ -308,4 +308,4 @@ class TestAdminMovieRoutes:
     ):
         """Unauthenticated user cannot access admin endpoints."""
         response = await client.get("/admin/movies")
-        assert response.status_code == 401
+        assert response.status_code == 403  # Forbidden (no token provided)
