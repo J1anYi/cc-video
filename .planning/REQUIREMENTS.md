@@ -3,95 +3,95 @@
 **Defined:** 2026-04-30
 **Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## v2.2 Requirements
+## v2.3 Requirements
 
-Requirements for v2.2 Monetization & Business milestone. Focuses on payment integration, subscription management, and business features.
+Requirements for v2.3 Enterprise & Integration milestone. Focuses on API ecosystem, third-party integrations, and enterprise capabilities.
 
-### Subscription System
+### Public API Platform
 
-- [ ] **SUB-01**: Multiple subscription tiers (Free, Basic, Premium)
-- [ ] **SUB-02**: Subscription signup and upgrade flow
-- [ ] **SUB-03**: Monthly and annual billing options
-- [ ] **SUB-04**: Subscription status display in UI
-- [ ] **SUB-05**: Grace period and dunning management
+- [ ] **API-01**: Public REST API with documentation
+- [ ] **API-02**: API key management and authentication
+- [ ] **API-03**: Rate limiting and usage quotas
+- [ ] **API-04**: Webhook system for events
+- [ ] **API-05**: API versioning and deprecation policy
 
-### Payment Integration
+### Third-Party Integrations
 
-- [ ] **PAY-01**: Stripe payment gateway integration
-- [ ] **PAY-02**: Secure payment form handling
-- [ ] **PAY-03**: Payment method management
-- [ ] **PAY-04**: Invoice generation and history
-- [ ] **PAY-05**: Refund processing workflow
+- [ ] **INT-01**: SSO integration (SAML, OAuth2)
+- [ ] **INT-02**: Content Delivery Network integration
+- [ ] **INT-03**: Analytics integration (Google Analytics, Mixpanel)
+- [ ] **INT-04**: Email service integration (SendGrid, Mailchimp)
+- [ ] **INT-05**: Support ticket integration (Zendesk, Intercom)
 
-### Access Control
+### Enterprise Features
 
-- [ ] **ACCESS-01**: Premium content restrictions
-- [ ] **ACCESS-02**: Feature gating by tier
-- [ ] **ACCESS-03**: Download limits by tier
-- [ ] **ACCESS-04**: Quality restrictions by tier
-- [ ] **ACCESS-05**: Trial period implementation
+- [ ] **ENT-01**: Organization accounts and teams
+- [ ] **ENT-02**: Role-based access control (RBAC)
+- [ ] **ENT-03**: Audit logging and compliance
+- [ ] **ENT-04**: Data export and portability
+- [ ] **ENT-05**: Custom branding and white-labeling
 
-### Admin Business Tools
+### Developer Tools
 
-- [ ] **ADMIN-01**: Revenue dashboard
-- [ ] **ADMIN-02**: Subscription analytics
-- [ ] **ADMIN-03**: Churn tracking and reporting
-- [ ] **ADMIN-04**: Promotional code management
-- [ ] **ADMIN-05**: Customer support tools
+- [ ] **DEV-01**: API sandbox and testing environment
+- [ ] **DEV-02**: SDK development (JavaScript, Python)
+- [ ] **DEV-03**: API playground and explorer
+- [ ] **DEV-04**: Developer documentation portal
+- [ ] **DEV-05**: Status page and incident management
 
-### Business Intelligence
+### Platform Extensibility
 
-- [ ] **BI-01**: Customer lifetime value calculation
-- [ ] **BI-02**: Revenue forecasting
-- [ ] **BI-03**: Cohort analysis
-- [ ] **BI-04**: Conversion funnel tracking
-- [ ] **BI-05**: A/B testing framework
+- [ ] **EXT-01**: Plugin architecture foundation
+- [ ] **EXT-02**: Custom metadata fields
+- [ ] **EXT-03**: Workflow automation hooks
+- [ ] **EXT-04**: Custom theme support
+- [ ] **EXT-05**: Integration marketplace
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Cryptocurrency payments | Regulatory complexity |
-| In-app purchases (mobile) | PWA approach |
-| Enterprise contracts | Focus on individual users first |
-| Affiliate program | Later phase consideration |
-| White-label solution | Architectural complexity |
+| On-premise deployment | Cloud-first architecture |
+| Multi-tenant isolation | Requires infrastructure changes |
+| Custom video processing plugins | Security concerns |
+| Machine learning model API | Separate consideration |
+| Blockchain integration | Not aligned with core value |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SUB-01 | Phase 41 | Pending |
-| SUB-02 | Phase 41 | Pending |
-| SUB-03 | Phase 41 | Pending |
-| SUB-04 | Phase 41 | Pending |
-| SUB-05 | Phase 41 | Pending |
-| PAY-01 | Phase 42 | Pending |
-| PAY-02 | Phase 42 | Pending |
-| PAY-03 | Phase 42 | Pending |
-| PAY-04 | Phase 42 | Pending |
-| PAY-05 | Phase 42 | Pending |
-| ACCESS-01 | Phase 43 | Pending |
-| ACCESS-02 | Phase 43 | Pending |
-| ACCESS-03 | Phase 43 | Pending |
-| ACCESS-04 | Phase 43 | Pending |
-| ACCESS-05 | Phase 43 | Pending |
-| ADMIN-01 | Phase 44 | Pending |
-| ADMIN-02 | Phase 44 | Pending |
-| ADMIN-03 | Phase 44 | Pending |
-| ADMIN-04 | Phase 44 | Pending |
-| ADMIN-05 | Phase 44 | Pending |
-| BI-01 | Phase 45 | Pending |
-| BI-02 | Phase 45 | Pending |
-| BI-03 | Phase 45 | Pending |
-| BI-04 | Phase 45 | Pending |
-| BI-05 | Phase 45 | Pending |
+| API-01 | Phase 46 | Pending |
+| API-02 | Phase 46 | Pending |
+| API-03 | Phase 46 | Pending |
+| API-04 | Phase 46 | Pending |
+| API-05 | Phase 46 | Pending |
+| INT-01 | Phase 47 | Pending |
+| INT-02 | Phase 47 | Pending |
+| INT-03 | Phase 47 | Pending |
+| INT-04 | Phase 47 | Pending |
+| INT-05 | Phase 47 | Pending |
+| ENT-01 | Phase 48 | Pending |
+| ENT-02 | Phase 48 | Pending |
+| ENT-03 | Phase 48 | Pending |
+| ENT-04 | Phase 48 | Pending |
+| ENT-05 | Phase 48 | Pending |
+| DEV-01 | Phase 49 | Pending |
+| DEV-02 | Phase 49 | Pending |
+| DEV-03 | Phase 49 | Pending |
+| DEV-04 | Phase 49 | Pending |
+| DEV-05 | Phase 49 | Pending |
+| EXT-01 | Phase 50 | Pending |
+| EXT-02 | Phase 50 | Pending |
+| EXT-03 | Phase 50 | Pending |
+| EXT-04 | Phase 50 | Pending |
+| EXT-05 | Phase 50 | Pending |
 
 **Coverage:**
-- v2.2 requirements: 25 total
+- v2.3 requirements: 25 total
 - Mapped to phases: 25
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-30*
-*Last updated: 2026-04-30 - v2.2 milestone created*
+*Last updated: 2026-04-30 - v2.3 milestone created*
