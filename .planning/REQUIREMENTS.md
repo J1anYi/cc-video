@@ -3,95 +3,95 @@
 **Defined:** 2026-04-30
 **Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## v2.3 Requirements
+## v2.4 Requirements
 
-Requirements for v2.3 Enterprise & Integration milestone. Focuses on API ecosystem, third-party integrations, and enterprise capabilities.
+Requirements for v2.4 AI & Machine Learning milestone. Focuses on intelligent features, ML-powered recommendations, and automated content analysis.
 
-### Public API Platform
+### ML Recommendation Engine
 
-- [ ] **API-01**: Public REST API with documentation
-- [ ] **API-02**: API key management and authentication
-- [ ] **API-03**: Rate limiting and usage quotas
-- [ ] **API-04**: Webhook system for events
-- [ ] **API-05**: API versioning and deprecation policy
+- [ ] **ML-01**: Collaborative filtering recommendation model
+- [ ] **ML-02**: Content-based recommendation system
+- [ ] **ML-03**: Hybrid recommendation combining multiple signals
+- [ ] **ML-04**: Real-time recommendation updates
+- [ ] **ML-05**: A/B testing for recommendation algorithms
 
-### Third-Party Integrations
+### Content Analysis
 
-- [ ] **INT-01**: SSO integration (SAML, OAuth2)
-- [ ] **INT-02**: Content Delivery Network integration
-- [ ] **INT-03**: Analytics integration (Google Analytics, Mixpanel)
-- [ ] **INT-04**: Email service integration (SendGrid, Mailchimp)
-- [ ] **INT-05**: Support ticket integration (Zendesk, Intercom)
+- [ ] **CONTENT-01**: Automatic video quality assessment
+- [ ] **CONTENT-02**: Scene detection and thumbnail generation
+- [ ] **CONTENT-03**: Automatic content tagging
+- [ ] **CONTENT-04**: Sentiment analysis for reviews
+- [ ] **CONTENT-05**: Duplicate content detection
 
-### Enterprise Features
+### Natural Language Processing
 
-- [ ] **ENT-01**: Organization accounts and teams
-- [ ] **ENT-02**: Role-based access control (RBAC)
-- [ ] **ENT-03**: Audit logging and compliance
-- [ ] **ENT-04**: Data export and portability
-- [ ] **ENT-05**: Custom branding and white-labeling
+- [ ] **NLP-01**: Smart search with intent recognition
+- [ ] **NLP-02**: Query auto-completion and suggestions
+- [ ] **NLP-03**: Multi-language content understanding
+- [ ] **NLP-04**: Entity extraction from movie descriptions
+- [ ] **NLP-05**: Chatbot for user support
 
-### Developer Tools
+### Predictive Analytics
 
-- [ ] **DEV-01**: API sandbox and testing environment
-- [ ] **DEV-02**: SDK development (JavaScript, Python)
-- [ ] **DEV-03**: API playground and explorer
-- [ ] **DEV-04**: Developer documentation portal
-- [ ] **DEV-05**: Status page and incident management
+- [ ] **PRED-01**: Churn prediction model
+- [ ] **PRED-02**: Content popularity forecasting
+- [ ] **PRED-03**: User engagement prediction
+- [ ] **PRED-04**: Revenue forecasting model
+- [ ] **PRED-05**: Optimal release time prediction
 
-### Platform Extensibility
+### Automated Workflows
 
-- [ ] **EXT-01**: Plugin architecture foundation
-- [ ] **EXT-02**: Custom metadata fields
-- [ ] **EXT-03**: Workflow automation hooks
-- [ ] **EXT-04**: Custom theme support
-- [ ] **EXT-05**: Integration marketplace
+- [ ] **AUTO-01**: Automated content moderation
+- [ ] **AUTO-02**: Smart notification timing
+- [ ] **AUTO-03**: Automated video transcoding optimization
+- [ ] **AUTO-04**: Dynamic pricing recommendations
+- [ ] **AUTO-05**: Automated A/B test management
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| On-premise deployment | Cloud-first architecture |
-| Multi-tenant isolation | Requires infrastructure changes |
-| Custom video processing plugins | Security concerns |
-| Machine learning model API | Separate consideration |
-| Blockchain integration | Not aligned with core value |
+| AI-generated video content | Ethical and legal concerns |
+| Facial recognition | Privacy concerns |
+| Deepfake detection | Specialized domain |
+| Real-time video analysis | Infrastructure requirements |
+| Autonomous decision making | Human oversight required |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| API-01 | Phase 46 | Pending |
-| API-02 | Phase 46 | Pending |
-| API-03 | Phase 46 | Pending |
-| API-04 | Phase 46 | Pending |
-| API-05 | Phase 46 | Pending |
-| INT-01 | Phase 47 | Pending |
-| INT-02 | Phase 47 | Pending |
-| INT-03 | Phase 47 | Pending |
-| INT-04 | Phase 47 | Pending |
-| INT-05 | Phase 47 | Pending |
-| ENT-01 | Phase 48 | Pending |
-| ENT-02 | Phase 48 | Pending |
-| ENT-03 | Phase 48 | Pending |
-| ENT-04 | Phase 48 | Pending |
-| ENT-05 | Phase 48 | Pending |
-| DEV-01 | Phase 49 | Pending |
-| DEV-02 | Phase 49 | Pending |
-| DEV-03 | Phase 49 | Pending |
-| DEV-04 | Phase 49 | Pending |
-| DEV-05 | Phase 49 | Pending |
-| EXT-01 | Phase 50 | Pending |
-| EXT-02 | Phase 50 | Pending |
-| EXT-03 | Phase 50 | Pending |
-| EXT-04 | Phase 50 | Pending |
-| EXT-05 | Phase 50 | Pending |
+| ML-01 | Phase 51 | Pending |
+| ML-02 | Phase 51 | Pending |
+| ML-03 | Phase 51 | Pending |
+| ML-04 | Phase 51 | Pending |
+| ML-05 | Phase 51 | Pending |
+| CONTENT-01 | Phase 52 | Pending |
+| CONTENT-02 | Phase 52 | Pending |
+| CONTENT-03 | Phase 52 | Pending |
+| CONTENT-04 | Phase 52 | Pending |
+| CONTENT-05 | Phase 52 | Pending |
+| NLP-01 | Phase 53 | Pending |
+| NLP-02 | Phase 53 | Pending |
+| NLP-03 | Phase 53 | Pending |
+| NLP-04 | Phase 53 | Pending |
+| NLP-05 | Phase 53 | Pending |
+| PRED-01 | Phase 54 | Pending |
+| PRED-02 | Phase 54 | Pending |
+| PRED-03 | Phase 54 | Pending |
+| PRED-04 | Phase 54 | Pending |
+| PRED-05 | Phase 54 | Pending |
+| AUTO-01 | Phase 55 | Pending |
+| AUTO-02 | Phase 55 | Pending |
+| AUTO-03 | Phase 55 | Pending |
+| AUTO-04 | Phase 55 | Pending |
+| AUTO-05 | Phase 55 | Pending |
 
 **Coverage:**
-- v2.3 requirements: 25 total
+- v2.4 requirements: 25 total
 - Mapped to phases: 25
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-30*
-*Last updated: 2026-04-30 - v2.3 milestone created*
+*Last updated: 2026-04-30 - v2.4 milestone created*
