@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+import os
 
 from app.config import settings
 from app.database import engine, Base
@@ -37,6 +39,15 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(admin_router)
 app.include_router(user_router)
+
+# Mount static files for posters and subtitles
+posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
+subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
+os.makedirs(posters_dir, exist_ok=True)
+os.makedirs(subtitles_dir, exist_ok=True)
+
+app.mount("/uploads/posters", StaticFiles(directory=posters_dir), name="posters")
+app.mount("/uploads/subtitles", StaticFiles(directory=subtitles_dir), name="subtitles")
 
 
 @app.get("/health")

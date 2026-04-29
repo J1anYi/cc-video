@@ -66,3 +66,15 @@ export interface Favorite {
 export interface FavoriteStatus {
   is_favorite: boolean;
 }
+
+export interface Subtitle {
+  id: number;
+  movie_id: number;
+  language: string;
+  file_path: string;
+  created_at: string;
+}
+
+export interface SubtitleListResponse {
+  subtitles: Subtitle[];
+}

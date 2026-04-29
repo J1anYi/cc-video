@@ -8,6 +8,7 @@ from app.database import Base
 
 if TYPE_CHECKING:
     from app.models.video_file import VideoFile
+    from app.models.subtitle import Subtitle
 
 
 class PublicationStatus(str, enum.Enum):
@@ -32,3 +33,5 @@ class Movie(Base):
 
     # Relationship to video files
     video_files: Mapped[list["VideoFile"]] = relationship("VideoFile", back_populates="movie")
+    # Relationship to subtitles
+    subtitles: Mapped[list["Subtitle"]] = relationship("Subtitle", back_populates="movie")

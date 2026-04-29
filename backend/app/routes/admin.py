@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status
+from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status, Form
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.dependencies import get_current_user, get_db
@@ -6,9 +6,11 @@ from app.middleware.rbac import require_roles
 from app.models.user import User
 from app.schemas.movie import MovieCreate, MovieUpdate, MovieResponse, MovieListResponse
 from app.schemas.video_file import VideoFileResponse
+from app.schemas.subtitle import SubtitleResponse, SubtitleListResponse
 from app.services.movie import movie_service
 from app.services.video_file import video_file_service
 from app.services.poster import poster_service
+from app.services.subtitle import subtitle_service
 
 
 router = APIRouter(prefix="/admin", tags=["admin"])
@@ -114,6 +116,40 @@ async def delete_poster(movie_id: int, db: AsyncSession = Depends(get_db)):
     poster_service.delete(movie.poster_path)
     movie.poster_path = None
     await db.commit()
+    return None
+
+
+@router.post("/movies/{movie_id}/subtitles", response_model=SubtitleResponse, dependencies=[admin_required])
+async def upload_subtitle(
+    movie_id: int,
+    language: str = Form(...),
+    file: UploadFile = File(...),
+    db: AsyncSession = Depends(get_db)
+):
+    """Upload a subtitle file for a movie. Admin only."""
+    movie = await movie_service.get_by_id(db, movie_id)
+    if not movie:
+        raise HTTPException(status_code=404, detail="Movie not found")
+    try:
+        subtitle = await subtitle_service.upload(db, movie_id, language, file)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    return subtitle
+
+
+@router.get("/movies/{movie_id}/subtitles", response_model=SubtitleListResponse, dependencies=[admin_required])
+async def list_subtitles(movie_id: int, db: AsyncSession = Depends(get_db)):
+    """List all subtitles for a movie. Admin only."""
+    subtitles = await subtitle_service.get_by_movie(db, movie_id)
+    return SubtitleListResponse(subtitles=subtitles)
+
+
+@router.delete("/movies/{movie_id}/subtitles/{subtitle_id}", status_code=204, dependencies=[admin_required])
+async def delete_subtitle(movie_id: int, subtitle_id: int, db: AsyncSession = Depends(get_db)):
+    """Delete a subtitle file from a movie. Admin only."""
+    deleted = await subtitle_service.delete(db, subtitle_id)
+    if not deleted:
+        raise HTTPException(status_code=404, detail="Subtitle not found")
     return None
 
 

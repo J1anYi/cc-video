@@ -9,7 +9,7 @@ from app.config import settings
 
 class PosterService:
     def __init__(self):
-        self.upload_dir = Path(settings.upload_dir) / "posters"
+        self.upload_dir = Path(settings.UPLOAD_DIR) / "posters"
         self.upload_dir.mkdir(parents=True, exist_ok=True)
         self.allowed_types = {"image/jpeg", "image/png", "image/webp", "image/gif"}
     

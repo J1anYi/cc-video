@@ -2,43 +2,17 @@
 
 ## Milestones
 
-- ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-04-29)
-- ✅ **v1.1 Discovery & Registration** — Phases 5-6 (shipped 2026-04-29)
-- ✅ **v1.2 Watch History & Favorites** — Phases 7-8 (shipped 2026-04-29) — [Details](milestones/v1.2-ROADMAP.md)
-- 🚧 **v1.3 Media Enhancement** — Phases 9-10 (in progress)
+- v1.0 MVP - Phases 1-4 (shipped 2026-04-29)
+- v1.1 Discovery & Registration - Phases 5-6 (shipped 2026-04-29)
+- v1.2 Watch History & Favorites - Phases 7-8 (shipped 2026-04-29) - [Details](milestones/v1.2-ROADMAP.md)
+- v1.3 Media Enhancement - Phases 9-10 (complete, pending audit)
 
 ## Phases
 
-<details>
-<summary>✅ v1.0 MVP (Phases 1-4) — SHIPPED 2026-04-29</summary>
+### v1.3 Media Enhancement (Complete)
 
-- [x] Phase 1: Backend Foundation (5/5 plans)
-- [x] Phase 2: Admin Movie Management (2/2 plans)
-- [x] Phase 3: User Catalog & Playback (1/1 plan)
-- [x] Phase 4: Frontend Integration (1/1 plan)
-
-</details>
-
-<details>
-<summary>✅ v1.1 Discovery & Registration (Phases 5-6) — SHIPPED 2026-04-29</summary>
-
-- [x] Phase 5: Movie Search & Filtering (3/3 plans)
-- [x] Phase 6: User Registration (1/1 plan)
-
-</details>
-
-<details>
-<summary>✅ v1.2 Watch History & Favorites (Phases 7-8) — SHIPPED 2026-04-29</summary>
-
-- [x] Phase 7: Watch History (1/1 plan)
-- [x] Phase 8: Favorites/Watchlist (1/1 plan)
-
-</details>
-
-### 🚧 v1.3 Media Enhancement (In Progress)
-
-- [ ] **Phase 9: Poster Images** — Upload and display movie posters
-- [ ] **Phase 10: Subtitles** — Upload and display subtitle tracks
+- [x] Phase 9: Poster Images - Upload and display movie posters
+- [x] Phase 10: Subtitles - Upload and display subtitle tracks
 
 ## Phase Details
 
@@ -82,8 +56,8 @@
 | 6. User Registration | v1.1 | 1/1 | Complete | 2026-04-29 |
 | 7. Watch History | v1.2 | 1/1 | Complete | 2026-04-29 |
 | 8. Favorites/Watchlist | v1.2 | 1/1 | Complete | 2026-04-29 |
-| 9. Poster Images | v1.3 | 0/? | Not started | - |
-| 10. Subtitles | v1.3 | 0/? | Not started | - |
+| 9. Poster Images | v1.3 | 1/1 | Complete | 2026-04-29 |
+| 10. Subtitles | v1.3 | 1/1 | Complete | 2026-04-29 |
 
 ---
-*Last updated: 2026-04-29 after v1.2 milestone completion*
+*Last updated: 2026-04-29 after Phase 10 completion*

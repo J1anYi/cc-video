@@ -8,11 +8,13 @@ from app.dependencies import get_current_user, get_db
 from app.models.movie import PublicationStatus
 from app.models.user import User
 from app.schemas.movie import MovieResponse, MovieListResponse
+from app.schemas.subtitle import SubtitleResponse, SubtitleListResponse
 from app.services.movie import movie_service
 from app.services.video_file import video_file_service
 from app.services.video_streaming import video_streaming_service
 from app.services.history import history_service
 from app.services.favorite import favorite_service
+from app.services.subtitle import subtitle_service
 
 
 class WatchHistoryUpdate(BaseModel):
@@ -57,7 +59,6 @@ async def list_movies(
     skip: int = 0,
     limit: int = 100
 ):
-    """List published movies with optional search and category filter."""
     movies = await movie_service.get_published_filtered(
         db, search=q, category=category, skip=skip, limit=limit
     )
@@ -69,7 +70,6 @@ async def list_categories(
     db: AsyncSession = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
-    """Get list of available categories from published movies."""
     return await movie_service.get_categories(db)
 
 
@@ -79,7 +79,6 @@ async def get_movie(
     db: AsyncSession = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
-    """Get a single published movie by ID. Requires authentication."""
     movie = await movie_service.get_by_id(db, movie_id)
     if not movie or movie.publication_status != PublicationStatus.PUBLISHED:
         raise HTTPException(status_code=404, detail="Movie not found")
@@ -92,7 +91,6 @@ async def stream_movie(
     db: AsyncSession = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
-    """Stream video file for a published movie. Requires authentication."""
     movie = await movie_service.get_by_id(db, movie_id)
     if not movie or movie.publication_status != PublicationStatus.PUBLISHED:
         raise HTTPException(status_code=404, detail="Movie not found")
@@ -104,14 +102,25 @@ async def stream_movie(
     return await video_streaming_service.stream(video_files[0])
 
 
-# Watch History endpoints
+@router.get("/movies/{movie_id}/subtitles", response_model=SubtitleListResponse)
+async def get_movie_subtitles(
+    movie_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(get_current_user)
+):
+    movie = await movie_service.get_by_id(db, movie_id)
+    if not movie or movie.publication_status != PublicationStatus.PUBLISHED:
+        raise HTTPException(status_code=404, detail="Movie not found")
+    
+    subtitles = await subtitle_service.get_by_movie(db, movie_id)
+    return SubtitleListResponse(subtitles=subtitles)
+
 
 @router.get("/history", response_model=List[WatchHistoryResponse])
 async def get_watch_history(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Get user's watch history sorted by most recent first."""
     history = await history_service.get_user_history(db, current_user.id)
     return [
         WatchHistoryResponse(
@@ -131,8 +140,6 @@ async def update_watch_history(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Create or update watch history entry."""
-    # Verify movie exists and is published
     movie = await movie_service.get_by_id(db, data.movie_id)
     if not movie or movie.publication_status != PublicationStatus.PUBLISHED:
         raise HTTPException(status_code=404, detail="Movie not found")
@@ -155,7 +162,6 @@ async def get_history_entry(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Get watch history entry for a specific movie."""
     entry = await history_service.get_history_entry(db, current_user.id, movie_id)
     if not entry:
         raise HTTPException(status_code=404, detail="History entry not found")
@@ -168,14 +174,11 @@ async def get_history_entry(
     )
 
 
-# Favorites endpoints
-
 @router.get("/favorites", response_model=List[FavoriteResponse])
 async def get_favorites(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Get user's favorites sorted by most recent first."""
     favorites = await favorite_service.get_user_favorites(db, current_user.id)
     return [
         FavoriteResponse(
@@ -194,8 +197,6 @@ async def add_favorite(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Add a movie to favorites."""
-    # Verify movie exists and is published
     movie = await movie_service.get_by_id(db, movie_id)
     if not movie or movie.publication_status != PublicationStatus.PUBLISHED:
         raise HTTPException(status_code=404, detail="Movie not found")
@@ -215,7 +216,6 @@ async def remove_favorite(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Remove a movie from favorites."""
     removed = await favorite_service.remove_favorite(db, current_user.id, movie_id)
     if not removed:
         raise HTTPException(status_code=404, detail="Favorite not found")
@@ -228,6 +228,5 @@ async def get_favorite_status(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Check if a movie is in user's favorites."""
     is_fav = await favorite_service.is_favorite(db, current_user.id, movie_id)
     return FavoriteStatusResponse(is_favorite=is_fav)

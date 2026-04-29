@@ -9,11 +9,11 @@ Requirements for Media Enhancement milestone. Each maps to roadmap phases.
 
 ### Media
 
-- [ ] **MED-01**: Administrator can upload poster images for movies
-- [ ] **MED-02**: Poster images display in movie catalog cards
-- [ ] **MED-03**: Administrator can upload subtitle files (SRT/VTT format)
-- [ ] **MED-04**: Users can enable/disable subtitles during playback
-- [ ] **MED-05**: Multiple subtitle tracks supported per movie
+- [x] **MED-01**: Administrator can upload poster images for movies
+- [x] **MED-02**: Poster images display in movie catalog cards
+- [x] **MED-03**: Administrator can upload subtitle files (SRT/VTT format)
+- [x] **MED-04**: Users can enable/disable subtitles during playback
+- [x] **MED-05**: Multiple subtitle tracks supported per movie
 
 ## v1.2 Requirements (Completed)
 
@@ -57,18 +57,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MED-01 | Phase 9 | ⏳ Pending |
-| MED-02 | Phase 9 | ⏳ Pending |
-| MED-03 | Phase 10 | ⏳ Pending |
-| MED-04 | Phase 10 | ⏳ Pending |
-| MED-05 | Phase 10 | ⏳ Pending |
+| MED-01 | Phase 9 | Complete |
+| MED-02 | Phase 9 | Complete |
+| MED-03 | Phase 10 | Complete |
+| MED-04 | Phase 10 | Complete |
+| MED-05 | Phase 10 | Complete |
 
 **Coverage:**
 - v1.3 requirements: 5 total
 - Mapped to phases: 5
 - Unmapped: 0
-- Completed: 0
-- Remaining: 5
+- Completed: 5
+- Remaining: 0
 
 ---
 *Requirements defined: 2026-04-29 for v1.3 milestone*
