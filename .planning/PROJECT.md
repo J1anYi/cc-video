@@ -6,7 +6,7 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focuses on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v1.4 Shipped (2026-04-29)
+## Current State: v1.5 Shipped (2026-04-29)
 
 **All planned milestones complete.** The system now supports:
 - User authentication with password reset
@@ -14,6 +14,10 @@ The v1 product focuses on making the basic viewing loop work end to end: a user 
 - Video playback with subtitles and poster images
 - Watch history and favorites
 - User profile management
+- Personalized recommendations
+- Continue watching
+- Trending movies
+- Related movies
 
 ## Core Value
 
@@ -39,6 +43,10 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Administrator can manage subtitles (v1.3)
 - [x] User can reset password by email (v1.4)
 - [x] User can update profile information (v1.4)
+- [x] User receives personalized recommendations (v1.5)
+- [x] User can continue watching from saved position (v1.5)
+- [x] User can discover trending movies (v1.5)
+- [x] User can view related movies (v1.5)
 
 ### Active
 
@@ -54,7 +62,7 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 
 ## Context
 
-v1.0 MVP completed successfully with all 18 requirements satisfied. The core viewing loop (admin upload → user catalog → user playback) works end-to-end.
+v1.0 MVP completed successfully with all 18 requirements satisfied. The core viewing loop (admin upload - user catalog - user playback) works end-to-end.
 
 v1.1 added search, filtering, and user self-registration - enabling discoverability and organic user growth.
 
@@ -63,6 +71,8 @@ v1.2 added watch history and favorites - increasing user engagement and retentio
 v1.3 added poster images and subtitles - enhancing visual presentation and accessibility.
 
 v1.4 added password reset and profile management - improving account security and user control.
+
+v1.5 added personalized recommendations, continue watching, trending movies, and related movies - enhancing content discovery.
 
 ## Constraints
 
@@ -87,23 +97,13 @@ v1.4 added password reset and profile management - improving account security an
 | Use SHA-256 hash for reset tokens | Secure, no plaintext tokens stored | Validated |
 | 1-hour token expiration | Balance security and usability | Validated |
 | No email enumeration | Prevent account discovery attacks | Validated |
+| Content-based filtering by category | Simple, effective, no ML needed | Validated |
+| 7-day window for trending | Balance freshness with data volume | Validated |
+| Hide recommendations when filters active | User intent is search, not discovery | Validated |
 
 ## Evolution
 
 This document evolves at phase transitions and milestone boundaries.
 
-**After each phase transition** (via `/gsd-transition`):
-1. Requirements invalidated? Move to Out of Scope with reason
-2. Requirements validated? Move to Validated with phase reference
-3. New requirements emerged? Add to Active
-4. Decisions to log? Add to Key Decisions
-5. "What This Is" still accurate? Update if drifted
-
-**After each milestone** (via `/gsd-complete-milestone`):
-1. Full review of all sections
-2. Core Value check - still the right priority?
-3. Audit Out of Scope - reasons still valid?
-4. Update Context with current state
-
 ---
-*Last updated: 2026-04-29 - v1.4 complete*
+*Last updated: 2026-04-29 - v1.5 complete*

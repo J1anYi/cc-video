@@ -7,7 +7,7 @@
 - v1.2 Watch History & Favorites - Phases 7-8 (shipped 2026-04-29)
 - v1.3 Media Enhancement - Phases 9-10 (shipped 2026-04-29)
 - v1.4 Account Enhancement - Phases 11-12 (shipped 2026-04-29)
-- v1.5 Discovery Enhancement - Phases 13-14 (in progress)
+- v1.5 Discovery Enhancement - Phases 13-14 (shipped 2026-04-29)
 
 ## Progress
 
@@ -26,7 +26,7 @@
 | 11. Password Reset | v1.4 | 2/2 | Complete | 2026-04-29 |
 | 12. Profile Management | v1.4 | 1/1 | Complete | 2026-04-29 |
 | 13. Personalized Recommendations | v1.5 | 2/2 | Complete | 2026-04-29 |
-| 14. Trending & Discovery | v1.5 | 2/2 | Complete | 2026-04-29 |
+| 14. Trending & Discovery | v1.5 | 1/1 | Complete | 2026-04-29 |
 
 ---
-*Last updated: 2026-04-29 - Phase 14 complete*
+*Last updated: 2026-04-29 - v1.5 complete*
