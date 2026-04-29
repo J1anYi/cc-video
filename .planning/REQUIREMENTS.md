@@ -3,97 +3,95 @@
 **Defined:** 2026-04-30
 **Core Value:** Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## v1.9 Requirements
+## v1.10 Requirements
 
-Requirements for v1.9 Admin & Safety milestone. Enhances admin capabilities, content moderation, and user interactions.
+Requirements for v1.10 Analytics & Insights milestone. Provides user analytics, content performance metrics, and enhanced admin dashboard.
 
-### Admin User Management
+### User Analytics Dashboard
 
-- [x] **ADMIN-USER-01**: Admin can list all users with pagination
-- [x] **ADMIN-USER-02**: Admin can search users by email or username
-- [x] **ADMIN-USER-03**: Admin can view user details (profile, activity, stats)
-- [x] **ADMIN-USER-04**: Admin can suspend/unsuspend user accounts
-- [x] **ADMIN-USER-05**: Admin can delete user accounts (soft delete)
+- [ ] **ANALYTICS-01**: User can view personal watch statistics (total hours, movies watched)
+- [ ] **ANALYTICS-02**: User can view genre preferences breakdown
+- [ ] **ANALYTICS-03**: User can view watching patterns by time/day
+- [ ] **ANALYTICS-04**: User can see their activity timeline
+- [ ] **ANALYTICS-05**: User can export their viewing data
 
-### Content Moderation
+### Content Performance Metrics
 
-- [x] **MOD-01**: User can report reviews for inappropriate content
-- [x] **MOD-02**: User can report comments for inappropriate content
-- [x] **MOD-03**: Admin can view reported content queue
-- [x] **MOD-04**: Admin can dismiss reports (content is acceptable)
-- [x] **MOD-05**: Admin can remove reported content
-- [x] **MOD-06**: Admin can issue warnings to users
+- [ ] **METRICS-01**: Admin can view movie engagement statistics
+- [ ] **METRICS-02**: Admin can view platform-wide viewing trends
+- [ ] **METRICS-03**: Admin can see top performing content
+- [ ] **METRICS-04**: Admin can view user retention metrics
+- [ ] **METRICS-05**: Admin can access content popularity rankings
 
-### Advanced Search
+### Admin Dashboard Enhancement
 
-- [x] **SEARCH-01**: User can filter movies by minimum rating
-- [x] **SEARCH-02**: User can filter movies by release year range
-- [x] **SEARCH-03**: User can filter movies by duration range
-- [x] **SEARCH-04**: User can combine multiple filters
-- [x] **SEARCH-05**: User can sort search results (rating, year, title)
+- [ ] **DASHBOARD-01**: Admin dashboard shows key platform metrics
+- [ ] **DASHBOARD-02**: Admin can view recent activity summary
+- [ ] **DASHBOARD-03**: Admin can see user growth trends
+- [ ] **DASHBOARD-04**: Admin can view content health indicators
+- [ ] **DASHBOARD-05**: Admin can access quick action shortcuts
 
-### User Blocking
+### Social Analytics
 
-- [x] **BLOCK-01**: User can block another user
-- [x] **BLOCK-02**: User can unblock a blocked user
-- [x] **BLOCK-03**: Blocked user's content is hidden from blocker
-- [x] **BLOCK-04**: Blocked user cannot comment on blocker's reviews
-- [x] **BLOCK-05**: User can view their blocked users list
+- [ ] **SOCIAL-01**: User can view their social influence score
+- [ ] **SOCIAL-02**: User can see review impact (views, helpful votes)
+- [ ] **SOCIAL-03**: User can view follower growth over time
+- [ ] **SOCIAL-04**: User can see most engaging content they created
+- [ ] **SOCIAL-05**: User can compare their stats with friends
 
-### @Mentions
+### Recommendation Insights
 
-- [x] **MENTION-01**: User can @mention other users in comments
-- [x] **MENTION-02**: User can @mention other users in reviews
-- [x] **MENTION-03**: Mentioned user receives notification
-- [x] **MENTION-04**: @mention links to mentioned user's profile
-- [x] **MENTION-05**: @mention autocomplete suggests followed users
+- [ ] **REC-01**: User can see why movies are recommended
+- [ ] **REC-02**: User can view recommendation preferences
+- [ ] **REC-03**: User can adjust recommendation factors
+- [ ] **REC-04**: User can see similarity scores for recommendations
+- [ ] **REC-05**: User can provide feedback on recommendations
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| IP-based bans | Requires additional infrastructure |
-| Content auto-moderation | ML-based filtering deferred |
-| Bulk user actions | Admin safety - single actions first |
-| Audit logs | Deferred to admin dashboard milestone |
-| Role-based permissions | Single admin role for v1.9 |
+| Real-time streaming analytics | Requires WebSocket infrastructure |
+| A/B testing framework | Complex experimentation system |
+| Machine learning model training | Requires ML infrastructure |
+| Revenue/analytics integration | No payment system yet |
+| Advanced data export (API) | Privacy considerations |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ADMIN-USER-01 | Phase 21 | Complete |
-| ADMIN-USER-02 | Phase 21 | Complete |
-| ADMIN-USER-03 | Phase 21 | Complete |
-| ADMIN-USER-04 | Phase 21 | Complete |
-| ADMIN-USER-05 | Phase 21 | Complete |
-| MOD-01 | Phase 22 | Complete |
-| MOD-02 | Phase 22 | Complete |
-| MOD-03 | Phase 22 | Complete |
-| MOD-04 | Phase 22 | Complete |
-| MOD-05 | Phase 22 | Complete |
-| MOD-06 | Phase 22 | Complete |
-| SEARCH-01 | Phase 23 | Complete |
-| SEARCH-02 | Phase 23 | Complete |
-| SEARCH-03 | Phase 23 | Complete |
-| SEARCH-04 | Phase 23 | Complete |
-| SEARCH-05 | Phase 23 | Complete |
-| BLOCK-01 | Phase 24 | Complete |
-| BLOCK-02 | Phase 24 | Complete |
-| BLOCK-03 | Phase 24 | Complete |
-| BLOCK-04 | Phase 24 | Complete |
-| BLOCK-05 | Phase 24 | Complete |
-| MENTION-01 | Phase 25 | Complete |
-| MENTION-02 | Phase 25 | Complete |
-| MENTION-03 | Phase 25 | Complete |
-| MENTION-04 | Phase 25 | Complete |
-| MENTION-05 | Phase 25 | Complete |
+| ANALYTICS-01 | Phase 26 | Pending |
+| ANALYTICS-02 | Phase 26 | Pending |
+| ANALYTICS-03 | Phase 26 | Pending |
+| ANALYTICS-04 | Phase 26 | Pending |
+| ANALYTICS-05 | Phase 26 | Pending |
+| METRICS-01 | Phase 27 | Pending |
+| METRICS-02 | Phase 27 | Pending |
+| METRICS-03 | Phase 27 | Pending |
+| METRICS-04 | Phase 27 | Pending |
+| METRICS-05 | Phase 27 | Pending |
+| DASHBOARD-01 | Phase 28 | Pending |
+| DASHBOARD-02 | Phase 28 | Pending |
+| DASHBOARD-03 | Phase 28 | Pending |
+| DASHBOARD-04 | Phase 28 | Pending |
+| DASHBOARD-05 | Phase 28 | Pending |
+| SOCIAL-01 | Phase 29 | Pending |
+| SOCIAL-02 | Phase 29 | Pending |
+| SOCIAL-03 | Phase 29 | Pending |
+| SOCIAL-04 | Phase 29 | Pending |
+| SOCIAL-05 | Phase 29 | Pending |
+| REC-01 | Phase 30 | Pending |
+| REC-02 | Phase 30 | Pending |
+| REC-03 | Phase 30 | Pending |
+| REC-04 | Phase 30 | Pending |
+| REC-05 | Phase 30 | Pending |
 
 **Coverage:**
-- v1.9 requirements: 26 total
-- Mapped to phases: 26
+- v1.10 requirements: 25 total
+- Mapped to phases: 25
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-30*
-*Last updated: 2026-04-30 - v1.9 milestone started*
+*Last updated: 2026-04-30 - v1.10 milestone created*
