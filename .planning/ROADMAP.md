@@ -11,8 +11,9 @@
 - v1.6 Social Features - Phases 15-16 (shipped 2026-04-30)
 - v1.7 Social Extensions - Phases 17-18 (shipped 2026-04-30)
 - v1.8 Content Organization - Phases 19-20 (shipped 2026-04-30)
-- v1.9 Admin & Safety - Phases 21-25 (shipped 2026-04-30) — [Archive](milestones/v1.9-ROADMAP.md)
-- v1.10 Analytics & Insights - Phases 26-30 (shipped 2026-04-30) — [Archive](milestones/v1.10-ROADMAP.md)
+- v1.9 Admin & Safety - Phases 21-25 (shipped 2026-04-30)
+- v1.10 Analytics & Insights - Phases 26-30 (shipped 2026-04-30)
+- v2.0 Platform Maturity - Phases 31-35 (planning)
 
 ## Progress
 
@@ -48,6 +49,11 @@
 | 28. Admin Dashboard Enhancement | v1.10 | 1/1 | Complete | 2026-04-30 |
 | 29. Social Analytics | v1.10 | 1/1 | Complete | 2026-04-30 |
 | 30. Recommendation Insights | v1.10 | 1/1 | Complete | 2026-04-30 |
+| 31. Performance Optimization | v2.0 | 0/1 | Not started | - |
+| 32. Scalability | v2.0 | 0/1 | Not started | - |
+| 33. Internationalization | v2.0 | 0/1 | Not started | - |
+| 34. Security Hardening | v2.0 | 0/1 | Not started | - |
+| 35. Production Readiness | v2.0 | 0/1 | Not started | - |
 
 ---
-*Last updated: 2026-04-30 - v1.10 shipped*
+*Last updated: 2026-04-30 - v2.0 planning started*
