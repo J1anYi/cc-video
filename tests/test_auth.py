@@ -136,7 +136,7 @@ class TestMeEndpoint:
         """Me endpoint without token should return 401."""
         response = await client.get("/auth/me")
 
-        assert response.status_code == 403
+        assert response.status_code == 401
 
     @pytest.mark.asyncio
     async def test_me_with_invalid_token(self, client: AsyncClient):
