@@ -4,7 +4,8 @@
 
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-04-29)
 - ✅ **v1.1 Discovery & Registration** — Phases 5-6 (shipped 2026-04-29)
-- 🚧 **v1.2 Watch History & Favorites** — Phases 7-8 (in progress)
+- ✅ **v1.2 Watch History & Favorites** — Phases 7-8 (shipped 2026-04-29) — [Details](milestones/v1.2-ROADMAP.md)
+- 🚧 **v1.3 Media Enhancement** — Phases 9-10 (in progress)
 
 ## Phases
 
@@ -26,52 +27,46 @@
 
 </details>
 
-### 🚧 v1.2 Watch History & Favorites (In Progress)
+<details>
+<summary>✅ v1.2 Watch History & Favorites (Phases 7-8) — SHIPPED 2026-04-29</summary>
 
-- [x] **Phase 7: Watch History** — Track user viewing history with progress ✅ 2026-04-29
-- [x] **Phase 8: Favorites/Watchlist** — Allow users to save movies for later ✅ 2026-04-29
+- [x] Phase 7: Watch History (1/1 plan)
+- [x] Phase 8: Favorites/Watchlist (1/1 plan)
+
+</details>
+
+### 🚧 v1.3 Media Enhancement (In Progress)
+
+- [ ] **Phase 9: Poster Images** — Upload and display movie posters
+- [ ] **Phase 10: Subtitles** — Upload and display subtitle tracks
 
 ## Phase Details
 
-### Phase 7: Watch History
+### Phase 9: Poster Images
 
-**Goal:** Enable users to track and resume their viewing history.
+**Goal:** Enable administrators to upload poster images for movies.
 
-**Requirements:** HIST-01, HIST-02, HIST-03, HIST-04
+**Requirements:** MED-01, MED-02
 
 **Success Criteria:**
 
-1. User can view a list of previously watched movies in reverse chronological order
-2. Each history entry shows the movie title, thumbnail, and progress percentage
-3. User can click a history entry to resume playback from where they left off
-4. History is automatically updated when user watches a movie
-
-**Notes:**
-
-- Need new `WatchHistory` model to store user-movie-view relationships
-- Track playback position for resume functionality
-- Consider privacy: history is user-specific, never shared
+1. Admin can upload a poster image for each movie
+2. Poster images display in catalog cards
+3. Poster images display on playback page
 
 ---
 
-### Phase 8: Favorites/Watchlist
+### Phase 10: Subtitles
 
-**Goal:** Allow users to save movies to a personal watchlist.
+**Goal:** Enable subtitle support for movies.
 
-**Requirements:** FAV-01, FAV-02, FAV-03, FAV-04
+**Requirements:** MED-03, MED-04, MED-05
 
 **Success Criteria:**
 
-1. User can add a movie to favorites from the catalog or playback page
-2. User can remove a movie from favorites
-3. User can view their favorites list in a dedicated page
-4. User can start playback directly from the favorites page
-
-**Notes:**
-
-- Need new `Favorite` model for user-movie relationships
-- Toggle button should be easily accessible
-- Favorites should be sorted by date added (most recent first)
+1. Admin can upload subtitle files (SRT/VTT)
+2. Users can enable/disable subtitles during playback
+3. Multiple subtitle tracks supported per movie
 
 ---
 
@@ -87,26 +82,8 @@
 | 6. User Registration | v1.1 | 1/1 | Complete | 2026-04-29 |
 | 7. Watch History | v1.2 | 1/1 | Complete | 2026-04-29 |
 | 8. Favorites/Watchlist | v1.2 | 1/1 | Complete | 2026-04-29 |
-
-## Coverage Validation
-
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| HIST-01 | Phase 7 | Complete |
-| HIST-02 | Phase 7 | Complete |
-| HIST-03 | Phase 7 | Complete |
-| HIST-04 | Phase 7 | Complete |
-| FAV-01 | Phase 8 | Complete |
-| FAV-02 | Phase 8 | Complete |
-| FAV-03 | Phase 8 | Complete |
-| FAV-04 | Phase 8 | Complete |
-
-**Coverage:**
-- v1.2 requirements: 8 total
-- Mapped to phases: 8
-- Unmapped: 0
-- Completed: 8
-- Remaining: 0
+| 9. Poster Images | v1.3 | 0/? | Not started | - |
+| 10. Subtitles | v1.3 | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-04-29 for v1.2 milestone*
+*Last updated: 2026-04-29 after v1.2 milestone completion*
