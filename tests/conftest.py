@@ -7,7 +7,8 @@ from httpx import AsyncClient, ASGITransport
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 
 from app.main import app
-from app.database import Base, get_db
+from app.database import Base
+from app.dependencies import get_db
 from app.config import settings
 
 
