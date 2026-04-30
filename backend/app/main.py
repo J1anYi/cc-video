@@ -134,6 +134,7 @@ from app.routes.global_payment import router as global_payment_router
 from app.routes.data_residency import router as data_residency_router
 from app.routes.global_infrastructure import router as global_infrastructure_router
 from app.routes.offline import router as offline_router
+from app.routes.tv import router as tv_router
 
 logger = logging.getLogger(__name__)
 
@@ -294,6 +295,7 @@ app.include_router(creator_support_router)
 app.include_router(multi_language_router)
 app.include_router(regional_content_router)
 app.include_router(offline_router)
+app.include_router(tv_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
