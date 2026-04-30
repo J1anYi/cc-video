@@ -3,9 +3,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 
 from app.dependencies import get_db
-from app.auth import get_current_user
+from app.dependencies import get_current_user
 from app.models.user import User
-from app.models.audio_features import AudioTrack, AudioEqualizer
+from app.models.audio_features import AudioTrackFeature as AudioTrack, AudioEqualizer
 
 router = APIRouter(prefix="/audio", tags=["audio"])
 

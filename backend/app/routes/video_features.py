@@ -3,9 +3,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 
 from app.dependencies import get_db
-from app.auth import get_current_user
+from app.dependencies import get_current_user
 from app.models.user import User
-from app.models.video_features import VideoChapter, SubtitleStyle
+from app.models.video_features import VideoChapterFeature as VideoChapter, SubtitleStyle
 
 router = APIRouter(prefix="/video-features", tags=["video-features"])
 

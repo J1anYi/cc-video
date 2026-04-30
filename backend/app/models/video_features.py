@@ -6,16 +6,16 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.database import Base
 
 
-class VideoChapter(Base):
-    __tablename__ = "video_chapters"
+class VideoChapterFeature(Base):
+    __tablename__ = "video_chapter_features"
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     movie_id: Mapped[int] = mapped_column(Integer, ForeignKey("movies.id"), nullable=False, index=True)
-    
+
     title: Mapped[str] = mapped_column(String(255), nullable=False)
     start_time: Mapped[int] = mapped_column(Integer, nullable=False)  # seconds
     end_time: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
-    
+
     created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
 
 
