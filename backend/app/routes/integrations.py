@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 
 from app.dependencies import get_db
-from app.auth import get_current_user
+from app.dependencies import get_current_user
 from app.models.user import User
 from app.middleware.tenant import get_tenant_id
 from app.models.integration import OAuthConnection, WebhookConfig, WebhookDelivery
