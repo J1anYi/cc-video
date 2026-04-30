@@ -1,0 +1,12 @@
+{
+    "id": "com.ccvideo.app",
+    "version": "1.0.0",
+    "vendor": "CC Video",
+    "type": "web",
+    "main": "index.html",
+    "title": "CC Video",
+    "icon": "icon.png",
+    "largeIcon": "largeIcon.png",
+    "uiRevision": 2,
+    "resolution": "1920x1080"
+}

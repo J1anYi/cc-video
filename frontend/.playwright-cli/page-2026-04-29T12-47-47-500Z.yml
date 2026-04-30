@@ -1,0 +1,12 @@
+- generic [ref=e20]:
+  - heading "CC Video" [level=1] [ref=e21]
+  - heading "Forgot Password" [level=2] [ref=e22]
+  - generic [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e25]: Email
+      - textbox "Enter your email address" [ref=e26]
+    - button "Send Reset Link" [ref=e27] [cursor=pointer]
+  - paragraph [ref=e28]:
+    - text: Remember your password?
+    - link "Login" [ref=e29] [cursor=pointer]:
+      - /url: /login

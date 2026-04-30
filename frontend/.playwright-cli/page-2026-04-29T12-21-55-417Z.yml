@@ -1,0 +1,19 @@
+- generic [ref=e4]:
+  - heading "CC Video" [level=1] [ref=e5]
+  - heading "Login" [level=2] [ref=e6]
+  - generic [ref=e20]: Incorrect email or password
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: Email
+      - textbox [ref=e10]: admin@example.com
+    - generic [ref=e11]:
+      - generic [ref=e12]: Password
+      - textbox [ref=e13]: testpassword123
+    - button "Login" [ref=e14] [cursor=pointer]
+    - paragraph [ref=e15]:
+      - link "Forgot password?" [ref=e16] [cursor=pointer]:
+        - /url: /forgot-password
+  - paragraph [ref=e17]:
+    - text: Don't have an account?
+    - link "Register" [ref=e18] [cursor=pointer]:
+      - /url: /register

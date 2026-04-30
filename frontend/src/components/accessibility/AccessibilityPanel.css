@@ -1,0 +1,178 @@
+.a11y-panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 400px;
+  position: relative;
+}
+
+.a11y-panel-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+  color: var(--text-h);
+}
+
+.a11y-panel-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.a11y-panel-close:hover,
+.a11y-panel-close:focus {
+  color: var(--accent);
+}
+
+.a11y-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.a11y-option:last-of-type {
+  border-bottom: none;
+}
+
+.a11y-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 0.25rem;
+}
+
+.a11y-description {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+/* Toggle Switch */
+.a11y-toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  background: var(--border);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.a11y-toggle[aria-checked="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.a11y-toggle:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.a11y-toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.a11y-toggle[aria-checked="true"] .a11y-toggle-slider {
+  transform: translateX(20px);
+}
+
+/* Select Dropdown */
+.a11y-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.a11y-select:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Keyboard Shortcuts Section */
+.a11y-shortcuts {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.a11y-shortcuts h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-h);
+}
+
+.a11y-shortcuts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.a11y-shortcuts li {
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+  color: var(--text);
+}
+
+.a11y-shortcuts kbd {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+/* High Contrast Mode */
+.high-contrast .a11y-panel {
+  border-width: 2px;
+}
+
+.high-contrast .a11y-toggle {
+  border-width: 3px;
+}
+
+.high-contrast .a11y-select {
+  border-width: 2px;
+}
+
+/* Reduced Motion */
+.reduced-motion .a11y-toggle-slider {
+  transition: none;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

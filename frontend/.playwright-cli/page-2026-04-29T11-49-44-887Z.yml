@@ -1,0 +1,85 @@
+- generic [ref=e2]:
+  - region "Notifications alt+T"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Sonic Curator" [level=1] [ref=e10]
+        - button "? Shortcuts" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: "?"
+          - generic [ref=e14]: Shortcuts
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Home" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e20]
+              - generic [ref=e23]: Home
+            - link "Library" [ref=e24] [cursor=pointer]:
+              - /url: /library
+              - img [ref=e26]
+              - generic [ref=e30]: Library
+            - link "Maintenance" [ref=e32] [cursor=pointer]:
+              - /url: /maintenance
+              - img [ref=e33]
+              - generic [ref=e35]: Maintenance
+            - link "Albums" [ref=e36] [cursor=pointer]:
+              - /url: /albums
+              - img [ref=e37]
+              - generic [ref=e40]: Albums
+            - link "Artists" [ref=e41] [cursor=pointer]:
+              - /url: /artists
+              - img [ref=e42]
+              - generic [ref=e47]: Artists
+            - link "Search" [ref=e48] [cursor=pointer]:
+              - /url: /search
+              - img [ref=e49]
+              - generic [ref=e52]: Search
+            - link "Health" [ref=e53] [cursor=pointer]:
+              - /url: /health
+              - img [ref=e54]
+              - generic [ref=e56]: Health
+            - link "Duplicates" [ref=e57] [cursor=pointer]:
+              - /url: /duplicates
+              - img [ref=e58]
+              - generic [ref=e61]: Duplicates
+            - link "Profile" [ref=e62] [cursor=pointer]:
+              - /url: /profile
+              - img [ref=e63]
+              - generic [ref=e66]: Profile
+            - link "Now Playing" [ref=e67] [cursor=pointer]:
+              - /url: /player
+              - img [ref=e68]
+              - generic [ref=e73]: Now Playing
+          - generic [ref=e75]:
+            - heading "Quick Access" [level=3] [ref=e76]
+            - navigation [ref=e77]:
+              - link "Favorites" [ref=e78] [cursor=pointer]:
+                - /url: /?filter=favorites
+                - img [ref=e79]
+                - generic [ref=e81]: Favorites
+              - link "Recently Added" [ref=e82] [cursor=pointer]:
+                - /url: /?filter=all
+                - img [ref=e83]
+                - generic [ref=e86]: Recently Added
+      - main [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e90]:
+            - heading "Library" [level=1] [ref=e91]
+            - paragraph [ref=e92]: Browse your entire music collection
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - img [ref=e95]
+              - textbox "Search in library..." [ref=e98]
+            - generic [ref=e99]:
+              - button "Toggle sort options" [ref=e100] [cursor=pointer]:
+                - img [ref=e101]
+                - generic [ref=e102]: Sort
+              - button "Toggle filter options" [ref=e103] [cursor=pointer]:
+                - img [ref=e104]
+                - generic [ref=e106]: Filter
+    - generic [ref=e509]:
+      - img [ref=e511]
+      - generic [ref=e515]:
+        - heading "No track playing" [level=3] [ref=e516]
+        - paragraph [ref=e517]: Select a track to start

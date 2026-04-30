@@ -1,0 +1,552 @@
+- generic [ref=e2]:
+  - region "Notifications alt+T"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Sonic Curator" [level=1] [ref=e10]
+        - button "? Shortcuts" [active] [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: "?"
+          - generic [ref=e14]: Shortcuts
+    - generic [ref=e15]:
+      - complementary [ref=e16]:
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - link "Home" [ref=e19] [cursor=pointer]:
+              - /url: /
+              - img [ref=e20]
+              - generic [ref=e23]: Home
+            - link "Library" [ref=e24] [cursor=pointer]:
+              - /url: /library
+              - img [ref=e26]
+              - generic [ref=e30]: Library
+            - link "Maintenance" [ref=e32] [cursor=pointer]:
+              - /url: /maintenance
+              - img [ref=e33]
+              - generic [ref=e35]: Maintenance
+            - link "Albums" [ref=e36] [cursor=pointer]:
+              - /url: /albums
+              - img [ref=e37]
+              - generic [ref=e40]: Albums
+            - link "Artists" [ref=e41] [cursor=pointer]:
+              - /url: /artists
+              - img [ref=e42]
+              - generic [ref=e47]: Artists
+            - link "Search" [ref=e48] [cursor=pointer]:
+              - /url: /search
+              - img [ref=e49]
+              - generic [ref=e52]: Search
+            - link "Health" [ref=e53] [cursor=pointer]:
+              - /url: /health
+              - img [ref=e54]
+              - generic [ref=e56]: Health
+            - link "Duplicates" [ref=e57] [cursor=pointer]:
+              - /url: /duplicates
+              - img [ref=e58]
+              - generic [ref=e61]: Duplicates
+            - link "Profile" [ref=e62] [cursor=pointer]:
+              - /url: /profile
+              - img [ref=e63]
+              - generic [ref=e66]: Profile
+            - link "Now Playing" [ref=e67] [cursor=pointer]:
+              - /url: /player
+              - img [ref=e68]
+              - generic [ref=e73]: Now Playing
+          - generic [ref=e75]:
+            - heading "Quick Access" [level=3] [ref=e76]
+            - navigation [ref=e77]:
+              - link "Favorites" [ref=e78] [cursor=pointer]:
+                - /url: /?filter=favorites
+                - img [ref=e79]
+                - generic [ref=e81]: Favorites
+              - link "Recently Added" [ref=e82] [cursor=pointer]:
+                - /url: /?filter=all
+                - img [ref=e83]
+                - generic [ref=e86]: Recently Added
+      - main [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - heading "Library" [level=1] [ref=e91]
+              - paragraph [ref=e92]: Browse your entire music collection
+            - button "Play All" [ref=e518] [cursor=pointer]:
+              - img [ref=e519]
+              - text: Play All
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - img [ref=e95]
+              - textbox "Search in library..." [ref=e98]
+            - generic [ref=e99]:
+              - button "Toggle sort options" [ref=e100] [cursor=pointer]:
+                - img [ref=e101]
+                - generic [ref=e102]: Sort
+              - button "Toggle filter options" [ref=e103] [cursor=pointer]:
+                - img [ref=e104]
+                - generic [ref=e106]: Filter
+          - generic [ref=e521]:
+            - button "Play LETTING GO by 蔡健雅" [ref=e524] [cursor=pointer]:
+              - button "Select LETTING GO" [ref=e525]
+              - img "LETTING GO" [ref=e528]
+              - generic [ref=e529]:
+                - heading "LETTING GO" [level=3] [ref=e530]
+                - paragraph [ref=e531]: 蔡健雅 • 说到爱
+              - generic [ref=e532]: 4:23
+              - button "Play LETTING GO" [ref=e533]:
+                - img [ref=e534]
+              - button "More options" [ref=e537]:
+                - img [ref=e538]
+            - button "Play 美人鱼 by 林俊杰" [ref=e544] [cursor=pointer]:
+              - button "Select 美人鱼" [ref=e545]
+              - img "美人鱼" [ref=e548]
+              - generic [ref=e549]:
+                - heading "美人鱼" [level=3] [ref=e550]
+                - paragraph [ref=e551]: 林俊杰 • 第二天堂
+              - generic [ref=e552]: 4:14
+              - button "Play 美人鱼" [ref=e553]:
+                - img [ref=e554]
+              - button "More options" [ref=e557]:
+                - img [ref=e558]
+            - button "Play 美人鱼 by 林俊杰" [ref=e564] [cursor=pointer]:
+              - button "Select 美人鱼" [ref=e565]
+              - img "美人鱼" [ref=e568]
+              - generic [ref=e569]:
+                - heading "美人鱼" [level=3] [ref=e570]
+                - paragraph [ref=e571]: 林俊杰 • 第二天堂
+              - generic [ref=e572]: 4:14
+              - button "Play 美人鱼" [ref=e573]:
+                - img [ref=e574]
+              - button "More options" [ref=e577]:
+                - img [ref=e578]
+            - button "Play 江南 by 林俊杰" [ref=e584] [cursor=pointer]:
+              - button "Select 江南" [ref=e585]
+              - img "江南" [ref=e588]
+              - generic [ref=e589]:
+                - heading "江南" [level=3] [ref=e590]
+                - paragraph [ref=e591]: 林俊杰 • 第二天堂
+              - generic [ref=e592]: 4:27
+              - button "Play 江南" [ref=e593]:
+                - img [ref=e594]
+              - button "More options" [ref=e597]:
+                - img [ref=e598]
+            - button "Play 关键词 by 林俊杰" [ref=e604] [cursor=pointer]:
+              - button "Select 关键词" [ref=e605]
+              - img "关键词" [ref=e608]
+              - generic [ref=e609]:
+                - heading "关键词" [level=3] [ref=e610]
+                - paragraph [ref=e611]: 林俊杰 • 和自己对话 From M.E. To Myself
+              - generic [ref=e612]: 3:32
+              - button "Play 关键词" [ref=e613]:
+                - img [ref=e614]
+              - button "More options" [ref=e617]:
+                - img [ref=e618]
+            - button "Play 修炼爱情 by 林俊杰" [ref=e624] [cursor=pointer]:
+              - button "Select 修炼爱情" [ref=e625]
+              - img "修炼爱情" [ref=e628]
+              - generic [ref=e629]:
+                - heading "修炼爱情" [level=3] [ref=e630]
+                - paragraph [ref=e631]: 林俊杰 • 因你而在
+              - generic [ref=e632]: 4:47
+              - button "Play 修炼爱情" [ref=e633]:
+                - img [ref=e634]
+              - button "More options" [ref=e637]:
+                - img [ref=e638]
+            - button "Play Always Online by 林俊杰" [ref=e644] [cursor=pointer]:
+              - button "Select Always Online" [ref=e645]
+              - img "Always Online" [ref=e648]
+              - generic [ref=e649]:
+                - heading "Always Online" [level=3] [ref=e650]
+                - paragraph [ref=e651]: 林俊杰 • JJ陆
+              - generic [ref=e652]: 3:45
+              - button "Play Always Online" [ref=e653]:
+                - img [ref=e654]
+              - button "More options" [ref=e657]:
+                - img [ref=e658]
+            - button "Play 可惜没如果 by 林俊杰 | 音乐下载网站 yym4.com" [ref=e664] [cursor=pointer]:
+              - button "Select 可惜没如果" [ref=e665]
+              - img [ref=e669]
+              - generic [ref=e673]:
+                - heading "可惜没如果" [level=3] [ref=e674]
+                - paragraph [ref=e675]: 林俊杰 | 音乐下载网站 yym4.com • 新地球 - 人 (Special Edition)
+              - generic [ref=e676]: 4:58
+              - button "Play 可惜没如果" [ref=e677]:
+                - img [ref=e678]
+              - button "More options" [ref=e681]:
+                - img [ref=e682]
+            - button "Play 李白 by 李荣浩" [ref=e688] [cursor=pointer]:
+              - button "Select 李白" [ref=e689]
+              - img [ref=e693]
+              - generic [ref=e697]:
+                - heading "李白" [level=3] [ref=e698]
+                - paragraph [ref=e699]: 李荣浩 • 模特
+              - generic [ref=e700]: 4:33
+              - button "Play 李白" [ref=e701]:
+                - img [ref=e702]
+              - button "More options" [ref=e705]:
+                - img [ref=e706]
+            - button "Play 戒烟 by 李荣浩" [ref=e712] [cursor=pointer]:
+              - button "Select 戒烟" [ref=e713]
+              - img "戒烟" [ref=e716]
+              - generic [ref=e717]:
+                - heading "戒烟" [level=3] [ref=e718]
+                - paragraph [ref=e719]: 李荣浩 • 戒烟
+              - generic [ref=e720]: 4:53
+              - button "Play 戒烟" [ref=e721]:
+                - img [ref=e722]
+              - button "More options" [ref=e725]:
+                - img [ref=e726]
+            - button "Play 我不难过 by 孙燕姿" [ref=e732] [cursor=pointer]:
+              - button "Select 我不难过" [ref=e733]
+              - img "我不难过" [ref=e736]
+              - generic [ref=e737]:
+                - heading "我不难过" [level=3] [ref=e738]
+                - paragraph [ref=e739]: 孙燕姿 • 未完成
+              - generic [ref=e740]: 5:22
+              - button "Play 我不难过" [ref=e741]:
+                - img [ref=e742]
+              - button "More options" [ref=e745]:
+                - img [ref=e746]
+            - button "Play 我不难过 by 孙燕姿" [ref=e752] [cursor=pointer]:
+              - button "Select 我不难过" [ref=e753]
+              - img "我不难过" [ref=e756]
+              - generic [ref=e757]:
+                - heading "我不难过" [level=3] [ref=e758]
+                - paragraph [ref=e759]: 孙燕姿 • 未完成
+              - generic [ref=e760]: 5:22
+              - button "Play 我不难过" [ref=e761]:
+                - img [ref=e762]
+              - button "More options" [ref=e765]:
+                - img [ref=e766]
+            - button "Play 稻香 by 周杰伦" [ref=e772] [cursor=pointer]:
+              - button "Select 稻香" [ref=e773]
+              - img [ref=e777]
+              - generic [ref=e781]:
+                - heading "稻香" [level=3] [ref=e782]
+                - paragraph [ref=e783]: 周杰伦 • 魔杰座
+              - generic [ref=e784]: 3:43
+              - button "Play 稻香" [ref=e785]:
+                - img [ref=e786]
+              - button "More options" [ref=e789]:
+                - img [ref=e790]
+            - button "Play 青花瓷 by 周杰伦" [ref=e796] [cursor=pointer]:
+              - button "Select 青花瓷" [ref=e797]
+              - img "青花瓷" [ref=e800]
+              - generic [ref=e801]:
+                - heading "青花瓷" [level=3] [ref=e802]
+                - paragraph [ref=e803]: 周杰伦 • 我很忙
+              - generic [ref=e804]: 3:59
+              - button "Play 青花瓷" [ref=e805]:
+                - img [ref=e806]
+              - button "More options" [ref=e809]:
+                - img [ref=e810]
+            - button "Play 说好的幸福呢 by 周杰伦" [ref=e816] [cursor=pointer]:
+              - button "Select 说好的幸福呢" [ref=e817]
+              - img "说好的幸福呢" [ref=e820]
+              - generic [ref=e821]:
+                - heading "说好的幸福呢" [level=3] [ref=e822]
+                - paragraph [ref=e823]: 周杰伦 • 魔杰座
+              - generic [ref=e824]: 4:16
+              - button "Play 说好的幸福呢" [ref=e825]:
+                - img [ref=e826]
+              - button "More options" [ref=e829]:
+                - img [ref=e830]
+            - button "Play 蒲公英的约定 by 周杰伦" [ref=e836] [cursor=pointer]:
+              - button "Select 蒲公英的约定" [ref=e837]
+              - img "蒲公英的约定" [ref=e840]
+              - generic [ref=e841]:
+                - heading "蒲公英的约定" [level=3] [ref=e842]
+                - paragraph [ref=e843]: 周杰伦 • 我很忙
+              - generic [ref=e844]: 4:07
+              - button "Play 蒲公英的约定" [ref=e845]:
+                - img [ref=e846]
+              - button "More options" [ref=e849]:
+                - img [ref=e850]
+            - button "Play 花海 by 周杰伦" [ref=e856] [cursor=pointer]:
+              - button "Select 花海" [ref=e857]
+              - img [ref=e861]
+              - generic [ref=e865]:
+                - heading "花海" [level=3] [ref=e866]
+                - paragraph [ref=e867]: 周杰伦 • 花海
+              - generic [ref=e868]: 4:24
+              - button "Play 花海" [ref=e869]:
+                - img [ref=e870]
+              - button "More options" [ref=e873]:
+                - img [ref=e874]
+            - button "Play 红尘客栈 by 周杰伦" [ref=e880] [cursor=pointer]:
+              - button "Select 红尘客栈" [ref=e881]
+              - img "红尘客栈" [ref=e884]
+              - generic [ref=e885]:
+                - heading "红尘客栈" [level=3] [ref=e886]
+                - paragraph [ref=e887]: 周杰伦 • 十二新作
+              - generic [ref=e888]: 4:34
+              - button "Play 红尘客栈" [ref=e889]:
+                - img [ref=e890]
+              - button "More options" [ref=e893]:
+                - img [ref=e894]
+            - button "Play 爱在西元前 by 周杰伦" [ref=e900] [cursor=pointer]:
+              - button "Select 爱在西元前" [ref=e901]
+              - img "爱在西元前" [ref=e904]
+              - generic [ref=e905]:
+                - heading "爱在西元前" [level=3] [ref=e906]
+                - paragraph [ref=e907]: 周杰伦 • 范特西
+              - generic [ref=e908]: 3:54
+              - button "Play 爱在西元前" [ref=e909]:
+                - img [ref=e910]
+              - button "More options" [ref=e913]:
+                - img [ref=e914]
+            - button "Play 烟花易冷 by 周杰伦" [ref=e920] [cursor=pointer]:
+              - button "Select 烟花易冷" [ref=e921]
+              - img "烟花易冷" [ref=e924]
+              - generic [ref=e925]:
+                - heading "烟花易冷" [level=3] [ref=e926]
+                - paragraph [ref=e927]: 周杰伦 • 跨时代
+              - generic [ref=e928]: 4:23
+              - button "Play 烟花易冷" [ref=e929]:
+                - img [ref=e930]
+              - button "More options" [ref=e933]:
+                - img [ref=e934]
+            - button "Play 枫 by 周杰伦" [ref=e940] [cursor=pointer]:
+              - button "Select 枫" [ref=e941]
+              - img "枫" [ref=e944]
+              - generic [ref=e945]:
+                - heading "枫" [level=3] [ref=e946]
+                - paragraph [ref=e947]: 周杰伦 • 十一月的萧邦
+              - generic [ref=e948]: 4:35
+              - button "Play 枫" [ref=e949]:
+                - img [ref=e950]
+              - button "More options" [ref=e953]:
+                - img [ref=e954]
+            - button "Play 半岛铁盒 by 周杰伦" [ref=e960] [cursor=pointer]:
+              - button "Select 半岛铁盒" [ref=e961]
+              - img "半岛铁盒" [ref=e964]
+              - generic [ref=e965]:
+                - heading "半岛铁盒" [level=3] [ref=e966]
+                - paragraph [ref=e967]: 周杰伦 • 八度空间
+              - generic [ref=e968]: 5:19
+              - button "Play 半岛铁盒" [ref=e969]:
+                - img [ref=e970]
+              - button "More options" [ref=e973]:
+                - img [ref=e974]
+            - button "Play 告白气球 by 周杰伦" [ref=e980] [cursor=pointer]:
+              - button "Select 告白气球" [ref=e981]
+              - img [ref=e985]
+              - generic [ref=e989]:
+                - heading "告白气球" [level=3] [ref=e990]
+                - paragraph [ref=e991]: 周杰伦 • 周杰伦的床边故事
+              - generic [ref=e992]: 3:35
+              - button "Play 告白气球" [ref=e993]:
+                - img [ref=e994]
+              - button "More options" [ref=e997]:
+                - img [ref=e998]
+            - button "Play 多远都要在一起-邓紫棋-黑人福音版 by Unknown Artist" [ref=e1004] [cursor=pointer]:
+              - button "Select 多远都要在一起-邓紫棋-黑人福音版" [ref=e1005]
+              - img [ref=e1009]
+              - generic [ref=e1013]:
+                - heading "多远都要在一起-邓紫棋-黑人福音版" [level=3] [ref=e1014]
+                - paragraph [ref=e1015]: Unknown Artist
+              - generic [ref=e1016]: 3:58
+              - button "Play 多远都要在一起-邓紫棋-黑人福音版" [ref=e1017]:
+                - img [ref=e1018]
+              - button "More options" [ref=e1021]:
+                - img [ref=e1022]
+            - button "Play 青花瓷 by 周杰伦" [ref=e1028] [cursor=pointer]:
+              - button "Select 青花瓷" [ref=e1029]
+              - img "青花瓷" [ref=e1032]
+              - generic [ref=e1033]:
+                - heading "青花瓷" [level=3] [ref=e1034]
+                - paragraph [ref=e1035]: 周杰伦 • 我很忙
+              - generic [ref=e1036]: 3:59
+              - button "Play 青花瓷" [ref=e1037]:
+                - img [ref=e1038]
+              - button "More options" [ref=e1041]:
+                - img [ref=e1042]
+            - button "Play 多远都要在一起-邓紫棋-黑人福音版 by Unknown Artist" [ref=e1048] [cursor=pointer]:
+              - button "Select 多远都要在一起-邓紫棋-黑人福音版" [ref=e1049]
+              - img [ref=e1053]
+              - generic [ref=e1057]:
+                - heading "多远都要在一起-邓紫棋-黑人福音版" [level=3] [ref=e1058]
+                - paragraph [ref=e1059]: Unknown Artist
+              - generic [ref=e1060]: 3:58
+              - button "Play 多远都要在一起-邓紫棋-黑人福音版" [ref=e1061]:
+                - img [ref=e1062]
+              - button "More options" [ref=e1065]:
+                - img [ref=e1066]
+            - button "Play 青花瓷 by 周杰伦" [ref=e1072] [cursor=pointer]:
+              - button "Select 青花瓷" [ref=e1073]
+              - img "青花瓷" [ref=e1076]
+              - generic [ref=e1077]:
+                - heading "青花瓷" [level=3] [ref=e1078]
+                - paragraph [ref=e1079]: 周杰伦 • 我很忙
+              - generic [ref=e1080]: 3:59
+              - button "Play 青花瓷" [ref=e1081]:
+                - img [ref=e1082]
+              - button "More options" [ref=e1085]:
+                - img [ref=e1086]
+            - button "Play 11-【SUNO V5】郭顶-凄美地-黑人福音版 by Unknown Artist" [ref=e1092] [cursor=pointer]:
+              - button "Select 11-【SUNO V5】郭顶-凄美地-黑人福音版" [ref=e1093]
+              - img [ref=e1097]
+              - generic [ref=e1101]:
+                - heading "11-【SUNO V5】郭顶-凄美地-黑人福音版" [level=3] [ref=e1102]
+                - paragraph [ref=e1103]: Unknown Artist
+              - generic [ref=e1104]: 4:00
+              - button "Play 11-【SUNO V5】郭顶-凄美地-黑人福音版" [ref=e1105]:
+                - img [ref=e1106]
+              - button "More options" [ref=e1109]:
+                - img [ref=e1110]
+            - button "Play 03-[Suno V5]徐佳莹-一样的月光（黑人福音给我听湿了） by Unknown Artist" [ref=e1116] [cursor=pointer]:
+              - button "Select 03-[Suno V5]徐佳莹-一样的月光（黑人福音给我听湿了）" [ref=e1117]
+              - img [ref=e1121]
+              - generic [ref=e1125]:
+                - heading "03-[Suno V5]徐佳莹-一样的月光（黑人福音给我听湿了）" [level=3] [ref=e1126]
+                - paragraph [ref=e1127]: Unknown Artist
+              - generic [ref=e1128]: 4:15
+              - button "Play 03-[Suno V5]徐佳莹-一样的月光（黑人福音给我听湿了）" [ref=e1129]:
+                - img [ref=e1130]
+              - button "More options" [ref=e1133]:
+                - img [ref=e1134]
+            - button "Play 01-【Suno V5】毛不易-无名的人-黑人福音 by Unknown Artist" [ref=e1140] [cursor=pointer]:
+              - button "Select 01-【Suno V5】毛不易-无名的人-黑人福音" [ref=e1141]
+              - img [ref=e1145]
+              - generic [ref=e1149]:
+                - heading "01-【Suno V5】毛不易-无名的人-黑人福音" [level=3] [ref=e1150]
+                - paragraph [ref=e1151]: Unknown Artist
+              - generic [ref=e1152]: 3:39
+              - button "Play 01-【Suno V5】毛不易-无名的人-黑人福音" [ref=e1153]:
+                - img [ref=e1154]
+              - button "More options" [ref=e1157]:
+                - img [ref=e1158]
+            - button "Play 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》 by Unknown Artist" [ref=e1164] [cursor=pointer]:
+              - button "Select 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [ref=e1165]
+              - img [ref=e1169]
+              - generic [ref=e1173]:
+                - heading "36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [level=3] [ref=e1174]
+                - paragraph [ref=e1175]: Unknown Artist
+              - generic [ref=e1176]: 4:09
+              - button "Play 36-[SUNO V5] 黑人大妈炸裂唱腔引爆灵魂福音版《情歌》" [ref=e1177]:
+                - img [ref=e1178]
+              - button "More options" [ref=e1181]:
+                - img [ref=e1182]
+            - button "Play 02-《独家记忆》R&B by Unknown Artist" [ref=e1188] [cursor=pointer]:
+              - button "Select 02-《独家记忆》R&B" [ref=e1189]
+              - img [ref=e1193]
+              - generic [ref=e1197]:
+                - heading "02-《独家记忆》R&B" [level=3] [ref=e1198]
+                - paragraph [ref=e1199]: Unknown Artist
+              - generic [ref=e1200]: 5:19
+              - button "Play 02-《独家记忆》R&B" [ref=e1201]:
+                - img [ref=e1202]
+              - button "More options" [ref=e1205]:
+                - img [ref=e1206]
+            - button "Play 青花瓷 by 周杰伦" [ref=e1212] [cursor=pointer]:
+              - button "Select 青花瓷" [ref=e1213]
+              - img "青花瓷" [ref=e1216]
+              - generic [ref=e1217]:
+                - heading "青花瓷" [level=3] [ref=e1218]
+                - paragraph [ref=e1219]: 周杰伦 • 我很忙
+              - generic [ref=e1220]: 3:59
+              - button "Play 青花瓷" [ref=e1221]:
+                - img [ref=e1222]
+              - button "More options" [ref=e1225]:
+                - img [ref=e1226]
+            - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP by 永雏塔菲" [ref=e1232] [cursor=pointer]:
+              - button "Select 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e1233]
+              - img [ref=e1237]
+              - generic [ref=e1241]:
+                - heading "【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e1242]
+                - paragraph [ref=e1243]: 永雏塔菲
+              - generic [ref=e1244]: 2:14
+              - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e1245]:
+                - img [ref=e1246]
+              - button "More options" [ref=e1249]:
+                - img [ref=e1250]
+            - button "Play 多远都要在一起-邓紫棋-黑人福音版 by Unknown Artist" [ref=e1256] [cursor=pointer]:
+              - button "Select 多远都要在一起-邓紫棋-黑人福音版" [ref=e1257]
+              - img [ref=e1261]
+              - generic [ref=e1265]:
+                - heading "多远都要在一起-邓紫棋-黑人福音版" [level=3] [ref=e1266]
+                - paragraph [ref=e1267]: Unknown Artist
+              - generic [ref=e1268]: 3:58
+              - button "Play 多远都要在一起-邓紫棋-黑人福音版" [ref=e1269]:
+                - img [ref=e1270]
+              - button "More options" [ref=e1273]:
+                - img [ref=e1274]
+            - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP by Unknown Artist" [ref=e1280] [cursor=pointer]:
+              - button "Select 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e1281]
+              - img [ref=e1285]
+              - generic [ref=e1289]:
+                - heading "【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e1290]
+                - paragraph [ref=e1291]: Unknown Artist
+              - generic [ref=e1292]: 2:14
+              - button "Play 【卖萌の小曲】“💗微笑再美再甜不是你的都不特别💗”《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e1293]:
+                - img [ref=e1294]
+              - button "More options" [ref=e1297]:
+                - img [ref=e1298]
+            - button "Play 【卖萌の小曲】\"💗微笑再美再甜不是你的都不特别💗\"《室内系的TrackMaker×只对你有感觉》_VIP by 测试艺术家" [ref=e1304] [cursor=pointer]:
+              - button "Select 【卖萌の小曲】\"💗微笑再美再甜不是你的都不特别💗\"《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e1305]
+              - img [ref=e1309]
+              - generic [ref=e1313]:
+                - heading "【卖萌の小曲】\"💗微笑再美再甜不是你的都不特别💗\"《室内系的TrackMaker×只对你有感觉》_VIP" [level=3] [ref=e1314]
+                - paragraph [ref=e1315]: 测试艺术家
+              - generic [ref=e1316]: 0:00
+              - button "Play 【卖萌の小曲】\"💗微笑再美再甜不是你的都不特别💗\"《室内系的TrackMaker×只对你有感觉》_VIP" [ref=e1317]:
+                - img [ref=e1318]
+              - button "More options" [ref=e1321]:
+                - img [ref=e1322]
+            - button "Play 【卖萌の小曲】测试 by Unknown Artist" [ref=e1328] [cursor=pointer]:
+              - button "Select 【卖萌の小曲】测试" [ref=e1329]
+              - img [ref=e1333]
+              - generic [ref=e1337]:
+                - heading "【卖萌の小曲】测试" [level=3] [ref=e1338]
+                - paragraph [ref=e1339]: Unknown Artist
+              - generic [ref=e1340]: 0:00
+              - button "Play 【卖萌の小曲】测试" [ref=e1341]:
+                - img [ref=e1342]
+              - button "More options" [ref=e1345]:
+                - img [ref=e1346]
+            - 'button "Play ãåèã®å°æ²ãæµè¯ by Unknown Artist" [ref=e1352] [cursor=pointer]':
+              - 'button "Select ãåèã®å°æ²ãæµè¯" [ref=e1353]'
+              - img [ref=e1357]
+              - generic [ref=e1361]:
+                - 'heading "ãåèã®å°æ²ãæµè¯" [level=3] [ref=e1362]'
+                - paragraph [ref=e1363]: Unknown Artist
+              - generic [ref=e1364]: 0:00
+              - 'button "Play ãåèã®å°æ²ãæµè¯" [ref=e1365]':
+                - img [ref=e1366]
+              - button "More options" [ref=e1369]:
+                - img [ref=e1370]
+            - button "Play 【卖萌の小曲】测试标题 by 测试艺术家" [ref=e1376] [cursor=pointer]:
+              - button "Select 【卖萌の小曲】测试标题" [ref=e1377]
+              - img [ref=e1381]
+              - generic [ref=e1385]:
+                - heading "【卖萌の小曲】测试标题" [level=3] [ref=e1386]
+                - paragraph [ref=e1387]: 测试艺术家
+              - generic [ref=e1388]: 0:00
+              - button "Play 【卖萌の小曲】测试标题" [ref=e1389]:
+                - img [ref=e1390]
+              - button "More options" [ref=e1393]:
+                - img [ref=e1394]
+            - 'button "Play ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP by Unknown Artist" [ref=e1400] [cursor=pointer]':
+              - 'button "Select ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP" [ref=e1401]'
+              - img [ref=e1405]
+              - generic [ref=e1409]:
+                - 'heading "ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP" [level=3] [ref=e1410]'
+                - paragraph [ref=e1411]: Unknown Artist
+              - generic [ref=e1412]: 2:14
+              - 'button "Play ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP" [ref=e1413]':
+                - img [ref=e1414]
+              - button "More options" [ref=e1417]:
+                - img [ref=e1418]
+            - 'button "Play ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP by Unknown Artist" [ref=e1424] [cursor=pointer]':
+              - 'button "Select ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP" [ref=e1425]'
+              - img [ref=e1429]
+              - generic [ref=e1433]:
+                - 'heading "ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP" [level=3] [ref=e1434]'
+                - paragraph [ref=e1435]: Unknown Artist
+              - generic [ref=e1436]: 2:14
+              - 'button "Play ãåèã®å°æ²ãâðå¾®ç¬åç¾åçä¸æ¯ä½ çé½ä¸ç¹å«ðâãå®¤åç³»çTrackMakerÃåªå¯¹ä½ ææè§ã_VIP" [ref=e1437]':
+                - img [ref=e1438]
+              - button "More options" [ref=e1441]:
+                - img [ref=e1442]
+    - generic [ref=e509]:
+      - img [ref=e511]
+      - generic [ref=e515]:
+        - heading "No track playing" [level=3] [ref=e516]
+        - paragraph [ref=e517]: Select a track to start
