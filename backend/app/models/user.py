@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from app.models.tenant import Tenant
     from app.models.password_reset import PasswordReset
     from app.models.video_chapter import UserBookmark
+    from app.models.creator import CreatorProfile
 
 
 class UserRole(str, enum.Enum):
@@ -49,6 +50,7 @@ class User(Base):
     # Relationships
     password_resets: Mapped[list["PasswordReset"]] = relationship("PasswordReset", back_populates="user")
     bookmarks: Mapped[list["UserBookmark"]] = relationship("UserBookmark", back_populates="user")
+    creator_profile: Mapped[Optional["CreatorProfile"]] = relationship("CreatorProfile", back_populates="user", uselist=False)
 
     # Personalization preferences
     homepage_layout: Mapped[str | None] = mapped_column(String(2000), nullable=True)

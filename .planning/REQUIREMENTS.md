@@ -2,11 +2,11 @@
 
 ## Mobile Platform (MP)
 
-- [ ] **MP-01**: Progressive Web App (PWA) with offline support and app-like experience
-- [ ] **MP-02**: Native iOS app with UIKit/SwiftUI and native video player
-- [ ] **MP-03**: Native Android app with Material Design and ExoPlayer integration
-- [ ] **MP-04**: Cross-platform responsive design system with mobile-first breakpoints
-- [ ] **MP-05**: Mobile-specific navigation patterns (bottom nav, gestures, swipe)
+- [x] **MP-01**: Progressive Web App (PWA) with offline support and app-like experience
+- [x] **MP-02**: Native iOS app with UIKit/SwiftUI and native video player
+- [x] **MP-03**: Native Android app with Material Design and ExoPlayer integration
+- [x] **MP-04**: Cross-platform responsive design system with mobile-first breakpoints
+- [x] **MP-05**: Mobile-specific navigation patterns (bottom nav, gestures, swipe)
 
 ## Offline & Sync (OS)
 
@@ -41,4 +41,4 @@
 - [ ] **MI-05**: Widget support for continue watching and recommendations
 
 ---
-*Created: 2026-04-30 - v5.5 planning*
+*Updated: 2026-04-30 - Phase 206 complete*
