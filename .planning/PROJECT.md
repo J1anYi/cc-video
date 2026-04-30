@@ -6,28 +6,28 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v3.7 Planning (2026-05-01)
+## Current State: v3.8 Planning (2026-05-01)
 
-**v3.6 Advanced Media and Streaming shipped.** Starting v3.7 Community and Social Features.
+**v3.7 Community and Social Features shipped.** Starting v3.8 Content Protection and Security.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v3.7 Community and Social Features
+## Current Milestone: v3.8 Content Protection and Security
 
-**Goal:** Enhance social interactions, community building, and user engagement tools.
+**Goal:** Implement comprehensive content protection, DRM, and security features.
 
 **Target features:**
-- Community forums and discussions
-- User groups and clubs
-- Event scheduling and watch parties
-- Social feeds and activity streams
-- Gamification and achievements
+- Digital Rights Management (DRM)
+- Video watermarking
+- Geo-restriction capabilities
+- Access control enhancements
+- Content encryption
 
 ## Requirements
 
-### Validated (v1.0-v3.6)
+### Validated (v1.0-v3.7)
 
 - [x] Core MVP features (v1.0-v1.10)
 - [x] Platform maturity (v2.0-v2.9)
@@ -38,18 +38,19 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Content Ecosystem and Marketplace (v3.4)
 - [x] AI-Enhanced User Experience (v3.5)
 - [x] Advanced Media and Streaming (v3.6)
+- [x] Community and Social Features (v3.7)
 
-### Active (v3.7)
+### Active (v3.8)
 
-- [ ] Community forums
-- [ ] User groups and clubs
-- [ ] Watch parties
-- [ ] Social feeds
-- [ ] Gamification
+- [ ] Digital Rights Management
+- [ ] Video watermarking
+- [ ] Geo-restrictions
+- [ ] Access control
+- [ ] Content encryption
 
 ## Context
 
-v3.7 builds community features enabling users to connect, discuss content, form groups, participate in events, and earn achievements.
+v3.8 implements enterprise-grade content protection including DRM, watermarking, regional restrictions, and enhanced security measures.
 
 ## Constraints
 
@@ -63,4 +64,4 @@ v3.7 builds community features enabling users to connect, discuss content, form 
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-05-01 - Starting v3.7*
+*Last updated: 2026-05-01 - Starting v3.8*

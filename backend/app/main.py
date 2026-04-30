@@ -60,6 +60,10 @@ from app.routes.audio_track import router as audio_track_router
 from app.routes.content_protection import router as content_protection_router
 from app.routes.mobile import router as mobile_router
 from app.routes.forum import router as forum_router
+from app.routes.group import router as group_router
+from app.routes.watch_party import router as watch_party_router
+from app.routes.social_feed import router as social_feed_router
+from app.routes.gamification import router as gamification_router
 
 logger = logging.getLogger(__name__)
 
@@ -150,6 +154,10 @@ app.include_router(audio_track_router)
 app.include_router(content_protection_router)
 app.include_router(mobile_router)
 app.include_router(forum_router)
+app.include_router(group_router)
+app.include_router(watch_party_router)
+app.include_router(social_feed_router)
+app.include_router(gamification_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")

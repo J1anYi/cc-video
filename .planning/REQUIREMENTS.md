@@ -1,59 +1,60 @@
-# Requirements: CC Video - v3.7 Community and Social Features
+# Requirements: CC Video - v3.8 Content Protection and Security
 
 ## Active Requirements
 
-### Community Forums (CF)
+### Digital Rights Management (DRM)
 
-- [ ] **CF-01**: Discussion forums per content category
-- [ ] **CF-02**: Thread creation and replies
-- [ ] **CF-03**: Forum moderation tools
-- [ ] **CF-04**: Pinned and featured threads
-- [ ] **CF-05**: Forum search and filtering
+- [ ] **DRM-01**: Multi-DRM support (Widevine, PlayReady, FairPlay)
+- [ ] **DRM-02**: License server integration
+- [ ] **DRM-03**: Device registration and limits
+- [ ] **DRM-04**: Offline playback with DRM
+- [ ] **DRM-05**: Key rotation and management
 
-### User Groups and Clubs (UGC)
+### Video Watermarking (VW)
 
-- [ ] **UGC-01**: Public and private groups
-- [ ] **UGC-02**: Group membership management
-- [ ] **UGC-03**: Group-specific content collections
-- [ ] **UGC-04**: Group discussion boards
-- [ ] **UGC-05**: Group activity feeds
+- [ ] **VW-01**: Visible watermark overlay
+- [ ] **VW-02**: Invisible forensic watermarking
+- [ ] **VW-03**: User-specific watermarks
+- [ ] **VW-04**: Watermark position customization
+- [ ] **VW-05**: Leak tracing capabilities
 
-### Watch Parties (WP)
+### Geo-Restrictions (GR)
 
-- [ ] **WP-01**: Scheduled watch events
-- [ ] **WP-02**: Synchronized playback for participants
-- [ ] **WP-03**: Live chat during watch parties
-- [ ] **WP-04**: Watch party invitations
-- [ ] **WP-05**: Event reminders and notifications
+- [ ] **GR-01**: Country-based content blocking
+- [ ] **GR-02**: Region-specific licensing
+- [ ] **GR-03**: IP-based access control
+- [ ] **GR-04**: VPN detection
+- [ ] **GR-05**: Geo-bypass prevention
 
-### Social Feeds (SF)
+### Access Control (AC)
 
-- [ ] **SF-01**: Personalized activity feed
-- [ ] **SF-02**: Follow user activity updates
-- [ ] **SF-03**: Content recommendations from follows
-- [ ] **SF-04**: Trending discussions display
-- [ ] **SF-05**: Feed customization options
+- [ ] **AC-01**: Content-level permissions
+- [ ] **AC-02**: Time-based access windows
+- [ ] **AC-03**: Device limit enforcement
+- [ ] **AC-04**: Concurrent stream limits
+- [ ] **AC-05**: Role-based content access
 
-### Gamification (GAM)
+### Content Encryption (CE)
 
-- [ ] **GAM-01**: User achievement badges
-- [ ] **GAM-02**: XP and leveling system
-- [ ] **GAM-03**: Leaderboards per category
-- [ ] **GAM-04**: Challenges and quests
-- [ ] **GAM-05**: Rewards and unlockables
+- [ ] **CE-01**: AES-256 video encryption
+- [ ] **CE-02**: Secure key delivery
+- [ ] **CE-03**: End-to-end encryption
+- [ ] **CE-04**: Key storage security
+- [ ] **CE-05**: Encryption at rest
 
 ## Completed Requirements
 
-### v3.6: Advanced Media and Streaming (Phases 111-115)
+### v3.7: Community and Social Features (Phases 116-120)
 
-- [x] Live Streaming Infrastructure (LS-01 to LS-05)
-- [x] Adaptive Bitrate Streaming (ABR-01 to ABR-05)
-- [x] Multi-Audio Track Support (MAT-01 to MAT-05)
-- [x] Video Chapters and Navigation (VCN-01 to VCN-05)
-- [x] Advanced Playback Controls (APC-01 to APC-05)
+- [x] Community Forums (CF-01 to CF-05)
+- [x] User Groups and Clubs (UGC-01 to UGC-05)
+- [x] Watch Parties (WP-01 to WP-05)
+- [x] Social Feeds (SF-01 to SF-05)
+- [x] Gamification (GAM-01 to GAM-05)
 
 ### Earlier Milestones
 
+- [x] v3.6: Advanced Media and Streaming (Phases 111-115)
 - [x] v3.5: AI-Enhanced User Experience (Phases 106-110)
 - [x] v3.4: Content Ecosystem and Marketplace (Phases 101-105)
 - [x] v3.3: Enterprise Platform and Infrastructure (Phases 96-100)
@@ -64,4 +65,4 @@
 - [x] v1.0-v1.10: Core MVP (Phases 1-30)
 
 ---
-*Created: 2026-05-01 - v3.7 Requirements*
+*Created: 2026-05-01 - v3.8 Requirements*
