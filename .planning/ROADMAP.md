@@ -9,67 +9,68 @@
 - v3.2 Advanced Analytics and Business Intelligence - Phases 91-95 (shipped 2026-04-30)
 - v3.3 Enterprise Platform and Infrastructure - Phases 96-100 (shipped 2026-04-30)
 - v3.4 Content Ecosystem and Marketplace - Phases 101-105 (shipped 2026-04-30)
-- v3.5 AI-Enhanced User Experience - Phases 106-110 (planning)
+- v3.5 AI-Enhanced User Experience - Phases 106-110 (shipped 2026-04-30)
+- v3.6 Advanced Media and Streaming - Phases 111-115 (planning)
 
 ## Progress
 
-**Current:** v3.5 in planning. 105 phases complete.
+**Current:** v3.6 in planning. 110 phases complete.
 
 ---
-*Last updated: 2026-04-30 - v3.5 planning*
+*Last updated: 2026-05-01 - v3.6 planning*
 
 ---
 
-## v3.5: AI-Enhanced User Experience
+## v3.6: Advanced Media and Streaming
 
-**Goal:** Leverage AI for personalized experiences, intelligent discovery, and automated content management.
+**Goal:** Enhance video delivery, live streaming capabilities, and advanced playback features.
 
-### Phase 106: Personalized Recommendations
-**Goal:** Implement ML-based personalized content recommendations
-**Requirements:** PR-01 to PR-05
+### Phase 111: Live Streaming Infrastructure
+**Goal:** Implement live streaming capabilities
+**Requirements:** LS-01 to LS-05
 **Success Criteria:**
-1. ML recommendation engine operational
-2. User preference learning functional
-3. Collaborative filtering working
-4. Context-aware suggestions enabled
-5. Recommendation explanations available
+1. Live broadcasting operational
+2. Real-time metrics available
+3. Live chat functional
+4. DVR controls working
+5. Stream scheduling enabled
 
-### Phase 107: Intelligent Discovery
-**Goal:** Implement intelligent search and discovery features
-**Requirements:** ID-01 to ID-05
+### Phase 112: Adaptive Bitrate Streaming
+**Goal:** Implement adaptive quality streaming
+**Requirements:** ABR-01 to ABR-05
 **Success Criteria:**
-1. Natural language search working
-2. Semantic content matching functional
-3. Trending and discovery feeds operational
-4. Personalized browse paths enabled
-5. Content relationship mapping available
+1. HLS streaming operational
+2. Auto-quality switching working
+3. Manual quality selection available
+4. Offline download functional
+5. Bandwidth analytics reporting
 
-### Phase 108: Automated Content Management
-**Goal:** Implement AI-powered content management automation
-**Requirements:** ACM-01 to ACM-05
+### Phase 113: Multi-Audio Track Support
+**Goal:** Implement multiple audio tracks per video
+**Requirements:** MAT-01 to MAT-05
 **Success Criteria:**
-1. Auto-tagging operational
-2. Content quality scoring functional
-3. Duplicate detection working
-4. Metadata enrichment enabled
-5. Content lifecycle automation active
+1. Multiple tracks supported
+2. Language selection in player
+3. Management interface operational
+4. Default preferences working
+5. Metadata support enabled
 
-### Phase 109: AI Accessibility
-**Goal:** Implement AI-powered accessibility features
-**Requirements:** AA-01 to AA-05
+### Phase 114: Video Chapters and Navigation
+**Goal:** Implement video chapter navigation
+**Requirements:** VCN-01 to VCN-05
 **Success Criteria:**
-1. Auto-generated captions working
-2. Audio descriptions available
-3. Sign language overlay functional
-4. Screen reader optimization enabled
-5. Cognitive accessibility modes operational
+1. Chapter markers functional
+2. Navigation UI available
+3. Auto-chapters generated
+4. Thumbnails displayed
+5. Progress saving working
 
-### Phase 110: Smart Engagement
-**Goal:** Implement intelligent user engagement tools
-**Requirements:** SE-01 to SE-05
+### Phase 115: Advanced Playback Controls
+**Goal:** Implement advanced player controls
+**Requirements:** APC-01 to APC-05
 **Success Criteria:**
-1. Intelligent notifications working
-2. Personalized reminders functional
-3. Social recommendations enabled
-4. Engagement prediction operational
-5. Retention optimization active
+1. Speed control operational
+2. Frame navigation working
+3. Picture-in-picture enabled
+4. Keyboard shortcuts configurable
+5. Position sync across devices
