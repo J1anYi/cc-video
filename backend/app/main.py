@@ -126,6 +126,15 @@ from app.routes.creator_monetization import router as creator_monetization_route
 from app.routes.creator_community import router as creator_community_router
 
 from app.routes.creator_support import router as creator_support_router
+from app.routes.multi_language import router as multi_language_router
+from app.routes.regional_content import router as regional_content_router
+from app.routes.global_payment import router as global_payment_router
+from app.routes.data_residency import router as data_residency_router
+from app.routes.global_infrastructure import router as global_infrastructure_router
+
+logger = logging.getLogger(__name__)
+
+
 class TimingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         start_time = time.time()
@@ -272,8 +281,13 @@ app.include_router(community_accessibility_router)
 app.include_router(creator_dashboard_router)
 app.include_router(content_upload_router)
 app.include_router(creator_monetization_router)
+app.include_router(global_payment_router)
+app.include_router(data_residency_router)
+app.include_router(global_infrastructure_router)
 app.include_router(creator_community_router)
 app.include_router(creator_support_router)
+app.include_router(multi_language_router)
+app.include_router(regional_content_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
