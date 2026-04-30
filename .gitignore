@@ -10,6 +10,12 @@
 *.mpeg
 *.mpg
 
+# Video data directory
+data/
+
+# Video uploads
+backend/uploads/videos/
+
 # Video segments
 *.ts
 *.m3u8
