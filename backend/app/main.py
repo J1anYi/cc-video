@@ -91,6 +91,7 @@ from app.routes.hdr_streaming import router as hdr_streaming_router
 from app.routes.watch_party_v2 import router as watch_party_v2_router
 from app.routes.ai_discovery import router as ai_discovery_router
 from app.routes.enterprise_security import router as enterprise_security_router
+from app.routes.user_feedback import router as user_feedback_router
 from app.routes.events import router as events_router
 from app.routes.version import router as version_router
 from app.routes.health_detailed import router as health_detailed_router
@@ -104,6 +105,9 @@ from app.routes.video_tools import router as video_tools_router
 from app.routes.live_stream import router as live_stream_router
 from app.routes.content_workflow import router as content_workflow_router
 from app.routes.rights import router as rights_router
+from app.routes.perf_optimization import router as perf_optimization_router
+from app.routes.ux_polish import router as ux_polish_router
+from app.routes.integration_connectivity import router as integration_connectivity_router
 from app.middleware.query_monitor import init_query_monitor
 from app.middleware.tracing import TracingMiddleware
 from app.middleware.versioning import VersioningMiddleware
@@ -245,6 +249,10 @@ app.include_router(hdr_streaming_router)
 app.include_router(watch_party_v2_router)
 app.include_router(ai_discovery_router)
 app.include_router(enterprise_security_router)
+app.include_router(user_feedback_router)
+app.include_router(perf_optimization_router)
+app.include_router(ux_polish_router)
+app.include_router(integration_connectivity_router)
 app.include_router(api_stability_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
