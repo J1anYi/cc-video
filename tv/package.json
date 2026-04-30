@@ -1,0 +1,26 @@
+{
+  "name": "cc-video-tv",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android-tv": "react-native run-android --variant=tvDebug",
+    "ios-tvos": "react-native run-ios --simulator=\"Apple TV\" --scheme=\"CC Video tvOS\"",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "@reduxjs/toolkit": "^2.0.1",
+    "axios": "^1.6.2",
+    "react": "18.2.0",
+    "react-native": "0.73.2",
+    "react-native-video": "^6.0.1",
+    "react-redux": "^9.0.4"
+  },
+  "devDependencies": {
+    "@react-native/babel-preset": "0.73.19",
+    "@react-native/typescript-config": "0.73.1",
+    "typescript": "^5.3.3"
+  }
+}

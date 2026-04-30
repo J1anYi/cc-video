@@ -1,0 +1,20 @@
+{
+  "name": "@ccvideo/sdk",
+  "version": "1.0.0",
+  "description": "CC Video JavaScript SDK",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "keywords": ["video", "streaming", "sdk"],
+  "license": "MIT"
+}

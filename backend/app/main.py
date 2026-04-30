@@ -71,10 +71,15 @@ from app.routes.access import router as access_router
 from app.routes.encryption import router as encryption_router
 from app.routes.cdn import router as cdn_router
 from app.routes.db_metrics import router as db_metrics_router
+from app.routes.api_consolidation import router as api_consolidation_router
 from app.routes.batch import router as batch_router
+from app.routes.data_migration import router as data_migration_router
 from app.routes.api_metrics import router as api_metrics_router
+from app.routes.performance_tuning import router as performance_tuning_router
 from app.routes.graphql import graphql_router
+from app.routes.technical_debt import router as technical_debt_router
 from app.routes.websocket import router as websocket_router
+from app.routes.v5_foundation import router as v5_foundation_router
 from app.routes.service_discovery import router as service_discovery_router
 from app.routes.events import router as events_router
 from app.routes.version import router as version_router
@@ -216,6 +221,11 @@ app.include_router(video_tools_router)
 app.include_router(live_stream_router)
 app.include_router(content_workflow_router)
 app.include_router(rights_router)
+app.include_router(api_consolidation_router)
+app.include_router(data_migration_router)
+app.include_router(performance_tuning_router)
+app.include_router(technical_debt_router)
+app.include_router(v5_foundation_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
