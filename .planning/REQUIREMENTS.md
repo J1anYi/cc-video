@@ -1,88 +1,88 @@
-# Requirements: CC Video - v3.0 AI-Powered Content and Creator Tools
+# Requirements: CC Video - v3.1 Collaboration and Content Rights Management
 
 ## Active Requirements
 
-### AI Video Editing (AIEDIT)
+### Team Workspaces (WORK)
 
-- [ ] **AIEDIT-01**: AI auto-crops video to optimal framing
-- [ ] **AIEDIT-02**: AI removes silence and dead air from videos
-- [ ] **AIEDIT-03**: AI enhances video quality
-- [ ] **AIEDIT-04**: AI generates video summaries
-- [ ] **AIEDIT-05**: AI suggests optimal cut points
+- [ ] **WORK-01**: Admin can create team workspaces
+- [ ] **WORK-02**: Team members can be invited to workspaces
+- [ ] **WORK-03**: Workspace has shared content library
+- [ ] **WORK-04**: Workspace roles (owner, editor, viewer)
+- [ ] **WORK-05**: Workspace activity feed
 
-### Automated Tagging (TAG)
+### Content Rights (RIGHTS)
 
-- [ ] **TAG-01**: AI automatically tags video content
-- [ ] **TAG-02**: AI extracts and tags objects, people
-- [ ] **TAG-03**: AI generates content warnings
-- [ ] **TAG-04**: AI categorizes movies by mood
-- [ ] **TAG-05**: Admin can review auto-generated tags
+- [ ] **RIGHTS-01**: Admin can define content rights and licenses
+- [ ] **RIGHTS-02**: Content can have multiple rights holders
+- [ ] **RIGHTS-03**: Rights expiration tracking
+- [ ] **RIGHTS-04**: Geographic rights restrictions
+- [ ] **RIGHTS-05**: Rights reports and audits
 
-### AI Thumbnails (THUMB)
+### Revenue Sharing (REV)
 
-- [ ] **THUMB-01**: AI generates thumbnail candidates
-- [ ] **THUMB-02**: AI selects optimal thumbnail
-- [ ] **THUMB-03**: AI creates animated preview GIFs
-- [ ] **THUMB-04**: Admin can select from AI options
-- [ ] **THUMB-05**: AI regenerates thumbnails
+- [ ] **REV-01**: Admin can configure revenue splits
+- [ ] **REV-02**: Multiple contributors per content
+- [ ] **REV-03**: Revenue calculation and tracking
+- [ ] **REV-04**: Contributor payout reports
+- [ ] **REV-05**: Revenue dashboard for contributors
 
-### Creator Analytics (CREAT)
+### Collaborative Review (COLLAB)
 
-- [ ] **CREAT-01**: AI predicts content performance
-- [ ] **CREAT-02**: AI suggests upload timing
-- [ ] **CREAT-03**: AI identifies engagement patterns
-- [ ] **CREAT-04**: AI recommends improvements
-- [ ] **CREAT-05**: AI generates performance reports
+- [ ] **COLLAB-01**: Team can review content before publish
+- [ ] **COLLAB-02**: Review comments and annotations
+- [ ] **COLLAB-03**: Approval workflows
+- [ ] **COLLAB-04**: Version history tracking
+- [ ] **COLLAB-05**: Review deadline notifications
 
-### ML Moderation (MOD)
+### Contributor Management (CONTRIB)
 
-- [ ] **MOD-01**: AI detects inappropriate content
-- [ ] **MOD-02**: AI flags violating content
-- [ ] **MOD-03**: AI learns from decisions
-- [ ] **MOD-04**: AI provides confidence scores
-- [ ] **MOD-05**: AI generates moderation reports
+- [ ] **CONTRIB-01**: Admin can add content contributors
+- [ ] **CONTRIB-02**: Contributor roles (director, actor, producer)
+- [ ] **CONTRIB-03**: Contributor profiles and credits
+- [ ] **CONTRIB-04**: Contributor search and discovery
+- [ ] **CONTRIB-05**: Automated credit generation
 
 ## Future Requirements
 
-- AI-powered color grading
-- AI-generated subtitles
-- AI voice enhancement
+- Blockchain-based rights tracking
+- Smart contract revenue distribution
+- AI-powered rights verification
 
 ## Out of Scope
 
-- Autonomous content creation
-- AI-generated video content
-- Real-time AI streaming
+- Legal contract management
+- Automated legal compliance
+- Third-party royalty systems
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AIEDIT-01 | TBD | - |
-| AIEDIT-02 | TBD | - |
-| AIEDIT-03 | TBD | - |
-| AIEDIT-04 | TBD | - |
-| AIEDIT-05 | TBD | - |
-| TAG-01 | TBD | - |
-| TAG-02 | TBD | - |
-| TAG-03 | TBD | - |
-| TAG-04 | TBD | - |
-| TAG-05 | TBD | - |
-| THUMB-01 | TBD | - |
-| THUMB-02 | TBD | - |
-| THUMB-03 | TBD | - |
-| THUMB-04 | TBD | - |
-| THUMB-05 | TBD | - |
-| CREAT-01 | TBD | - |
-| CREAT-02 | TBD | - |
-| CREAT-03 | TBD | - |
-| CREAT-04 | TBD | - |
-| CREAT-05 | TBD | - |
-| MOD-01 | TBD | - |
-| MOD-02 | TBD | - |
-| MOD-03 | TBD | - |
-| MOD-04 | TBD | - |
-| MOD-05 | TBD | - |
+| WORK-01 | TBD | - |
+| WORK-02 | TBD | - |
+| WORK-03 | TBD | - |
+| WORK-04 | TBD | - |
+| WORK-05 | TBD | - |
+| RIGHTS-01 | TBD | - |
+| RIGHTS-02 | TBD | - |
+| RIGHTS-03 | TBD | - |
+| RIGHTS-04 | TBD | - |
+| RIGHTS-05 | TBD | - |
+| REV-01 | TBD | - |
+| REV-02 | TBD | - |
+| REV-03 | TBD | - |
+| REV-04 | TBD | - |
+| REV-05 | TBD | - |
+| COLLAB-01 | TBD | - |
+| COLLAB-02 | TBD | - |
+| COLLAB-03 | TBD | - |
+| COLLAB-04 | TBD | - |
+| COLLAB-05 | TBD | - |
+| CONTRIB-01 | TBD | - |
+| CONTRIB-02 | TBD | - |
+| CONTRIB-03 | TBD | - |
+| CONTRIB-04 | TBD | - |
+| CONTRIB-05 | TBD | - |
 
 ---
-*Created: 2026-04-30 - v3.0 Requirements*
+*Created: 2026-04-30 - v3.1 Requirements*

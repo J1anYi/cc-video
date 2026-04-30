@@ -6,52 +6,44 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v3.0 Planning (2026-04-30)
+## Current State: v3.1 Planning (2026-04-30)
 
-**v2.9 Multi-Tenant and White-Label Platform shipped.** Starting v3.0 AI-Powered Content and Creator Tools.
+**v3.0 AI-Powered Content and Creator Tools shipped.** Starting v3.1 Collaboration and Content Rights Management.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v3.0 AI-Powered Content and Creator Tools
+## Current Milestone: v3.1 Collaboration and Content Rights Management
 
-**Goal:** Integrate advanced AI capabilities for automated content creation, intelligent editing, and creator empowerment tools.
+**Goal:** Enable collaborative content workflows, team management, and comprehensive content rights and licensing management.
 
 **Target features:**
-- AI-powered video editing and enhancement
-- Automated content tagging and categorization
-- AI-generated thumbnails and previews
-- Creator analytics dashboard with AI insights
-- Automated content moderation with ML
+- Team workspaces and collaboration tools
+- Content rights and licensing management
+- Royalty and revenue sharing
+- Collaborative review workflows
+- Content contributor management
 
 ## Requirements
 
-### Validated (v1.0-v2.9)
+### Validated (v1.0-v3.0)
 
 - [x] Core MVP features (v1.0-v1.10)
-- [x] Platform maturity (v2.0)
-- [x] Enhanced UX (v2.1)
-- [x] Monetization (v2.2)
-- [x] Enterprise (v2.3)
-- [x] AI/ML basics (v2.4)
-- [x] Advanced content management (v2.5)
-- [x] Community and engagement (v2.6)
-- [x] Advanced security and compliance (v2.7)
-- [x] Advanced media and streaming (v2.8)
-- [x] Multi-tenant platform (v2.9)
+- [x] Platform maturity (v2.0-v2.9)
+- [x] AI-Powered Content Tools (v3.0)
 
-### Active (v3.0)
+### Active (v3.1)
 
-- [ ] AI-powered video editing
-- [ ] Automated content tagging
-- [ ] AI-generated thumbnails
-- [ ] Creator analytics with AI insights
-- [ ] ML-based content moderation
+- [ ] Team workspaces
+- [ ] Content rights management
+- [ ] Revenue sharing
+- [ ] Collaborative workflows
+- [ ] Contributor management
 
 ## Context
 
-v3.0 introduces next-generation AI capabilities for content creation, automated workflows, and creator tools, empowering administrators and content creators with intelligent automation and insights.
+v3.1 introduces collaboration tools for teams, content rights tracking, licensing management, and revenue sharing capabilities for professional content operations.
 
 ## Constraints
 
@@ -65,4 +57,4 @@ v3.0 introduces next-generation AI capabilities for content creation, automated 
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - Starting v3.0*
+*Last updated: 2026-04-30 - Starting v3.1*
