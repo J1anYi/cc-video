@@ -86,6 +86,11 @@ from app.routes.feature_freeze import router as feature_freeze_router
 from app.routes.beta_readiness import router as beta_readiness_router
 from app.routes.performance_validation import router as performance_validation_router
 from app.routes.release_documentation import router as release_documentation_router
+from app.routes.multi_tenant import router as multi_tenant_router
+from app.routes.hdr_streaming import router as hdr_streaming_router
+from app.routes.watch_party_v2 import router as watch_party_v2_router
+from app.routes.ai_discovery import router as ai_discovery_router
+from app.routes.enterprise_security import router as enterprise_security_router
 from app.routes.events import router as events_router
 from app.routes.version import router as version_router
 from app.routes.health_detailed import router as health_detailed_router
@@ -235,6 +240,11 @@ app.include_router(feature_freeze_router)
 app.include_router(beta_readiness_router)
 app.include_router(performance_validation_router)
 app.include_router(release_documentation_router)
+app.include_router(multi_tenant_router)
+app.include_router(hdr_streaming_router)
+app.include_router(watch_party_v2_router)
+app.include_router(ai_discovery_router)
+app.include_router(enterprise_security_router)
 app.include_router(api_stability_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
