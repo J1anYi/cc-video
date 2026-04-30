@@ -84,6 +84,11 @@ from app.routes.chaos import router as chaos_router
 from app.routes.feature_flags import router as feature_flags_router
 from app.routes.capacity import router as capacity_router
 from app.routes.sync import router as sync_router
+from app.routes.creator import router as creator_router
+from app.routes.video_tools import router as video_tools_router
+from app.routes.live_stream import router as live_stream_router
+from app.routes.content_workflow import router as content_workflow_router
+from app.routes.rights import router as rights_router
 from app.middleware.query_monitor import init_query_monitor
 from app.middleware.tracing import TracingMiddleware
 from app.middleware.versioning import VersioningMiddleware
@@ -206,6 +211,11 @@ app.include_router(chaos_router)
 app.include_router(feature_flags_router)
 app.include_router(capacity_router)
 app.include_router(sync_router)
+app.include_router(creator_router)
+app.include_router(video_tools_router)
+app.include_router(live_stream_router)
+app.include_router(content_workflow_router)
+app.include_router(rights_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
