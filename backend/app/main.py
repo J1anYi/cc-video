@@ -109,9 +109,13 @@ from app.routes.perf_optimization import router as perf_optimization_router
 from app.routes.ux_polish import router as ux_polish_router
 from app.routes.integration_connectivity import router as integration_connectivity_router
 from app.routes.accessibility import router as accessibility_router
+from app.routes.adaptive_streaming import router as adaptive_streaming_router
 from app.middleware.query_monitor import init_query_monitor
+from app.routes.inclusive_design import router as inclusive_design_router
 from app.middleware.tracing import TracingMiddleware
+from app.routes.assistive_technology import router as assistive_technology_router
 from app.middleware.versioning import VersioningMiddleware
+from app.routes.community_accessibility import router as community_accessibility_router
 from fastapi.middleware.gzip import GZipMiddleware
 
 logger = logging.getLogger(__name__)
@@ -256,6 +260,10 @@ app.include_router(ux_polish_router)
 app.include_router(integration_connectivity_router)
 app.include_router(accessibility_router)
 app.include_router(api_stability_router)
+app.include_router(adaptive_streaming_router)
+app.include_router(inclusive_design_router)
+app.include_router(assistive_technology_router)
+app.include_router(community_accessibility_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
