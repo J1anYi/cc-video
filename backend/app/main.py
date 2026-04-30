@@ -65,6 +65,7 @@ from app.routes.watch_party import router as watch_party_router
 from app.routes.social_feed import router as social_feed_router
 from app.routes.gamification import router as gamification_router
 from app.routes.drm import router as drm_router
+from app.routes.watermark import router as watermark_router
 
 logger = logging.getLogger(__name__)
 
@@ -160,6 +161,7 @@ app.include_router(watch_party_router)
 app.include_router(social_feed_router)
 app.include_router(gamification_router)
 app.include_router(drm_router)
+app.include_router(watermark_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
