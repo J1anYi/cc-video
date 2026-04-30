@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List
 
-from app.database import get_db
+from app.dependencies import get_db, get_current_user
 from app.models.geo import GeoRuleType, GeoAction
 from app.schemas.geo import (
     GeoConfigCreate, GeoConfigResponse,
@@ -13,7 +13,6 @@ from app.schemas.geo import (
 )
 from app.services.geo_service import GeoService
 from app.middleware.tenant import get_tenant_id
-from app.routes.auth import get_current_user
 
 router = APIRouter(prefix="/geo", tags=["geo"])
 

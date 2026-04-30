@@ -1,6 +1,6 @@
 """Content encryption service."""
 from datetime import datetime, timedelta
-from typing import Optional, tuple
+from typing import Optional, Tuple
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 import secrets

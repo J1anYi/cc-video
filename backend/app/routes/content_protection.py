@@ -5,7 +5,8 @@ from pydantic import BaseModel
 from app.dependencies import get_db
 from app.dependencies import get_current_user
 from app.models.user import User
-from app.models.content_protection import ContentDRM, GeoBlock, DeviceLimit
+from app.models.content_protection import ContentDRM, GeoBlock
+from app.models.access import DeviceLimit
 
 router = APIRouter(prefix="/protection", tags=["protection"])
 

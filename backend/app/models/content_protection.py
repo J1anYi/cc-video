@@ -28,15 +28,3 @@ class GeoBlock(Base):
     is_allowed: Mapped[bool] = mapped_column(default=False)
     
     created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
-
-
-class DeviceLimit(Base):
-    __tablename__ = "device_limits"
-
-    id: Mapped[int] = mapped_column(primary_key=True, index=True)
-    user_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False, index=True)
-    
-    device_id: Mapped[str] = mapped_column(String(100), nullable=False)
-    device_name: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
-    
-    last_used_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
