@@ -12,10 +12,11 @@
 - v5.3 Content Creator Tools: Phases 196-200 (shipped 2026-04-30)
 - v5.4 International Expansion: Phases 201-205 (shipped 2026-04-30)
 - v5.5 Mobile Experience: Phases 206-210 (shipped 2026-04-30)
-- v5.6 Smart TV & Living Room: Phases 211-215 (planning)
+- v5.6 Smart TV & Living Room: Phases 211-215 (shipped 2026-04-30)
+- v5.7 Kids & Family: Phases 216-220 (planning)
 
 ## Progress
-**Current:** v5.6 planning. 210 phases shipped.
+Current: v5.7 planning. 215 phases shipped.
 
 ---
-*Last updated: 2026-04-30 - v5.6 planning started*
+Last updated: 2026-04-30 - v5.7 planning started
