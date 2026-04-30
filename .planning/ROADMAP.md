@@ -5,67 +5,68 @@
 - v1.0-v1.10: Phases 1-30 (shipped 2026-04-29/30)
 - v2.0-v2.9: Phases 31-80 (shipped 2026-04-30)
 - v3.0 AI-Powered Content & Creator Tools - Phases 81-85 (shipped 2026-04-30)
-- v3.1 Collaboration & Content Rights Management - Phases 86-90 (planning)
+- v3.1 Collaboration & Content Rights Management - Phases 86-90 (shipped 2026-04-30)
+- v3.2 Advanced Analytics & Business Intelligence - Phases 91-95 (planning)
 
 ## Progress
 
-**Current:** v3.1 planning in progress. 85 phases complete.
+**Current:** v3.2 planning in progress. 90 phases complete.
 
 ---
-*Last updated: 2026-04-30 - v3.1 planning*
+*Last updated: 2026-04-30 - v3.2 planning*
 
 ---
 
-## v3.1: Collaboration & Content Rights Management
+## v3.2: Advanced Analytics & Business Intelligence
 
-**Goal:** Enable collaborative content workflows, team management, and comprehensive content rights and licensing management.
+**Goal:** Implement comprehensive analytics, reporting, and business intelligence tools for data-driven content operations.
 
-### Phase 86: Team Workspaces
-**Goal:** Implement team collaboration workspaces
-**Requirements:** WORK-01 to WORK-05
+### Phase 91: Content Analytics Dashboard
+**Goal:** Implement advanced content performance analytics
+**Requirements:** CA-01 to CA-05
 **Success Criteria:**
-1. Team workspaces creatable
-2. Members inviteable to workspaces
-3. Shared content library available
-4. Workspace roles functional
-5. Activity feed operational
+1. Real-time metrics available
+2. Engagement heatmaps generated
+3. Completion analysis working
+4. Content comparison enabled
+5. Trending analysis functional
 
-### Phase 87: Content Rights Management
-**Goal:** Implement rights and licensing tracking
-**Requirements:** RIGHTS-01 to RIGHTS-05
+### Phase 92: User Behavior Analytics
+**Goal:** Implement user journey and behavior tracking
+**Requirements:** UBA-01 to UBA-05
 **Success Criteria:**
-1. Rights and licenses definable
-2. Multiple rights holders supported
-3. Expiration tracking functional
-4. Geographic restrictions enforced
-5. Rights reports generated
+1. Journey tracking operational
+2. Session analysis working
+3. User segmentation functional
+4. Cohort analysis available
+5. Churn prediction enabled
 
-### Phase 88: Revenue Sharing
-**Goal:** Implement revenue split and tracking
-**Requirements:** REV-01 to REV-05
+### Phase 93: Revenue Analytics
+**Goal:** Implement comprehensive revenue analytics
+**Requirements:** RA-01 to RA-05
 **Success Criteria:**
-1. Revenue splits configurable
-2. Multiple contributors supported
-3. Revenue calculation working
-4. Payout reports generated
-5. Contributor dashboard available
+1. Revenue trends tracked
+2. Subscription metrics displayed
+3. Revenue per user calculated
+4. Payment failures analyzed
+5. Revenue forecasting working
 
-### Phase 89: Collaborative Review
-**Goal:** Implement content review workflows
-**Requirements:** COLLAB-01 to COLLAB-05
+### Phase 94: Predictive Intelligence
+**Goal:** Implement ML-powered business predictions
+**Requirements:** PI-01 to PI-05
 **Success Criteria:**
-1. Pre-publish review enabled
-2. Comments and annotations working
-3. Approval workflows functional
-4. Version history tracked
-5. Deadline notifications sent
+1. Content success predicted
+2. Demand forecasted
+3. LTV prediction working
+4. Pricing suggestions generated
+5. Content gaps identified
 
-### Phase 90: Contributor Management
-**Goal:** Implement contributor tracking and credits
-**Requirements:** CONTRIB-01 to CONTRIB-05
+### Phase 95: Custom Report Builder
+**Goal:** Implement customizable reporting tools
+**Requirements:** CR-01 to CR-05
 **Success Criteria:**
-1. Contributors addable to content
-2. Contributor roles supported
-3. Profiles and credits displayed
-4. Contributor search working
-5. Auto-credit generation functional
+1. Report builder functional
+2. Scheduled reports working
+3. Export options available
+4. Sharing permissions set
+5. Dashboard customizable
