@@ -6,9 +6,9 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v2.6 Planning (2026-04-30)
+## Current State: v2.7 Planning (2026-04-30)
 
-**v2.5 Advanced Content Management & Live Streaming shipped.** Starting v2.6 Community & Engagement Features.
+**v2.6 Community & Engagement Features shipped.** Starting v2.7 Advanced Security & Compliance.
 
 The system now supports:
 - User authentication with password reset
@@ -70,21 +70,26 @@ The system now supports:
 - Content scheduling system
 - Advanced video management
 - Content versioning
+- Movie polls and voting
+- Trivia quizzes
+- Watch parties
+- User achievements and badges
+- Leaderboards and gamification
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v2.6 Community & Engagement Features
+## Current Milestone: v2.7 Advanced Security & Compliance
 
-**Goal:** Enhance community interaction with polls, quizzes, events, and gamification elements to boost user engagement.
+**Goal:** Implement enterprise-grade security features, comprehensive audit logging, and regulatory compliance tools.
 
 **Target features:**
-- Movie polls and voting system
-- Movie trivia quizzes
-- Virtual watch parties
-- User achievements and badges
-- Leaderboards and gamification
+- Two-factor authentication (2FA)
+- Comprehensive audit logging
+- Session management and security controls
+- GDPR compliance tools (data export, deletion)
+- IP-based access controls and geo-blocking
 
 ## Requirements
 
@@ -102,7 +107,7 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Admin & safety (v1.9)
 - [x] Analytics & insights (v1.10)
 
-### Validated (v2.0-v2.5)
+### Validated (v2.0-v2.6)
 
 - [x] Platform maturity - performance, scalability, i18n, security (v2.0)
 - [x] Enhanced UX - accessibility, personalization, PWA (v2.1)
@@ -110,14 +115,15 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Enterprise - API platform, integrations, developer tools (v2.3)
 - [x] AI/ML - recommendations, NLP, predictive analytics (v2.4)
 - [x] Advanced content management & live streaming (v2.5)
+- [x] Community & engagement features (v2.6)
 
-### Active (v2.6)
+### Active (v2.7)
 
-- [ ] Polls and voting system
-- [ ] Movie trivia quizzes
-- [ ] Virtual watch parties
-- [ ] User achievements and badges
-- [ ] Leaderboards and gamification
+- [ ] Two-factor authentication
+- [ ] Comprehensive audit logging
+- [ ] Session management controls
+- [ ] GDPR compliance tools
+- [ ] IP and geo-based access controls
 
 ## Context
 
@@ -135,7 +141,9 @@ v2.4 brought AI/ML capabilities with recommendation engines, content analysis, N
 
 v2.5 introduced live streaming and advanced content management, enabling real-time viewer engagement and sophisticated content operations.
 
-v2.6 focuses on community engagement with interactive polls, quizzes, watch parties, and gamification to increase user retention and platform stickiness.
+v2.6 focused on community engagement with interactive polls, quizzes, watch parties, and gamification to increase user retention and platform stickiness.
+
+v2.7 strengthens security posture with two-factor authentication, comprehensive audit trails, session management, GDPR compliance, and advanced access controls for enterprise deployments.
 
 ## Constraints
 
@@ -173,4 +181,4 @@ v2.6 focuses on community engagement with interactive polls, quizzes, watch part
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - Starting v2.6*
+*Last updated: 2026-04-30 - Starting v2.7*

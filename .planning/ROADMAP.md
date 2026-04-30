@@ -19,80 +19,80 @@
 - v2.3 Enterprise & Integration - Phases 46-50 (shipped 2026-04-30) - [Archive](milestones/v2.3-ROADMAP.md)
 - v2.4 AI & Machine Learning - Phases 51-55 (shipped 2026-04-30) - [Archive](milestones/v2.4-ROADMAP.md)
 - v2.5 Advanced Content Management & Live Streaming - Phases 56-60 (shipped 2026-04-30) - [Archive](milestones/v2.5-ROADMAP.md)
-- v2.6 Community & Engagement Features - Phases 61-65 (planning)
+- v2.6 Community & Engagement Features - Phases 61-65 (shipped 2026-04-30) - [Archive](milestones/v2.6-ROADMAP.md)
+- v2.7 Advanced Security & Compliance - Phases 66-70 (planning)
 
 ## Progress
 
-**Current:** v2.6 planning in progress. 60 phases complete.
+**Current:** v2.7 planning in progress. 65 phases complete.
 
 ---
-*Last updated: 2026-04-30 - v2.6 planning*
+*Last updated: 2026-04-30 - v2.7 planning*
 
 ---
 
-## v2.6: Community & Engagement Features
+## v2.7: Advanced Security & Compliance
 
-**Goal:** Enhance community interaction with polls, quizzes, events, and gamification elements to boost user engagement.
+**Goal:** Implement enterprise-grade security features, comprehensive audit logging, and regulatory compliance tools.
 
-### Phase 61: Polls & Voting System
-**Goal:** Implement movie polls with voting functionality
+### Phase 66: Two-Factor Authentication
+**Goal:** Implement 2FA with TOTP and SMS support
 
-**Requirements:** POLL-01, POLL-02, POLL-03, POLL-04, POLL-05, POLL-06
-
-**Success Criteria:**
-1. Admin can create polls with multiple choice options
-2. Users can vote on polls (one vote per user)
-3. Poll results display with percentages
-4. Polls can have expiration dates
-5. Polls appear on movie detail pages
-6. Users notified of new polls on followed movies
-
-### Phase 62: Trivia Quizzes
-**Goal:** Implement movie trivia quizzes with scoring
-
-**Requirements:** QUIZ-01, QUIZ-02, QUIZ-03, QUIZ-04, QUIZ-05, QUIZ-06
+**Requirements:** 2FA-01, 2FA-02, 2FA-03, 2FA-04, 2FA-05
 
 **Success Criteria:**
-1. Admin can create quizzes with multiple choice questions
-2. Users can take quizzes and see scores
-3. Correct answers shown after completion
-4. Quiz attempts tracked in user profile
-5. Quizzes associated with specific movies
-6. Per-movie quiz leaderboards
+1. Users can enable TOTP-based 2FA via authenticator apps
+2. Users can enable SMS-based 2FA
+3. Backup codes provided for account recovery
+4. Admins can mandate 2FA for roles
+5. Users can disable 2FA with password confirmation
 
-### Phase 63: Watch Parties
-**Goal:** Enable synchronized group viewing experiences
+### Phase 67: Audit Logging System
+**Goal:** Implement comprehensive audit logging for all system events
 
-**Requirements:** PARTY-01, PARTY-02, PARTY-03, PARTY-04, PARTY-05, PARTY-06
-
-**Success Criteria:**
-1. Users can create watch parties for movies
-2. Users can invite friends to parties
-3. Users can join public watch parties
-4. Real-time chat during viewing
-5. Host controls playback sync
-6. Parties appear in activity feed
-
-### Phase 64: Achievements & Badges
-**Goal:** Implement gamification with badges for user achievements
-
-**Requirements:** ACH-01, ACH-02, ACH-03, ACH-04, ACH-05
+**Requirements:** AUDIT-01, AUDIT-02, AUDIT-03, AUDIT-04, AUDIT-05, AUDIT-06
 
 **Success Criteria:**
-1. System awards badges for achievements
-2. Users view earned badges on profile
-3. Multiple achievement types supported
-4. Users notified when earning badges
-5. Badges display publicly with unlock date
+1. All authentication events logged
+2. All admin actions logged
+3. Data access events logged
+4. Audit logs searchable and filterable
+5. Logs are immutable with retention policy
+6. Security events logged
 
-### Phase 65: Leaderboards & Points
-**Goal:** Implement engagement points and global leaderboards
+### Phase 68: Session Management
+**Goal:** Implement comprehensive session controls
 
-**Requirements:** GAME-01, GAME-02, GAME-03, GAME-04, GAME-05
+**Requirements:** SESS-01, SESS-02, SESS-03, SESS-04, SESS-05
 
 **Success Criteria:**
-1. Global leaderboard shows top users
-2. Points earned for platform activities
-3. Weekly and all-time views available
-4. Users see rank on profile
-5. Top users featured on community page
+1. Users view all active sessions
+2. Users can revoke specific sessions
+3. Users can revoke all other sessions
+4. Sessions auto-expire after inactivity
+5. Admins can manage user sessions
+
+### Phase 69: GDPR Compliance Tools
+**Goal:** Implement data export and deletion for GDPR compliance
+
+**Requirements:** GDPR-01, GDPR-02, GDPR-03, GDPR-04, GDPR-05, GDPR-06
+
+**Success Criteria:**
+1. Users can request full data export
+2. Exports generated in JSON format
+3. Users can request account deletion
+4. Data anonymized on deletion
+5. Admins can track GDPR requests
+6. Deletion records retained for compliance
+
+### Phase 70: Access Controls & Rate Limiting
+**Goal:** Implement IP-based access controls and rate limiting
+
+**Requirements:** ACCESS-01, ACCESS-02, ACCESS-03, ACCESS-04, ACCESS-05
+
+**Success Criteria:**
+1. IP whitelist for admin access
+2. IP blocklist functionality
+3. Geo-blocking by country
+4. Blocked attempts logged
+5. Rate limiting per IP configurable
