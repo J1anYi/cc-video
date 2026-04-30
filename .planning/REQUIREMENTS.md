@@ -4,11 +4,11 @@
 
 ### Digital Rights Management (DRM)
 
-- [ ] **DRM-01**: Multi-DRM support (Widevine, PlayReady, FairPlay)
-- [ ] **DRM-02**: License server integration
-- [ ] **DRM-03**: Device registration and limits
-- [ ] **DRM-04**: Offline playback with DRM
-- [ ] **DRM-05**: Key rotation and management
+- [x] **DRM-01**: Multi-DRM support (Widevine, PlayReady, FairPlay)
+- [x] **DRM-02**: License server integration
+- [x] **DRM-03**: Device registration and limits
+- [x] **DRM-04**: Offline playback with DRM
+- [x] **DRM-05**: Key rotation and management
 
 ### Video Watermarking (VW)
 
