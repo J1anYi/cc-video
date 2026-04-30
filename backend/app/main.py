@@ -117,10 +117,15 @@ from app.routes.assistive_technology import router as assistive_technology_route
 from app.middleware.versioning import VersioningMiddleware
 from app.routes.community_accessibility import router as community_accessibility_router
 from fastapi.middleware.gzip import GZipMiddleware
+from app.routes.creator_dashboard import router as creator_dashboard_router
 
+from app.routes.content_upload import router as content_upload_router
 logger = logging.getLogger(__name__)
+from app.routes.creator_monetization import router as creator_monetization_router
 
+from app.routes.creator_community import router as creator_community_router
 
+from app.routes.creator_support import router as creator_support_router
 class TimingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         start_time = time.time()
@@ -264,6 +269,11 @@ app.include_router(adaptive_streaming_router)
 app.include_router(inclusive_design_router)
 app.include_router(assistive_technology_router)
 app.include_router(community_accessibility_router)
+app.include_router(creator_dashboard_router)
+app.include_router(content_upload_router)
+app.include_router(creator_monetization_router)
+app.include_router(creator_community_router)
+app.include_router(creator_support_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
