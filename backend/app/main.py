@@ -81,6 +81,11 @@ from app.routes.technical_debt import router as technical_debt_router
 from app.routes.websocket import router as websocket_router
 from app.routes.v5_foundation import router as v5_foundation_router
 from app.routes.service_discovery import router as service_discovery_router
+from app.routes.api_stability import router as api_stability_router
+from app.routes.feature_freeze import router as feature_freeze_router
+from app.routes.beta_readiness import router as beta_readiness_router
+from app.routes.performance_validation import router as performance_validation_router
+from app.routes.release_documentation import router as release_documentation_router
 from app.routes.events import router as events_router
 from app.routes.version import router as version_router
 from app.routes.health_detailed import router as health_detailed_router
@@ -226,6 +231,11 @@ app.include_router(data_migration_router)
 app.include_router(performance_tuning_router)
 app.include_router(technical_debt_router)
 app.include_router(v5_foundation_router)
+app.include_router(feature_freeze_router)
+app.include_router(beta_readiness_router)
+app.include_router(performance_validation_router)
+app.include_router(release_documentation_router)
+app.include_router(api_stability_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
