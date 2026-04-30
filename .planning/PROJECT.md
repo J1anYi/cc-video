@@ -6,28 +6,28 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v3.8 Planning (2026-05-01)
+## Current State: v3.9 Planning (2026-05-01)
 
-**v3.7 Community and Social Features shipped.** Starting v3.8 Content Protection and Security.
+**v3.8 Content Protection and Security shipped.** Starting v3.9 Performance and Scale Optimization.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v3.8 Content Protection and Security
+## Current Milestone: v3.9 Performance and Scale Optimization
 
-**Goal:** Implement comprehensive content protection, DRM, and security features.
+**Goal:** Enhance performance, scalability, and optimization for enterprise-grade operations.
 
 **Target features:**
-- Digital Rights Management (DRM)
-- Video watermarking
-- Geo-restriction capabilities
-- Access control enhancements
-- Content encryption
+- CDN integration and edge caching
+- Database optimization
+- API performance tuning
+- Frontend performance
+- Load testing and optimization
 
 ## Requirements
 
-### Validated (v1.0-v3.7)
+### Validated (v1.0-v3.8)
 
 - [x] Core MVP features (v1.0-v1.10)
 - [x] Platform maturity (v2.0-v2.9)
@@ -39,18 +39,19 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] AI-Enhanced User Experience (v3.5)
 - [x] Advanced Media and Streaming (v3.6)
 - [x] Community and Social Features (v3.7)
+- [x] Content Protection and Security (v3.8)
 
-### Active (v3.8)
+### Active (v3.9)
 
-- [ ] Digital Rights Management
-- [ ] Video watermarking
-- [ ] Geo-restrictions
-- [ ] Access control
-- [ ] Content encryption
+- [ ] CDN and edge caching
+- [ ] Database optimization
+- [ ] API performance
+- [ ] Frontend performance
+- [ ] Load testing
 
 ## Context
 
-v3.8 implements enterprise-grade content protection including DRM, watermarking, regional restrictions, and enhanced security measures.
+v3.9 optimizes platform performance for scale, implementing CDN, database tuning, API optimization, and comprehensive load testing.
 
 ## Constraints
 
@@ -64,4 +65,4 @@ v3.8 implements enterprise-grade content protection including DRM, watermarking,
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-05-01 - Starting v3.8*
+*Last updated: 2026-05-01 - Starting v3.9*
