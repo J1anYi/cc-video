@@ -108,6 +108,7 @@ from app.routes.rights import router as rights_router
 from app.routes.perf_optimization import router as perf_optimization_router
 from app.routes.ux_polish import router as ux_polish_router
 from app.routes.integration_connectivity import router as integration_connectivity_router
+from app.routes.accessibility import router as accessibility_router
 from app.middleware.query_monitor import init_query_monitor
 from app.middleware.tracing import TracingMiddleware
 from app.middleware.versioning import VersioningMiddleware
@@ -253,6 +254,7 @@ app.include_router(user_feedback_router)
 app.include_router(perf_optimization_router)
 app.include_router(ux_polish_router)
 app.include_router(integration_connectivity_router)
+app.include_router(accessibility_router)
 app.include_router(api_stability_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
