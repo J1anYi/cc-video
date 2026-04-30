@@ -6,28 +6,28 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v4.0 Planning (2026-05-01)
+## Current State: v4.1 Planning (2026-05-01)
 
-**v3.9 Performance and Scale Optimization shipped.** Starting v4.0 Platform Modernization and Next-Gen Features.
+**v4.0 Platform Modernization shipped.** Starting v4.1 Observability & Operations Excellence.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v4.0 Platform Modernization and Next-Gen Features
+## Current Milestone: v4.1 Observability & Operations Excellence
 
-**Goal:** Major architectural upgrades and next-generation capabilities for the platform.
+**Goal:** Build comprehensive observability and operational excellence for the modernized platform.
 
 **Target features:**
-- GraphQL API layer
-- Real-time WebSocket infrastructure
-- Microservices architecture foundation
-- Event-driven architecture
-- API versioning and deprecation
+- Unified observability platform (metrics, logs, traces)
+- Incident management system
+- Chaos engineering practice
+- Enhanced developer experience
+- Capacity planning system
 
 ## Requirements
 
-### Validated (v1.0-v3.9)
+### Validated (v1.0-v4.0)
 
 - [x] Core MVP features (v1.0-v1.10)
 - [x] Platform maturity (v2.0-v2.9)
@@ -41,18 +41,19 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Community and Social Features (v3.7)
 - [x] Content Protection and Security (v3.8)
 - [x] Performance and Scale Optimization (v3.9)
+- [x] Platform Modernization and Next-Gen Features (v4.0)
 
-### Active (v4.0)
+### Active (v4.1)
 
-- [ ] GraphQL API
-- [ ] WebSocket infrastructure
-- [ ] Microservices foundation
-- [ ] Event-driven architecture
-- [ ] API versioning
+- [ ] Observability Platform
+- [ ] Incident Management
+- [ ] Chaos Engineering
+- [ ] Developer Experience
+- [ ] Capacity Planning
 
 ## Context
 
-v4.0 modernizes the platform architecture with GraphQL, real-time capabilities, microservices foundation, and event-driven patterns for future scalability.
+v4.1 builds operational excellence on top of the modernized platform, ensuring reliability, observability, and developer productivity at scale.
 
 ## Constraints
 
@@ -66,4 +67,4 @@ v4.0 modernizes the platform architecture with GraphQL, real-time capabilities, 
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-05-01 - Starting v4.0*
+*Last updated: 2026-05-01 - Starting v4.1*

@@ -1,59 +1,60 @@
-# Requirements: CC Video - v4.0 Platform Modernization and Next-Gen Features
+# Requirements: CC Video - v4.1 Observability & Operations Excellence
 
 ## Active Requirements
 
-### GraphQL API (GQL)
+### Observability Platform (OBS)
 
-- [ ] **GQL-01**: GraphQL schema design and implementation
-- [ ] **GQL-02**: Query and mutation resolvers
-- [ ] **GQL-03**: Subscription support for real-time data
-- [ ] **GQL-04**: Federation support for microservices
-- [ ] **GQL-05**: GraphQL playground and documentation
+- [ ] **OBS-01**: Unified metrics collection and aggregation
+- [ ] **OBS-02**: Distributed logging with structured logs
+- [ ] **OBS-03**: Distributed tracing dashboards
+- [ ] **OBS-04**: Service health monitoring and alerting
+- [ ] **OBS-05**: SLI/SLO tracking and error budgets
 
-### WebSocket Infrastructure (WS)
+### Incident Management (IM)
 
-- [ ] **WS-01**: WebSocket server implementation
-- [ ] **WS-02**: Real-time notification delivery
-- [ ] **WS-03**: Live collaboration features
-- [ ] **WS-04**: Connection management and scaling
-- [ ] **WS-05**: Fallback to polling for unsupported clients
+- [ ] **IM-01**: Incident detection and classification
+- [ ] **IM-02**: On-call rotation and escalation policies
+- [ ] **IM-03**: Runbooks and incident playbooks
+- [ ] **IM-04**: Post-incident review automation
+- [ ] **IM-05**: Incident timeline and communication
 
-### Microservices Foundation (MS)
+### Chaos Engineering (CE)
 
-- [ ] **MS-01**: Service decomposition strategy
-- [ ] **MS-02**: Inter-service communication patterns
-- [ ] **MS-03**: Service discovery and registration
-- [ ] **MS-04**: Distributed tracing
-- [ ] **MS-05**: Service mesh preparation
+- [ ] **CE-01**: Chaos testing framework setup
+- [ ] **CE-02**: Failure injection experiments
+- [ ] **CE-03**: Game day planning and execution
+- [ ] **CE-04**: Resilience scoring and tracking
+- [ ] **CE-05**: Automated recovery validation
 
-### Event-Driven Architecture (EDA)
+### Developer Experience (DX)
 
-- [ ] **EDA-01**: Event bus implementation
-- [ ] **EDA-02**: Event sourcing for critical data
-- [ ] **EDA-03**: CQRS pattern implementation
-- [ ] **EDA-04**: Event replay and recovery
-- [ ] **EDA-05**: Saga pattern for distributed transactions
+- [ ] **DX-01**: Local development environment improvements
+- [ ] **DX-02**: API documentation and sandbox
+- [ ] **DX-03**: CI/CD pipeline optimization
+- [ ] **DX-04**: Feature flag management system
+- [ ] **DX-05**: Developer portal and onboarding
 
-### API Versioning (AV)
+### Capacity Planning (CP)
 
-- [ ] **AV-01**: Versioning strategy implementation
-- [ ] **AV-02**: Deprecation workflow
-- [ ] **AV-03**: Version migration guides
-- [ ] **AV-04**: Backward compatibility layer
-- [ ] **AV-05**: Version sunset notifications
+- [ ] **CP-01**: Resource usage forecasting
+- [ ] **CP-02**: Auto-scaling policies refinement
+- [ ] **CP-03**: Cost allocation and optimization
+- [ ] **CP-04**: Capacity reservation system
+- [ ] **CP-05**: Infrastructure as code improvements
 
 ## Completed Requirements
 
-### v3.9: Performance and Scale Optimization (Phases 126-130)
+### v4.0: Platform Modernization and Next-Gen Features (Phases 131-135)
 
-- [x] CDN and Edge Caching (CDN-01 to CDN-05)
-- [x] Database Optimization (DBO-01 to DBO-05)
-- [x] API Performance (APIP-01 to APIP-05)
-- [x] Frontend Performance (FP-01 to FP-05)
-- [x] Load Testing (LT-01 to LT-05)
+- [x] GraphQL API (GQL-01 to GQL-05)
+- [x] WebSocket Infrastructure (WS-01 to WS-05)
+- [x] Microservices Foundation (MS-01 to MS-05)
+- [x] Event-Driven Architecture (EDA-01 to EDA-05)
+- [x] API Versioning (AV-01 to AV-05)
 
 ### Earlier Milestones
 
+- [x] v3.9: Performance and Scale Optimization (Phases 126-130)
 - [x] v3.8: Content Protection and Security (Phases 121-125)
 - [x] v3.7: Community and Social Features (Phases 116-120)
 - [x] v3.6: Advanced Media and Streaming (Phases 111-115)
@@ -67,4 +68,4 @@
 - [x] v1.0-v1.10: Core MVP (Phases 1-30)
 
 ---
-*Created: 2026-05-01 - v4.0 Requirements*
+*Updated: 2026-05-01 - Starting v4.1*
