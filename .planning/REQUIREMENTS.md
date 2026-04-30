@@ -1,93 +1,105 @@
-# Requirements: CC Video - v2.5 Advanced Content Management & Live Streaming
+# Requirements: CC Video - v2.6 Community & Engagement Features
 
 ## Active Requirements
 
-### Live Streaming (LIVE)
+### Polls & Voting (POLL)
 
-- [ ] **LIVE-01**: Admin can schedule live streaming events with title, description, and start time
-- [ ] **LIVE-02**: User can view upcoming and ongoing live events in a dedicated section
-- [ ] **LIVE-03**: User can watch live streams with real-time video playback
-- [ ] **LIVE-04**: User can see live viewer count during streaming
-- [ ] **LIVE-05**: Admin can start and end live streams
-- [ ] **LIVE-06**: Live streams are automatically recorded and saved as VOD content
-- [ ] **LIVE-07**: User can receive notifications for upcoming live events they follow
+- [ ] **POLL-01**: Admin can create movie-related polls with multiple choice options
+- [ ] **POLL-02**: User can vote on polls (one vote per user per poll)
+- [ ] **POLL-03**: User can view poll results and percentages
+- [ ] **POLL-04**: Admin can set poll expiration dates
+- [ ] **POLL-05**: Polls display on movie detail pages and community section
+- [ ] **POLL-06**: User receives notification for new polls on followed movies
 
-### Content Scheduling (SCHED)
+### Trivia Quizzes (QUIZ)
 
-- [ ] **SCHED-01**: Admin can schedule content availability windows (start/end dates)
-- [ ] **SCHED-02**: Content is automatically published/unpublished based on schedule
-- [ ] **SCHED-03**: Admin can set expiration dates for time-limited content
-- [ ] **SCHED-04**: User sees scheduled content countdown before release
-- [ ] **SCHED-05**: Admin can manage content release calendar
+- [ ] **QUIZ-01**: Admin can create movie trivia quizzes with multiple choice questions
+- [ ] **QUIZ-02**: User can take quizzes and see their score
+- [ ] **QUIZ-03**: User can see correct answers after completing quiz
+- [ ] **QUIZ-04**: User quiz attempts are tracked in profile
+- [ ] **QUIZ-05**: Quizzes are associated with specific movies
+- [ ] **QUIZ-06**: Leaderboard shows top quiz scorers per movie
 
-### Advanced Video Management (VIDM)
+### Watch Parties (PARTY)
 
-- [ ] **VIDM-01**: Admin can upload multiple videos in bulk
-- [ ] **VIDM-02**: System transcodes videos to multiple quality variants (1080p, 720p, 480p)
-- [ ] **VIDM-03**: User can manually select video quality during playback
-- [ ] **VIDM-04**: Admin can view transcoding status and progress
-- [ ] **VIDM-05**: System stores multiple quality variants for adaptive streaming
-- [ ] **VIDM-06**: Admin can replace video file without losing metadata
+- [ ] **PARTY-01**: User can create a watch party for a specific movie and time
+- [ ] **PARTY-02**: User can invite friends to watch party
+- [ ] **PARTY-03**: User can join public watch parties
+- [ ] **PARTY-04**: Watch party participants can chat in real-time during viewing
+- [ ] **PARTY-05**: Host can control playback synchronization for all participants
+- [ ] **PARTY-06**: Watch party appears in activity feed and notifications
 
-### Content Versioning (VER)
+### Achievements & Badges (ACH)
 
-- [ ] **VER-01**: Admin can create multiple versions of a movie (theatrical, director's cut, extended)
-- [ ] **VER-02**: User can select which version to watch from movie detail page
-- [ ] **VER-03**: Each version maintains separate watch history
-- [ ] **VER-04**: Admin can set default version for new viewers
-- [ ] **VER-05**: Version metadata includes runtime differences and content warnings
+- [ ] **ACH-01**: System awards badges for completed achievements
+- [ ] **ACH-02**: User can view their earned badges on profile
+- [ ] **ACH-03**: Achievement types: watching milestones, reviews written, quizzes completed
+- [ ] **ACH-04**: User receives notification when earning a badge
+- [ ] **ACH-05**: Badges display publicly on user profile with unlock date
+
+### Leaderboards & Gamification (GAME)
+
+- [ ] **GAME-01**: Global leaderboard shows top users by engagement points
+- [ ] **GAME-02**: Users earn points for activities (watching, reviewing, voting)
+- [ ] **GAME-03**: Weekly and all-time leaderboard views available
+- [ ] **GAME-04**: User can see their rank and points on profile
+- [ ] **GAME-05**: Top users featured on community page
 
 ## Future Requirements
 
-### Live Streaming Enhancements (Future)
-- Live chat during streams
-- Real-time Q&A functionality
-- Multi-camera angle support
-- DVR-like rewind during live
+### Enhanced Polls (Future)
+- Image-based polls
+- Poll comments and discussion
+- Poll recommendations based on viewing history
 
-### Advanced Scheduling (Future)
-- Recurring content schedules
-- Timezone-aware releases
-- Geographic availability restrictions
+### Enhanced Watch Parties (Future)
+- Screen sharing during watch parties
+- Voice chat integration
+- Private vs public party options
 
-### Content Management Enhancements (Future)
-- AI-powered video tagging
-- Automated thumbnail generation
-- Content recommendation for playlists
+### Advanced Gamification (Future)
+- Seasonal competitions
+- Team-based challenges
+- Reward redemption system
 
 ## Out of Scope
 
-- **External streaming platforms**: Live streaming is through the platform only, no Twitch/YouTube integration
-- **User-generated content**: Only admins can create live streams and upload content
-- **Real-time analytics dashboard**: Live viewer count only, detailed analytics remain post-stream
+- **Real-money gambling**: No betting or gambling features on polls or quizzes
+- **External social media integration**: Gamification stays within platform
+- **Physical rewards**: No merchandise or physical prize redemption
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LIVE-01 | TBD | - |
-| LIVE-02 | TBD | - |
-| LIVE-03 | TBD | - |
-| LIVE-04 | TBD | - |
-| LIVE-05 | TBD | - |
-| LIVE-06 | TBD | - |
-| LIVE-07 | TBD | - |
-| SCHED-01 | TBD | - |
-| SCHED-02 | TBD | - |
-| SCHED-03 | TBD | - |
-| SCHED-04 | TBD | - |
-| SCHED-05 | TBD | - |
-| VIDM-01 | TBD | - |
-| VIDM-02 | TBD | - |
-| VIDM-03 | TBD | - |
-| VIDM-04 | TBD | - |
-| VIDM-05 | TBD | - |
-| VIDM-06 | TBD | - |
-| VER-01 | TBD | - |
-| VER-02 | TBD | - |
-| VER-03 | TBD | - |
-| VER-04 | TBD | - |
-| VER-05 | TBD | - |
+| POLL-01 | TBD | - |
+| POLL-02 | TBD | - |
+| POLL-03 | TBD | - |
+| POLL-04 | TBD | - |
+| POLL-05 | TBD | - |
+| POLL-06 | TBD | - |
+| QUIZ-01 | TBD | - |
+| QUIZ-02 | TBD | - |
+| QUIZ-03 | TBD | - |
+| QUIZ-04 | TBD | - |
+| QUIZ-05 | TBD | - |
+| QUIZ-06 | TBD | - |
+| PARTY-01 | TBD | - |
+| PARTY-02 | TBD | - |
+| PARTY-03 | TBD | - |
+| PARTY-04 | TBD | - |
+| PARTY-05 | TBD | - |
+| PARTY-06 | TBD | - |
+| ACH-01 | TBD | - |
+| ACH-02 | TBD | - |
+| ACH-03 | TBD | - |
+| ACH-04 | TBD | - |
+| ACH-05 | TBD | - |
+| GAME-01 | TBD | - |
+| GAME-02 | TBD | - |
+| GAME-03 | TBD | - |
+| GAME-04 | TBD | - |
+| GAME-05 | TBD | - |
 
 ---
-*Created: 2026-04-30 - v2.5 Requirements*
+*Created: 2026-04-30 - v2.6 Requirements*
