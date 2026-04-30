@@ -1,59 +1,45 @@
-# Requirements: CC Video - v4.7 Advanced Content & Creator Tools
+# Requirements: CC Video - v4.8 Platform Consolidation & v5.0 Prep
 
 ## Active Requirements
 
-### Creator Studio (CRS)
+### API Consolidation (AC)
+- [ ] AC-01: API deprecation cleanup
+- [ ] AC-02: Legacy endpoint migration
+- [ ] AC-03: API documentation consolidation
+- [ ] AC-04: Client SDK updates
+- [ ] AC-05: API performance optimization
 
-- [ ] **CRS-01**: Creator dashboard and analytics
-- [ ] **CRS-02**: Content scheduling and publishing
-- [ ] **CRS-03**: Creator monetization tools
-- [ ] **CRS-04**: Audience insights and growth
-- [ ] **CRS-05**: Creator collaboration features
+### Data Migration (DM)
+- [ ] DM-01: Legacy data cleanup
+- [ ] DM-02: Schema optimization
+- [ ] DM-03: Data archiving automation
+- [ ] DM-04: Migration tooling
+- [ ] DM-05: Data integrity validation
 
-### Advanced Video Tools (AVT)
+### Performance Tuning (PT)
+- [ ] PT-01: Query optimization
+- [ ] PT-02: Caching strategy refinement
+- [ ] PT-03: Resource usage optimization
+- [ ] PT-04: Latency reduction
+- [ ] PT-05: Load testing and tuning
 
-- [ ] **AVT-01**: Cloud-based video editor
-- [ ] **AVT-02**: Thumbnail generation tools
-- [ ] **AVT-03**: Video chapters and markers
-- [ ] **AVT-04**: Multi-language support
-- [ ] **AVT-05**: Video templates and presets
+### Technical Debt (TD)
+- [ ] TD-01: Code cleanup and refactoring
+- [ ] TD-02: Dependency updates
+- [ ] TD-03: Test coverage improvement
+- [ ] TD-04: Documentation updates
+- [ ] TD-05: Security audit remediation
 
-### Live Streaming (LS)
-
-- [ ] **LS-01**: Live streaming infrastructure
-- [ ] **LS-02**: Real-time chat and moderation
-- [ ] **LS-03**: Live DVR and replay
-- [ ] **LS-04**: Stream scheduling
-- [ ] **LS-05**: Live analytics and metrics
-
-### Content Workflow (CW)
-
-- [ ] **CW-01**: Content approval workflows
-- [ ] **CW-02**: Version control for content
-- [ ] **CW-03**: Automated quality checks
-- [ ] **CW-04**: Content lifecycle management
-- [ ] **CW-05**: Bulk operations and import
-
-### Rights & Licensing (RL)
-
-- [ ] **RL-01**: Rights management system
-- [ ] **RL-02**: License tracking and renewal
-- [ ] **RL-03**: Royalty calculation
-- [ ] **RL-04**: Rights conflict detection
-- [ ] **RL-05**: Licensing marketplace
+### v5.0 Foundation (VF)
+- [ ] VF-01: Architecture review
+- [ ] VF-02: Technology stack evaluation
+- [ ] VF-03: Scalability assessment
+- [ ] VF-04: Feature deprecation planning
+- [ ] VF-05: v5.0 roadmap definition
 
 ## Completed Requirements
-
-### v4.6: Mobile & Cross-Platform Expansion (Phases 161-165)
-
-- [x] Mobile Applications (MA-01 to MA-05)
-- [x] TV & Living Room (TV-01 to TV-05)
-- [x] Desktop Applications (DA-01 to DA-05)
-- [x] Cross-Platform Sync (CS-01 to CS-05)
-- [x] Platform SDK (PS-01 to PS-05)
-
-### Earlier Milestones
-
+- [x] v4.7: Advanced Content & Creator Tools (Phases 166-170)
+- [x] v4.6: Mobile & Cross-Platform (Phases 161-165)
 - [x] v4.5: Advanced Monetization (Phases 156-160)
 - [x] v4.4: AI-Powered Personalization (Phases 151-155)
 - [x] v4.3: Multi-Region & Global Scale (Phases 146-150)
@@ -65,4 +51,4 @@
 - [x] v1.0-v1.10: Core MVP (Phases 1-30)
 
 ---
-*Updated: 2026-05-02 - Starting v4.7*
+*Updated: 2026-05-02 - Starting v4.8*
