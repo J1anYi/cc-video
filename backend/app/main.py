@@ -59,6 +59,7 @@ from app.routes.audio_features import router as audio_features_router
 from app.routes.audio_track import router as audio_track_router
 from app.routes.content_protection import router as content_protection_router
 from app.routes.mobile import router as mobile_router
+from app.routes.forum import router as forum_router
 
 logger = logging.getLogger(__name__)
 
@@ -148,6 +149,7 @@ app.include_router(audio_features_router)
 app.include_router(audio_track_router)
 app.include_router(content_protection_router)
 app.include_router(mobile_router)
+app.include_router(forum_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
