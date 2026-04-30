@@ -69,6 +69,12 @@ from app.routes.watermark import router as watermark_router
 from app.routes.geo import router as geo_router
 from app.routes.access import router as access_router
 from app.routes.encryption import router as encryption_router
+from app.routes.cdn import router as cdn_router
+from app.routes.db_metrics import router as db_metrics_router
+from app.routes.batch import router as batch_router
+from app.routes.api_metrics import router as api_metrics_router
+from app.middleware.query_monitor import init_query_monitor
+from fastapi.middleware.gzip import GZipMiddleware
 
 logger = logging.getLogger(__name__)
 
@@ -90,6 +96,7 @@ class TimingMiddleware(BaseHTTPMiddleware):
 async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
+    init_query_monitor(engine, slow_query_threshold=0.5)
     yield
 
 
@@ -100,6 +107,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 app.add_middleware(SecurityHeadersMiddleware)
 # app.add_middleware(HTTPSRedirectMiddleware)  # Disabled for local testing
 app.add_middleware(RateLimitMiddleware)
@@ -168,6 +176,10 @@ app.include_router(watermark_router)
 app.include_router(geo_router)
 app.include_router(access_router)
 app.include_router(encryption_router)
+app.include_router(cdn_router)
+app.include_router(db_metrics_router)
+app.include_router(batch_router)
+app.include_router(api_metrics_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
