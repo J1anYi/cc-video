@@ -6,28 +6,28 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v3.6 Planning (2026-05-01)
+## Current State: v3.7 Planning (2026-05-01)
 
-**v3.5 AI-Enhanced User Experience shipped.** Starting v3.6 Advanced Media and Streaming.
+**v3.6 Advanced Media and Streaming shipped.** Starting v3.7 Community and Social Features.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v3.6 Advanced Media and Streaming
+## Current Milestone: v3.7 Community and Social Features
 
-**Goal:** Enhance video delivery, live streaming capabilities, and advanced playback features.
+**Goal:** Enhance social interactions, community building, and user engagement tools.
 
 **Target features:**
-- Live streaming infrastructure
-- Adaptive bitrate streaming
-- Multi-audio track support
-- Video chapters and navigation
-- Advanced playback controls
+- Community forums and discussions
+- User groups and clubs
+- Event scheduling and watch parties
+- Social feeds and activity streams
+- Gamification and achievements
 
 ## Requirements
 
-### Validated (v1.0-v3.5)
+### Validated (v1.0-v3.6)
 
 - [x] Core MVP features (v1.0-v1.10)
 - [x] Platform maturity (v2.0-v2.9)
@@ -37,18 +37,19 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Enterprise Platform and Infrastructure (v3.3)
 - [x] Content Ecosystem and Marketplace (v3.4)
 - [x] AI-Enhanced User Experience (v3.5)
+- [x] Advanced Media and Streaming (v3.6)
 
-### Active (v3.6)
+### Active (v3.7)
 
-- [ ] Live streaming infrastructure
-- [ ] Adaptive bitrate streaming
-- [ ] Multi-audio track support
-- [ ] Video chapters and navigation
-- [ ] Advanced playback controls
+- [ ] Community forums
+- [ ] User groups and clubs
+- [ ] Watch parties
+- [ ] Social feeds
+- [ ] Gamification
 
 ## Context
 
-v3.6 enhances the core media capabilities with professional-grade streaming, multi-language audio, video navigation, and advanced playback features.
+v3.7 builds community features enabling users to connect, discuss content, form groups, participate in events, and earn achievements.
 
 ## Constraints
 
@@ -62,4 +63,4 @@ v3.6 enhances the core media capabilities with professional-grade streaming, mul
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-05-01 - Starting v3.6*
+*Last updated: 2026-05-01 - Starting v3.7*

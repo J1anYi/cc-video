@@ -1,15 +1,15 @@
 ---
 gsd_state_version: 1.0
-milestone: v3.6
-status: complete
-last_updated: "2026-05-01T02:00:00.000Z"
-last_activity: Milestone v3.6 complete
+milestone: v3.7
+status: planning
+last_updated: "2026-05-01T02:30:00.000Z"
+last_activity: v3.6 shipped, starting v3.7 planning
 ---
 # State: CC Video
 ## Current Position
-Phase: 115 Complete
-Status: Milestone v3.6 Complete
-Last activity: 2026-05-01 - Milestone v3.6 Advanced Media and Streaming shipped
+Phase: None
+Status: Planning v3.7
+Last activity: 2026-05-01 - v3.6 shipped, v3.7 planning started
 ## Completed Milestones
 - v1.0-v1.10: Phases 1-30
 - v2.0-v2.9: Phases 31-80
@@ -20,5 +20,7 @@ Last activity: 2026-05-01 - Milestone v3.6 Advanced Media and Streaming shipped
 - v3.4: Phases 101-105
 - v3.5: Phases 106-110
 - v3.6: Phases 111-115
+## Current Milestone
+- v3.7: Phases 116-120 (planning)
 ## Next Steps
-Run /gsd-new-milestone to start v4.0 planning
+Define v3.7 requirements and roadmap
