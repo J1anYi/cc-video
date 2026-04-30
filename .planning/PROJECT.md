@@ -3,20 +3,21 @@
 ## What This Is
 CC Video is a web-based movie watching system with separated frontend and backend services.
 
-## Current State: v5.1 In Progress (2026-05-03)
+## Current State: v5.2 Planning (2026-04-30)
 
-**v5.0 Major Release shipped.** Enterprise-ready platform with multi-tenant, 4K HDR, social features, AI, and enterprise security.
+**v5.1 Platform Polish & User Experience shipped.** Enhanced platform with user feedback integration, performance optimizations, UX polish, integrations, and analytics.
 
-**v5.1 Platform Polish & User Experience** - Enhancing v5.0 with user feedback integration, performance optimizations, UX polish, integrations, and analytics.
+**v5.2 Accessibility & Inclusion** - Making CC Video accessible to everyone, regardless of ability, language, or technology.
 
-## v5.1 Goals
-1. **User Feedback Integration (Phase 186)** - Close the feedback loop with in-app widgets, feature voting, and automated categorization
-2. **Performance Optimization (Phase 187)** - Fine-tune multi-tenant queries, 4K streaming, Watch Party sync, and AI recommendations
-3. **UX Polish (Phase 188)** - Streamline interfaces for workspace management, video playback, and enterprise admin
-4. **Integration & Connectivity (Phase 189)** - Extend platform with calendar, SSO providers, webhooks, and mobile sync
-5. **Analytics & Insights (Phase 190)** - Provide visibility into engagement, streaming quality, social activity, and security
+## v5.2 Goals
+1. **Accessibility Compliance (Phase 191)** - WCAG 2.1 AA compliance, screen reader optimization, keyboard navigation, accessible themes, and caption improvements
+2. **Adaptive Streaming (Phase 192)** - Adaptive bitrate for all users, audio description tracks, sign language overlays, content warnings, and motion preferences
+3. **Inclusive Design (Phase 193)** - Multi-language expansion, RTL support, cultural localization, age-appropriate modes, and family profiles
+4. **Assistive Technology (Phase 194)** - Voice control, eye-tracking, switch access, haptic feedback, and screen magnifier integration
+5. **Community Accessibility (Phase 195)** - Accessibility feedback portal, community captions, documentation center, creator guidelines, and certification program
 
 ## Completed Milestones
+- [x] v5.1: Platform Polish & User Experience (Phases 186-190)
 - [x] v5.0: Major Release (Phases 181-185)
 - [x] v4.9: v5.0 Alpha Preparation (Phases 176-180)
 - [x] v4.8: Platform Consolidation (Phases 171-175)
@@ -33,4 +34,4 @@ CC Video is a web-based movie watching system with separated frontend and backen
 - [x] v1.0-v1.10: Core MVP
 
 ---
-*Last updated: 2026-05-03 - v5.1 planning started*
+*Last updated: 2026-04-30 - v5.2 planning started*
