@@ -56,6 +56,7 @@ from app.routes.partner import router as partner_router
 from app.routes.livestream import router as livestream_router
 from app.routes.video_features import router as video_features_router
 from app.routes.audio_features import router as audio_features_router
+from app.routes.audio_track import router as audio_track_router
 from app.routes.content_protection import router as content_protection_router
 from app.routes.mobile import router as mobile_router
 
@@ -144,6 +145,7 @@ app.include_router(partner_router)
 app.include_router(livestream_router)
 app.include_router(video_features_router)
 app.include_router(audio_features_router)
+app.include_router(audio_track_router)
 app.include_router(content_protection_router)
 app.include_router(mobile_router)
 
