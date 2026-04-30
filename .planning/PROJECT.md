@@ -4,40 +4,35 @@
 
 CC Video is a web-based movie watching system with separated frontend and backend services.
 
-## Current State: v4.6 Planning (2026-05-02)
+## Current State: v4.7 Planning (2026-05-02)
 
-**v4.5 Advanced Monetization shipped.** Starting v4.6 Mobile & Cross-Platform Expansion.
+**v4.6 Mobile & Cross-Platform Expansion shipped.** Starting v4.7 Advanced Content & Creator Tools.
 
-## Current Milestone: v4.6 Mobile & Cross-Platform Expansion
+## Current Milestone: v4.7 Advanced Content & Creator Tools
 
-**Goal:** Expand platform to mobile, TV, and desktop applications.
+**Goal:** Empower content creators with advanced tools and workflows.
 
 **Target features:**
-- Native iOS and Android applications
-- Smart TV and streaming device apps
-- Desktop applications for Windows and macOS
-- Cross-device synchronization
-- Partner SDKs for third-party integration
+- Creator dashboard and analytics
+- Cloud-based video editing tools
+- Live streaming infrastructure
+- Content approval workflows
+- Rights and licensing management
 
 ## Requirements
 
-### Validated (v1.0-v4.5)
+### Validated (v1.0-v4.6)
 - [x] Core MVP features (v1.0-v1.10)
 - [x] Platform maturity (v2.0-v2.9)
 - [x] All v3.x milestones (v3.0-v3.9)
-- [x] Platform Modernization (v4.0)
-- [x] Observability (v4.1)
-- [x] Security Hardening (v4.2)
-- [x] Multi-Region & Global Scale (v4.3)
-- [x] AI-Powered Personalization (v4.4)
-- [x] Advanced Monetization (v4.5)
+- [x] v4.0-v4.6 milestones
 
-### Active (v4.6)
-- [ ] Mobile Applications
-- [ ] TV & Living Room
-- [ ] Desktop Applications
-- [ ] Cross-Platform Sync
-- [ ] Platform SDK
+### Active (v4.7)
+- [ ] Creator Studio
+- [ ] Advanced Video Tools
+- [ ] Live Streaming
+- [ ] Content Workflow
+- [ ] Rights & Licensing
 
 ---
-*Last updated: 2026-05-02 - Starting v4.6*
+*Last updated: 2026-05-02 - Starting v4.7*

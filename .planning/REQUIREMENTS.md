@@ -1,43 +1,59 @@
-# Requirements: CC Video - v4.6 Mobile & Cross-Platform Expansion
+# Requirements: CC Video - v4.7 Advanced Content & Creator Tools
 
 ## Active Requirements
 
-### Mobile Applications (MA)
-- [ ] MA-01: Native iOS application
-- [ ] MA-02: Native Android application
-- [ ] MA-03: Cross-platform shared codebase
-- [ ] MA-04: Mobile offline support
-- [ ] MA-05: Mobile push notifications
+### Creator Studio (CRS)
 
-### TV & Living Room (TV)
-- [ ] TV-01: Smart TV applications
-- [ ] TV-02: Streaming device apps
-- [ ] TV-03: Apple tvOS application
-- [ ] TV-04: Android TV application
-- [ ] TV-05: TV remote navigation
+- [ ] **CRS-01**: Creator dashboard and analytics
+- [ ] **CRS-02**: Content scheduling and publishing
+- [ ] **CRS-03**: Creator monetization tools
+- [ ] **CRS-04**: Audience insights and growth
+- [ ] **CRS-05**: Creator collaboration features
 
-### Desktop Applications (DA)
-- [ ] DA-01: Windows desktop application
-- [ ] DA-02: macOS desktop application
-- [ ] DA-03: Cross-platform framework
-- [ ] DA-04: Desktop offline playback
-- [ ] DA-05: System integration
+### Advanced Video Tools (AVT)
 
-### Cross-Platform Sync (CS)
-- [ ] CS-01: Watch history sync
-- [ ] CS-02: Playback position sync
-- [ ] CS-03: Download and offline sync
-- [ ] CS-04: Preferences sync
-- [ ] CS-05: Cross-device handoff
+- [ ] **AVT-01**: Cloud-based video editor
+- [ ] **AVT-02**: Thumbnail generation tools
+- [ ] **AVT-03**: Video chapters and markers
+- [ ] **AVT-04**: Multi-language support
+- [ ] **AVT-05**: Video templates and presets
 
-### Platform SDK (PS)
-- [ ] PS-01: iOS SDK
-- [ ] PS-02: Android SDK
-- [ ] PS-03: Web SDK and widgets
-- [ ] PS-04: SDK documentation
-- [ ] PS-05: SDK versioning
+### Live Streaming (LS)
+
+- [ ] **LS-01**: Live streaming infrastructure
+- [ ] **LS-02**: Real-time chat and moderation
+- [ ] **LS-03**: Live DVR and replay
+- [ ] **LS-04**: Stream scheduling
+- [ ] **LS-05**: Live analytics and metrics
+
+### Content Workflow (CW)
+
+- [ ] **CW-01**: Content approval workflows
+- [ ] **CW-02**: Version control for content
+- [ ] **CW-03**: Automated quality checks
+- [ ] **CW-04**: Content lifecycle management
+- [ ] **CW-05**: Bulk operations and import
+
+### Rights & Licensing (RL)
+
+- [ ] **RL-01**: Rights management system
+- [ ] **RL-02**: License tracking and renewal
+- [ ] **RL-03**: Royalty calculation
+- [ ] **RL-04**: Rights conflict detection
+- [ ] **RL-05**: Licensing marketplace
 
 ## Completed Requirements
+
+### v4.6: Mobile & Cross-Platform Expansion (Phases 161-165)
+
+- [x] Mobile Applications (MA-01 to MA-05)
+- [x] TV & Living Room (TV-01 to TV-05)
+- [x] Desktop Applications (DA-01 to DA-05)
+- [x] Cross-Platform Sync (CS-01 to CS-05)
+- [x] Platform SDK (PS-01 to PS-05)
+
+### Earlier Milestones
+
 - [x] v4.5: Advanced Monetization (Phases 156-160)
 - [x] v4.4: AI-Powered Personalization (Phases 151-155)
 - [x] v4.3: Multi-Region & Global Scale (Phases 146-150)
@@ -49,4 +65,4 @@
 - [x] v1.0-v1.10: Core MVP (Phases 1-30)
 
 ---
-*Updated: 2026-05-02 - Starting v4.6*
+*Updated: 2026-05-02 - Starting v4.7*
