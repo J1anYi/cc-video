@@ -20,79 +20,68 @@
 - v2.4 AI & Machine Learning - Phases 51-55 (shipped 2026-04-30) - [Archive](milestones/v2.4-ROADMAP.md)
 - v2.5 Advanced Content Management & Live Streaming - Phases 56-60 (shipped 2026-04-30) - [Archive](milestones/v2.5-ROADMAP.md)
 - v2.6 Community & Engagement Features - Phases 61-65 (shipped 2026-04-30) - [Archive](milestones/v2.6-ROADMAP.md)
-- v2.7 Advanced Security & Compliance - Phases 66-70 (planning)
+- v2.7 Advanced Security & Compliance - Phases 66-70 (shipped 2026-04-30) - [Archive](milestones/v2.7-ROADMAP.md)
+- v2.8 Advanced Media & Streaming Enhancements - Phases 71-75 (planning)
 
 ## Progress
 
-**Current:** v2.7 planning in progress. 65 phases complete.
+**Current:** v2.8 planning in progress. 70 phases complete.
 
 ---
-*Last updated: 2026-04-30 - v2.7 planning*
+*Last updated: 2026-04-30 - v2.8 planning*
 
 ---
 
-## v2.7: Advanced Security & Compliance
+## v2.8: Advanced Media & Streaming Enhancements
 
-**Goal:** Implement enterprise-grade security features, comprehensive audit logging, and regulatory compliance tools.
+**Goal:** Enhance video streaming with adaptive bitrate, HDR support, advanced codecs, and improved media processing.
 
-### Phase 66: Two-Factor Authentication
-**Goal:** Implement 2FA with TOTP and SMS support
-
-**Requirements:** 2FA-01, 2FA-02, 2FA-03, 2FA-04, 2FA-05
-
+### Phase 71: Adaptive Bitrate Streaming
+**Goal:** Implement HLS-based adaptive streaming
+**Requirements:** ABS-01 to ABS-05
 **Success Criteria:**
-1. Users can enable TOTP-based 2FA via authenticator apps
-2. Users can enable SMS-based 2FA
-3. Backup codes provided for account recovery
-4. Admins can mandate 2FA for roles
-5. Users can disable 2FA with password confirmation
+1. HLS manifest generated for all videos
+2. Player auto-selects quality based on bandwidth
+3. Manual quality override available
+4. Multiple quality variants generated
+5. Smooth transitions without buffering
 
-### Phase 67: Audit Logging System
-**Goal:** Implement comprehensive audit logging for all system events
-
-**Requirements:** AUDIT-01, AUDIT-02, AUDIT-03, AUDIT-04, AUDIT-05, AUDIT-06
-
+### Phase 72: HDR Video Support
+**Goal:** Add HDR10 playback support
+**Requirements:** HDR-01 to HDR-05
 **Success Criteria:**
-1. All authentication events logged
-2. All admin actions logged
-3. Data access events logged
-4. Audit logs searchable and filterable
-5. Logs are immutable with retention policy
-6. Security events logged
+1. HDR content detected on upload
+2. HDR10 playback on compatible devices
+3. SDR fallback generated automatically
+4. User HDR preference stored
+5. HDR metadata preserved
 
-### Phase 68: Session Management
-**Goal:** Implement comprehensive session controls
-
-**Requirements:** SESS-01, SESS-02, SESS-03, SESS-04, SESS-05
-
+### Phase 73: Advanced Audio Tracks
+**Goal:** Support multiple audio tracks and surround sound
+**Requirements:** AUDIO-01 to AUDIO-05
 **Success Criteria:**
-1. Users view all active sessions
-2. Users can revoke specific sessions
-3. Users can revoke all other sessions
-4. Sessions auto-expire after inactivity
-5. Admins can manage user sessions
+1. Multiple audio tracks uploadable
+2. Audio track selection in player
+3. Surround sound support
+4. Audio track labels display correctly
+5. Default track matches user language
 
-### Phase 69: GDPR Compliance Tools
-**Goal:** Implement data export and deletion for GDPR compliance
-
-**Requirements:** GDPR-01, GDPR-02, GDPR-03, GDPR-04, GDPR-05, GDPR-06
-
+### Phase 74: Video Chapters and Bookmarks
+**Goal:** Implement chapter markers and personal bookmarks
+**Requirements:** CHAPTER-01 to CHAPTER-05
 **Success Criteria:**
-1. Users can request full data export
-2. Exports generated in JSON format
-3. Users can request account deletion
-4. Data anonymized on deletion
-5. Admins can track GDPR requests
-6. Deletion records retained for compliance
+1. Chapter markers definable by admin
+2. Chapter list visible in player
+3. Jump to chapter functionality
+4. Chapter thumbnails generated
+5. Personal bookmarks supported
 
-### Phase 70: Access Controls & Rate Limiting
-**Goal:** Implement IP-based access controls and rate limiting
-
-**Requirements:** ACCESS-01, ACCESS-02, ACCESS-03, ACCESS-04, ACCESS-05
-
+### Phase 75: Enhanced Transcoding Pipeline
+**Goal:** Improve transcoding with job queue and hardware acceleration
+**Requirements:** TRANSCODE-01 to TRANSCODE-05
 **Success Criteria:**
-1. IP whitelist for admin access
-2. IP blocklist functionality
-3. Geo-blocking by country
-4. Blocked attempts logged
-5. Rate limiting per IP configurable
+1. Background job queue operational
+2. Transcoding progress visible
+3. Hardware acceleration supported
+4. Automatic retry on failure
+5. Encoding presets configurable

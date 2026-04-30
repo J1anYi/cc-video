@@ -1,98 +1,94 @@
-# Requirements: CC Video - v2.7 Advanced Security and Compliance
+# Requirements: CC Video - v2.8 Advanced Media and Streaming
 
 ## Active Requirements
 
-### Two-Factor Authentication (2FA)
+### Adaptive Bitrate Streaming (ABS)
 
-- [ ] **2FA-01**: User can enable two-factor authentication using TOTP authenticator apps
-- [ ] **2FA-02**: User can enable two-factor authentication via SMS
-- [ ] **2FA-03**: User receives backup codes for account recovery
-- [ ] **2FA-04**: Admin can require 2FA for specific user roles
-- [ ] **2FA-05**: User can disable 2FA with password confirmation
+- [ ] **ABS-01**: System generates HLS manifest for adaptive streaming
+- [ ] **ABS-02**: Player automatically selects optimal quality based on bandwidth
+- [ ] **ABS-03**: User can manually override quality selection
+- [ ] **ABS-04**: System generates multiple quality variants (4K, 1080p, 720p, 480p)
+- [ ] **ABS-05**: Smooth quality transitions without buffering interruptions
 
-### Audit Logging (AUDIT)
+### HDR Video Support (HDR)
 
-- [ ] **AUDIT-01**: System logs all user authentication events
-- [ ] **AUDIT-02**: System logs all admin actions
-- [ ] **AUDIT-03**: System logs all data access events
-- [ ] **AUDIT-04**: Admin can search and filter audit logs
-- [ ] **AUDIT-05**: Audit logs are immutable and retained
-- [ ] **AUDIT-06**: System logs security events
+- [ ] **HDR-01**: System detects HDR content on upload
+- [ ] **HDR-02**: Player supports HDR10 playback on compatible devices
+- [ ] **HDR-03**: System generates SDR fallback for non-HDR devices
+- [ ] **HDR-04**: User preference for HDR when available
+- [ ] **HDR-05**: HDR metadata preserved during transcoding
 
-### Session Management (SESS)
+### Advanced Audio Tracks (AUDIO)
 
-- [ ] **SESS-01**: User can view all active sessions
-- [ ] **SESS-02**: User can revoke specific sessions remotely
-- [ ] **SESS-03**: User can revoke all other sessions
-- [ ] **SESS-04**: System expires inactive sessions automatically
-- [ ] **SESS-05**: Admin can view and revoke user sessions
+- [ ] **AUDIO-01**: Admin can upload multiple audio tracks per movie
+- [ ] **AUDIO-02**: User can select audio track during playback
+- [ ] **AUDIO-03**: System supports surround sound (5.1, 7.1) audio
+- [ ] **AUDIO-04**: Audio track labels show language and type
+- [ ] **AUDIO-05**: Default audio track matches user language preference
 
-### GDPR Compliance (GDPR)
+### Video Chapters (CHAPTER)
 
-- [ ] **GDPR-01**: User can request full data export
-- [ ] **GDPR-02**: System generates data export in JSON format
-- [ ] **GDPR-03**: User can request account deletion
-- [ ] **GDPR-04**: System anonymizes user data on deletion
-- [ ] **GDPR-05**: Admin can track GDPR requests
-- [ ] **GDPR-06**: System retains deletion request records
+- [ ] **CHAPTER-01**: Admin can define chapter markers with timestamps
+- [ ] **CHAPTER-02**: User sees chapter list in player
+- [ ] **CHAPTER-03**: User can jump to specific chapters
+- [ ] **CHAPTER-04**: Chapters display thumbnail previews
+- [ ] **CHAPTER-05**: User can create personal bookmarks
 
-### Access Controls (ACCESS)
+### Transcoding Pipeline (TRANSCODE)
 
-- [ ] **ACCESS-01**: Admin can configure IP whitelist
-- [ ] **ACCESS-02**: Admin can block specific IP addresses
-- [ ] **ACCESS-03**: Admin can configure geo-blocking rules
-- [ ] **ACCESS-04**: System logs blocked access attempts
-- [ ] **ACCESS-05**: Admin can configure rate limiting per IP
+- [ ] **TRANSCODE-01**: Background job queue for transcoding tasks
+- [ ] **TRANSCODE-02**: Admin sees transcoding progress and status
+- [ ] **TRANSCODE-03**: System supports hardware-accelerated encoding
+- [ ] **TRANSCODE-04**: Failed transcodes are retried automatically
+- [ ] **TRANSCODE-05**: Admin can configure encoding presets
 
 ## Future Requirements
 
-### Advanced 2FA (Future)
-- Hardware security key support
-- Biometric authentication options
-- Risk-based authentication triggers
+### Advanced Streaming (Future)
+- DASH protocol support
+- Low-latency streaming for live
+- Peer-to-peer CDN optimization
 
-### Enhanced Compliance (Future)
-- SOC 2 compliance reporting
-- HIPAA compliance mode
-- Data retention policy automation
+### Enhanced Media (Future)
+- Dolby Vision support
+- Dolby Atmos audio
+- 360-degree video support
 
 ## Out of Scope
 
-- Biometric authentication for v2.7
-- Hardware tokens deferred to future release
-- Zero-trust architecture out of scope
+- 8K video storage and bandwidth
+- VR content playback
+- Live transcoding
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| 2FA-01 | TBD | - |
-| 2FA-02 | TBD | - |
-| 2FA-03 | TBD | - |
-| 2FA-04 | TBD | - |
-| 2FA-05 | TBD | - |
-| AUDIT-01 | TBD | - |
-| AUDIT-02 | TBD | - |
-| AUDIT-03 | TBD | - |
-| AUDIT-04 | TBD | - |
-| AUDIT-05 | TBD | - |
-| AUDIT-06 | TBD | - |
-| SESS-01 | TBD | - |
-| SESS-02 | TBD | - |
-| SESS-03 | TBD | - |
-| SESS-04 | TBD | - |
-| SESS-05 | TBD | - |
-| GDPR-01 | TBD | - |
-| GDPR-02 | TBD | - |
-| GDPR-03 | TBD | - |
-| GDPR-04 | TBD | - |
-| GDPR-05 | TBD | - |
-| GDPR-06 | TBD | - |
-| ACCESS-01 | TBD | - |
-| ACCESS-02 | TBD | - |
-| ACCESS-03 | TBD | - |
-| ACCESS-04 | TBD | - |
-| ACCESS-05 | TBD | - |
+| ABS-01 | TBD | - |
+| ABS-02 | TBD | - |
+| ABS-03 | TBD | - |
+| ABS-04 | TBD | - |
+| ABS-05 | TBD | - |
+| HDR-01 | TBD | - |
+| HDR-02 | TBD | - |
+| HDR-03 | TBD | - |
+| HDR-04 | TBD | - |
+| HDR-05 | TBD | - |
+| AUDIO-01 | TBD | - |
+| AUDIO-02 | TBD | - |
+| AUDIO-03 | TBD | - |
+| AUDIO-04 | TBD | - |
+| AUDIO-05 | TBD | - |
+| CHAPTER-01 | TBD | - |
+| CHAPTER-02 | TBD | - |
+| CHAPTER-03 | TBD | - |
+| CHAPTER-04 | TBD | - |
+| CHAPTER-05 | TBD | - |
+| TRANSCODE-01 | TBD | - |
+| TRANSCODE-02 | TBD | - |
+| TRANSCODE-03 | TBD | - |
+| TRANSCODE-04 | TBD | - |
+| TRANSCODE-05 | TBD | - |
 
 ---
-*Created: 2026-04-30 - v2.7 Requirements*
+*Created: 2026-04-30 - v2.8 Requirements*
