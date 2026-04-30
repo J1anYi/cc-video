@@ -47,6 +47,7 @@ from app.routes.user_behavior import router as user_behavior_router
 from app.routes.revenue import router as revenue_router
 from app.routes.predictions import router as predictions_router
 from app.routes.custom_reports import router as custom_reports_router
+from app.routes.security import router as security_router
 
 logger = logging.getLogger(__name__)
 
@@ -124,6 +125,7 @@ app.include_router(user_behavior_router)
 app.include_router(revenue_router)
 app.include_router(predictions_router)
 app.include_router(custom_reports_router)
+app.include_router(security_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
