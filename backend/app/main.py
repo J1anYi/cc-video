@@ -61,6 +61,7 @@ from app.routes.content_protection import router as content_protection_router
 from app.routes.mobile import router as mobile_router
 from app.routes.mobile_integration import router as mobile_integration_router
 from app.routes.mobile_notification import router as mobile_notification_router
+from app.routes.playback import router as playback_router
 from app.routes.forum import router as forum_router
 from app.routes.group import router as group_router
 from app.routes.watch_party import router as watch_party_router
@@ -230,6 +231,7 @@ app.include_router(content_protection_router)
 app.include_router(mobile_router)
 app.include_router(mobile_integration_router)
 app.include_router(mobile_notification_router)
+app.include_router(playback_router)
 app.include_router(forum_router)
 app.include_router(group_router)
 app.include_router(watch_party_router)
