@@ -6,24 +6,24 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v2.8 Planning (2026-04-30)
+## Current State: v2.9 Planning (2026-04-30)
 
-**v2.7 Advanced Security and Compliance shipped.** Starting v2.8 Advanced Media and Streaming Enhancements.
+**v2.8 Advanced Media and Streaming Enhancements shipped.** Starting v2.9 Multi-Tenant and White-Label Platform.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v2.8 Advanced Media and Streaming Enhancements
+## Current Milestone: v2.9 Multi-Tenant and White-Label Platform
 
-**Goal:** Enhance video streaming with adaptive bitrate, HDR support, advanced codecs, and improved media processing.
+**Goal:** Enable multi-tenant deployments with tenant isolation, white-label customization, and platform-as-a-service capabilities.
 
 **Target features:**
-- Adaptive bitrate streaming (HLS/DASH)
-- HDR video support
-- Advanced audio tracks (multi-language, surround sound)
-- Video chapters and bookmarks
-- Improved transcoding pipeline
+- Multi-tenant architecture with data isolation
+- White-label customization (themes, branding, domains)
+- Tenant management and billing
+- Platform admin dashboard
+- Tenant-specific configurations
 
 ## Requirements
 
@@ -41,7 +41,7 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Admin and safety (v1.9)
 - [x] Analytics and insights (v1.10)
 
-### Validated (v2.0-v2.7)
+### Validated (v2.0-v2.8)
 
 - [x] Platform maturity (v2.0)
 - [x] Enhanced UX (v2.1)
@@ -51,18 +51,19 @@ Users can reliably browse the movie list and play administrator-uploaded videos 
 - [x] Advanced content management (v2.5)
 - [x] Community and engagement (v2.6)
 - [x] Advanced security and compliance (v2.7)
+- [x] Advanced media and streaming (v2.8)
 
-### Active (v2.8)
+### Active (v2.9)
 
-- [ ] Adaptive bitrate streaming
-- [ ] HDR video support
-- [ ] Advanced audio tracks
-- [ ] Video chapters and bookmarks
-- [ ] Enhanced transcoding pipeline
+- [ ] Multi-tenant architecture
+- [ ] White-label customization
+- [ ] Tenant management
+- [ ] Platform admin dashboard
+- [ ] Tenant-specific configurations
 
 ## Context
 
-v2.8 enhances media capabilities with adaptive streaming, HDR support, multi-language audio, video chapters, and an improved transcoding pipeline for premium viewing experiences.
+v2.9 transforms CC Video into a multi-tenant platform capable of serving multiple organizations with complete data isolation, custom branding, and independent configurations, enabling white-label and SaaS deployment models.
 
 ## Constraints
 
@@ -76,4 +77,4 @@ v2.8 enhances media capabilities with adaptive streaming, HDR support, multi-lan
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - Starting v2.8*
+*Last updated: 2026-04-30 - Starting v2.9*

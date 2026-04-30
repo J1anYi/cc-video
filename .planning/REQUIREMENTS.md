@@ -1,94 +1,94 @@
-# Requirements: CC Video - v2.8 Advanced Media and Streaming
+# Requirements: CC Video - v2.9 Multi-Tenant and White-Label Platform
 
 ## Active Requirements
 
-### Adaptive Bitrate Streaming (ABS)
+### Multi-Tenant Architecture (TENANT)
 
-- [ ] **ABS-01**: System generates HLS manifest for adaptive streaming
-- [ ] **ABS-02**: Player automatically selects optimal quality based on bandwidth
-- [ ] **ABS-03**: User can manually override quality selection
-- [ ] **ABS-04**: System generates multiple quality variants (4K, 1080p, 720p, 480p)
-- [ ] **ABS-05**: Smooth quality transitions without buffering interruptions
+- [ ] **TENANT-01**: System supports multiple isolated tenants with separate data
+- [ ] **TENANT-02**: Tenant data is completely isolated from other tenants
+- [ ] **TENANT-03**: Users belong to specific tenants with tenant-scoped access
+- [ ] **TENANT-04**: Tenant context automatically applied to all queries
+- [ ] **TENANT-05**: Cross-tenant data access prevented at database level
 
-### HDR Video Support (HDR)
+### White-Label Customization (BRAND)
 
-- [ ] **HDR-01**: System detects HDR content on upload
-- [ ] **HDR-02**: Player supports HDR10 playback on compatible devices
-- [ ] **HDR-03**: System generates SDR fallback for non-HDR devices
-- [ ] **HDR-04**: User preference for HDR when available
-- [ ] **HDR-05**: HDR metadata preserved during transcoding
+- [ ] **BRAND-01**: Admin can customize platform logo and favicon
+- [ ] **BRAND-02**: Admin can customize color scheme and theme
+- [ ] **BRAND-03**: Admin can configure custom domain for tenant
+- [ ] **BRAND-04**: Admin can customize email templates with branding
+- [ ] **BRAND-05**: Admin can set custom platform name displayed to users
 
-### Advanced Audio Tracks (AUDIO)
+### Tenant Management (MGMT)
 
-- [ ] **AUDIO-01**: Admin can upload multiple audio tracks per movie
-- [ ] **AUDIO-02**: User can select audio track during playback
-- [ ] **AUDIO-03**: System supports surround sound (5.1, 7.1) audio
-- [ ] **AUDIO-04**: Audio track labels show language and type
-- [ ] **AUDIO-05**: Default audio track matches user language preference
+- [ ] **MGMT-01**: Platform admin can create new tenants
+- [ ] **MGMT-02**: Platform admin can suspend or deactivate tenants
+- [ ] **MGMT-03**: Tenant admins can manage their own users
+- [ ] **MGMT-04**: Platform admin can view tenant usage statistics
+- [ ] **MGMT-05**: Tenant creation includes plan selection and billing setup
 
-### Video Chapters (CHAPTER)
+### Platform Admin Dashboard (PADM)
 
-- [ ] **CHAPTER-01**: Admin can define chapter markers with timestamps
-- [ ] **CHAPTER-02**: User sees chapter list in player
-- [ ] **CHAPTER-03**: User can jump to specific chapters
-- [ ] **CHAPTER-04**: Chapters display thumbnail previews
-- [ ] **CHAPTER-05**: User can create personal bookmarks
+- [ ] **PADM-01**: Platform admin sees all tenants overview
+- [ ] **PADM-02**: Platform admin can manage platform-wide settings
+- [ ] **PADM-03**: Platform admin can view aggregated revenue and metrics
+- [ ] **PADM-04**: Platform admin can manage platform-level API keys
+- [ ] **PADM-05**: Platform admin receives platform health alerts
 
-### Transcoding Pipeline (TRANSCODE)
+### Tenant Configuration (CONFIG)
 
-- [ ] **TRANSCODE-01**: Background job queue for transcoding tasks
-- [ ] **TRANSCODE-02**: Admin sees transcoding progress and status
-- [ ] **TRANSCODE-03**: System supports hardware-accelerated encoding
-- [ ] **TRANSCODE-04**: Failed transcodes are retried automatically
-- [ ] **TRANSCODE-05**: Admin can configure encoding presets
+- [ ] **CONFIG-01**: Admin can enable/disable features per tenant
+- [ ] **CONFIG-02**: Admin can set storage and bandwidth limits
+- [ ] **CONFIG-03**: Admin can configure authentication providers
+- [ ] **CONFIG-04**: Admin can set content moderation rules
+- [ ] **CONFIG-05**: Admin can configure notification preferences
 
 ## Future Requirements
 
-### Advanced Streaming (Future)
-- DASH protocol support
-- Low-latency streaming for live
-- Peer-to-peer CDN optimization
+### Advanced Multi-Tenancy (Future)
+- Tenant-specific database schemas
+- Geographic data residency options
+- Tenant-to-tenant sharing features
 
-### Enhanced Media (Future)
-- Dolby Vision support
-- Dolby Atmos audio
-- 360-degree video support
+### Enhanced White-Label (Future)
+- Custom CSS injection
+- Custom page builder
+- Multi-language theme support
 
 ## Out of Scope
 
-- 8K video storage and bandwidth
-- VR content playback
-- Live transcoding
+- **On-premise deployments**: Cloud-only for v2.9
+- **Self-service tenant signup**: Manual tenant creation only
+- **Tenant migration tools**: Cross-tenant data migration deferred
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ABS-01 | TBD | - |
-| ABS-02 | TBD | - |
-| ABS-03 | TBD | - |
-| ABS-04 | TBD | - |
-| ABS-05 | TBD | - |
-| HDR-01 | TBD | - |
-| HDR-02 | TBD | - |
-| HDR-03 | TBD | - |
-| HDR-04 | TBD | - |
-| HDR-05 | TBD | - |
-| AUDIO-01 | TBD | - |
-| AUDIO-02 | TBD | - |
-| AUDIO-03 | TBD | - |
-| AUDIO-04 | TBD | - |
-| AUDIO-05 | TBD | - |
-| CHAPTER-01 | TBD | - |
-| CHAPTER-02 | TBD | - |
-| CHAPTER-03 | TBD | - |
-| CHAPTER-04 | TBD | - |
-| CHAPTER-05 | TBD | - |
-| TRANSCODE-01 | TBD | - |
-| TRANSCODE-02 | TBD | - |
-| TRANSCODE-03 | TBD | - |
-| TRANSCODE-04 | TBD | - |
-| TRANSCODE-05 | TBD | - |
+| TENANT-01 | TBD | - |
+| TENANT-02 | TBD | - |
+| TENANT-03 | TBD | - |
+| TENANT-04 | TBD | - |
+| TENANT-05 | TBD | - |
+| BRAND-01 | TBD | - |
+| BRAND-02 | TBD | - |
+| BRAND-03 | TBD | - |
+| BRAND-04 | TBD | - |
+| BRAND-05 | TBD | - |
+| MGMT-01 | TBD | - |
+| MGMT-02 | TBD | - |
+| MGMT-03 | TBD | - |
+| MGMT-04 | TBD | - |
+| MGMT-05 | TBD | - |
+| PADM-01 | TBD | - |
+| PADM-02 | TBD | - |
+| PADM-03 | TBD | - |
+| PADM-04 | TBD | - |
+| PADM-05 | TBD | - |
+| CONFIG-01 | TBD | - |
+| CONFIG-02 | TBD | - |
+| CONFIG-03 | TBD | - |
+| CONFIG-04 | TBD | - |
+| CONFIG-05 | TBD | - |
 
 ---
-*Created: 2026-04-30 - v2.8 Requirements*
+*Created: 2026-04-30 - v2.9 Requirements*

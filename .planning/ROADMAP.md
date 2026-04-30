@@ -21,67 +21,68 @@
 - v2.5 Advanced Content Management & Live Streaming - Phases 56-60 (shipped 2026-04-30) - [Archive](milestones/v2.5-ROADMAP.md)
 - v2.6 Community & Engagement Features - Phases 61-65 (shipped 2026-04-30) - [Archive](milestones/v2.6-ROADMAP.md)
 - v2.7 Advanced Security & Compliance - Phases 66-70 (shipped 2026-04-30) - [Archive](milestones/v2.7-ROADMAP.md)
-- v2.8 Advanced Media & Streaming Enhancements - Phases 71-75 (planning)
+- v2.8 Advanced Media & Streaming Enhancements - Phases 71-75 (shipped 2026-04-30) - [Archive](milestones/v2.8-ROADMAP.md)
+- v2.9 Multi-Tenant & White-Label Platform - Phases 76-80 (planning)
 
 ## Progress
 
-**Current:** v2.8 planning in progress. 70 phases complete.
+**Current:** v2.9 planning in progress. 75 phases complete.
 
 ---
-*Last updated: 2026-04-30 - v2.8 planning*
+*Last updated: 2026-04-30 - v2.9 planning*
 
 ---
 
-## v2.8: Advanced Media & Streaming Enhancements
+## v2.9: Multi-Tenant & White-Label Platform
 
-**Goal:** Enhance video streaming with adaptive bitrate, HDR support, advanced codecs, and improved media processing.
+**Goal:** Enable multi-tenant deployments with tenant isolation, white-label customization, and platform-as-a-service capabilities.
 
-### Phase 71: Adaptive Bitrate Streaming
-**Goal:** Implement HLS-based adaptive streaming
-**Requirements:** ABS-01 to ABS-05
+### Phase 76: Multi-Tenant Architecture
+**Goal:** Implement tenant isolation and data segregation
+**Requirements:** TENANT-01 to TENANT-05
 **Success Criteria:**
-1. HLS manifest generated for all videos
-2. Player auto-selects quality based on bandwidth
-3. Manual quality override available
-4. Multiple quality variants generated
-5. Smooth transitions without buffering
+1. Multiple isolated tenants supported
+2. Tenant data completely isolated
+3. Users belong to specific tenants
+4. Tenant context auto-applied to queries
+5. Cross-tenant access prevented
 
-### Phase 72: HDR Video Support
-**Goal:** Add HDR10 playback support
-**Requirements:** HDR-01 to HDR-05
+### Phase 77: White-Label Customization
+**Goal:** Enable tenant branding and theming
+**Requirements:** BRAND-01 to BRAND-05
 **Success Criteria:**
-1. HDR content detected on upload
-2. HDR10 playback on compatible devices
-3. SDR fallback generated automatically
-4. User HDR preference stored
-5. HDR metadata preserved
+1. Custom logo and favicon supported
+2. Color scheme and theme customizable
+3. Custom domain configuration
+4. Branded email templates
+5. Custom platform name
 
-### Phase 73: Advanced Audio Tracks
-**Goal:** Support multiple audio tracks and surround sound
-**Requirements:** AUDIO-01 to AUDIO-05
+### Phase 78: Tenant Management
+**Goal:** Implement tenant CRUD and administration
+**Requirements:** MGMT-01 to MGMT-05
 **Success Criteria:**
-1. Multiple audio tracks uploadable
-2. Audio track selection in player
-3. Surround sound support
-4. Audio track labels display correctly
-5. Default track matches user language
+1. Platform admin creates tenants
+2. Tenants can be suspended/deactivated
+3. Tenant admins manage their users
+4. Tenant usage stats visible
+5. Plan selection and billing setup
 
-### Phase 74: Video Chapters and Bookmarks
-**Goal:** Implement chapter markers and personal bookmarks
-**Requirements:** CHAPTER-01 to CHAPTER-05
+### Phase 79: Platform Admin Dashboard
+**Goal:** Build platform-level administration interface
+**Requirements:** PADM-01 to PADM-05
 **Success Criteria:**
-1. Chapter markers definable by admin
-2. Chapter list visible in player
-3. Jump to chapter functionality
-4. Chapter thumbnails generated
-5. Personal bookmarks supported
+1. All tenants overview visible
+2. Platform-wide settings manageable
+3. Aggregated revenue and metrics
+4. Platform API key management
+5. Platform health alerts
 
-### Phase 75: Enhanced Transcoding Pipeline
-**Goal:** Improve transcoding with job queue and hardware acceleration
-**Requirements:** TRANSCODE-01 to TRANSCODE-05
+### Phase 80: Tenant Configuration
+**Goal:** Implement per-tenant feature flags and limits
+**Requirements:** CONFIG-01 to CONFIG-05
 **Success Criteria:**
-1. Background job queue operational
-2. Transcoding progress visible
-3. Hardware acceleration supported
-4. Automatic retry on failure
-5. Encoding presets configurable
+1. Features enabled/disabled per tenant
+2. Storage and bandwidth limits set
+3. Authentication providers configured
+4. Content moderation rules set
+5. Notification preferences configured
