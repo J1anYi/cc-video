@@ -3,18 +3,19 @@
 ## What This Is
 CC Video is a web-based movie watching system with separated frontend and backend services.
 
-## Current State: v5.7 Planning (2026-04-30)
+## Current State: v5.8 Planning (2026-05-01)
 
-**v5.6 Smart TV & Living Room shipped.** Planning v5.7 Kids & Family - parental controls, kids profiles, family features.
+**v5.7 Kids & Family shipped.** Planning v5.8 Live Events & Sports - live streaming, sports features, interactive events.
 
-## v5.7 Goals (PLANNING)
-1. Family Safety & Controls (Phase 216)
-2. Kids Content Experience (Phase 217)
-3. Family Sharing & Profiles (Phase 218)
-4. Family Viewing Features (Phase 219)
-5. Kids Safety & Privacy (Phase 220)
+## v5.8 Goals (PLANNING)
+1. Live Streaming Infrastructure (Phase 221)
+2. Sports Features (Phase 222)
+3. Interactive Events (Phase 223)
+4. Event Monetization (Phase 224)
+5. Performance & Reliability (Phase 225)
 
 ## Completed Milestones
+- [x] v5.7: Kids & Family (Phases 216-220)
 - [x] v5.6: Smart TV & Living Room (Phases 211-215)
 - [x] v5.5: Mobile Experience (Phases 206-210)
 - [x] v5.4: International Expansion (Phases 201-205)
@@ -28,4 +29,4 @@ CC Video is a web-based movie watching system with separated frontend and backen
 - [x] v1.0-v1.10: Core MVP
 
 ---
-Last updated: 2026-04-30 - v5.7 planning started
+Last updated: 2026-05-01 - v5.8 planning started

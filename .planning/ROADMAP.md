@@ -1,22 +1,21 @@
 # Roadmap: CC Video
 
 ## Milestones
+- v5.8 Live Events & Sports: Phases 221-225 (planning 2026-05-01)
+- v5.7 Kids & Family: Phases 216-220 (shipped 2026-05-01)
+- v5.6 Smart TV: Phases 211-215 (shipped 2026-04-30)
+- v5.5 Mobile: Phases 206-210 (shipped 2026-04-30)
+- v5.4-v1.0: Phases 1-205
 
-- v1.0-v1.10: Phases 1-30 (shipped 2026-04-29/30)
-- v2.0-v2.9: Phases 31-80 (shipped 2026-04-30)
-- v3.0-v3.9: Phases 81-130 (shipped 2026-04/05)
-- v4.0-v4.9: Phases 131-180 (shipped 2026-05-01/03)
-- v5.0 Major Release: Phases 181-185 (shipped 2026-05-03)
-- v5.1 Platform Polish & UX: Phases 186-190 (shipped 2026-05-03)
-- v5.2 Accessibility & Inclusion: Phases 191-195 (shipped 2026-04-30)
-- v5.3 Content Creator Tools: Phases 196-200 (shipped 2026-04-30)
-- v5.4 International Expansion: Phases 201-205 (shipped 2026-04-30)
-- v5.5 Mobile Experience: Phases 206-210 (shipped 2026-04-30)
-- v5.6 Smart TV & Living Room: Phases 211-215 (shipped 2026-04-30)
-- v5.7 Kids & Family: Phases 216-220 (planning)
+## v5.8 Phases
+- Phase 221: Live Streaming Infrastructure - WebRTC backend, event scheduling, stream monitoring
+- Phase 222: Sports Features - Score overlays, sports calendar, instant replay, statistics
+- Phase 223: Interactive Events - Live chat, polls, Q&A, reactions, watch party sync
+- Phase 224: Event Monetization - Pay-per-view, dynamic pricing, subscriptions, sponsors
+- Phase 225: Performance & Reliability - CDN integration, failover, latency optimization
 
 ## Progress
-Current: v5.7 planning. 215 phases shipped.
+Current: v5.8 planning. 220 phases shipped.
 
 ---
-Last updated: 2026-04-30 - v5.7 planning started
+Last updated: 2026-05-01
