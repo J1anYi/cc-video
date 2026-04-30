@@ -16,7 +16,7 @@ from app.models.comment import Comment
 from app.models.helpful_vote import HelpfulVote
 from app.models.notification import Notification, NotificationType
 from app.models.watchlist import Watchlist, WatchlistItem
-from app.models.report import Report, ContentType, ReportStatus
+from app.models.report import ReportDefinition, ReportSchedule, ReportExecution, ReportShare, DashboardConfig
 from app.models.user_block import UserBlock
 from app.models.viewing_session import ViewingSession
 from app.models.user_analytics import UserAnalytics

@@ -1,5 +1,5 @@
 from typing import Optional
-from fastapi import Request
+from fastapi import Request, Depends
 from starlette.middleware.base import BaseHTTPMiddleware
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -42,3 +42,12 @@ class TenantMiddleware(BaseHTTPMiddleware):
 
 def get_tenant_from_request(request: Request) -> Optional[int]:
     return getattr(request.state, 'tenant_id', None)
+
+
+async def get_tenant_id(request: Request) -> int:
+    """FastAPI dependency to get tenant_id from request."""
+    tenant_id = getattr(request.state, 'tenant_id', None)
+    if tenant_id is None:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=400, detail="Tenant context required")
+    return tenant_id

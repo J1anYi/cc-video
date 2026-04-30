@@ -48,6 +48,11 @@ from app.routes.revenue import router as revenue_router
 from app.routes.predictions import router as predictions_router
 from app.routes.custom_reports import router as custom_reports_router
 from app.routes.security import router as security_router
+from app.routes.marketplace import router as marketplace_router
+from app.routes.monetization import router as monetization_router
+from app.routes.integrations import router as integrations_router
+from app.routes.syndication import router as syndication_router
+from app.routes.partner import router as partner_router
 
 logger = logging.getLogger(__name__)
 
@@ -80,7 +85,7 @@ app = FastAPI(
 )
 
 app.add_middleware(SecurityHeadersMiddleware)
-app.add_middleware(HTTPSRedirectMiddleware)
+# app.add_middleware(HTTPSRedirectMiddleware)  # Disabled for local testing
 app.add_middleware(RateLimitMiddleware)
 app.add_middleware(TenantMiddleware)
 app.add_middleware(TimingMiddleware)
@@ -126,6 +131,11 @@ app.include_router(revenue_router)
 app.include_router(predictions_router)
 app.include_router(custom_reports_router)
 app.include_router(security_router)
+app.include_router(marketplace_router)
+app.include_router(monetization_router)
+app.include_router(integrations_router)
+app.include_router(syndication_router)
+app.include_router(partner_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")

@@ -2,6 +2,39 @@ from sqlalchemy import Column, Integer, DateTime, ForeignKey, String, JSON
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from app.database import Base
 from datetime import datetime
+import enum
+
+
+class ContentType(str, enum.Enum):
+    VIDEO = "video"
+    COMMENT = "comment"
+    USER = "user"
+    REVIEW = "review"
+
+
+class ReportStatus(str, enum.Enum):
+    PENDING = "pending"
+    REVIEWED = "reviewed"
+    DISMISSED = "dismissed"
+    ACTIONED = "actioned"
+
+
+class Report(Base):
+    """Content moderation reports."""
+    __tablename__ = "reports"
+
+    id: Mapped[int] = mapped_column(primary_key=True, index=True)
+    reporter_id: Mapped[int] = mapped_column(Integer, ForeignKey("users.id"), nullable=False)
+    content_type: Mapped[ContentType] = mapped_column(String(20), nullable=False)
+    content_id: Mapped[int] = mapped_column(Integer, nullable=False)
+    reason: Mapped[str] = mapped_column(String(500), nullable=False)
+    status: Mapped[ReportStatus] = mapped_column(String(20), default=ReportStatus.PENDING)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    reviewed_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    reviewed_by: Mapped[int | None] = mapped_column(Integer, ForeignKey("users.id"), nullable=True)
+
+    reporter = relationship("User", foreign_keys=[reporter_id])
+    reviewer = relationship("User", foreign_keys=[reviewed_by])
 
 
 class ReportDefinition(Base):

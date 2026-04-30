@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 from typing import Optional
-from app.database import get_db
-from app.routes.auth import require_admin
+from app.dependencies import get_db
+from app.dependencies import require_admin
 from app.services.custom_report_service import custom_report_service
 
 router = APIRouter(prefix="/admin/reports", tags=["Custom Reports"])
