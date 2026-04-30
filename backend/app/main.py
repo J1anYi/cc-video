@@ -73,7 +73,20 @@ from app.routes.cdn import router as cdn_router
 from app.routes.db_metrics import router as db_metrics_router
 from app.routes.batch import router as batch_router
 from app.routes.api_metrics import router as api_metrics_router
+from app.routes.graphql import graphql_router
+from app.routes.websocket import router as websocket_router
+from app.routes.service_discovery import router as service_discovery_router
+from app.routes.events import router as events_router
+from app.routes.version import router as version_router
+from app.routes.health_detailed import router as health_detailed_router
+from app.routes.incidents import router as incidents_router
+from app.routes.chaos import router as chaos_router
+from app.routes.feature_flags import router as feature_flags_router
+from app.routes.capacity import router as capacity_router
+from app.routes.sync import router as sync_router
 from app.middleware.query_monitor import init_query_monitor
+from app.middleware.tracing import TracingMiddleware
+from app.middleware.versioning import VersioningMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
 logger = logging.getLogger(__name__)
@@ -113,6 +126,8 @@ app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(RateLimitMiddleware)
 app.add_middleware(TenantMiddleware)
 app.add_middleware(TimingMiddleware)
+app.add_middleware(TracingMiddleware)
+app.add_middleware(VersioningMiddleware, default_version="v1")
 
 app.add_middleware(
     CORSMiddleware,
@@ -180,6 +195,17 @@ app.include_router(cdn_router)
 app.include_router(db_metrics_router)
 app.include_router(batch_router)
 app.include_router(api_metrics_router)
+app.include_router(graphql_router)
+app.include_router(websocket_router)
+app.include_router(service_discovery_router)
+app.include_router(events_router)
+app.include_router(version_router)
+app.include_router(health_detailed_router)
+app.include_router(incidents_router)
+app.include_router(chaos_router)
+app.include_router(feature_flags_router)
+app.include_router(capacity_router)
+app.include_router(sync_router)
 
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
