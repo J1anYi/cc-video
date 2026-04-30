@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.dependencies import get_current_user
 from app.models.user import User
-from app.models.rights import ContentRights, License, Royalty, RightsConflict, LicenseListing
+from app.models.rights import ContentRights, ContentLicense, Royalty, RightsConflict, LicenseListing
 
 router = APIRouter(prefix="/rights", tags=["rights"])
 
@@ -22,15 +22,15 @@ def get_rights(content_id: int, db: Session = Depends(get_db)):
 
 @router.post("/licenses")
 def create_license(content_id: int, licensee_id: int, license_type: str, fee: float, db: Session = Depends(get_db)):
-    license = License(content_id=content_id, licensee_id=licensee_id, license_type=license_type, fee=fee)
-    db.add(license)
+    content_license = ContentLicense(content_id=content_id, licensee_id=licensee_id, license_type=license_type, fee=fee)
+    db.add(content_license)
     db.commit()
-    db.refresh(license)
-    return license
+    db.refresh(content_license)
+    return content_license
 
 @router.get("/licenses/{content_id}")
 def get_licenses(content_id: int, db: Session = Depends(get_db)):
-    return db.query(License).filter(License.content_id == content_id).all()
+    return db.query(ContentLicense).filter(ContentLicense.content_id == content_id).all()
 
 @router.post("/royalties")
 def create_royalty(content_id: int, creator_id: int, period: str, views: int, revenue: float, db: Session = Depends(get_db)):

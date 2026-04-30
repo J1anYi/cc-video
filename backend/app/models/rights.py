@@ -16,8 +16,9 @@ class ContentRights(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
 
-class License(Base):
-    __tablename__ = "licenses"
+class ContentLicense(Base):
+    """Content license for rights management (separate from marketplace License)."""
+    __tablename__ = "content_licenses"
     id = Column(Integer, primary_key=True, index=True)
     content_id = Column(Integer, ForeignKey("creator_contents.id"), nullable=False)
     licensee_id = Column(Integer, ForeignKey("users.id"), nullable=False)
