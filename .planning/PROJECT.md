@@ -6,45 +6,46 @@ CC Video is a web-based movie watching system with separated frontend and backen
 
 The v1 product focused on making the basic viewing loop work end to end: a user can log in, find a movie in the list, and watch it, while an administrator can add and manage the movies that appear there.
 
-## Current State: v3.2 Planning (2026-04-30)
+## Current State: v3.2 Shipped (2026-04-30)
 
-**v3.1 Collaboration and Content Rights Management shipped.** Starting v3.2 Advanced Analytics and Business Intelligence.
+**v3.2 Analytics and Business Intelligence shipped.** 95 phases complete.
 
 ## Core Value
 
 Users can reliably browse the movie list and play administrator-uploaded videos through the web app.
 
-## Current Milestone: v3.2 Advanced Analytics and Business Intelligence
-
-**Goal:** Implement comprehensive analytics, reporting, and business intelligence tools for data-driven content operations.
-
-**Target features:**
-- Advanced content analytics dashboard
-- User behavior analytics and insights
-- Revenue and subscription analytics
-- Predictive business intelligence
-- Custom report builder
-
 ## Requirements
 
-### Validated (v1.0-v3.1)
+### Validated (v1.0-v3.2)
 
 - [x] Core MVP features (v1.0-v1.10)
 - [x] Platform maturity (v2.0-v2.9)
 - [x] AI-Powered Content Tools (v3.0)
 - [x] Collaboration and Rights (v3.1)
+- [x] Analytics and Business Intelligence (v3.2)
+  - Content Analytics Dashboard
+  - User Behavior Analytics
+  - Revenue Analytics
+  - Predictive Intelligence
+  - Custom Report Builder
 
-### Active (v3.2)
+### Active (Next Milestone)
 
-- [ ] Advanced content analytics
-- [ ] User behavior insights
-- [ ] Revenue analytics
-- [ ] Predictive intelligence
-- [ ] Custom reporting
+- [ ] TBD - Run /gsd-new-milestone to define
 
 ## Context
 
-v3.2 provides comprehensive analytics and business intelligence capabilities, enabling data-driven decision making for content strategy, user engagement, and revenue optimization.
+v3.2 delivered comprehensive analytics and business intelligence:
+- Content performance metrics and heatmaps
+- User journey tracking and segmentation
+- Revenue analytics and forecasting
+- Predictive intelligence for content success
+- Custom report builder with scheduling
+
+Tech debt to address in future:
+- ML models for predictions (currently rule-based)
+- Full PDF/Excel export implementation
+- Background tasks for trending/cache
 
 ## Constraints
 
@@ -58,4 +59,4 @@ v3.2 provides comprehensive analytics and business intelligence capabilities, en
 This document evolves at phase transitions and milestone boundaries.
 
 ---
-*Last updated: 2026-04-30 - Starting v3.2*
+*Last updated: 2026-04-30 - v3.2 shipped*

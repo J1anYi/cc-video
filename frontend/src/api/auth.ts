@@ -12,6 +12,30 @@ export function setToken(token: string): void {
 
 export function clearToken(): void {
   localStorage.removeItem('token');
+  localStorage.removeItem('tenant_id');
+}
+
+export function getTenantId(): number | null {
+  const stored = localStorage.getItem('tenant_id');
+  return stored ? parseInt(stored, 10) : null;
+}
+
+export function setTenantId(tenantId: number | null): void {
+  if (tenantId) {
+    localStorage.setItem('tenant_id', String(tenantId));
+  } else {
+    localStorage.removeItem('tenant_id');
+  }
+}
+
+function parseTenantFromToken(token: string): number | null {
+  try {
+    const payload = token.split('.')[1];
+    const decoded = JSON.parse(atob(payload));
+    return decoded.tenant_id ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export async function fetchApi<T>(
@@ -19,6 +43,7 @@ export async function fetchApi<T>(
   options: RequestInit = {}
 ): Promise<T> {
   const token = getToken();
+  const tenantId = getTenantId();
 
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
@@ -26,10 +51,14 @@ export async function fetchApi<T>(
   };
 
   if (token) {
-    (headers as Record<string, string>)['Authorization'] = `Bearer ${token}`;
+    (headers as Record<string, string>)['Authorization'] = 'Bearer ' + token;
   }
 
-  const response = await fetch(`${API_BASE}${endpoint}`, {
+  if (tenantId) {
+    (headers as Record<string, string>)['X-Tenant-ID'] = String(tenantId);
+  }
+
+  const response = await fetch(API_BASE + endpoint, {
     ...options,
     headers,
   });
@@ -45,18 +74,16 @@ export async function fetchApi<T>(
     throw new Error(error.detail || 'Request failed');
   }
 
-  // Handle empty responses (e.g., 204 No Content)
   const text = await response.text();
   return text ? JSON.parse(text) : (null as T);
 }
 
-// Auth API
 export async function login(data: LoginRequest): Promise<LoginResponse> {
   const formData = new FormData();
   formData.append('username', data.username);
   formData.append('password', data.password);
 
-  const response = await fetch(`${API_BASE}/auth/login`, {
+  const response = await fetch(API_BASE + '/auth/login', {
     method: 'POST',
     body: formData,
   });
@@ -68,11 +95,17 @@ export async function login(data: LoginRequest): Promise<LoginResponse> {
 
   const result: LoginResponse = await response.json();
   setToken(result.access_token);
+  
+  const tenantId = parseTenantFromToken(result.access_token);
+  if (tenantId) {
+    setTenantId(tenantId);
+  }
+  
   return result;
 }
 
 export async function register(email: string, password: string): Promise<LoginResponse> {
-  const response = await fetch(`${API_BASE}/auth/register`, {
+  const response = await fetch(API_BASE + '/auth/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -87,6 +120,12 @@ export async function register(email: string, password: string): Promise<LoginRe
 
   const result: LoginResponse = await response.json();
   setToken(result.access_token);
+  
+  const tenantId = parseTenantFromToken(result.access_token);
+  if (tenantId) {
+    setTenantId(tenantId);
+  }
+  
   return result;
 }
 

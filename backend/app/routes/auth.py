@@ -25,7 +25,6 @@ async def login(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: AsyncSession = Depends(get_db),
 ) -> Token:
-    """Login with email and password. Returns access token and sets refresh token cookie."""
     user = await user_service.get_by_email(db, form_data.username)
 
     if not user or not auth_service.verify_password(form_data.password, user.hashed_password):
@@ -53,7 +52,7 @@ async def login(
             detail="User account is disabled",
         )
 
-    access_token = auth_service.create_access_token(str(user.id), user.role.value)
+    access_token = auth_service.create_access_token(str(user.id), user.role.value, user.tenant_id)
     refresh_token = auth_service.create_refresh_token(str(user.id))
 
     response.set_cookie(
@@ -62,7 +61,7 @@ async def login(
         httponly=True,
         secure=True,
         samesite="lax",
-        max_age=7 * 24 * 60 * 60,  # 7 days in seconds
+        max_age=7 * 24 * 60 * 60,
     )
 
     return Token(access_token=access_token, token_type="bearer")
@@ -74,7 +73,6 @@ async def register(
     user_data: UserCreate,
     db: AsyncSession = Depends(get_db),
 ) -> Token:
-    """Register a new user. Returns access token and sets refresh token cookie."""
     try:
         user = await user_service.create(db, user_data.email, user_data.password)
     except IntegrityError:
@@ -83,7 +81,7 @@ async def register(
             detail="Email already registered",
         )
 
-    access_token = auth_service.create_access_token(str(user.id), user.role.value)
+    access_token = auth_service.create_access_token(str(user.id), user.role.value, user.tenant_id)
     refresh_token = auth_service.create_refresh_token(str(user.id))
 
     response.set_cookie(
@@ -92,7 +90,7 @@ async def register(
         httponly=True,
         secure=True,
         samesite="lax",
-        max_age=7 * 24 * 60 * 60,  # 7 days in seconds
+        max_age=7 * 24 * 60 * 60,
     )
 
     return Token(access_token=access_token, token_type="bearer")
@@ -100,7 +98,6 @@ async def register(
 
 @router.post("/logout")
 async def logout(response: Response) -> dict:
-    """Logout by clearing the refresh token cookie."""
     response.delete_cookie(key="refresh_token")
     return {"message": "Successfully logged out"}
 
@@ -111,7 +108,6 @@ async def refresh_token(
     refresh_token: Optional[str] = Cookie(None),
     db: AsyncSession = Depends(get_db),
 ) -> Token:
-    """Refresh access token using refresh token from cookie."""
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -137,7 +133,7 @@ async def refresh_token(
             detail="User account is disabled",
         )
 
-    access_token = auth_service.create_access_token(str(user.id), user.role.value)
+    access_token = auth_service.create_access_token(str(user.id), user.role.value, user.tenant_id)
 
     return Token(access_token=access_token, token_type="bearer")
 
@@ -146,7 +142,6 @@ async def refresh_token(
 async def get_current_user_profile(
     current_user: User = Depends(get_current_user),
 ) -> UserResponse:
-    """Get the currently authenticated user's profile."""
     return UserResponse.model_validate(current_user)
 
 
@@ -156,22 +151,12 @@ async def request_password_reset(
     background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
 ) -> PasswordResetResponse:
-    """
-    Request a password reset.
-    Always returns success to prevent email enumeration.
-    """
-    # Check if user exists
     user = await user_service.get_by_email(db, request.email)
 
     if user:
-        # Generate reset token
         token = await password_reset_service.create_reset_token(db, user.id)
-
-        # Get reset URL from environment or use default
         frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
         reset_url = f"{frontend_url}/reset-password"
-
-        # Send email in background
         background_tasks.add_task(
             email_service.send_password_reset_email,
             user.email,
@@ -179,7 +164,6 @@ async def request_password_reset(
             reset_url
         )
 
-    # Always return success to prevent email enumeration
     return PasswordResetResponse(
         message="If the email exists in our system, a password reset link has been sent."
     )
@@ -190,9 +174,6 @@ async def confirm_password_reset(
     request: PasswordResetConfirm,
     db: AsyncSession = Depends(get_db),
 ) -> PasswordResetResponse:
-    """
-    Confirm password reset with token and new password.
-    """
     success = await password_reset_service.reset_password(db, request.token, request.new_password)
 
     if not success:

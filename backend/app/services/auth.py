@@ -20,7 +20,7 @@ class AuthService:
     def get_password_hash(self, password: str) -> str:
         return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
-    def create_access_token(self, subject: str, role: str) -> str:
+    def create_access_token(self, subject: str, role: str, tenant_id: Optional[int] = None) -> str:
         expire = datetime.now(timezone.utc) + timedelta(minutes=self.access_token_expire_minutes)
         to_encode = {
             "sub": subject,
@@ -28,6 +28,8 @@ class AuthService:
             "exp": expire,
             "type": "access"
         }
+        if tenant_id is not None:
+            to_encode["tenant_id"] = tenant_id
         return jwt.encode(to_encode, self.secret_key, algorithm=self.algorithm)
 
     def create_refresh_token(self, subject: str) -> str:

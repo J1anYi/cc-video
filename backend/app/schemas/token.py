@@ -10,5 +10,6 @@ class Token(BaseModel):
 class TokenPayload(BaseModel):
     sub: str
     exp: int
-    type: str  # "access" or "refresh"
+    type: str
     role: Optional[str] = None
+    tenant_id: Optional[int] = None

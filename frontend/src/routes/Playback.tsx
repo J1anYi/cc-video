@@ -1,10 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, Link, useSearchParams } from 'react-router-dom';
+import Hls from 'hls.js';
 import { useAuth } from '../auth/AuthContext';
-import { getMovie, getStreamUrl } from '../api/movies';
+import { getMovie } from '../api/movies';
 import { updateWatchHistory } from '../api/history';
 import { getMovieSubtitles } from '../api/subtitles';
+import { QualitySelector, QualityOption } from '../components/VideoPlayer/QualitySelector';
 import type { Movie, Subtitle } from '../api/types';
+
+const API_BASE = 'http://localhost:8000';
 
 export default function Playback() {
   const { id } = useParams<{ id: string }>();
@@ -14,12 +18,18 @@ export default function Playback() {
   const [selectedSubtitle, setSelectedSubtitle] = useState<Subtitle | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
+  const [qualities, setQualities] = useState<QualityOption[]>([]);
+  const [currentQuality, setCurrentQuality] = useState('720p');
+  const [isAuto, setIsAuto] = useState(true);
   const { user, logout } = useAuth();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const hlsRef = useRef<Hls | null>(null);
 
   useEffect(() => {
     if (id) loadMovie(parseInt(id));
-    return () => { if (movie) saveProgress(); };
+    return () => {
+      if (hlsRef.current) hlsRef.current.destroy();
+    };
   }, [id]);
 
   const loadMovie = async (movieId: number) => {
@@ -33,13 +43,7 @@ export default function Playback() {
       if (subtitleData.subtitles.length > 0) {
         setSelectedSubtitle(subtitleData.subtitles[0]);
       }
-      const progress = searchParams.get('t');
-      if (progress && videoRef.current) {
-        videoRef.current.addEventListener('loadedmetadata', () => {
-          const startPercent = parseInt(progress);
-          videoRef.current!.currentTime = videoRef.current!.duration * (startPercent / 100);
-        });
-      }
+      await initializeHls(movieId);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load movie');
     } finally {
@@ -47,15 +51,61 @@ export default function Playback() {
     }
   };
 
-  const saveProgress = async () => {
-    if (!videoRef.current || !movie) return;
-    const progress = Math.round((videoRef.current.currentTime / videoRef.current.duration) * 100);
-    if (progress > 0) await updateWatchHistory(movie.id, progress);
+  const initializeHls = async (movieId: number) => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (Hls.isSupported()) {
+      const hls = new Hls({ enableWorker: true });
+      hlsRef.current = hls;
+      hls.loadSource(API_BASE + '/api/hls/video/' + movieId + '/master.m3u8');
+      hls.attachMedia(video);
+
+      hls.on(Hls.Events.MANIFEST_PARSED, (_event, data) => {
+        const qualityOptions: QualityOption[] = data.levels.map((level) => ({
+          quality: level.name || String(level.height) + 'p',
+          width: level.width,
+          height: level.height,
+          bitrate: level.bitrate,
+        }));
+        setQualities(qualityOptions);
+        video.play().catch(() => {});
+      });
+
+      hls.on(Hls.Events.LEVEL_SWITCHED, (_event, data) => {
+        const level = hls.levels[data.level];
+        setCurrentQuality(level.name || String(level.height) + 'p');
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = API_BASE + '/api/hls/video/' + movieId + '/master.m3u8';
+    } else {
+      setError('HLS is not supported in this browser');
+    }
   };
+
+  const handleQualityChange = useCallback((quality: string) => {
+    const hls = hlsRef.current;
+    if (!hls) return;
+    const levelIndex = hls.levels.findIndex(
+      level => level.name === quality || String(level.height) + 'p' === quality
+    );
+    if (levelIndex !== -1) {
+      hls.currentLevel = levelIndex;
+      setIsAuto(false);
+    }
+  }, []);
+
+  const handleAutoToggle = useCallback(() => {
+    const hls = hlsRef.current;
+    if (hls) {
+      hls.currentLevel = -1;
+      setIsAuto(true);
+    }
+  }, []);
 
   const getSubtitleUrl = (subtitle: Subtitle) => {
     const filename = subtitle.file_path.split('/').pop();
-    return `http://localhost:8000/uploads/subtitles/${filename}`;
+    return API_BASE + '/uploads/subtitles/' + filename;
   };
 
   if (isLoading) return <div style={styles.container}><p>Loading...</p></div>;
@@ -69,42 +119,20 @@ export default function Playback() {
       </header>
       <h1>{movie.title}</h1>
       {movie.description && <p style={styles.desc}>{movie.description}</p>}
-      
-      {subtitles.length > 0 && (
-        <div style={styles.subtitleControls}>
-          <label style={styles.label}>Subtitles: </label>
-          <select 
-            value={selectedSubtitle?.id || ''} 
-            onChange={(e) => {
-              const sub = subtitles.find(s => s.id === parseInt(e.target.value));
-              setSelectedSubtitle(sub || null);
-            }}
-            style={styles.select}
-          >
-            <option value="">Off</option>
-            {subtitles.map((sub) => (
-              <option key={sub.id} value={sub.id}>{sub.language}</option>
-            ))}
-          </select>
-        </div>
-      )}
-      
-      <video 
-        ref={videoRef} 
-        controls 
-        style={styles.video} 
-        src={getStreamUrl(movie.id)} 
-        onPause={saveProgress} 
-        onEnded={saveProgress}
-      >
-        {selectedSubtitle && (
-          <track 
-            kind="subtitles" 
-            src={getSubtitleUrl(selectedSubtitle)} 
-            srcLang={selectedSubtitle.language} 
-            label={selectedSubtitle.language}
-            default
+      <div style={styles.playerControls}>
+        {qualities.length > 0 && (
+          <QualitySelector
+            qualities={qualities}
+            currentQuality={currentQuality}
+            onQualityChange={handleQualityChange}
+            isAuto={isAuto}
+            onAutoToggle={handleAutoToggle}
           />
+        )}
+      </div>
+      <video ref={videoRef} controls style={styles.video}>
+        {selectedSubtitle && (
+          <track kind="subtitles" src={getSubtitleUrl(selectedSubtitle)} srcLang={selectedSubtitle.language} label={selectedSubtitle.language} default />
         )}
       </video>
     </div>
@@ -115,9 +143,7 @@ const styles: Record<string, React.CSSProperties> = {
   container: { maxWidth: '1000px', margin: '0 auto', padding: '1rem' },
   header: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' },
   desc: { color: '#666' },
+  playerControls: { display: 'flex', gap: '1rem', marginBottom: '1rem' },
   video: { width: '100%', background: '#000' },
   error: { padding: '1rem', background: '#fee', color: '#c00' },
-  subtitleControls: { marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' },
-  label: { fontWeight: 'bold' },
-  select: { padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' },
 };

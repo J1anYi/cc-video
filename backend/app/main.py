@@ -14,6 +14,7 @@ from app.middleware.security import (
     SecurityHeadersMiddleware,
     HTTPSRedirectMiddleware,
 )
+from app.middleware.tenant import TenantMiddleware
 from app.routes.auth import router as auth_router
 from app.routes.admin import router as admin_router
 from app.routes.user import router as user_router
@@ -34,31 +35,37 @@ from app.routes.admin_metrics import router as admin_metrics_router
 from app.routes.admin_dashboard import router as admin_dashboard_router
 from app.routes.social_analytics import router as social_analytics_router
 from app.routes.rec_insights import router as rec_insights_router
+from app.routes.personalization import router as personalization_router
+from app.routes.hls import router as hls_router
+from app.routes.tenant_admin import router as tenant_admin_router
+from app.routes.branding import router as branding_router
+from app.routes.platform_admin import router as platform_admin_router
+from app.routes.tenant_config import router as tenant_config_router
+from app.routes.ai_editing import router as ai_editing_router
+from app.routes.content_analytics import router as content_analytics_router
+from app.routes.user_behavior import router as user_behavior_router
+from app.routes.revenue import router as revenue_router
+from app.routes.predictions import router as predictions_router
+from app.routes.custom_reports import router as custom_reports_router
 
 logger = logging.getLogger(__name__)
 
 
 class TimingMiddleware(BaseHTTPMiddleware):
-    """Middleware to add response time header and log slow requests."""
-
     async def dispatch(self, request: Request, call_next):
         start_time = time.time()
         response = await call_next(request)
         process_time = time.time() - start_time
         response.headers["X-Process-Time"] = f"{process_time:.3f}"
-
-        # Log slow requests (>200ms)
         if process_time > 0.2:
             logger.warning(
                 f"Slow request: {request.method} {request.url.path} took {process_time:.3f}s"
             )
-
         return response
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create tables on startup (dev mode; use Alembic in production)
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
@@ -71,19 +78,12 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Add security headers middleware
 app.add_middleware(SecurityHeadersMiddleware)
-
-# Add HTTPS redirect middleware (production only)
 app.add_middleware(HTTPSRedirectMiddleware)
-
-# Add rate limiting middleware
 app.add_middleware(RateLimitMiddleware)
-
-# Add timing middleware
+app.add_middleware(TenantMiddleware)
 app.add_middleware(TimingMiddleware)
 
-# CORS configuration for frontend development
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
@@ -92,7 +92,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
 app.include_router(auth_router)
 app.include_router(admin_router)
 app.include_router(user_router)
@@ -112,21 +111,37 @@ app.include_router(analytics_router)
 app.include_router(admin_metrics_router)
 app.include_router(admin_dashboard_router)
 app.include_router(social_analytics_router)
+app.include_router(personalization_router)
 app.include_router(rec_insights_router)
+app.include_router(hls_router)
+app.include_router(tenant_admin_router)
+app.include_router(branding_router)
+app.include_router(platform_admin_router)
+app.include_router(tenant_config_router)
+app.include_router(ai_editing_router)
+app.include_router(content_analytics_router)
+app.include_router(user_behavior_router)
+app.include_router(revenue_router)
+app.include_router(predictions_router)
+app.include_router(custom_reports_router)
 
-# Mount static files for posters and subtitles
 posters_dir = os.path.join(settings.UPLOAD_DIR, "posters")
 subtitles_dir = os.path.join(settings.UPLOAD_DIR, "subtitles")
+logos_dir = os.path.join(settings.UPLOAD_DIR, "logos")
+favicons_dir = os.path.join(settings.UPLOAD_DIR, "favicons")
 os.makedirs(posters_dir, exist_ok=True)
 os.makedirs(subtitles_dir, exist_ok=True)
+os.makedirs(logos_dir, exist_ok=True)
+os.makedirs(favicons_dir, exist_ok=True)
 
 app.mount("/uploads/posters", StaticFiles(directory=posters_dir), name="posters")
 app.mount("/uploads/subtitles", StaticFiles(directory=subtitles_dir), name="subtitles")
+app.mount("/uploads/logos", StaticFiles(directory=logos_dir), name="logos")
+app.mount("/uploads/favicons", StaticFiles(directory=favicons_dir), name="favicons")
 
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint for load balancers."""
     return {
         "status": "healthy",
         "service": "cc-video-api",
@@ -136,15 +151,12 @@ async def health_check():
 
 @app.get("/healthz")
 async def liveness():
-    """Liveness probe - is the service running?"""
     return {"status": "alive"}
 
 
 @app.get("/readyz")
 async def readiness():
-    """Readiness probe - is the service ready to accept traffic?"""
     try:
-        # Test database connectivity
         async with engine.connect() as conn:
             await conn.execute("SELECT 1")
         return {"status": "ready"}
