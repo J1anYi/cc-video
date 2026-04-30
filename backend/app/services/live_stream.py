@@ -1,13 +1,13 @@
 """Live streaming services."""
 from datetime import datetime
 from sqlalchemy.orm import Session
-from app.models.live_stream import LiveStream, LiveChatMessage, LiveStreamSchedule
+from app.models.live_stream import CreatorLiveStream, LiveChatMessage, CreatorLiveStreamSchedule
 import uuid
 
-class LiveStreamService:
+class CreatorLiveStreamService:
     @staticmethod
     def create_stream(db, creator_id, title, description=None):
-        stream = LiveStream(creator_id=creator_id, title=title, description=description, stream_key=str(uuid.uuid4()))
+        stream = CreatorLiveStream(creator_id=creator_id, title=title, description=description, stream_key=str(uuid.uuid4()))
         db.add(stream)
         db.commit()
         db.refresh(stream)
@@ -15,15 +15,15 @@ class LiveStreamService:
 
     @staticmethod
     def get_stream(db, stream_id):
-        return db.query(LiveStream).filter(LiveStream.id == stream_id).first()
+        return db.query(CreatorLiveStream).filter(CreatorLiveStream.id == stream_id).first()
 
     @staticmethod
     def get_creator_streams(db, creator_id):
-        return db.query(LiveStream).filter(LiveStream.creator_id == creator_id).order_by(LiveStream.created_at.desc()).all()
+        return db.query(CreatorLiveStream).filter(CreatorLiveStream.creator_id == creator_id).order_by(CreatorLiveStream.created_at.desc()).all()
 
     @staticmethod
     def start_stream(db, stream_id):
-        stream = db.query(LiveStream).filter(LiveStream.id == stream_id).first()
+        stream = db.query(CreatorLiveStream).filter(CreatorLiveStream.id == stream_id).first()
         if stream:
             stream.status = 'live'
             stream.started_at = datetime.utcnow()
@@ -33,7 +33,7 @@ class LiveStreamService:
 
     @staticmethod
     def end_stream(db, stream_id):
-        stream = db.query(LiveStream).filter(LiveStream.id == stream_id).first()
+        stream = db.query(CreatorLiveStream).filter(CreatorLiveStream.id == stream_id).first()
         if stream:
             stream.status = 'ended'
             stream.ended_at = datetime.utcnow()
@@ -57,7 +57,7 @@ class LiveStreamService:
 
     @staticmethod
     def schedule_stream(db, creator_id, title, scheduled_start, description=None):
-        schedule = LiveStreamSchedule(creator_id=creator_id, title=title, description=description, scheduled_start=scheduled_start)
+        schedule = CreatorLiveStreamSchedule(creator_id=creator_id, title=title, description=description, scheduled_start=scheduled_start)
         db.add(schedule)
         db.commit()
         db.refresh(schedule)
@@ -65,7 +65,7 @@ class LiveStreamService:
 
     @staticmethod
     def get_scheduled_streams(db, creator_id=None):
-        query = db.query(LiveStreamSchedule).filter(LiveStreamSchedule.scheduled_start > datetime.utcnow())
+        query = db.query(CreatorLiveStreamSchedule).filter(CreatorLiveStreamSchedule.scheduled_start > datetime.utcnow())
         if creator_id:
-            query = query.filter(LiveStreamSchedule.creator_id == creator_id)
-        return query.order_by(LiveStreamSchedule.scheduled_start).all()
+            query = query.filter(CreatorLiveStreamSchedule.creator_id == creator_id)
+        return query.order_by(CreatorLiveStreamSchedule.scheduled_start).all()

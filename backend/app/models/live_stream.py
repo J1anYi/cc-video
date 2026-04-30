@@ -5,9 +5,9 @@ from app.database import Base
 import uuid
 
 
-class LiveStream(Base):
-    """Live stream session."""
-    __tablename__ = "live_streams"
+class CreatorLiveStream(Base):
+    """Live stream session for creators."""
+    __tablename__ = "creator_live_streams"
 
     id = Column(Integer, primary_key=True, index=True)
     creator_id = Column(Integer, ForeignKey("creator_profiles.id"), nullable=False)
@@ -35,7 +35,7 @@ class LiveChatMessage(Base):
     __tablename__ = "live_chat_messages"
 
     id = Column(Integer, primary_key=True, index=True)
-    stream_id = Column(Integer, ForeignKey("live_streams.id"), nullable=False)
+    stream_id = Column(Integer, ForeignKey("creator_live_streams.id"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     message = Column(Text, nullable=False)
     is_highlighted = Column(Boolean, default=False)
@@ -48,7 +48,7 @@ class LiveStreamRecording(Base):
     __tablename__ = "live_stream_recordings"
 
     id = Column(Integer, primary_key=True, index=True)
-    stream_id = Column(Integer, ForeignKey("live_streams.id"), nullable=False)
+    stream_id = Column(Integer, ForeignKey("creator_live_streams.id"), nullable=False)
     video_url = Column(String(500), nullable=False)
     thumbnail_url = Column(String(500), nullable=True)
     duration = Column(Integer, default=0)
@@ -57,9 +57,9 @@ class LiveStreamRecording(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
 
-class LiveStreamSchedule(Base):
-    """Scheduled live stream."""
-    __tablename__ = "live_stream_schedules"
+class CreatorLiveStreamSchedule(Base):
+    """Scheduled live stream for creators."""
+    __tablename__ = "creator_live_stream_schedules"
 
     id = Column(Integer, primary_key=True, index=True)
     creator_id = Column(Integer, ForeignKey("creator_profiles.id"), nullable=False)
@@ -69,7 +69,7 @@ class LiveStreamSchedule(Base):
     scheduled_end = Column(DateTime, nullable=True)
     timezone = Column(String(50), default="UTC")
     reminder_sent = Column(Boolean, default=False)
-    stream_id = Column(Integer, ForeignKey("live_streams.id"), nullable=True)
+    stream_id = Column(Integer, ForeignKey("creator_live_streams.id"), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
 
@@ -78,7 +78,7 @@ class LiveStreamAnalytics(Base):
     __tablename__ = "live_stream_analytics"
 
     id = Column(Integer, primary_key=True, index=True)
-    stream_id = Column(Integer, ForeignKey("live_streams.id"), nullable=False)
+    stream_id = Column(Integer, ForeignKey("creator_live_streams.id"), nullable=False)
     timestamp = Column(DateTime, default=datetime.utcnow)
     viewer_count = Column(Integer, default=0)
     chat_messages = Column(Integer, default=0)
