@@ -35,3 +35,5 @@ __all__ = [
 ]
 from app.models.live_event import LiveEvent, StreamEndpoint, StreamMetrics, DVRSegment, HealthAlert, EventStatus
 from app.models.sports import League, Team, Game, TeamFollow, GameStatistic
+from app.models.music import Artist, Album, Track, Genre, AudioFile, PlaybackState, PlayHistory, AlbumType, AudioQuality
+from app.models.creator import CreatorProfile, CreatorContent, CreatorTeamMember
