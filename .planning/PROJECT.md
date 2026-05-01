@@ -1,25 +1,35 @@
 # CC Video
 
 ## What This Is
-CC Video is a web-based movie watching system with separated frontend and backend services.
 
-## Current State: v5.9 Planning (2026-04-30)
+CC Video is a comprehensive web-based video streaming platform with live events, sports, and interactive features.
 
-**v5.8 Live Events and Sports shipped.** v5.9 Music and Audio development starting.
+## Current State: v5.8 SHIPPED (2026-05-01)
 
-## v5.9 Goals (PLANNING)
-1. Pending: Music Streaming Infrastructure (Phase 226)
-2. Pending: Podcast Platform (Phase 227)
-3. Pending: Audio Discovery and Personalization (Phase 228)
-4. Pending: Audio Monetization (Phase 229)
-5. Pending: Music Social Features (Phase 230)
+**v5.8 Live Events & Sports shipped.** Full live streaming infrastructure, sports features, interactive events, monetization, and performance optimization delivered.
 
-## Completed Milestones
-- v5.8: Live Events and Sports (Phases 221-225)
-- v5.7: Kids and Family (Phases 216-220)
-- v5.6: Smart TV (Phases 211-215)
-- v5.5: Mobile Experience (Phases 206-210)
-- v5.4: International Expansion (Phases 201-205)
+## Shipped Milestones
+
+- **v5.8 Live Events & Sports** (2026-05-01) - WebRTC streaming, sports features, interactive events, monetization
+- **v5.7 Kids & Family** (2026-05-01) - Family safety controls, kids content, family sharing
+- **v5.6 Smart TV** (2026-04-30) - Smart TV platform, TV playback, living room experience
+- **v5.5 Mobile** (2026-04-30) - Mobile platform, offline sync, mobile playback
+- **v5.4 International** (2026-04-30) - Multi-language, regional content, global infrastructure
+- v5.3-v1.0: Core platform features
+
+## Key Features
+
+- **Live Streaming**: WebRTC-based with adaptive bitrate, DVR, multi-camera
+- **Sports**: Real-time scores, calendar, instant replay, statistics
+- **Interactive**: Live chat, polls, Q&A, reactions, watch parties
+- **Monetization**: Pay-per-view, dynamic pricing, subscriptions, sponsorships
+- **Performance**: CDN integration, failover, latency optimization
+
+## Tech Stack
+
+- Backend: FastAPI, SQLAlchemy 2.0, PostgreSQL, Redis
+- Frontend: React, TypeScript
+- Infrastructure: WebRTC, HLS, CDN
 
 ---
-Last updated: 2026-04-30 - v5.9 Music & Audio planning
+Last updated: 2026-05-01 - v5.8 shipped
