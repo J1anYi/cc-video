@@ -33,3 +33,5 @@ __all__ = [
     "ContentType", "ReportStatus", "UserBlock", "ViewingSession", "UserAnalytics",
     "ContentMetrics", "PlatformMetrics", "Tenant", "TenantStatus", "TenantPlan"
 ]
+from app.models.live_event import LiveEvent, StreamEndpoint, StreamMetrics, DVRSegment, HealthAlert, EventStatus
+from app.models.sports import League, Team, Game, TeamFollow, GameStatistic
